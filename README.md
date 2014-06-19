@@ -1,5 +1,7 @@
 # idobata-hooks
 
+[![Build Status](https://travis-ci.org/idobata/idobata-hooks.png)](https://travis-ci.org/idobata/idobata-hooks)
+
 A collection of [Idobata](https://idobata.io) hooks.
 
 (see: [README written in Japanese](#idobata-hooks-japanese))
