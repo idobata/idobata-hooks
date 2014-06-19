@@ -5,7 +5,7 @@ require 'idobata/hook/version'
 Gem::Specification.new do |spec|
   spec.name          = 'idobata-hooks'
   spec.version       = Idobata::Hook::VERSION
-  spec.authors       = ['Keita Urashima', 'Ryunosuke Sato']
+  spec.authors       = ['Keita Urashima', 'hibariya', 'Ryunosuke Sato']
   spec.email         = ['hi@idobata.io']
   spec.summary       = %q{A collection of Idobata hooks.}
   spec.description   = %q{A collection of Idobata hooks.}
