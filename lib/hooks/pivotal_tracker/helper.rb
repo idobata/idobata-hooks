@@ -1,3 +1,5 @@
+require 'uri'
+
 module Idobata::Hook
   class PivotalTracker
     module Helper
