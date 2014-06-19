@@ -109,22 +109,24 @@ module Idobata::Hook
     end
 
     def _payload
-      content_type = if type = self.class.forced_content_type
-        MIME::Types.type_for(type.to_s).map(&:content_type).first
+      content_type = headers['Content-Type']
+
+      mime = if type = self.class.forced_content_type
+        MIME::Types.type_for(type.to_s).first
       else
-        headers['Content-Type']
+        MIME::Types[content_type].first
       end
 
-      case content_type
+      case mime
       when 'application/json'
         JSON.parse(raw_body)
       when 'application/xml'
         Hash.from_xml(raw_body)
-      when %r{\Aapplication/x-www-form-urlencoded}
+      when 'application/x-www-form-urlencoded'
         payload = Rack::Utils.parse_nested_query(raw_body)
 
         parse_json_in_form(payload)
-      when Rack::Multipart::MULTIPART
+      when 'multipart/form-data'
         payload = Rack::Multipart.parse_multipart(
           'CONTENT_TYPE'   => content_type,
           'CONTENT_LENGTH' => raw_body.length,
