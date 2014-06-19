@@ -1,3 +1,5 @@
+require 'action_dispatch/http/mime_type'
+
 module Idobata::Hook
   class Base
     include ActiveSupport::Callbacks
@@ -109,33 +111,28 @@ module Idobata::Hook
     end
 
     def _payload
-      content_type = headers['Content-Type']
+      raw_type = headers['Content-Type']
+      type     = Mime[self.class.forced_content_type] || Mime::Type.parse(headers['Content-Type']).first
 
-      mime = if type = self.class.forced_content_type
-        MIME::Types.type_for(type.to_s).first
-      else
-        MIME::Types[content_type].first
-      end
-
-      case mime
-      when 'application/json'
+      case type
+      when Mime::JSON
         JSON.parse(raw_body)
-      when 'application/xml'
+      when Mime::XML
         Hash.from_xml(raw_body)
-      when 'application/x-www-form-urlencoded'
+      when Mime::URL_ENCODED_FORM
         payload = Rack::Utils.parse_nested_query(raw_body)
 
         parse_json_in_form(payload)
-      when 'multipart/form-data'
+      when Mime::MULTIPART_FORM
         payload = Rack::Multipart.parse_multipart(
-          'CONTENT_TYPE'   => content_type,
+          'CONTENT_TYPE'   => raw_type,
           'CONTENT_LENGTH' => raw_body.length,
           'rack.input'     => StringIO.new(raw_body)
         )
 
         parse_json_in_form(payload)
       else
-        raise "Unsupported content_type: `#{content_type}`."
+        raise Error, "Unsupported content_type: `#{raw_type}`."
       end
     end
 
