@@ -93,5 +93,21 @@ describe Idobata::Hook::PivotalTracker, type: :hook do
         </ul>
       HTML
     end
+
+    describe 'API v5 epic' do
+      let(:payload) { fixture_payload('pivotal/v5+epic.json') }
+
+      before do
+        post payload, 'Content-Type' => 'application/json'
+      end
+
+      its([:source]) { should eq(<<-HTML.strip_heredoc) }
+        <p>
+          Ryunosuke SATO added epic
+          <a href='https://www.pivotaltracker.com/epic/show/1263316'>
+            <span class='story-id'>#1263316</span>
+          </a><b>EPIC!!!</b></p>
+      HTML
+    end
   end
 end
