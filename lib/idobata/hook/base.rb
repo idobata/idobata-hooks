@@ -112,7 +112,7 @@ module Idobata::Hook
 
     def _payload
       raw_type = headers['Content-Type']
-      type     = Mime[self.class.forced_content_type] || Mime::Type.parse(headers['Content-Type']).first
+      type     = Mime[self.class.forced_content_type] || Mime::Type.parse(raw_type).first
 
       case type
       when Mime::JSON
