@@ -1,0 +1,52 @@
+{
+  "kind": "epic_create_activity",
+  "guid": "902866_234",
+  "project_version": 234,
+  "message": "Ryunosuke SATO added this epic",
+  "highlight": "added",
+  "changes": [
+    {
+      "kind": "epic",
+      "change_type": "create",
+      "id": 1263316,
+      "new_values": {
+        "id": 1263316,
+        "project_id": 902866,
+        "name": "EPIC!!!",
+        "label_id": 8753768,
+        "description": "hihi",
+        "follower_ids": [
+
+        ],
+        "created_at": 1403166990000,
+        "updated_at": 1403166990000,
+        "before_id": 1263314,
+        "past_done_story_estimates": 0,
+        "past_done_stories_count": 0,
+        "past_done_stories_no_point_count": 0,
+        "label": "epic!!!"
+      },
+      "name": "EPIC!!!"
+    }
+  ],
+  "primary_resources": [
+    {
+      "kind": "epic",
+      "id": 1263316,
+      "name": "EPIC!!!",
+      "url": "https://www.pivotaltracker.com/epic/show/1263316"
+    }
+  ],
+  "project": {
+    "kind": "project",
+    "id": 902866,
+    "name": "hi"
+  },
+  "performed_by": {
+    "kind": "person",
+    "id": 140609,
+    "name": "Ryunosuke SATO",
+    "initials": "Ryunosuke"
+  },
+  "occurred_at": 1403166990000
+}
