@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    idobata-hooks (1.0.0)
+    idobata-hooks (1.0.1)
       actionpack (~> 4.1)
       activesupport (~> 4.1)
       github-markdown
