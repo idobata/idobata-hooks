@@ -120,7 +120,7 @@ module Idobata::Hook
         JSON.parse(raw_body)
       when 'application/xml'
         Hash.from_xml(raw_body)
-      when 'application/x-www-form-urlencoded'
+      when %r{\Aapplication/x-www-form-urlencoded}
         payload = Rack::Utils.parse_nested_query(raw_body)
 
         parse_json_in_form(payload)

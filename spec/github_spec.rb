@@ -11,7 +11,7 @@ describe Idobata::Hook::Github, type: :hook do
 
       before do
         post params.to_param,
-          'Content-Type'   => 'application/x-www-form-urlencoded',
+          'Content-Type'   => 'application/x-www-form-urlencoded; charset=utf-8',
           'X-GitHub-Event' => github_event_type
       end
 
