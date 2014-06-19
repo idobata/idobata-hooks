@@ -1,0 +1,71 @@
+{
+  "pullrequest_updated": {
+    "description": "# This is a pull request\r\n\r\n``` ruby\r\ndef hell\r\n  :hi\r\nend\r\n```",
+    "title": "ping!",
+    "destination": {
+      "commit": {
+        "hash": "45d5b0768a90",
+        "links": {
+          "self": {
+            "href": "https://api.bitbucket.org/2.0/repositories/ursm/hello/commit/45d5b0768a90"
+          }
+        }
+      },
+      "branch": {
+        "name": "master"
+      },
+      "repository": {
+        "full_name": "ursm/hello",
+        "links": {
+          "self": {
+            "href": "https://api.bitbucket.org/2.0/repositories/ursm/hello"
+          },
+          "avatar": {
+            "href": "https://d3oaxc4q5k2d6q.cloudfront.net/m/9d3d19e361c2/img/language-avatars/default_16.png"
+          }
+        },
+        "name": "hello"
+      }
+    },
+    "reason": "",
+    "source": {
+      "commit": {
+        "hash": "a306dc0532ca",
+        "links": {
+          "self": {
+            "href": "https://api.bitbucket.org/2.0/repositories/ursm/hello/commit/a306dc0532ca"
+          }
+        }
+      },
+      "branch": {
+        "name": "ping"
+      },
+      "repository": {
+        "full_name": "ursm/hello",
+        "links": {
+          "self": {
+            "href": "https://api.bitbucket.org/2.0/repositories/ursm/hello"
+          },
+          "avatar": {
+            "href": "https://d3oaxc4q5k2d6q.cloudfront.net/m/9d3d19e361c2/img/language-avatars/default_16.png"
+          }
+        },
+        "name": "hello"
+      }
+    },
+    "state": "OPEN",
+    "author": {
+      "username": "tricknotes",
+      "display_name": "Ryunosuke SATO",
+      "links": {
+        "self": {
+          "href": "https://api.bitbucket.org/2.0/users/tricknotes"
+        },
+        "avatar": {
+          "href": "https://secure.gravatar.com/avatar/dc03a27ae31ba428c560c00c9128cd75?d=https%3A%2F%2Fd3oaxc4q5k2d6q.cloudfront.net%2Fm%2F9d3d19e361c2%2Fimg%2Fdefault_avatar%2F32%2Fuser_blue.png&s=32"
+        }
+      }
+    },
+    "date": "2014-05-27T10:21:20.095313+00:00"
+  }
+}

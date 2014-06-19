@@ -1,0 +1,6 @@
+%dl
+  %dt Usage
+  %dd
+    You can add webhook URL to your repository.
+    %br
+    See <a href='https://help.github.com/articles/creating-webhooks' target='_blank'><i class='fa fa-external-link'></i> Creating Webhooks | GitHub Help</a> for more details.

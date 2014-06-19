@@ -1,0 +1,25 @@
+%p
+  %span= avatar_image_tag payload.sender.avatar_url
+  %a{href: payload.sender.html_url}= payload.sender.login
+
+  - if payload.pull_request.merged
+    -# `payload.action` is 'closed' on merge.
+    merged
+  - else
+    = payload.action
+
+  pull request
+  %a{href: payload.pull_request.html_url} #{payload.repository.owner.login}/#{payload.repository.name}##{payload.number}
+  %b= payload.pull_request.title
+
+.pull-info
+  %b= number_with_delimiter payload.pull_request.commits
+  = 'commit'.pluralize(payload.pull_request.commits)
+  with
+  %b= number_with_delimiter payload.pull_request.additions
+  = 'addition'.pluralize(payload.pull_request.additions)
+  and
+  %b= number_with_delimiter payload.pull_request.deletions
+  = 'deletion'.pluralize(payload.pull_request.deletions)
+
+= md payload.pull_request.body if payload.action == 'opened'

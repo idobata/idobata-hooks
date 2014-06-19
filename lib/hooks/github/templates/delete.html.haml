@@ -1,0 +1,7 @@
+%p
+  %span= avatar_image_tag(payload.sender.avatar_url)
+  %a{href: payload.sender.html_url}= payload.sender.login
+
+  deleted #{payload.ref_type} #{payload.ref} at
+
+  %a{href: payload.repository.html_url}= payload.repository.full_name

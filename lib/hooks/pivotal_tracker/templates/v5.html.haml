@@ -1,0 +1,29 @@
+- payload.primary_resources.each do |story|
+  %p
+    #{payload.performed_by.name} #{payload.highlight} story
+
+    %a{href: story.url}
+      %span.story-id ##{story.id}
+
+    = succeed Haml::Util.html_safe('&nbsp;') do
+      %img(width=14 height=14){src: hook_image_url("icons/#{story.story_type}.png")}
+
+    %b>= story.name
+
+- if %w(story_create_activity story_update_activity).include?(payload.kind)
+  - if story = new_value(:story)
+    = md story.description
+
+- if comment = new_value(:comment)
+  = md comment.text
+
+- if attachments = new_values(:file_attachment).presence
+  %ul.thumbnails.pivotal-attachments
+    - attachments.each do |attachment|
+      %li.thumbnail
+        %a{href: download_url(attachment)}
+          - if attachment.thumbnailable
+            %img{src: attachment.thumbnail_url, title: attachment.filename}
+          - else
+            .extname= File.extname(attachment.filename)[1..-1]
+            .filename (#{attachment.filename})

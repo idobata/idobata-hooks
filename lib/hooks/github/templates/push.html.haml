@@ -1,0 +1,30 @@
+:ruby
+  github_url = 'https://github.com'
+  branch     = payload.ref.split('/', 3).last # refs/heads/:branch_name
+
+%p
+  %span= gravatar_image_tag payload.pusher.email
+  %a{href: "#{github_url}/#{payload.pusher.name}"}= payload.pusher.name
+
+  - if payload.forced && !payload.created # Somehow `payload.forced` is `true` on created
+    force-pushed to
+  - else
+    pushed to
+
+  %a{href: "#{payload.repository.url}/tree/#{branch}"}= branch
+  at
+  %a{href: payload.repository.url} #{payload.repository.owner.name}/#{payload.repository.name}
+
+  = surround '(', ')' do
+    %a{href: payload.compare} compare
+
+- if payload.commits.present?
+  %ul
+    - payload.commits.each do |commit|
+      %li
+        - head, *tail = commit.message.lines
+
+        %a{href: commit.url}<
+          %span.commit-id= commit.id[0...7]
+        = head
+        = md tail.join

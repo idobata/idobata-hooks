@@ -1,0 +1,137 @@
+PATH
+  remote: .
+  specs:
+    idobata-hooks (1.0.0)
+      actionpack (~> 4.1)
+      activesupport (~> 4.1)
+      github-markdown
+      haml
+      hashie
+      html-pipeline
+      mime-types
+      tilt
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    actionpack (4.1.1)
+      actionview (= 4.1.1)
+      activesupport (= 4.1.1)
+      rack (~> 1.5.2)
+      rack-test (~> 0.6.2)
+    actionview (4.1.1)
+      activesupport (= 4.1.1)
+      builder (~> 3.1)
+      erubis (~> 2.7.0)
+    activesupport (4.1.1)
+      i18n (~> 0.6, >= 0.6.9)
+      json (~> 1.7, >= 1.7.7)
+      minitest (~> 5.1)
+      thread_safe (~> 0.1)
+      tzinfo (~> 1.1)
+    backports (3.6.0)
+    builder (3.2.2)
+    charlock_holmes (0.7.3)
+    coderay (1.1.0)
+    diff-lcs (1.2.5)
+    erubis (2.7.0)
+    escape_utils (1.0.1)
+    execjs (2.2.0)
+    github-linguist (2.12.0)
+      charlock_holmes (~> 0.7.3)
+      escape_utils (~> 1.0.1)
+      mime-types (~> 1.19)
+      pygments.rb (~> 0.6.0)
+    github-markdown (0.6.5)
+    haml (4.0.5)
+      tilt
+    hamlbars (2.1.1)
+      execjs (>= 1.2)
+      haml
+      sprockets (>= 2.0)
+      tilt
+    hashie (3.0.0)
+    hike (1.2.3)
+    html-pipeline (1.8.0)
+      activesupport (>= 2)
+      nokogiri (~> 1.4)
+    i18n (0.6.9)
+    json (1.8.1)
+    method_source (0.8.2)
+    mime-types (1.25.1)
+    mini_portile (0.6.0)
+    minitest (5.3.5)
+    multi_json (1.10.1)
+    nokogiri (1.6.2.1)
+      mini_portile (= 0.6.0)
+    posix-spawn (0.3.8)
+    pry (0.10.0)
+      coderay (~> 1.1.0)
+      method_source (~> 0.8.1)
+      slop (~> 3.4)
+    pygments.rb (0.6.0)
+      posix-spawn (~> 0.3.6)
+      yajl-ruby (~> 1.1.0)
+    rack (1.5.2)
+    rack-protection (1.5.3)
+      rack
+    rack-test (0.6.2)
+      rack (>= 1.0)
+    rake (10.3.2)
+    rspec (3.0.0)
+      rspec-core (~> 3.0.0)
+      rspec-expectations (~> 3.0.0)
+      rspec-mocks (~> 3.0.0)
+    rspec-core (3.0.1)
+      rspec-support (~> 3.0.0)
+    rspec-expectations (3.0.1)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.0.0)
+    rspec-its (1.0.1)
+      rspec-core (>= 2.99.0.beta1)
+      rspec-expectations (>= 2.99.0.beta1)
+    rspec-mocks (3.0.1)
+      rspec-support (~> 3.0.0)
+    rspec-support (3.0.0)
+    sinatra (1.4.5)
+      rack (~> 1.4)
+      rack-protection (~> 1.4)
+      tilt (~> 1.3, >= 1.3.4)
+    sinatra-contrib (1.4.2)
+      backports (>= 2.0)
+      multi_json
+      rack-protection
+      rack-test
+      sinatra (~> 1.4.0)
+      tilt (~> 1.3)
+    slop (3.5.0)
+    sprockets (2.12.1)
+      hike (~> 1.2)
+      multi_json (~> 1.0)
+      rack (~> 1.0)
+      tilt (~> 1.1, != 1.3.0)
+    tapp (1.4.0)
+      thor
+    thor (0.19.1)
+    thread_safe (0.3.4)
+    tilt (1.4.1)
+    tzinfo (1.2.1)
+      thread_safe (~> 0.1)
+    yajl-ruby (1.1.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  bundler (~> 1.6)
+  github-linguist
+  hamlbars
+  idobata-hooks!
+  pry
+  rake
+  rspec (~> 3.0.0)
+  rspec-its
+  sinatra (~> 1.4)
+  sinatra-contrib
+  sprockets
+  tapp

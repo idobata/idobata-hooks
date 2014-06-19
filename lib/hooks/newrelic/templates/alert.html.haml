@@ -1,0 +1,12 @@
+:ruby
+  body = payload.alert
+
+%p
+  %b= body.short_description
+  %span.label.label-important= body.severity.titleize
+
+%p
+  = body.message
+
+  = surround '(', ')' do
+    %a{href: body.alert_url} detail

@@ -1,0 +1,16 @@
+%p
+  %span= avatar_image_tag payload.sender.avatar_url
+  %a{href: payload.sender.html_url}= payload.sender.login
+  #{payload.pages.first.action} the
+  %a{href: payload.repository.html_url}= payload.repository.full_name
+  wiki
+
+  %ul
+    - payload.pages.each do |page|
+      %li
+        #{page.action.titleize} <a href="#{page.html_url}">#{page.title}</a>.
+        - if page.action == 'edited'
+          :ruby
+            sha = page.sha[0...7]
+            diff_url = "#{page.html_url}/_compare/#{sha}^...#{sha}"
+          %a{href: diff_url} View the diff &raquo;

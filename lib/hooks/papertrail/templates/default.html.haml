@@ -1,0 +1,4 @@
+- payload.events.reverse.each do |event|
+  %p
+    %b #{event.display_received_at} #{event.source_name} #{event.program}:
+    = event.message

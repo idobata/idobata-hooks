@@ -1,0 +1,20 @@
+%dl
+  %dt Setup
+  %dd
+    %ol
+      %li
+        Install <a href='https://wiki.jenkins-ci.org/display/JENKINS/Notification+Plugin' target='_blank'><i class='fa fa-external-link'></i>Notification Plugin</a> to your Jenkins.
+
+      %li
+        %p Add notification endpoint as below:
+
+        %table.table
+          %tr
+            %th Format
+            %td JSON
+          %tr
+            %th Protocol
+            %td HTTP
+          %tr
+            %th URL
+            %td= hb 'endpoint'

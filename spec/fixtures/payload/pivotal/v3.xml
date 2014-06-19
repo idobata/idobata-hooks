@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<activity>
+  <id type="integer">212059205</id>
+  <version type="integer">163</version>
+  <event_type>story_create</event_type>
+  <occurred_at type="datetime">2012/06/23 05:46:17 UTC</occurred_at>
+  <author>ursm</author>
+  <project_id type="integer">578877</project_id>
+  <description>ursm added &quot;test&quot;</description>
+  <stories type="array">
+    <story>
+      <id type="integer">31693177</id>
+      <url>https://www.pivotaltracker.com/services/v3/projects/578877/stories/31693087</url>
+      <name>test</name>
+      <story_type>feature</story_type>
+      <current_state>unscheduled</current_state>
+      <requested_by>ursm</requested_by>
+    </story>
+  </stories>
+</activity>

@@ -1,0 +1,56 @@
+{
+  "changes": [
+    {
+      "name": "Upgrade Ember version to 1.6.0",
+      "change_type": "create",
+      "kind": "story",
+      "new_values": {
+        "current_state": "unscheduled",
+        "project_id": 903866,
+        "name": "Upgrade Ember version to 1.6.0",
+        "follower_ids": [
+
+        ],
+        "requested_by_id": 140609,
+        "estimate": 2,
+        "updated_at": 1378085125000,
+        "before_id": 56193144,
+        "label_ids": [
+
+        ],
+        "description": "And ember data...",
+        "created_at": 1378085125000,
+        "id": 56193170,
+        "story_type": "feature"
+      },
+      "id": 56193170,
+      "story_type": "feature"
+    }
+  ],
+  "highlight": "added",
+  "message": "Ryunosuke SATO added this feature",
+  "occurred_at": 1378085125000,
+  "kind": "story_create_activity",
+  "primary_resources": [
+    {
+      "name": "Upgrade Ember version to 1.6.0",
+      "kind": "story",
+      "url": "http://www.pivotaltracker.com/story/show/56193170",
+      "id": 56193170,
+      "story_type": "feature"
+    }
+  ],
+  "project_version": 8,
+  "project": {
+    "name": "hi",
+    "kind": "project",
+    "id": 903866
+  },
+  "guid": "903866_8",
+  "performed_by": {
+    "name": "Ryunosuke SATO",
+    "kind": "person",
+    "initials": "Ryunosuke",
+    "id": 140609
+  }
+}

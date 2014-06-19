@@ -1,0 +1,75 @@
+{
+  "author_email": "celluloid.key@gmail.com",
+  "author_name": "hibariya",
+  "branch": "travis-ci-integration",
+  "build_url": "https://magnum.travis-ci.com/esminc/idobata/builds/2663",
+  "commit": "25d6fc1811e3a77e5d6f12410b4daf33aabf2ff5",
+  "committed_at": "2012-07-04T07:15:24Z",
+  "committer_email": "celluloid.key@gmail.com",
+  "committer_name": "hibariya",
+  "compare_url": "https://github.com/esminc/idobata/compare/676b88ee9966...25d6fc1811e3",
+  "config": {
+    ".result": "configured",
+    "before_install": "gem install bundler --pre",
+    "before_script": "rake db:create db:test:load",
+    "bundler_args": "--without development:production",
+    "language": "ruby",
+    "notifications": {
+      "webhooks": {
+        "urls": ["http://requestb.in/mwrz9tmw"]
+      }
+    },
+    "rvm": "1.9.3",
+    "source_key": "LS0tLS1CRUdJTiBSU0EgUFJJVkFURSBLRVktLS0tLQpNSUlFb3dJQkFBS0NB\nUUVBdkVTdkxrckxJamIyek5EVk5XbVkvOHNERGFoT1dCUVhUcUJUaHNHYkxy\nM1VEeWVSCkpxNEkwa0ludGdFNWtGb0VmOHZrdGxrTHlXM0RqT0hJYWorVUhk\nZ2dGZ3oyYTZzd3ZvRlBONjNlUG0xN1hUN1QKOWRrNTkwMGdPYkgxblp4c0VD\nWUF3eDQvcWU5NE1SOHJKNXdJcG85d3hMQ3pQaEU5YlVZdWkrdGZkLzk4YXpW\nOAo0UTJUL2srLzg3UWFKNUE4T3pVTk9pRmJhTUhEdDJ4SXpUVmt6dDRWT01w\nN0tsb0hOUEpEV2NpQWplUjZRTko3CnR6bndXaDFRM1RpMThQNzFOb1VncEVR\nSDhRTklXV0pWajhRam9VenFQanE2ZXdFOFhaOTVtazNlb0d4eEFlWCsKSEU3\nYk4zMiswZDRvTHBRNW5iMVlFOHhNS2pyYjkrY2krNUdFWVFJREFRQUJBb0lC\nQUhTYVhaMWdPWHVSYXozagpRWW41UXdkNkp3UDRiNzFoaENYd2Fvc1ZzaFU3\nQVBINTRZNkJUM2xaKzlwZjI5VXB5NHVUTHE0NWJIRnZDQ1JqCldvdGpvVXJ5\ncHJ6QmZvV2syMlhDRk53NVZXSjQwR1VxR29Fejd4RFp0ZEhHQklkL2IvWjRj\neFJsMGF4Z1lxS1oKMlZLSTgxcWxrSVJocEVJV3oySzBpdk9oN2RrVlU0VGd5\nK2dONERwTk4xSlBBazFUbXkvMFRMZUh5OVR4UzJ6bwp6cVBtbC9sdjlGdDAz\nVEVJeG81ODBIMVJhcWZuekIrU1pRSEpNRkp3dXNXTlBib203NGJlV0dyTStJ\nYVdNRGxNCm5neU1ncU5KK1A2bjZFamUzNDU3UzVRZzJkdmxLd090ZmNzRkMz\nNGdKUEppTFVvS1BOUXBZeUxRbEdubXBwZzIKQ3haOU5LRUNnWUVBOTRVN2wr\nakYvSlFhOGhtVHI3bmQzYzJRRWtSS0pvTWpOTVdveVNJdEF4bUFJRGxyYzRR\nTApnNVNQTVZWODlubDdFTWZVTFRmQ2d0Z2Z4aU9zOUlQYWRVKzh6M2NZUHIw\nYTdzYVAwZ2JlTHBxaE00WWNkOWNqCm4xTDdHcm9Tc1dBaGVtL2dQM0k3QWQ0\nRDZLa0F6NWN2N29NZ200T1djTm9YMVRhMy9SUlRuLzBDZ1lFQXdyZk8KbjZh\nZVRFWEJac2xaRmhvbnVjczdCTm5JdEdHbEttOW80Z292UHZ0cHBzVUM2elN4\nYjIrdENFcGtMK3RtcGp6cwpLZ1JxajVTVG8rTkpEcjIwSXZuT0hJVEVJUGt2\nYVdoQjc5ZmxXQndmaTdvWHlJNjBiUnpXcisvT2dmbHIxRkYyCkNaYUZTSElj\nL2IwbHByaUUyMnJtRGFIQ0Z6MGxhRVNCQVI0ZmlUVUNnWUVBNEl2UHVrb0Rn\ndFhoZEF4Yi9La0QKYTdxV250dXc0U3RLZnc5cHhiM3BVOHlJZmJOWmxWd1BE\nZmx4eGZHbUFmdkc5end4Y2l3Sm02WHhmVkRVRUthbApRcE5wMkZSVWZHWVZ6\ndFAzbVROOTBJMmEvQ0VJSm5mWDZ5dmVmU3FjMXFrODlkUVVmYnBsYVpZOXVZ\nM0lISXN0CmdwVVd1YjR3ZG9TRDVudFRncFkwSHdrQ2dZQkZ2TzhUM3VqekNF\naXNONURnaVoyUXZXajE0OG91VUlxSEdEL0kKTlQyV29SVEYxZW1sczhtWXo3\nWjVNYXVRUGc4Vm10dzZjRHA2RWd5T3RlaUVqd3psT2ZMSDVBVWFpaVNnNitZ\neApzSEZEalU3L0REZFliVVBSa0hLVHNKK1ZqVzlCSzZ2SzQwMzVGR1d0dXdD\neEpZVHYwT2wwR0dzYlI1c09MUHJICkc3TFB3UUtCZ0h1bVgwU3ZDS3VRTFhz\nQm1sTTFRdm82VGNqQzJNakZ1OXRBL0dHVzZNSDZqSVdFb1YvSlhvZDEKSDFh\nNDhqZlVQeVB3MWl3RE5rMnJnWThHdHZRSVh6SnZ5UGNDYmNGZnQ1SjdQWWsx\nY3AzUkZTM0xQQVJSNmFmRQpWTXBqTWluWjNlTjEzdHBVcDRSajhFUmFCNkRI\nQk80YTZnblZSeEFWVi8ySzVKdzVyVCtBCi0tLS0tRU5EIFJTQSBQUklWQVRF\nIEtFWS0tLS0tCg=="
+  },
+  "duration": 86,
+  "finished_at": "2012-07-04T07:20:49Z",
+  "id": 2663,
+  "matrix": [{
+    "author_email": "celluloid.key@gmail.com",
+    "author_name": "hibariya",
+    "branch": "travis-ci-integration",
+    "commit": "25d6fc1811e3a77e5d6f12410b4daf33aabf2ff5",
+    "committed_at": "2012-07-04T07:15:24Z",
+    "committer_email": "celluloid.key@gmail.com",
+    "committer_name": "hibariya",
+    "compare_url": "https://github.com/esminc/idobata/compare/676b88ee9966...25d6fc1811e3",
+    "config": {
+      ".result": "configured",
+      "before_install": "gem install bundler --pre",
+      "before_script": "rake db:create db:test:load",
+      "bundler_args": "--without development:production",
+      "language": "ruby",
+      "notifications": {
+        "webhooks": {
+          "urls": ["http://requestb.in/mwrz9tmw"]
+        }
+      },
+      "rvm": "1.9.3",
+      "source_key": "LS0tLS1CRUdJTiBSU0EgUFJJVkFURSBLRVktLS0tLQpNSUlFb3dJQkFBS0NB\nUUVBdkVTdkxrckxJamIyek5EVk5XbVkvOHNERGFoT1dCUVhUcUJUaHNHYkxy\nM1VEeWVSCkpxNEkwa0ludGdFNWtGb0VmOHZrdGxrTHlXM0RqT0hJYWorVUhk\nZ2dGZ3oyYTZzd3ZvRlBONjNlUG0xN1hUN1QKOWRrNTkwMGdPYkgxblp4c0VD\nWUF3eDQvcWU5NE1SOHJKNXdJcG85d3hMQ3pQaEU5YlVZdWkrdGZkLzk4YXpW\nOAo0UTJUL2srLzg3UWFKNUE4T3pVTk9pRmJhTUhEdDJ4SXpUVmt6dDRWT01w\nN0tsb0hOUEpEV2NpQWplUjZRTko3CnR6bndXaDFRM1RpMThQNzFOb1VncEVR\nSDhRTklXV0pWajhRam9VenFQanE2ZXdFOFhaOTVtazNlb0d4eEFlWCsKSEU3\nYk4zMiswZDRvTHBRNW5iMVlFOHhNS2pyYjkrY2krNUdFWVFJREFRQUJBb0lC\nQUhTYVhaMWdPWHVSYXozagpRWW41UXdkNkp3UDRiNzFoaENYd2Fvc1ZzaFU3\nQVBINTRZNkJUM2xaKzlwZjI5VXB5NHVUTHE0NWJIRnZDQ1JqCldvdGpvVXJ5\ncHJ6QmZvV2syMlhDRk53NVZXSjQwR1VxR29Fejd4RFp0ZEhHQklkL2IvWjRj\neFJsMGF4Z1lxS1oKMlZLSTgxcWxrSVJocEVJV3oySzBpdk9oN2RrVlU0VGd5\nK2dONERwTk4xSlBBazFUbXkvMFRMZUh5OVR4UzJ6bwp6cVBtbC9sdjlGdDAz\nVEVJeG81ODBIMVJhcWZuekIrU1pRSEpNRkp3dXNXTlBib203NGJlV0dyTStJ\nYVdNRGxNCm5neU1ncU5KK1A2bjZFamUzNDU3UzVRZzJkdmxLd090ZmNzRkMz\nNGdKUEppTFVvS1BOUXBZeUxRbEdubXBwZzIKQ3haOU5LRUNnWUVBOTRVN2wr\nakYvSlFhOGhtVHI3bmQzYzJRRWtSS0pvTWpOTVdveVNJdEF4bUFJRGxyYzRR\nTApnNVNQTVZWODlubDdFTWZVTFRmQ2d0Z2Z4aU9zOUlQYWRVKzh6M2NZUHIw\nYTdzYVAwZ2JlTHBxaE00WWNkOWNqCm4xTDdHcm9Tc1dBaGVtL2dQM0k3QWQ0\nRDZLa0F6NWN2N29NZ200T1djTm9YMVRhMy9SUlRuLzBDZ1lFQXdyZk8KbjZh\nZVRFWEJac2xaRmhvbnVjczdCTm5JdEdHbEttOW80Z292UHZ0cHBzVUM2elN4\nYjIrdENFcGtMK3RtcGp6cwpLZ1JxajVTVG8rTkpEcjIwSXZuT0hJVEVJUGt2\nYVdoQjc5ZmxXQndmaTdvWHlJNjBiUnpXcisvT2dmbHIxRkYyCkNaYUZTSElj\nL2IwbHByaUUyMnJtRGFIQ0Z6MGxhRVNCQVI0ZmlUVUNnWUVBNEl2UHVrb0Rn\ndFhoZEF4Yi9La0QKYTdxV250dXc0U3RLZnc5cHhiM3BVOHlJZmJOWmxWd1BE\nZmx4eGZHbUFmdkc5end4Y2l3Sm02WHhmVkRVRUthbApRcE5wMkZSVWZHWVZ6\ndFAzbVROOTBJMmEvQ0VJSm5mWDZ5dmVmU3FjMXFrODlkUVVmYnBsYVpZOXVZ\nM0lISXN0CmdwVVd1YjR3ZG9TRDVudFRncFkwSHdrQ2dZQkZ2TzhUM3VqekNF\naXNONURnaVoyUXZXajE0OG91VUlxSEdEL0kKTlQyV29SVEYxZW1sczhtWXo3\nWjVNYXVRUGc4Vm10dzZjRHA2RWd5T3RlaUVqd3psT2ZMSDVBVWFpaVNnNitZ\neApzSEZEalU3L0REZFliVVBSa0hLVHNKK1ZqVzlCSzZ2SzQwMzVGR1d0dXdD\neEpZVHYwT2wwR0dzYlI1c09MUHJICkc3TFB3UUtCZ0h1bVgwU3ZDS3VRTFhz\nQm1sTTFRdm82VGNqQzJNakZ1OXRBL0dHVzZNSDZqSVdFb1YvSlhvZDEKSDFh\nNDhqZlVQeVB3MWl3RE5rMnJnWThHdHZRSVh6SnZ5UGNDYmNGZnQ1SjdQWWsx\nY3AzUkZTM0xQQVJSNmFmRQpWTXBqTWluWjNlTjEzdHBVcDRSajhFUmFCNkRI\nQk80YTZnblZSeEFWVi8ySzVKdzVyVCtBCi0tLS0tRU5EIFJTQSBQUklWQVRF\nIEtFWS0tLS0tCg=="
+    },
+    "finished_at": "2012-07-04T07:20:49Z",
+    "id": 4627,
+    "log": "Using worker: worker1.travis-ci.com:travis-ruby-2\n\n\r\n\r\n$ cd ~/builds\r\n\r\n\r\n\r\nAgent pid 1776\r\n\r\nIdentity added: /home/vagrant/.ssh/id_rsa (/home/vagrant/.ssh/id_rsa)\r\n\r\n\r\n\r\n$ git clone --depth=100 --quiet git@github.com:esminc/idobata.git esminc/idobata\r\nWarning: Permanently added 'github.com,207.97.227.239' (RSA) to the list of known hosts.\r\r\n\r\n\r\n\r\n$ cd esminc/idobata\r\n\r\n$ git checkout -qf 25d6fc1811e3a77e5d6f12410b4daf33aabf2ff5\r\n\r\n\r\n$ export TRAVIS_RUBY_VERSION=1.9.3\r\n\r\n$ rvm use 1.9.3\r\n\u001b[32mUsing /home/vagrant/.rvm/gems/ruby-1.9.3-p125\u001b(B\u001b[m\r\n\r\n$ ruby --version\r\nruby 1.9.3p125 (2012-02-16 revision 34643) [i686-linux]\r\n\r\n$ gem --version\r\n1.8.17\r\n\r\n\r\n$ export BUNDLE_GEMFILE=/home/vagrant/builds/esminc/idobata/Gemfile\r\n\r\n$ gem install bundler --pre\r\nFetching: bundler-1.2.0.pre.1.gem\rFetching: bundler-1.2.0.pre.1.gem ( 3%)\rFetching: bundler-1.2.0.pre.1.gem ( 4%)\rFetching: bundler-1.2.0.pre.1.gem ( 8%)\rFetching: bundler-1.2.0.pre.1.gem ( 10%)\rFetching: bundler-1.2.0.pre.1.gem ( 12%)\rFetching: bundler-1.2.0.pre.1.gem ( 19%)\rFetching: bundler-1.2.0.pre.1.gem ( 25%)\rFetching: bundler-1.2.0.pre.1.gem ( 29%)\rFetching: bundler-1.2.0.pre.1.gem ( 37%)\rFetching: bundler-1.2.0.pre.1.gem ( 45%)\rFetching: bundler-1.2.0.pre.1.gem ( 49%)\rFetching: bundler-1.2.0.pre.1.gem ( 56%)\rFetching: bundler-1.2.0.pre.1.gem ( 64%)\rFetching: bundler-1.2.0.pre.1.gem ( 72%)\rFetching: bundler-1.2.0.pre.1.gem ( 79%)\rFetching: bundler-1.2.0.pre.1.gem ( 87%)\rFetching: bundler-1.2.0.pre.1.gem ( 95%)\rFetching: bundler-1.2.0.pre.1.gem (100%)\rFetching: bundler-1.2.0.pre.1.gem (100%)\r\nSuccessfully installed bundler-1.2.0.pre.1\r\n1 gem installed\r\n\r\n$ bundle install --without development:production\r\nFetching gem metadata from http://rubygems.org/.......\r\nFetching gem metadata from http://rubygems.org/..\r\nUsing rake (0.9.2.2) \r\nInstalling i18n (0.6.0) \r\nInstalling multi_json (1.3.6) \r\nInstalling activesupport (3.2.6) \r\nInstalling builder (3.0.0) \r\nInstalling activemodel (3.2.6) \r\nInstalling erubis (2.7.0) \r\nInstalling journey (1.0.4) \r\nInstalling rack (1.4.1) \r\nInstalling rack-cache (1.2) \r\nInstalling rack-test (0.6.1) \r\nInstalling hike (1.2.1) \r\nInstalling tilt (1.3.3) \r\nInstalling sprockets (2.1.3) \r\nInstalling actionpack (3.2.6) \r\nInstalling mime-types (1.19) \r\nInstalling polyglot (0.3.3) \r\nInstalling treetop (1.4.10) \r\nInstalling mail (2.4.4) \r\nInstalling actionmailer (3.2.6) \r\nInstalling arel (3.0.2) \r\nInstalling tzinfo (0.3.33) \r\nInstalling activerecord (3.2.6) \r\nInstalling activeresource (3.2.6) \r\nInstalling addressable (2.2.8) \r\nInstalling coffee-script-source (1.3.3) \r\nInstalling execjs (1.4.0) \r\nInstalling coffee-script (2.2.0) \r\nInstalling barista (1.2.1) \r\nInstalling bootstrap-sass (2.0.3.1) \r\nInstalling nokogiri (1.5.5) with native extensions \r\nUsing ffi (1.0.11) \r\nInstalling childprocess (0.3.2) \r\nInstalling libwebsocket (0.1.3) \r\nInstalling rubyzip (0.9.9) \r\nInstalling selenium-webdriver (2.24.0) \r\nInstalling xpath (0.1.4) \r\nInstalling capybara (1.1.2) \r\nInstalling rack-ssl (1.3.2) \r\nInstalling json (1.7.3) with native extensions \r\nUsing rdoc (3.12) \r\nInstalling thor (0.15.3) \r\nInstalling railties (3.2.6) \r\nInstalling coffee-rails (3.2.2) \r\nInstalling commonjs (0.2.6) \r\nInstalling cookiejar (0.3.0) \r\nInstalling daemons (1.1.8) \r\nInstalling database_cleaner (0.8.0) \r\nInstalling diff-lcs (1.1.3) \r\nInstalling eventmachine (1.0.0.rc.1) with native extensions \r\nInstalling em-socksify (0.2.0) \r\nInstalling http_parser.rb (0.5.3) with native extensions \r\nInstalling em-http-request (1.0.2) \r\nInstalling enumerize (0.2.2) \r\nInstalling factory_girl (3.5.0) \r\nInstalling factory_girl_rails (3.5.0) \r\nInstalling multipart-post (1.1.5) \r\nInstalling faraday (0.8.1) \r\nInstalling font-awesome-rails (0.2.1) \r\nInstalling rspec-core (2.10.1) \r\nInstalling rspec-expectations (2.10.0) \r\nInstalling rspec-mocks (2.10.1) \r\nInstalling rspec (2.10.0) \r\nInstalling rspec-instafail (0.2.4) \r\nInstalling ruby-progressbar (0.0.10) \r\nInstalling fuubar (1.0.0) \r\nInstalling gon (3.0.5) \r\nInstalling haml (3.1.6) \r\nInstalling haml-rails (0.3.4) \r\nInstalling libv8 (3.3.10.4) \r\nInstalling therubyracer (0.10.1) with native extensions \r\nInstalling handlebars (0.3.1) \r\nInstalling hashie (1.2.0) \r\nInstalling html5_validators (1.1.0) \r\nInstalling jquery-rails (2.0.2) \r\nInstalling launchy (2.1.0) \r\nInstalling omniauth (1.1.0) \r\nInstalling omniauth-browserid (0.0.1) \r\nInstalling pg (0.14.0) with native extensions \r\nInstalling signature (0.1.3) \r\nInstalling pusher (0.9.4) \r\nUsing bundler (1.2.0.pre.1) \r\nInstalling rails (3.2.6) \r\nInstalling redcarpet (2.1.1) with native extensions \r\nInstalling rinku (1.5.1) with native extensions \r\nInstalling rspec-rails (2.10.1) \r\nInstalling sass (3.1.19) \r\nInstalling sass-rails (3.2.5) \r\nInstalling tapp (1.3.1) \r\nInstalling thin (1.3.1) with native extensions \r\nInstalling twitter_bootstrap_form_for (2.0.1.0.rc1) \r\nInstalling uglifier (1.2.5) \r\nInstalling underscore-rails (1.3.1) \r\n\u001b[32mYour bundle is complete! Use `bundle show [gemname]` to see where a bundled gem is installed.\u001b[0m\r\n\r\n$ rake db:create db:test:load\r\n\r\n$ bundle exec rake\r\n/home/vagrant/.rvm/rubies/ruby-1.9.3-p125/bin/ruby -S rspec ./spec/controllers/accounts_controller_spec.rb ./spec/controllers/pusher_controller_spec.rb ./spec/controllers/rooms_controller_spec.rb ./spec/controllers/messages_controller_spec.rb ./spec/controllers/sessions_controller_spec.rb ./spec/controllers/hooks_controller_spec.rb ./spec/controllers/dashboards_controller_spec.rb ./spec/models/user_spec.rb ./spec/models/hook_spec.rb ./spec/models/room_spec.rb ./spec/models/identity_spec.rb ./spec/models/join_spec.rb ./spec/models/hook_provider/travis_ci_spec.rb ./spec/models/hook_provider/heroku_spec.rb ./spec/models/hook_provider/github_spec.rb ./spec/models/hook_provider/pivotal_tracker_spec.rb ./spec/models/message_spec.rb\r\n\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\r\n\r\nFinished in 0.37484 seconds\r\n\u001b[32m19 examples, 0 failures\u001b[0m\r\n\r\nRandomized with seed 42693\r\n\r\n\r\n\nDone. Build script exited with: 0\n",
+    "message": "(test) hook!\n\nZOMG!",
+    "number": "124.1",
+    "parent_id": 2663,
+    "repository_id": 1031,
+    "result": 0,
+    "state": "finished",
+    "status": 0
+  }],
+  "message": "(test) hook!\n\nZOMG!",
+  "number": "124",
+  "repository": {
+    "id": 1031,
+    "name": "idobata",
+    "owner_name": "esminc",
+    "url": "https://github.com/esminc/idobata"
+  },
+  "result": 0,
+  "result_message": "Passed",
+  "started_at": "2012-07-04T07:19:23Z",
+  "status": 0,
+  "status_message": "Passed"
+}

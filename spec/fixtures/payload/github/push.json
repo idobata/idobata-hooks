@@ -1,0 +1,122 @@
+{
+   "pusher":{
+      "name":"ursm",
+      "email":"ursm@ursm.jp"
+   },
+   "repository":{
+      "name":"idobata",
+      "size":380,
+      "has_wiki":true,
+      "created_at":"2012-06-20T02:50:09-07:00",
+      "private":true,
+      "watchers":4,
+      "language":"Ruby",
+      "fork":false,
+      "url":"https://github.com/esminc/idobata",
+      "pushed_at":"2012-06-21T11:24:50-07:00",
+      "has_downloads":true,
+      "open_issues":0,
+      "homepage":"https://idobata.herokuapp.com/",
+      "has_issues":true,
+      "forks":0,
+      "description":"",
+      "organization":"esminc",
+      "owner":{
+         "name":"esminc",
+         "email":"rubyagile@esm.co.jp"
+      }
+   },
+   "forced":false,
+   "head_commit":{
+      "added":[
+
+      ],
+      "modified":[
+         "app/controllers/sessions_controller.rb",
+         "app/models/user.rb",
+         "app/views/sessions/new.html.haml"
+      ],
+      "removed":[
+
+      ],
+      "author":{
+         "name":"Keita Urashima",
+         "username":"ursm",
+         "email":"ursm@ursm.jp"
+      },
+      "timestamp":"2012-06-21T08:28:25-07:00",
+      "url":"https://github.com/esminc/idobata/commit/9f5102f9c2129a14577fd8c17bb55526547a5642",
+      "id":"9f5102f9c2129a14577fd8c17bb55526547a5642",
+      "distinct":true,
+      "message":"give over to html5_validations",
+      "committer":{
+         "name":"Keita Urashima",
+         "username":"ursm",
+         "email":"ursm@ursm.jp"
+      }
+   },
+   "after":"9f5102f9c2129a14577fd8c17bb55526547a5642",
+   "deleted":false,
+   "ref":"refs/heads/foo/bar",
+   "commits":[
+      {
+         "added":[
+            "db/migrate/20120621151042_add_index_users_on_name.rb"
+         ],
+         "modified":[
+            "app/models/user.rb",
+            "app/views/sessions/new.html.haml",
+            "db/structure.sql"
+         ],
+         "removed":[
+
+         ],
+         "author":{
+            "name":"Keita Urashima",
+            "username":"ursm",
+            "email":"ursm@ursm.jp"
+         },
+         "timestamp":"2012-06-21T08:23:23-07:00",
+         "url":"https://github.com/esminc/idobata/commit/dc98741098f3fc245055ff76571dc1a257ccfc35",
+         "id":"dc98741098f3fc245055ff76571dc1a257ccfc35",
+         "distinct":true,
+         "message":"add validations to User#name",
+         "committer":{
+            "name":"Keita Urashima",
+            "username":"ursm",
+            "email":"ursm@ursm.jp"
+         }
+      },
+      {
+         "added":[
+
+         ],
+         "modified":[
+            "app/controllers/sessions_controller.rb",
+            "app/models/user.rb",
+            "app/views/sessions/new.html.haml"
+         ],
+         "removed":[
+
+         ],
+         "author":{
+            "name":"Keita Urashima",
+            "username":"ursm",
+            "email":"ursm@ursm.jp"
+         },
+         "timestamp":"2012-06-21T08:28:25-07:00",
+         "url":"https://github.com/esminc/idobata/commit/9f5102f9c2129a14577fd8c17bb55526547a5642",
+         "id":"9f5102f9c2129a14577fd8c17bb55526547a5642",
+         "distinct":true,
+         "message":"give over to html5_validations",
+         "committer":{
+            "name":"Keita Urashima",
+            "username":"ursm",
+            "email":"ursm@ursm.jp"
+         }
+      }
+   ],
+   "before":"359eaf8de7c3845b7a3f83953c30e4d02bb20a53",
+   "compare":"https://github.com/esminc/idobata/compare/359eaf8de7c3...9f5102f9c212",
+   "created":false
+}

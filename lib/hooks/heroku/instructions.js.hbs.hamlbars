@@ -1,0 +1,8 @@
+%dl
+  %dt Setup
+  %dd
+    %pre
+      $ heroku addons:add deployhooks:http --url=#{hb 'endpoint'}
+
+    %p
+      See <a href='https://devcenter.heroku.com/articles/deploy-hooks#http-post-hook' target='_blank'><i class='fa fa-external-link'></i> Deploy Hooks | Heroku Dev Center</a> for more details.

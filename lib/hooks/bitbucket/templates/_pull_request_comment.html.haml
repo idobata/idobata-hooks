@@ -1,0 +1,12 @@
+:ruby
+  comment_url = body.links.html.href.sub('api.bitbucket.org', 'bitbucket.org') # XXX `href` contains `'api' in its domain
+
+%span
+  = avatar_image_tag(body.user.links.avatar.href)
+
+%a{href: bitbucket_url(body.user.username)}= body.user.display_name
+
+#{action} on pull request
+%a{href: comment_url}= pull_request_name_from_api_url(body.links.self.href)
+
+!= body.content.html

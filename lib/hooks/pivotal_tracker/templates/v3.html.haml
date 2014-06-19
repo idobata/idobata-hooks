@@ -1,0 +1,6 @@
+%div
+  = payload.activity.description
+
+  - payload.activity.stories.each do |story|
+    %a{href: "http://www.pivotaltracker.com/story/show/#{story.id}"}
+      %span.story-id ##{story.id}

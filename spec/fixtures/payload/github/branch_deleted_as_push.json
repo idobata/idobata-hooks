@@ -1,0 +1,40 @@
+{
+  "ref": "refs/heads/hi",
+  "after": "0000000000000000000000000000000000000000",
+  "before": "8cb4f39786deca638744fb1c41cbcc221c3f2b3e",
+  "created": false,
+  "deleted": true,
+  "forced": true,
+  "compare": "https://github.com/tricknotes/notification-test/compare/8cb4f39786de...000000000000",
+  "commits": [
+
+  ],
+  "head_commit": null,
+  "repository": {
+    "id": 10777893,
+    "name": "notification-test",
+    "url": "https://github.com/tricknotes/notification-test",
+    "description": "",
+    "watchers": 0,
+    "stargazers": 0,
+    "forks": 0,
+    "fork": false,
+    "size": 360,
+    "owner": {
+      "name": "tricknotes",
+      "email": "tricknotes.rs@gmail.com"
+    },
+    "private": true,
+    "open_issues": 1,
+    "has_issues": true,
+    "has_downloads": true,
+    "has_wiki": true,
+    "created_at": 1371608346,
+    "pushed_at": 1394607430,
+    "master_branch": "master"
+  },
+  "pusher": {
+    "name": "tricknotes",
+    "email": "tricknotes.rs@gmail.com"
+  }
+}

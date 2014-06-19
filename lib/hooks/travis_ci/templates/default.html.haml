@@ -1,0 +1,23 @@
+:ruby
+  label_class = case payload.status_message
+                when 'Passed', 'Fixed'
+                  'label-success'
+                when 'Failed', 'Broken', 'Still Failing', 'Pending'
+                  'label-important'
+                else
+                  nil
+                end
+
+%p
+  = precede "#{payload.repository.owner_name}/#{payload.repository.name}" do
+    %a{href: payload.build_url} ##{payload.number}
+
+  (#{payload.branch} - <span class="commit-id">#{payload.commit[0...7]}</span>):
+  %span.label(class=label_class)= payload.status_message
+  (Finished in #{payload.duration} seconds)
+
+%p
+  #{payload.author_name}: #{payload.message.lines.first}
+
+  = surround '(', ')' do
+    %a{href: payload.compare_url} changeset

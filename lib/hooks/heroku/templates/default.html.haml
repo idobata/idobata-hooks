@@ -1,0 +1,6 @@
+%p
+  #{payload.user} deployed a new version of
+  %a{href: payload.url}= payload.app
+
+  = surround '(', ')' do
+    %span.commit-id= payload.head

@@ -1,0 +1,108 @@
+{
+  "kind": "comment_create_activity",
+  "guid": "902866_188",
+  "project_version": 188,
+  "message": "Ryunosuke SATO added comment with attachments: \"This is file!\"",
+  "highlight": "added comment with attachments:",
+  "changes": [
+    {
+      "kind": "comment",
+      "change_type": "create",
+      "id": 68939672,
+      "new_values": {
+        "id": 68939672,
+        "story_id": 70561082,
+        "text": "This is file!",
+        "person_id": 140609,
+        "created_at": 1399884623000,
+        "updated_at": 1399884623000,
+        "file_attachment_ids": [
+          31360000,
+          31360000
+        ],
+        "google_attachment_ids": [
+
+        ],
+        "file_attachments": [
+          "screenshot.png",
+          "attendance_sheet.xls"
+        ],
+        "google_attachments": [
+
+        ]
+      }
+    },
+    {
+      "kind": "file_attachment",
+      "change_type": "create",
+      "id": 31360000,
+      "new_values": {
+        "id": 31360000,
+        "filename": "screenshot.png",
+        "created_at": 1399884602000,
+        "uploader_id": 140609,
+        "thumbnailable": true,
+        "height": 853,
+        "width": 1023,
+        "size": 392567,
+        "download_url": "/file_attachments/31360000/download",
+        "content_type": "image/png",
+        "uploaded": true,
+        "big_url": "https://s3.amazonaws.com/prod.tracker2/resource/31360000/screenshot_big.png?AWSAccessKeyId=AKIAIKWOAN6H4H2QMJ6Q&Expires=1400489423&Signature=vtuQp5k%2Bok6UgJItdhBC5jDOGKo%3D",
+        "thumbnail_url": "https://s3.amazonaws.com/prod.tracker2/resource/31360000/screenshot_thumb.png?AWSAccessKeyId=AKIAIKWOAN6H4H2QMJ6Q&Expires=1400489423&Signature=GDdasG9NBmAQXtE3X46agM0EnJY%3D"
+      }
+    },
+    {
+      "kind": "file_attachment",
+      "change_type": "create",
+      "id": 31360000,
+      "new_values": {
+        "id": 31360000,
+        "filename": "attendance_sheet.xls",
+        "created_at": 1399884676000,
+        "uploader_id": 140609,
+        "thumbnailable": false,
+        "size": 98379,
+        "download_url": "/file_attachments/31360000/download",
+        "content_type": "application/vnd.ms-excel",
+        "uploaded": true,
+        "big_url": "https://s3.amazonaws.com/prod.tracker2/resource/31360000/attendance_sheet_big.xls?AWSAccessKeyId=AKIAIKWOAN6H4H2QMJ6Q&Expires=1400489423&Signature=mp842X18YuqzPkx5avIWiPzGiLA%3D",
+        "thumbnail_url": "https://s3.amazonaws.com/prod.tracker2/resource/31360000/attendance_sheet_thumb.xls?AWSAccessKeyId=AKIAIKWOAN6H4H2QMJ6Q&Expires=1400489423&Signature=vCV6FGQpPNb4q%2BYGJ5BDp9O86xI%3D"
+      }
+    },
+    {
+      "kind": "story",
+      "change_type": "update",
+      "id": 70561082,
+      "original_values": {
+        "updated_at": 1399884566000
+      },
+      "new_values": {
+        "updated_at": 1399884623000
+      },
+      "name": "chore!\n",
+      "story_type": "chore"
+    }
+  ],
+  "primary_resources": [
+    {
+      "kind": "story",
+      "id": 70561082,
+      "name": "chore!\n",
+      "story_type": "chore",
+      "url": "https://www.pivotaltracker.com/story/show/70561082"
+    }
+  ],
+  "project": {
+    "kind": "project",
+    "id": 903866,
+    "name": "hi"
+  },
+  "performed_by": {
+    "kind": "person",
+    "id": 140609,
+    "name": "Ryunosuke SATO",
+    "initials": "Ryunosuke"
+  },
+  "occurred_at": 1399884623000
+}

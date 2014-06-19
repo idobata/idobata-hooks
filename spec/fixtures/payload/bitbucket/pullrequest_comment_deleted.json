@@ -1,0 +1,40 @@
+{
+  "pullrequest_comment_deleted": {
+    "links": {
+      "self": {
+        "href": "https://api.bitbucket.org/2.0/repositories/ursm/hello/pullrequests/2/comments/1236863"
+      },
+      "code": {
+        "href": "https://api.bitbucket.org/2.0/repositories/ursm/hello/diff/ursm/hello:79c0510941f3..a81ff1622a46?path=README.md"
+      },
+      "html": {
+        "href": "https://api.bitbucket.org/ursm/hello/pull-request/2/_/diff#comment-1236863"
+      }
+    },
+    "content": {
+      "raw": "Oops...",
+      "markup": "markdown",
+      "html": "<p>Oops...</p>"
+    },
+    "created_on": "2014-02-14T06:54:14.357822+00:00",
+    "user": {
+      "username": "tricknotes",
+      "display_name": "Ryunosuke SATO",
+      "links": {
+        "self": {
+          "href": "https://api.bitbucket.org/2.0/users/tricknotes"
+        },
+        "avatar": {
+          "href": "https://secure.gravatar.com/avatar/dc03a27ae31ba428c560c00c9128cd75?d=https%3A%2F%2Fd3oaxc4q5k2d6q.cloudfront.net%2Fm%2Fd7db0fdaad19%2Fimg%2Fdefault_avatar%2F32%2Fuser_blue.png&s=32"
+        }
+      }
+    },
+    "updated_on": "2014-02-14T06:54:47.590954+00:00",
+    "inline": {
+      "to": 3,
+      "from": null,
+      "path": "README.md"
+    },
+    "id": 1236863
+  }
+}

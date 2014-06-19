@@ -1,0 +1,10 @@
+{
+  "created_at": "2013-10-21T08:32:41+00:00",
+  "application_name": "Application name",
+  "account_name": "Account name",
+  "changelog": "Changelog for deployment",
+  "description": "Information about deployment",
+  "revision": "Revision number",
+  "deployment_url": "https://rpm.newrelic.com/accounts/[account_id]/applications/[application_id]/deployments/[deployment_id]",
+  "deployed_by": "Name of person deploying"
+}

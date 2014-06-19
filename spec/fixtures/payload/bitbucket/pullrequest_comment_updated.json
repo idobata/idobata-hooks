@@ -1,0 +1,32 @@
+{
+  "pullrequest_comment_updated": {
+    "links": {
+      "self": {
+        "href": "https://api.bitbucket.org/2.0/repositories/tricknotes/notification-test/pullrequests/11/comments/1316114"
+      },
+      "html": {
+        "href": "https://api.bitbucket.org/tricknotes/notification-test/pull-request/11/_/diff#comment-1316114"
+      }
+    },
+    "content": {
+      "raw": "updated!",
+      "markup": "markdown",
+      "html": "<p>updated!</p>"
+    },
+    "created_on": "2014-02-27T05:29:01.274743+00:00",
+    "user": {
+      "username": "tricknotes",
+      "display_name": "Ryunosuke SATO",
+      "links": {
+        "self": {
+          "href": "https://api.bitbucket.org/2.0/users/tricknotes"
+        },
+        "avatar": {
+          "href": "https://secure.gravatar.com/avatar/dc03a27ae31ba428c560c00c9128cd75?d=https%3A%2F%2Fd3oaxc4q5k2d6q.cloudfront.net%2Fm%2Fe6bd9f5793a0%2Fimg%2Fdefault_avatar%2F32%2Fuser_blue.png&s=32"
+        }
+      }
+    },
+    "updated_on": "2014-03-05T06:04:18.788345+00:00",
+    "id": 1316114
+  }
+}

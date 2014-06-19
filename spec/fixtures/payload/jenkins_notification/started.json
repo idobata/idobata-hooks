@@ -1,0 +1,10 @@
+{
+  "name": "support",
+  "url": "job/support/",
+  "build": {
+    "full_url": "http://localhost:8080/job/dss-support/162/",
+    "number": 162,
+    "phase": "STARTED",
+    "url": "job/support/162/"
+  }
+}

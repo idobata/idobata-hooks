@@ -1,0 +1,8 @@
+%p
+  Project #{payload.name} build
+  - if payload.build.full_url.present?
+    %a{href: payload.build.full_url} ##{payload.build.number}
+  - else
+    \##{payload.build.number}
+  \:
+  %span.label{class: label_class_from_build_status(payload.build.status)}= payload.build.status

@@ -1,0 +1,11 @@
+:ruby
+  body = payload.deployment
+
+%p
+  %b #{body.application_name} was deployed by #{body.deployed_by}
+
+%p
+  = body.description
+
+  = surround '(', ')' do
+    %a{href: body.deployment_url} detail

@@ -1,0 +1,107 @@
+{
+  "pullrequest_created": {
+    "description": "# This is a pull request\r\n\r\n* hi\r\n* hoi\r\n* yo",
+    "links": {
+      "decline": {
+        "href": "https://api.bitbucket.org/2.0/repositories/ursm/hello/pullrequests/13/decline"
+      },
+      "commits": {
+        "href": "https://api.bitbucket.org/2.0/repositories/ursm/hello/pullrequests/13/commits"
+      },
+      "self": {
+        "href": "https://api.bitbucket.org/2.0/repositories/ursm/hello/pullrequests/13"
+      },
+      "comments": {
+        "href": "https://api.bitbucket.org/2.0/repositories/ursm/hello/pullrequests/13/comments"
+      },
+      "merge": {
+        "href": "https://api.bitbucket.org/2.0/repositories/ursm/hello/pullrequests/13/merge"
+      },
+      "html": {
+        "href": "https://api.bitbucket.org/ursm/hello/pull-request/13"
+      },
+      "activity": {
+        "href": "https://api.bitbucket.org/2.0/repositories/ursm/hello/pullrequests/13/activity"
+      },
+      "diff": {
+        "href": "https://api.bitbucket.org/2.0/repositories/ursm/hello/pullrequests/13/diff"
+      },
+      "approve": {
+        "href": "https://api.bitbucket.org/2.0/repositories/ursm/hello/pullrequests/13/approve"
+      }
+    },
+    "title": "ping!",
+    "close_source_branch": false,
+    "reviewers": [],
+    "destination": {
+      "commit": {
+        "hash": "45d5b0768a90",
+        "links": {
+          "self": {
+            "href": "https://api.bitbucket.org/2.0/repositories/ursm/hello/commit/45d5b0768a90"
+          }
+        }
+      },
+      "branch": {
+        "name": "master"
+      },
+      "repository": {
+        "full_name": "ursm/hello",
+        "links": {
+          "self": {
+            "href": "https://api.bitbucket.org/2.0/repositories/ursm/hello"
+          },
+          "avatar": {
+            "href": "https://d3oaxc4q5k2d6q.cloudfront.net/m/9d3d19e361c2/img/language-avatars/default_16.png"
+          }
+        },
+        "name": "hello"
+      }
+    },
+    "state": "OPEN",
+    "id": 13,
+    "source": {
+      "commit": {
+        "hash": "a306dc0532ca",
+        "links": {
+          "self": {
+            "href": "https://api.bitbucket.org/2.0/repositories/ursm/hello/commit/a306dc0532ca"
+          }
+        }
+      },
+      "branch": {
+        "name": "ping"
+      },
+      "repository": {
+        "full_name": "ursm/hello",
+        "links": {
+          "self": {
+            "href": "https://api.bitbucket.org/2.0/repositories/ursm/hello"
+          },
+          "avatar": {
+            "href": "https://d3oaxc4q5k2d6q.cloudfront.net/m/9d3d19e361c2/img/language-avatars/default_16.png"
+          }
+        },
+        "name": "hello"
+      }
+    },
+    "reason": "",
+    "author": {
+      "username": "tricknotes",
+      "display_name": "Ryunosuke SATO",
+      "links": {
+        "self": {
+          "href": "https://api.bitbucket.org/2.0/users/tricknotes"
+        },
+        "avatar": {
+          "href": "https://secure.gravatar.com/avatar/dc03a27ae31ba428c560c00c9128cd75?d=https%3A%2F%2Fd3oaxc4q5k2d6q.cloudfront.net%2Fm%2F9d3d19e361c2%2Fimg%2Fdefault_avatar%2F32%2Fuser_blue.png&s=32"
+        }
+      }
+    },
+    "created_on": "2014-05-27T10:04:53.005054+00:00",
+    "participants": [],
+    "updated_on": "2014-05-27T10:04:53.026608+00:00",
+    "merge_commit": null,
+    "closed_by": null
+  }
+}

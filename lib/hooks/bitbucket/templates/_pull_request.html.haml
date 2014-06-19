@@ -1,0 +1,10 @@
+%p
+  %span
+    = avatar_image_tag(body.author.links.avatar.href)
+
+  %a{href: bitbucket_url(body.author.username)}= body.author.display_name
+  #{action} pull request.
+
+  %b= body.title
+
+= md body.description if action == 'updated'
