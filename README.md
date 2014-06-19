@@ -1,6 +1,7 @@
 # idobata-hooks
 
 [![Build Status](https://travis-ci.org/idobata/idobata-hooks.png)](https://travis-ci.org/idobata/idobata-hooks)
+[![Code Climate](https://codeclimate.com/github/idobata/idobata-hooks.png)](https://codeclimate.com/github/idobata/idobata-hooks)
 
 A collection of [Idobata](https://idobata.io) hooks.
 
