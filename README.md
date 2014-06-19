@@ -327,7 +327,7 @@ $ rake
 
 1. idobata-hooksを外部からアクセス可能なサーバにデプロイします。 (例えば[Heroku](https://heroku.com)。\* Heroku では環境変数`BUNDLE_WITHOUT="test"`を設定する必要があります。)
 
-2. idobata-hooksのホスト名を環境変数`IDOBATA_HOOK_URL`に設定します。
+2. idobata-hooksのホスト名を環境変数`IDOBATA_HOOK_HOST`に設定します。
 
 3. サービスのwebhookにidobata-hooksのエンドポイントを指定します。
   idobata-hooksのデプロイ先が`http://example.com`の場合は`http://example.com/my_hook`がエンドポイントです。
