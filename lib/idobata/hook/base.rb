@@ -111,10 +111,9 @@ module Idobata::Hook
     end
 
     def _payload
-      raw_type = headers['Content-Type']
-      type     = Mime[self.class.forced_content_type] || Mime::Type.parse(raw_type).first
+      raw_content_type = headers['Content-Type']
 
-      case type
+      case normalized_content_type
       when Mime::JSON
         JSON.parse(raw_body)
       when Mime::XML
@@ -125,14 +124,25 @@ module Idobata::Hook
         parse_json_in_form(payload)
       when Mime::MULTIPART_FORM
         payload = Rack::Multipart.parse_multipart(
-          'CONTENT_TYPE'   => raw_type,
+          'CONTENT_TYPE'   => raw_content_type,
           'CONTENT_LENGTH' => raw_body.length,
           'rack.input'     => StringIO.new(raw_body)
         )
 
         parse_json_in_form(payload)
       else
-        raise Error, "Unsupported content_type: `#{raw_type}`."
+        raise Error, "Unsupported content_type: `#{raw_content_type}`."
+      end
+    end
+
+    def normalized_content_type
+      return Mime[self.class.forced_content_type] if self.class.forced_content_type
+
+      case type = headers['Content-Type']
+      when /\A#{Regexp.quote(Mime::MULTIPART_FORM)}\b/
+        Mime::MULTIPART_FORM
+      else
+        Mime::Type.parse(type)
       end
     end
 
