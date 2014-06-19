@@ -1,0 +1,23 @@
+:ruby
+  label_class = case payload.outcome.downcase
+                when 'success'
+                  'label-success'
+                when 'failed'
+                  'label-important'
+                else
+                  nil
+                end
+
+%p
+  = precede "#{payload.username}/#{payload.reponame}" do
+    %a{href: payload.build_url} ##{payload.build_num}
+
+  (#{payload.branch} - <span class="commit-id">#{payload.vcs_revision[0...7]}</span>):
+  %span.label(class=label_class)= payload.status.camelize
+  (Finished in #{payload.build_time_millis / 1000} seconds)
+
+%p
+  #{payload.committer_name}: #{payload.subject}
+
+  = surround '(', ')' do
+    %a{href: payload.compare} changeset
