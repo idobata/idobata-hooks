@@ -60,5 +60,16 @@ describe Idobata::Hook::Generic, type: :hook do
         expect(filenames).to eq([image.original_filename] * 2)
       }
     end
+
+    context 'urlencoded data without Content-Type' do
+      let(:params) { {source: source}.to_query }
+
+      before do
+        post params
+      end
+
+      its([:source]) { should eq(source) }
+      its([:format]) { should eq(:plain) }
+    end
   end
 end
