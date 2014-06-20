@@ -1,0 +1,28 @@
+require 'spec_helper'
+
+describe Idobata::Hook::CircleCI, type: :hook do
+  let(:payload) { fixture_payload('circle_ci.json') }
+
+  before do
+    post payload, 'Content-Type' => 'application/json'
+  end
+
+  describe '#process_payload' do
+    subject { hook.process_payload }
+
+    its([:source]) { should eq(<<-HTML.strip_heredoc) }
+      <p>
+        circleci/mongofinil<a href='https://circleci.com/gh/circleci/mongofinil/22'>#22</a>
+        (master - <span class="commit-id">1d23162</span>):
+        <span class='label label-success'>Success</span>
+        (Finished in 23 seconds)
+      </p>
+      <p>
+        Allen Rohner: Don't explode when the system clock shifts backwards
+        (<a href='https://github.com/circleci/mongofinil/compare/0553ba86b3...1d231626ba1d'>changeset</a>)
+      </p>
+    HTML
+
+    its([:format]) { should eq(:html) }
+  end
+end
