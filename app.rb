@@ -47,23 +47,26 @@ module Idobata::Hook
     private
 
     def post_to_idobata(payload)
-      form = []
-
-      form << ['source', payload[:source].to_s]
-      form << ['format', payload[:format].to_s]
-
-      [*payload[:images]].each do |image|
-        form << ['image[]', image.tempfile, filename: image.filename, content_type: image.type]
-      end
-
       url  = URI(settings.idobta_hook_url)
       post = Net::HTTP::Post.new(url)
 
-      post.set_form form, 'multipart/form-data'
+      post.set_form generate_form(payload), 'multipart/form-data'
 
       Net::HTTP.start(url.hostname, url.port, use_ssl: url.scheme == 'https') do |http|
         http.request post
       end
+    end
+
+    def generate_form(payload)
+      images = Array(payload[:images]).map {|image|
+        ['image[]', image.tempfile, filename: image.filename, content_type: image.type]
+      }
+
+      [
+        ['source', payload[:source].to_s],
+        ['format', payload[:format].to_s],
+        *images
+      ]
     end
   end
 end
