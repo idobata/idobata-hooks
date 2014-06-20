@@ -1,0 +1,6 @@
+%dl
+  %dt Usage
+  %dd
+    You can add webhook URL to your Qiita:Team.
+    %br
+    Open <a href='https://your-qiita-team.qiita.com/admin/webhooks/new' target='_blank'><i class='fa fa-external-link'></i>your Qiita:Team add new webhook page</a>.

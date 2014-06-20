@@ -1,0 +1,9 @@
+%p
+  %span= avatar_image_tag(payload.comment.user.profile_image_url)
+  %a{href: user_url(payload.comment.url, payload.comment.user.url_name)}= payload.comment.user.url_name
+  - if payload.action == 'created'
+    %a{href: payload.comment.url} commented
+    = payload.comment.body.html_safe
+  - else
+    updated
+    %a{href: payload.comment.url} comment
