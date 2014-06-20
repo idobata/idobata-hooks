@@ -141,6 +141,8 @@ module Idobata::Hook
       case type = headers['Content-Type']
       when /\A#{Regexp.quote(Mime::MULTIPART_FORM)}\b/
         Mime::MULTIPART_FORM
+      when nil
+        Mime::URL_ENCODED_FORM
       else
         Mime::Type.parse(type)
       end
