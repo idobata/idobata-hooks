@@ -2,9 +2,9 @@
   repository_name = "#{payload.repository.owner}/#{payload.repository.slug}"
   repository_url  = payload.canon_url + payload.repository.absolute_url
 
-%a{href: payload.canon_url + payload.user}= payload.user
+%a(href="#{payload.canon_url}/#{payload.user}")= payload.user
 pushed to
-%a{href: repository_url}= repository_name
+%a(href=repository_url)= repository_name
 
 %ul
   - payload.commits.each do |commit|

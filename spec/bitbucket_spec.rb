@@ -17,7 +17,7 @@ describe Idobata::Hook::Bitbucket, type: :hook do
         let(:event_type) { 'push' }
 
         its([:source]) { should == <<-HTML.strip_heredoc }
-          <a href='https://bitbucket.orgtricknotes'>tricknotes</a>
+          <a href='https://bitbucket.org/tricknotes'>tricknotes</a>
           pushed to
           <a href='https://bitbucket.org/ursm/hello/'>ursm/hello</a>
           <ul>
