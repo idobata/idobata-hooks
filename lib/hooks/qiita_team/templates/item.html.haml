@@ -3,6 +3,6 @@
   %a{href: user_url(payload.item.url, payload.item.user.url_name)}= payload.item.user.url_name
   = payload.action
   %a{href: payload.item.url}= payload.item.title
+
 - if payload.action == 'created'
-  %p
-    = md payload.item.raw_body
+  = md payload.item.raw_body

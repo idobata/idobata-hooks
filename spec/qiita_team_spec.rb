@@ -22,9 +22,7 @@ describe Idobata::Hook::QiitaTeam, type: :hook do
           created
           <a href='https://hanachin.qiita.com/hanachin_/items/d7a204610de2097df0c4'>hi</a>
         </p>
-        <p>
-          <p><code>hi</code></p>
-        </p>
+        <p><code>hi</code></p>
       HTML
       its([:format]) { should eq(:html) }
     end
@@ -50,9 +48,10 @@ describe Idobata::Hook::QiitaTeam, type: :hook do
         <p>
           <span><img src="https://pbs.twimg.com/profile_images/429833774562439168/gEY-Y6IJ_normal.jpeg" width="16" height="16" alt="" /></span>
           <a href='https://hanachin.qiita.com/hanachin_'>hanachin_</a>
-          <a href='https://hanachin.qiita.com/hanachin_/items/d7a204610de2097df0c4#comment-645d16bf39452455e5d7'>commented</a>
-          <p><code>hi comment</code></p>
+          posted
+          <a href='https://hanachin.qiita.com/hanachin_/items/d7a204610de2097df0c4#comment-645d16bf39452455e5d7'>comment</a>
         </p>
+        <p><code>hi comment</code></p>
       HTML
       its([:format]) { should eq(:html) }
     end
