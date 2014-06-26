@@ -301,7 +301,7 @@ describe Idobata::Hook::Github, type: :hook do
 
         subject { ->{ hook.process_payload } }
 
-        it { expect(subject).to raise_error(Idobata::Hook::SkipProcessing) }
+        it { expect(subject).to throw_symbol(:skip_processing) }
       end
 
       describe 'pull request (synchronize) event' do
@@ -310,7 +310,7 @@ describe Idobata::Hook::Github, type: :hook do
 
         subject { ->{ hook.process_payload } }
 
-        it { expect(subject).to raise_error(Idobata::Hook::SkipProcessing) }
+        it { expect(subject).to throw_symbol(:skip_processing) }
       end
 
       describe 'Without X-GitHub-Event' do
