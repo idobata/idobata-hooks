@@ -1,0 +1,8 @@
+%p
+  %span= avatar_image_tag(payload.item.user.profile_image_url)
+  %a{href: user_url(payload.item.url, payload.item.user.url_name)}= payload.item.user.url_name
+  = payload.action
+  %a{href: payload.item.url}= payload.item.title
+
+- if payload.action == 'created'
+  = md payload.item.raw_body
