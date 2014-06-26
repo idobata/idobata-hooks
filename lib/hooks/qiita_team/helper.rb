@@ -16,7 +16,7 @@ module Idobata::Hook
       end
 
       def user_url(base_url, url_name)
-        URI.join(URI.parse(base_url), "/" + url_name)
+        URI.join(base_url, "/#{url_name}")
       end
     end
   end
