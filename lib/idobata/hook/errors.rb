@@ -4,4 +4,7 @@ module Idobata::Hook
 
   class BadRequest < Error
   end
+
+  class SkipProcessing < Error
+  end
 end

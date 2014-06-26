@@ -116,14 +116,14 @@ describe Idobata::Hook::QiitaTeam, type: :hook do
         let(:fixture) { 'item_destroyed.json' }
         let(:qiita_event_model_type) { 'item' }
 
-        it { expect(subject).to throw_symbol(:skip_processing) }
+        it { expect(subject).to raise_error(Idobata::Hook::SkipProcessing) }
       end
 
       describe 'comment destroyed event' do
         let(:fixture) { 'comment_destroyed.json' }
         let(:qiita_event_model_type) { 'comment' }
 
-        it { expect(subject).to throw_symbol(:skip_processing) }
+        it { expect(subject).to raise_error(Idobata::Hook::SkipProcessing) }
       end
     end
   end

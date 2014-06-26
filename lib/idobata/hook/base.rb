@@ -149,7 +149,7 @@ module Idobata::Hook
     end
 
     def skip_processing!
-      throw :skip_processing
+      raise SkipProcessing
     end
 
     def add_description(description)

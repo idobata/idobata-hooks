@@ -146,7 +146,7 @@ describe Idobata::Hook::Bitbucket, type: :hook do
 
         subject { ->{ hook.process_payload } }
 
-        it { expect(subject).to throw_symbol(:skip_processing) }
+        it { expect(subject).to raise_error(Idobata::Hook::SkipProcessing) }
       end
 
       describe 'pullrequest_comment_deleted event' do
@@ -154,7 +154,7 @@ describe Idobata::Hook::Bitbucket, type: :hook do
 
         subject { ->{ hook.process_payload } }
 
-        it { expect(subject).to throw_symbol(:skip_processing) }
+        it { expect(subject).to raise_error(Idobata::Hook::SkipProcessing) }
       end
     end
   end

@@ -66,7 +66,7 @@ describe Idobata::Hook::JenkinsNotification, type: :hook do
 
       subject { ->{ hook.process_payload } }
 
-      it { expect(subject).to throw_symbol(:skip_processing) }
+      it { expect(subject).to raise_error(Idobata::Hook::SkipProcessing) }
     end
   end
 end
