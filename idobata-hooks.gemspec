@@ -19,6 +19,7 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency 'actionpack', '~> 4.1'
   spec.add_dependency 'activesupport', '~> 4.1'
+  spec.add_dependency 'gemoji'
   spec.add_dependency 'github-markdown'
   spec.add_dependency 'haml'
   spec.add_dependency 'hashie'

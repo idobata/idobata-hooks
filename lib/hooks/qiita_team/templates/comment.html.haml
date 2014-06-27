@@ -10,4 +10,4 @@
     %a{href: payload.comment.url} comment
 
 - if payload.action == 'created'
-  = payload.comment.body.html_safe
+  = fixup_qiita_html payload.comment.body

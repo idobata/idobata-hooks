@@ -61,6 +61,24 @@ describe Idobata::Hook::QiitaTeam, type: :hook do
       its([:format]) { should eq(:html) }
     end
 
+    describe 'comment created event (complex case)' do
+      let(:fixture) { 'comment_created_2.json' }
+      let(:qiita_event_model_type) { 'comment' }
+
+      its([:source]) { should eq(<<-HTML.strip_heredoc) }
+        <p>
+          <span><img src="https://secure.gravatar.com/avatar/f966e93db0fbaf3aa07f7df5fa136933?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png" width="16" height="16" alt="" /></span>
+          <a href='https://idobata.qiita.com/ursm'>ursm</a>
+          posted
+          <a href='https://idobata.qiita.com/tricknotes/items/8fb60872a90868fb311b#comment-410b03f7c2b47ee8141e'>comment</a>
+        </p>
+        <h1>
+                
+                heading
+              </h1><p><img class="emoji" title=":trollface:" alt=":trollface:" src="/images/emoji/trollface.png" height="20" width="20" align="absmiddle"> </p>
+      HTML
+    end
+
     describe 'comment updated event' do
       let(:fixture) { 'comment_updated.json' }
       let(:qiita_event_model_type) { 'comment' }
