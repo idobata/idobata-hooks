@@ -4,6 +4,7 @@ PATH
     idobata-hooks (1.0.1)
       actionpack (~> 4.1)
       activesupport (~> 4.1)
+      gemoji
       github-markdown
       haml
       hashie
@@ -37,6 +38,7 @@ GEM
     erubis (2.7.0)
     escape_utils (1.0.1)
     execjs (2.2.0)
+    gemoji (1.5.0)
     github-linguist (2.12.0)
       charlock_holmes (~> 0.7.3)
       escape_utils (~> 1.0.1)
