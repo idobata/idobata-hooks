@@ -44,6 +44,10 @@ module Idobata::Hook
       'OK'
     end
 
+    route :head, '/:identifier' do
+      Idobata::Hook.find(params[:identifier])
+    end
+
     private
 
     def post_to_idobata(payload)
