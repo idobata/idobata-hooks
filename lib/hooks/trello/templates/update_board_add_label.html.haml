@@ -1,0 +1,8 @@
+= link_to_member(payload.action.memberCreator)
+named
+= payload.action.data.board.labelNames.keys.first
+label
+to
+= payload.action.data.board.labelNames.values.first
+on
+= link_to_board(payload.action.data.board)

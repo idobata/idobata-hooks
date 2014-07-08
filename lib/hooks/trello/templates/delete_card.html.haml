@@ -1,0 +1,7 @@
+= link_to_member(payload.action.memberCreator)
+deleted card
+= sprintf('#%d', payload.action.data.card.idShort)
+from
+= payload.action.data.list.name
+on
+= link_to_board(payload.action.data.board)
