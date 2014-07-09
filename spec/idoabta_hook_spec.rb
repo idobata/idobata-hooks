@@ -6,8 +6,8 @@ describe Idobata::Hook do
       describe hook do
         subject { hook }
 
-        its(:name)     { should be_present }
-        its(:icon_url) { should be_present }
+        its(:screen_name) { should be_present }
+        its(:icon_url)    { should be_present }
       end
     end
 

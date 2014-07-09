@@ -17,7 +17,7 @@ module Idobata::Hook
       )
     )
 
-    name          'GitHub'
+    screen_name   'GitHub'
     identifier    :github
     icon_url      gravatar('61024896f291303615bcd4f7a0dcfb74')
     form_json_key 'payload'

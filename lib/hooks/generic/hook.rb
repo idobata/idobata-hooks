@@ -1,6 +1,6 @@
 module Idobata::Hook
   class Generic < Base
-    name        'Generic'
+    screen_name 'Generic'
     identifier  :generic
     icon_url    gravatar('9fef32520aa08836d774873cb8b7df28')
 
