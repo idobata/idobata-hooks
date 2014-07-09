@@ -199,7 +199,7 @@ hookの名前が`my_hook`である場合、`lib/hooks`の下に`my_hook`を作�
   * (任意設定)
     * [`template_name`](#テンプレートを使い分ける)
     * [`form_json_key`](#urlencodedされたjsonを扱う)
-    * [`forced_content_type`](#content-typeに依存せずリクエストを扱う)
+    * [`forced_content_type`](#Content-Typeを強制する)
 
 * `templates/default.html.haml`
 
