@@ -65,7 +65,7 @@ module Idobata::Hook
       end
     end
 
-    define_config_accessor :name, :identifier, :icon_url, :forced_content_type, :form_json_key
+    define_config_accessor :screen_name, :identifier, :icon_url, :forced_content_type, :form_json_key
 
     helper Helper
 

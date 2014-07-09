@@ -19,15 +19,15 @@ The minimal requirements are:
   ``` ruby
   module Idobata::Hook
     class MyHook < Base
-      name       'My Hook'
-      identifier :my_hook
-      icon_url   'http://example.com/path/to/icon.png'
+      screen_name 'My Hook'
+      identifier  :my_hook
+      icon_url    'http://example.com/path/to/icon.png'
     end
   end
   ```
 
   * (required)
-    * `name`: The hook name. The is displayed as message sender.
+    * `screen_name`: The hook name. The is displayed as message sender.
     * `identifier`: The internal identifier. This should not be duplicated as other identifier.
     * `icon_url`: The icon url. The icon linked by URL is displayed as message sender.
 
@@ -64,7 +64,7 @@ You can customize template using `template_name` method.
 # lib/hooks/my_hook/hook.rb
 module Idobata::Hook
   class MyHook < Base
-    name          'My Hook'
+    screen_name   'My Hook'
     identifier    :my_hook
     icon_url      'http://example.com/path/to/icon.png'
     template_name { custom_template_name }
@@ -98,7 +98,7 @@ payload={"message":"hi"}
 # lib/hooks/my_hook/hook.rb
 module Idobata::Hook
   class MyHook < Base
-    name          'My Hook'
+    screen_name   'My Hook'
     identifier    :my_hook
     icon_url      'http://example.com/path/to/icon.png'
     form_json_key 'payload'
@@ -114,7 +114,7 @@ You can use `forced_content_type` for the service that lie about content type.
 # lib/hooks/my_hook/hook.rb
 module Idobata::Hook
   class MyHook < Base
-    name                'My Hook'
+    screen_name         'My Hook'
     identifier          :my_hook
     icon_url            'http://example.com/path/to/icon.png'
     forced_content_type :json
@@ -134,9 +134,9 @@ You can use `skip_processing!` at `before_render` callback to ignore posting mes
 # lib/hooks/my_hook/hook.rb
 module Idobata::Hook
   class MyHook < Base
-    name       'My Hook'
-    identifier :my_hook
-    icon_url   'http://example.com/path/to/icon.png'
+    screen_name 'My Hook'
+    identifier  :my_hook
+    icon_url    'http://example.com/path/to/icon.png'
 
     before_render do
       skip_processing! if payload.is_bored
@@ -184,15 +184,15 @@ hookの名前が`my_hook`である場合、`lib/hooks`の下に`my_hook`を作�
   ``` ruby
   module Idobata::Hook
     class MyHook < Base
-      name       'My Hook'
-      identifier :my_hook
-      icon_url   'http://example.com/path/to/icon.png'
+      screen_name 'My Hook'
+      identifier  :my_hook
+      icon_url    'http://example.com/path/to/icon.png'
     end
   end
   ```
 
   * (必須設定)
-    * `name`: hookの名前です。hookが作成したメッセージの発言者として表示されます
+    * `screen_name`: hookの名前です。hookが作成したメッセージの発言者として表示されます
     * `identifier`: 内部的にhookを特定するための識別子です。他のhookと重複してはいけません。
     * `icon_url`: hookのアイコンです。メッセージの発言者として表示されます。
 
@@ -231,7 +231,7 @@ hookの名前が`my_hook`である場合、`lib/hooks`の下に`my_hook`を作�
 # lib/hooks/my_hook/hook.rb
 module Idobata::Hook
   class MyHook < Base
-    name          'My Hook'
+    screen_name   'My Hook'
     identifier    :my_hook
     icon_url      'http://example.com/path/to/icon.png'
     template_name { custom_template_name }
@@ -267,7 +267,7 @@ payload={"message":"hi"}
 # lib/hooks/my_hook/hook.rb
 module Idobata::Hook
   class MyHook < Base
-    name          'My Hook'
+    screen_name   'My Hook'
     identifier    :my_hook
     icon_url      'http://example.com/path/to/icon.png'
     form_json_key 'payload'
@@ -283,7 +283,7 @@ end
 # lib/hooks/my_hook/hook.rb
 module Idobata::Hook
   class MyHook < Base
-    name                'My Hook'
+    screen_name         'My Hook'
     identifier          :my_hook
     icon_url            'http://example.com/path/to/icon.png'
     forced_content_type :json
@@ -305,9 +305,9 @@ end
 # lib/hooks/my_hook/hook.rb
 module Idobata::Hook
   class MyHook < Base
-    name       'My Hook'
-    identifier :my_hook
-    icon_url   'http://example.com/path/to/icon.png'
+    screen_name 'My Hook'
+    identifier  :my_hook
+    icon_url    'http://example.com/path/to/icon.png'
 
     before_render do
       skip_processing! if payload.is_bored
