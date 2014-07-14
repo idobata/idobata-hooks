@@ -10,6 +10,7 @@ PATH
       hashie
       html-pipeline
       mime-types
+      sass
       tilt
 
 GEM
@@ -97,6 +98,7 @@ GEM
       rspec-support (~> 3.0.0)
     rspec-support (3.0.2)
     rugged (0.21.0)
+    sass (3.3.10)
     sinatra (1.4.5)
       rack (~> 1.4)
       rack-protection (~> 1.4)

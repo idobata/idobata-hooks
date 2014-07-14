@@ -31,4 +31,18 @@ describe Idobata::Hook do
       end
     end
   end
+
+  describe 'style.css.sass' do
+    Idobata::Hook.all.each do |hook|
+      describe hook do
+        subject { hook }
+
+        let(:path) { hook.hook_root.join('style.css.sass').to_s }
+
+        it 'should be compiled successfully' do
+          Tilt.new(path).render if File.exist?(path)
+        end
+      end
+    end
+  end
 end
