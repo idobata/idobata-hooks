@@ -1,0 +1,64 @@
+{
+  "action": {
+    "id": "53bc5a3776de788492186fb5",
+    "idMemberCreator": "532c55772d4209b159d7fb90",
+    "data": {
+      "board": {
+        "shortLink": "zlgpqYq6",
+        "name": "Welcome Board",
+        "id": "532c55782d4209b159d7fb91"
+      },
+      "list": {
+        "name": "Test",
+        "id": "53bc5a3776de788492186fb4"
+      }
+    },
+    "type": "createList",
+    "date": "2014-07-08T20:53:11.113Z",
+    "memberCreator": {
+      "id": "532c55772d4209b159d7fb90",
+      "avatarHash": "",
+      "fullName": "Eito Katagiri",
+      "initials": "EK",
+      "username": "eitokatagiri2"
+    }
+  },
+  "model": {
+    "id": "532c55782d4209b159d7fb91",
+    "name": "Welcome Board",
+    "desc": "",
+    "descData": null,
+    "closed": false,
+    "idOrganization": null,
+    "pinned": true,
+    "url": "https://trello.com/b/zlgpqYq6/welcome-board",
+    "shortUrl": "https://trello.com/b/zlgpqYq6",
+    "prefs": {
+      "permissionLevel": "private",
+      "voting": "disabled",
+      "comments": "members",
+      "invitations": "members",
+      "selfJoin": false,
+      "cardCovers": true,
+      "calendarFeedEnabled": false,
+      "background": "blue",
+      "backgroundColor": "#23719F",
+      "backgroundImage": null,
+      "backgroundImageScaled": null,
+      "backgroundTile": false,
+      "backgroundBrightness": "unknown",
+      "canBePublic": true,
+      "canBeOrg": true,
+      "canBePrivate": true,
+      "canInvite": true
+    },
+    "labelNames": {
+      "red": "",
+      "orange": "",
+      "yellow": "",
+      "green": "",
+      "blue": "",
+      "purple": ""
+    }
+  }
+}

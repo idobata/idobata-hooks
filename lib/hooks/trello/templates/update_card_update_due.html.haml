@@ -1,0 +1,7 @@
+= link_to_member(payload.action.memberCreator)
+set due to
+= DateTime.parse(payload.action.data.card.due).to_time.strftime('%Y/%m/%d %H:%M:%S')
+for
+= link_to_card(payload.action.data.card)
+on
+= link_to_board(payload.action.data.board)

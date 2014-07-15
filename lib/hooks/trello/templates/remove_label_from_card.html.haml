@@ -1,0 +1,8 @@
+= link_to_member(payload.action.memberCreator)
+removed
+= payload.action.data.text.present? ? payload.action.data.text : payload.action.data.value
+label
+from
+= link_to_card(payload.action.data.card)
+on
+= link_to_board(payload.action.data.board)
