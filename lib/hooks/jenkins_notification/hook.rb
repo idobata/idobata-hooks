@@ -8,7 +8,7 @@ module Idobata::Hook
     helper Helper
 
     before_render do
-      skip_processing! unless payload.build.phase == 'FINISHED'
+      skip_processing! unless %w( FINISHED FINALIZED ).include?(payload.build.phase)
     end
   end
 end

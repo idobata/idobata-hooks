@@ -1,0 +1,11 @@
+{
+  "name": "support",
+  "url": "job/support/",
+  "build": {
+    "full_url": "http://localhost:8080/job/support/148/",
+    "number": 148,
+    "phase": "FINALIZED",
+    "status": "SUCCESS",
+    "url": "job/support/148/"
+  }
+}
