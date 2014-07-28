@@ -4,9 +4,7 @@ describe Idobata::Hook::JenkinsNotification, type: :hook do
   describe '#process_payload' do
     subject { hook.process_payload }
 
-    context 'phase is "FINISHED"' do
-      let(:payload) { fixture_payload('jenkins_notification/finished.json') }
-
+    shared_examples 'processing payload with URL to job' do
       before do
         post payload, 'Content-Type' => 'application/json'
       end
@@ -20,6 +18,18 @@ describe Idobata::Hook::JenkinsNotification, type: :hook do
         </p>
       HTML
       its([:format]) { should eq(:html) }
+    end
+
+    context 'phase is "FINALIZED"' do
+      it_should_behave_like 'processing payload with URL to job' do
+        let(:payload) { fixture_payload('jenkins_notification/finalized.json') }
+      end
+    end
+
+    context 'phase is "FINISHED"' do
+      it_should_behave_like 'processing payload with URL to job' do
+        let(:payload) { fixture_payload('jenkins_notification/finished.json') }
+      end
     end
 
     context 'Old jenkins (build.full_url is missing)' do
