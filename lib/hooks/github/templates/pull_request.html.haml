@@ -5,14 +5,15 @@
   %a{href: payload.pull_request.html_url} #{payload.repository.owner.login}/#{payload.repository.name}##{payload.number}
   %b= payload.pull_request.title
 
-.pull-info
-  %b= number_with_delimiter payload.pull_request.commits
-  = 'commit'.pluralize(payload.pull_request.commits)
-  with
-  %b= number_with_delimiter payload.pull_request.additions
-  = 'addition'.pluralize(payload.pull_request.additions)
-  and
-  %b= number_with_delimiter payload.pull_request.deletions
-  = 'deletion'.pluralize(payload.pull_request.deletions)
+- if %w(opened closed).include?(payload.action)
+  .pull-info
+    %b= number_with_delimiter payload.pull_request.commits
+    = 'commit'.pluralize(payload.pull_request.commits)
+    with
+    %b= number_with_delimiter payload.pull_request.additions
+    = 'addition'.pluralize(payload.pull_request.additions)
+    and
+    %b= number_with_delimiter payload.pull_request.deletions
+    = 'deletion'.pluralize(payload.pull_request.deletions)
 
 = md payload.pull_request.body if payload.action == 'opened'

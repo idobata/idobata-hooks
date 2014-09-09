@@ -261,16 +261,6 @@ describe Idobata::Hook::Github, type: :hook do
             <a href='https://github.com/idobata/idobata-hooks/pull/16'>idobata/idobata-hooks#16</a>
             <b>[WIP] Support to show Github PR's label name and assignee</b>
           </p>
-          <div class='pull-info'>
-            <b>1</b>
-            commit
-            with
-            <b>45</b>
-            additions
-            and
-            <b>30</b>
-            deletions
-          </div>
 
         HTML
       end
@@ -290,16 +280,6 @@ describe Idobata::Hook::Github, type: :hook do
             <a href='https://github.com/idobata/idobata-hooks/pull/16'>idobata/idobata-hooks#16</a>
             <b>[WIP] Support to show Github PR's label name and assignee</b>
           </p>
-          <div class='pull-info'>
-            <b>1</b>
-            commit
-            with
-            <b>45</b>
-            additions
-            and
-            <b>30</b>
-            deletions
-          </div>
 
         HTML
       end
