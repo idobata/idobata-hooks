@@ -54,7 +54,7 @@ describe Idobata::Hook::Generic, type: :hook do
       its([:source]) { should eq(source) }
       its([:format]) { should eq(:plain) }
       it {
-        pending '`Rack::Multipart.build_multipart` couldn\t generate multipart value as Array.'
+        pending "`Rack::Multipart.build_multipart` couldn't generate multipart value as Array."
 
         filenames = subject[:images].map {|image| image['filename'] }
         expect(filenames).to eq([image.original_filename] * 2)
