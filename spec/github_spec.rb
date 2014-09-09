@@ -163,7 +163,7 @@ describe Idobata::Hook::Github, type: :hook do
             <span><img src="https://avatars.githubusercontent.com/u/290782?v=2" width="16" height="16" alt="" /></span>
             <a href='https://github.com/tricknotes'>tricknotes</a>
             labeled
-            <span class='label' style='background-color:#84b6eb'>enhancement</span>
+            <span class='label' style='background-color: #84b6eb'>enhancement</span>
             to
             <a href='https://github.com/idobata/idobata-hooks/issues/14'>idobata/idobata-hooks#14</a>
             <b>Need more kindness info about GitHub events</b>
@@ -199,8 +199,7 @@ describe Idobata::Hook::Github, type: :hook do
           <p>
             <span><img src="https://secure.gravatar.com/avatar/dc03a27ae31ba428c560c00c9128cd75?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png" width="16" height="16" alt="" /></span>
             <a href='https://github.com/tricknotes'>tricknotes</a>
-            opened
-            pull request
+            opened pull request
             <a href='https://github.com/tricknotes/notification-test/pull/2'>tricknotes/notification-test#2</a>
             <b>Test for PR</b>
           </p>
@@ -230,8 +229,7 @@ describe Idobata::Hook::Github, type: :hook do
           <p>
             <span><img src="https://secure.gravatar.com/avatar/dc03a27ae31ba428c560c00c9128cd75?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png" width="16" height="16" alt="" /></span>
             <a href='https://github.com/tricknotes'>tricknotes</a>
-            closed
-            pull request
+            closed pull request
             <a href='https://github.com/tricknotes/notification-test/pull/12'>tricknotes/notification-test#12</a>
             <b>:soy_milk:</b>
           </p>
@@ -243,6 +241,63 @@ describe Idobata::Hook::Github, type: :hook do
             addition
             and
             <b>5</b>
+            deletions
+          </div>
+
+        HTML
+      end
+
+      describe 'pull request (labeled) event' do
+        let(:fixture)           { 'pull_request_labeled.json' }
+        let(:github_event_type) { 'pull_request' }
+
+        its([:source]) { should eq(<<-HTML.strip_heredoc) }
+          <p>
+            <span><img src="https://avatars.githubusercontent.com/u/290782?v=2" width="16" height="16" alt="" /></span>
+            <a href='https://github.com/tricknotes'>tricknotes</a>
+            labeled
+            <span class='label' style='background-color: #84b6eb'>enhancement</span>
+            to
+            <a href='https://github.com/idobata/idobata-hooks/pull/16'>idobata/idobata-hooks#16</a>
+            <b>[WIP] Support to show Github PR's label name and assignee</b>
+          </p>
+          <div class='pull-info'>
+            <b>1</b>
+            commit
+            with
+            <b>45</b>
+            additions
+            and
+            <b>30</b>
+            deletions
+          </div>
+
+        HTML
+      end
+
+      describe 'pull request (assigned) event' do
+        let(:fixture)           { 'pull_request_assigned.json' }
+        let(:github_event_type) { 'pull_request' }
+
+        its([:source]) { should eq(<<-HTML.strip_heredoc) }
+          <p>
+            <span><img src="https://avatars.githubusercontent.com/u/290782?v=2" width="16" height="16" alt="" /></span>
+            <a href='https://github.com/tricknotes'>tricknotes</a>
+            assigned
+            <span><img src="https://avatars.githubusercontent.com/u/290782?v=2" width="16" height="16" alt="" /></span>
+            <a href='https://github.com/tricknotes'>tricknotes</a>
+            to
+            <a href='https://github.com/idobata/idobata-hooks/pull/16'>idobata/idobata-hooks#16</a>
+            <b>[WIP] Support to show Github PR's label name and assignee</b>
+          </p>
+          <div class='pull-info'>
+            <b>1</b>
+            commit
+            with
+            <b>45</b>
+            additions
+            and
+            <b>30</b>
             deletions
           </div>
 
