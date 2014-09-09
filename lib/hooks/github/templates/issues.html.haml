@@ -1,7 +1,17 @@
 %p
   %span= avatar_image_tag payload.sender.avatar_url
   %a{href: payload.sender.html_url}= payload.sender.login
-  #{payload.action} issue
+  - if %w(labeled unlabeled).include?(payload.action)
+    #{payload.action}
+    %span.label{style: "background-color:##{payload.label.color}"}= payload.label.name
+    = payload.action == 'labeled' ? 'to' : 'from'
+  - elsif %w(assigned unassigned).include?(payload.action)
+    #{payload.action}
+    %span= avatar_image_tag payload.assignee.avatar_url
+    %a{href: payload.assignee.html_url}= payload.assignee.login
+    = payload.action == 'assigned' ? 'to' : 'from'
+  - else
+    #{payload.action} issue
   %a{href: payload.issue.html_url} #{payload.repository.full_name}##{payload.issue.number}
   %b= payload.issue.title
 

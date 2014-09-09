@@ -154,6 +154,43 @@ describe Idobata::Hook::Github, type: :hook do
         HTML
       end
 
+      describe 'issue (labeled) event' do
+        let(:fixture)           { 'issue_labeled.json' }
+        let(:github_event_type) { 'issues' }
+
+        its([:source]) { should eq(<<-HTML.strip_heredoc) }
+          <p>
+            <span><img src="https://avatars.githubusercontent.com/u/290782?v=2" width="16" height="16" alt="" /></span>
+            <a href='https://github.com/tricknotes'>tricknotes</a>
+            labeled
+            <span class='label' style='background-color:#84b6eb'>enhancement</span>
+            to
+            <a href='https://github.com/idobata/idobata-hooks/issues/14'>idobata/idobata-hooks#14</a>
+            <b>Need more kindness info about GitHub events</b>
+          </p>
+
+        HTML
+      end
+
+      describe 'issue (assigned) event' do
+        let(:fixture)           { 'issue_assigned.json' }
+        let(:github_event_type) { 'issues' }
+
+        its([:source]) { should eq(<<-HTML.strip_heredoc) }
+          <p>
+            <span><img src="https://avatars.githubusercontent.com/u/290782?v=2" width="16" height="16" alt="" /></span>
+            <a href='https://github.com/tricknotes'>tricknotes</a>
+            assigned
+            <span><img src="https://avatars.githubusercontent.com/u/290782?v=2" width="16" height="16" alt="" /></span>
+            <a href='https://github.com/tricknotes'>tricknotes</a>
+            to
+            <a href='https://github.com/idobata/idobata-hooks/issues/14'>idobata/idobata-hooks#14</a>
+            <b>Need more kindness info about GitHub events</b>
+          </p>
+
+        HTML
+      end
+
       describe 'pull request event' do
         let(:fixture)           { 'pull_request.json' }
         let(:github_event_type) { 'pull_request' }
