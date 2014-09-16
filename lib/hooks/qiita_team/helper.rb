@@ -35,10 +35,6 @@ module Idobata::Hook
       def fixup_qiita_html(html)
         QiitaHTMLFilter.new(html).call.to_s.html_safe
       end
-
-      def user_url(base_url, url_name)
-        URI.join(base_url, "/#{url_name}")
-      end
     end
   end
 end
