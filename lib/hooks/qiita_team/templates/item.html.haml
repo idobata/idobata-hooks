@@ -1,9 +1,9 @@
 %p
-  - if %w{ created updated }.include?(payload.action)
-    %span= avatar_image_tag(payload.user.profile_image_url)
+  - if %w(created updated).include?(payload.action)
+    %span= avatar_image_tag payload.user.profile_image_url
     = payload.user.url_name
   - else
-    %span= avatar_image_tag(payload.item.user.profile_image_url)
+    %span= avatar_image_tag payload.item.user.profile_image_url
     = payload.item.user.url_name
   = payload.action
   %a{href: payload.item.url}= payload.item.title
