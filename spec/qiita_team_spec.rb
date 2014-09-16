@@ -19,7 +19,7 @@ describe Idobata::Hook::QiitaTeam, type: :hook do
       its([:source]) { should eq(<<-HTML.strip_heredoc) }
         <p>
           <span><img src="https://pbs.twimg.com/profile_images/429833774562439168/gEY-Y6IJ_normal.jpeg" width="16" height="16" alt="" /></span>
-          <a href='https://hanachin.qiita.com/hanachin_'>hanachin_</a>
+          hanachin_
           created
           <a href='https://hanachin.qiita.com/hanachin_/items/d7a204610de2097df0c4'>hi</a>
         </p>
@@ -34,8 +34,8 @@ describe Idobata::Hook::QiitaTeam, type: :hook do
 
       its([:source]) { should eq(<<-HTML.strip_heredoc) }
         <p>
-          <span><img src="https://pbs.twimg.com/profile_images/429833774562439168/gEY-Y6IJ_normal.jpeg" width="16" height="16" alt="" /></span>
-          <a href='https://hanachin.qiita.com/hanachin_'>hanachin_</a>
+          <span><img src="https://pbs.twimg.com/profile_images/1542801560/Qiita_normal.png" width="16" height="16" alt="" /></span>
+          qiitan
           updated
           <a href='https://hanachin.qiita.com/hanachin_/items/d7a204610de2097df0c4'>hi</a>
         </p>
