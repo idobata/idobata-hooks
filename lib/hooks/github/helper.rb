@@ -58,6 +58,17 @@ module Idobata::Hook
       def render_as_haml(haml, locals)
         Haml::Engine.new(haml, escape_html: true).render(self, locals)
       end
+
+      def label_class_from_build_status(state)
+        case state
+        when 'success'
+          'label-success'
+        when 'failure'
+          'label-important'
+        else
+          nil
+        end
+      end
     end
   end
 end

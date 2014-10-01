@@ -367,6 +367,55 @@ describe Idobata::Hook::Github, type: :hook do
         HTML
       end
 
+      describe 'statue event as pending' do
+        let(:fixture)           { 'status_pending.json' }
+        let(:github_event_type) { 'status' }
+
+        subject { ->{ hook.process_payload } }
+
+        it { expect(subject).to raise_error(Idobata::Hook::SkipProcessing) }
+      end
+
+      describe 'statue event as success' do
+        let(:fixture)           { 'status_success.json' }
+        let(:github_event_type) { 'status' }
+
+        its([:source]) { should eq(<<-HTML.strip_heredoc) }
+          <p>
+            The Travis CI build passed: idobata/idobata-hooks
+            (<a href='https://travis-ci.org/idobata/idobata-hooks/builds/35399301'>build</a>)
+            :
+            <span class='label label-success'>
+              success
+            </span>
+          </p>
+          <p>
+            Keita Urashima: Cosmetic
+            (<a href='https://github.com/idobata/idobata-hooks/commit/ffaa23d30f023abab9b8152a98d357c93d56c26f'>ffaa23d3</a>)
+          </p>
+        HTML
+      end
+
+      describe 'statue event as failure' do
+        let(:fixture)           { 'status_failure.json' }
+        let(:github_event_type) { 'status' }
+
+        its([:source]) { should eq(<<-HTML.strip_heredoc) }
+          <p>
+            The Travis CI build failed: idobata/idobata-hooks
+            (<a href='https://travis-ci.org/idobata/idobata-hooks/builds/36560867'>build</a>)
+            :
+            <span class='label label-important'>
+              failure
+            </span>
+          </p>
+          <p>
+            Ryunosuke SATO: WIP: Support GitHub's status event
+            (<a href='https://github.com/idobata/idobata-hooks/commit/d4fcd0513cfce99f646b9f18e351a68bf9476fe6'>d4fcd051</a>)
+          </p>
+        HTML
+      end
+
       describe 'branch deleted as push event' do
         let(:fixture)           { 'branch_deleted_as_push.json' }
         let(:github_event_type) { 'push' }
