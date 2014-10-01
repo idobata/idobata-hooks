@@ -386,7 +386,7 @@ describe Idobata::Hook::Github, type: :hook do
             (<a href='https://travis-ci.org/idobata/idobata-hooks/builds/36738881'>build</a>)
             :
             <span class='label label-success'>
-              success
+              Success
             </span>
           </p>
           <p>
@@ -406,7 +406,7 @@ describe Idobata::Hook::Github, type: :hook do
             (<a href='https://travis-ci.org/idobata/idobata-hooks/builds/36560867'>build</a>)
             :
             <span class='label label-important'>
-              failure
+              Failure
             </span>
           </p>
           <p>

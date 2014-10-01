@@ -4,7 +4,7 @@
     %a{href: payload.target_url} build
   \:
   %span.label{class: label_class_from_build_status(payload.state)}
-    = payload.state
+    = payload.state.titleize
 
 %p
   #{payload.commit.commit.author.name}: #{payload.commit.commit.message.lines.first}
