@@ -367,6 +367,20 @@ describe Idobata::Hook::Github, type: :hook do
         HTML
       end
 
+      describe 'watch event' do
+        let(:fixture)           { 'watch.json' }
+        let(:github_event_type) { 'watch' }
+
+        its([:source]) { should eq(<<-HTML.strip_heredoc) }
+          <p>
+            <span><img src="https://avatars.githubusercontent.com/u/290782?v=2" width="16" height="16" alt="" /></span>
+            <a href='https://github.com/tricknotes'>tricknotes</a>
+            starred
+            <a href='https://github.com/idobata/capybara_screenshot_idobata'>idobata/capybara_screenshot_idobata</a>
+          </p>
+        HTML
+      end
+
       describe 'status event as pending' do
         let(:fixture)           { 'status_pending.json' }
         let(:github_event_type) { 'status' }

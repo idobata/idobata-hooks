@@ -10,7 +10,6 @@ module Idobata::Hook
         release
         page_build
         deployment_status
-        watch
         public
         team_add
       )
