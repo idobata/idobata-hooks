@@ -7,6 +7,6 @@
     = payload.state
 
 %p
-  #{payload.commit.commit.author.name}: #{payload.commit.commit.message}
+  #{payload.commit.commit.author.name}: #{payload.commit.commit.message.lines.first}
   = surround '(', ')' do
     %a{href: payload.commit.html_url}= payload.sha[0..7]
