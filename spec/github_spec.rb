@@ -383,15 +383,15 @@ describe Idobata::Hook::Github, type: :hook do
         its([:source]) { should eq(<<-HTML.strip_heredoc) }
           <p>
             The Travis CI build passed: idobata/idobata-hooks
-            (<a href='https://travis-ci.org/idobata/idobata-hooks/builds/35399301'>build</a>)
+            (<a href='https://travis-ci.org/idobata/idobata-hooks/builds/36738881'>build</a>)
             :
             <span class='label label-success'>
-              success
+              Success
             </span>
           </p>
           <p>
-            Keita Urashima: Cosmetic
-            (<a href='https://github.com/idobata/idobata-hooks/commit/ffaa23d30f023abab9b8152a98d357c93d56c26f'>ffaa23d3</a>)
+            Keita Urashima: Merge pull request #18 from idobata/github-status-event
+            (<a href='https://github.com/idobata/idobata-hooks/commit/433db95a768426ecf7ac77a9ef1ad9a3b0557367'>433db95a</a>)
           </p>
         HTML
       end
@@ -406,7 +406,7 @@ describe Idobata::Hook::Github, type: :hook do
             (<a href='https://travis-ci.org/idobata/idobata-hooks/builds/36560867'>build</a>)
             :
             <span class='label label-important'>
-              failure
+              Failure
             </span>
           </p>
           <p>
