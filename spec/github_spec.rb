@@ -367,7 +367,7 @@ describe Idobata::Hook::Github, type: :hook do
         HTML
       end
 
-      describe 'statue event as pending' do
+      describe 'status event as pending' do
         let(:fixture)           { 'status_pending.json' }
         let(:github_event_type) { 'status' }
 
@@ -376,7 +376,7 @@ describe Idobata::Hook::Github, type: :hook do
         it { expect(subject).to raise_error(Idobata::Hook::SkipProcessing) }
       end
 
-      describe 'statue event as success' do
+      describe 'status event as success' do
         let(:fixture)           { 'status_success.json' }
         let(:github_event_type) { 'status' }
 
@@ -396,7 +396,7 @@ describe Idobata::Hook::Github, type: :hook do
         HTML
       end
 
-      describe 'statue event as failure' do
+      describe 'status event as failure' do
         let(:fixture)           { 'status_failure.json' }
         let(:github_event_type) { 'status' }
 
