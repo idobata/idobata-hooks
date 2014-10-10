@@ -1,0 +1,149 @@
+{
+  "account": {
+    "id": "xxxyyyyyyyyyyyyyyyyy",
+    "name": "example",
+    "url": "https://bugsnag.com/accounts/example"
+  },
+  "project": {
+    "id": "zzzzzzzzzzzzzzzzzzzzzzzzzzzz",
+    "apiKey": "xxxxxxxx",
+    "name": "Rails",
+    "url": "https://bugsnag.com/example/rails"
+  },
+  "trigger": {
+    "type": "comment",
+    "message": "Comment Added"
+  },
+  "error": {
+    "id": "12345abc",
+    "errorId": "2345bcds",
+    "exceptionClass": "RuntimeError",
+    "message": "Bugsnag test exception",
+    "context": "rake#test_exception",
+    "appVersion": null,
+    "releaseStage": "development",
+    "occurrences": 8,
+    "firstReceived": "2014-10-10T13:48:00.000Z",
+    "stacktrace": [
+      {
+        "lineNumber": 240,
+        "file": "gems/rake-10.3.2/lib/rake/task.rb",
+        "method": "call"
+      },
+      {
+        "lineNumber": 240,
+        "file": "gems/rake-10.3.2/lib/rake/task.rb",
+        "method": "block in execute"
+      },
+      {
+        "lineNumber": 235,
+        "file": "gems/rake-10.3.2/lib/rake/task.rb",
+        "method": "each"
+      },
+      {
+        "lineNumber": 235,
+        "file": "gems/rake-10.3.2/lib/rake/task.rb",
+        "method": "execute"
+      },
+      {
+        "lineNumber": 179,
+        "file": "gems/rake-10.3.2/lib/rake/task.rb",
+        "method": "block in invoke_with_call_chain"
+      },
+      {
+        "lineNumber": 211,
+        "file": "/Users/foobar/.rbenv/versions/2.1.3/lib/ruby/2.1.0/monitor.rb",
+        "method": "mon_synchronize"
+      },
+      {
+        "lineNumber": 172,
+        "file": "gems/rake-10.3.2/lib/rake/task.rb",
+        "method": "invoke_with_call_chain"
+      },
+      {
+        "lineNumber": 165,
+        "file": "gems/rake-10.3.2/lib/rake/task.rb",
+        "method": "invoke"
+      },
+      {
+        "lineNumber": 150,
+        "file": "gems/rake-10.3.2/lib/rake/application.rb",
+        "method": "invoke_task"
+      },
+      {
+        "lineNumber": 106,
+        "file": "gems/rake-10.3.2/lib/rake/application.rb",
+        "method": "block (2 levels) in top_level"
+      },
+      {
+        "lineNumber": 106,
+        "file": "gems/rake-10.3.2/lib/rake/application.rb",
+        "method": "each"
+      },
+      {
+        "lineNumber": 106,
+        "file": "gems/rake-10.3.2/lib/rake/application.rb",
+        "method": "block in top_level"
+      },
+      {
+        "lineNumber": 115,
+        "file": "gems/rake-10.3.2/lib/rake/application.rb",
+        "method": "run_with_threads"
+      },
+      {
+        "lineNumber": 100,
+        "file": "gems/rake-10.3.2/lib/rake/application.rb",
+        "method": "top_level"
+      },
+      {
+        "lineNumber": 78,
+        "file": "gems/rake-10.3.2/lib/rake/application.rb",
+        "method": "block in run"
+      },
+      {
+        "lineNumber": 176,
+        "file": "gems/rake-10.3.2/lib/rake/application.rb",
+        "method": "standard_exception_handling"
+      },
+      {
+        "lineNumber": 75,
+        "file": "gems/rake-10.3.2/lib/rake/application.rb",
+        "method": "run"
+      },
+      {
+        "lineNumber": 33,
+        "file": "gems/rake-10.3.2/bin/rake",
+        "method": "<top (required)>"
+      },
+      {
+        "lineNumber": 23,
+        "file": "/Users/foobar/.rbenv/versions/2.1.3/bin/rake",
+        "method": "load"
+      },
+      {
+        "lineNumber": 23,
+        "file": "/Users/foobar/.rbenv/versions/2.1.3/bin/rake",
+        "method": "<main>"
+      }
+    ],
+    "metaData": {
+      "rake_task": {
+        "name": "bugsnag:test_exception",
+        "description": "Send a test exception to Bugsnag.",
+        "arguments": null
+      }
+    },
+    "url": "https://bugsnag.com/example/rails/errors/2345bcds?event_id=12345abc",
+    "createdIssue": {},
+    "severity": "warning"
+  },
+  "comment": {
+    "id": "3456basdf",
+    "message": "コメントですよ",
+    "already_emailed_addresses": []
+  },
+  "user": {
+    "name": "foobarbaz",
+    "email": "foobarbaz@gmail.com"
+  }
+}
