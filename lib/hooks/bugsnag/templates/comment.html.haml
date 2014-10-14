@@ -1,4 +1,5 @@
 %p
   #{payload.user.name} commented on
-  %a{href: payload.error.url} [#{payload.error.exceptionClass}] #{payload.error.message}
+  %a{href: payload.error.url} [#{payload.error.exceptionClass}]
+%p
   %blockquote= payload.comment.message

@@ -15,7 +15,9 @@ describe Idobata::Hook::Bugsnag, type: :hook do
       its([:source]) { should eq(<<-HTML.strip_heredoc) }
         <p>
           foobarbaz commented on
-          <a href='https://bugsnag.com/example/rails/errors/2345bcds?event_id=12345abc'>[RuntimeError] Bugsnag test exception</a>
+          <a href='https://bugsnag.com/example/rails/errors/2345bcds?event_id=12345abc'>[RuntimeError]</a>
+        </p>
+        <p>
           <blockquote>コメントですよ</blockquote>
         </p>
       HTML
@@ -28,9 +30,14 @@ describe Idobata::Hook::Bugsnag, type: :hook do
       its([:source]) { should eq(<<-HTML.strip_heredoc) }
         <p>
           <span class='label label-important'>Exception</span>
-          <a href='https://bugsnag.com/example/rails/errors/2345bcds?event_id=12345abc'>[RuntimeError] Bugsnag test exception</a>
+          <a href='https://bugsnag.com/example/rails/errors/2345bcds?event_id=12345abc'>[RuntimeError]</a>
         </p>
-        <pre>releaseStage: development<br>occurrences:  8</pre>
+        <p>
+          Bugsnag test exception
+        </p>
+        <p>
+          has occurred 8 time(s) on development
+        </p>
       HTML
 
       its([:format]) { should eq(:html) }
