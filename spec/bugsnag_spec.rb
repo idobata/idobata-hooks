@@ -18,7 +18,9 @@ describe Idobata::Hook::Bugsnag, type: :hook do
           <a href='https://bugsnag.com/example/rails/errors/2345bcds?event_id=12345abc'>[RuntimeError]</a>
         </p>
         <p>
-          <blockquote>コメントですよ</blockquote>
+          <ul>
+          <li>コメントですよ</li>
+          </ul>
         </p>
       HTML
 
