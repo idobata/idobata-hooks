@@ -1,6 +1,6 @@
 %p
   %span.label.label-important= payload.trigger.message
-  %a{ href: payload.error.url }= "[#{payload.error.exceptionClass}] #{payload.error.message}"
+  %a{href: payload.error.url} [#{payload.error.exceptionClass}] #{payload.error.message}
 %pre
   releaseStage: #{payload.error.releaseStage}
   %br

@@ -1,4 +1,4 @@
 %p
-  = "#{payload.user.name} commented on "
-  %a{ href: payload.error.url }= "[#{payload.error.exceptionClass}] #{payload.error.message}"
+  #{payload.user.name} commented on
+  %a{href: payload.error.url} [#{payload.error.exceptionClass}] #{payload.error.message}
   %blockquote= payload.comment.message
