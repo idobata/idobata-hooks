@@ -17,11 +17,9 @@ describe Idobata::Hook::Bugsnag, type: :hook do
           foobarbaz commented on
           <a href='https://bugsnag.com/example/rails/errors/2345bcds?event_id=12345abc'>[RuntimeError]</a>
         </p>
-        <p>
-          <ul>
-          <li>コメントですよ</li>
-          </ul>
-        </p>
+        <ul>
+        <li>コメントですよ</li>
+        </ul>
       HTML
 
       its([:format]) { should eq(:html) }
