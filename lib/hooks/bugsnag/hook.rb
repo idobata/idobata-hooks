@@ -5,6 +5,8 @@ module Idobata::Hook
     icon_url      gravatar('7e8b5cfa0dbe9df4205ab6d811fddd31')
     template_name { custom_template_name }
 
+    helper Helper
+
     private
 
     def custom_template_name
@@ -12,7 +14,7 @@ module Idobata::Hook
       when 'comment'
         'comment.html.haml'
       else
-        'default.html.haml'
+        'error.html.haml'
       end
     end
   end

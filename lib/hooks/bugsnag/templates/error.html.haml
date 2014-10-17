@@ -1,0 +1,10 @@
+%p
+  %span.label.label-important= type_to_label payload.trigger.type
+  %a{href: payload.error.url}
+    <b>#{payload.error.exceptionClass}</b> #{payload.error.context}
+
+%p
+  %i= payload.error.message
+
+%p
+  has occurred #{payload.error.occurrences} time(s) on #{payload.error.releaseStage}

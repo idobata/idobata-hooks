@@ -1,7 +1,0 @@
-%p
-  %span.label.label-important= payload.trigger.message
-  %a{href: payload.error.url} [#{payload.error.exceptionClass}]
-%p
-  #{payload.error.message}
-%p
-  has occurred #{payload.error.occurrences} time(s) on #{payload.error.releaseStage}
