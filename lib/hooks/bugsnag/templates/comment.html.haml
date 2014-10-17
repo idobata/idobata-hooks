@@ -1,0 +1,4 @@
+%p
+  #{payload.user.name} commented on
+  %a{href: payload.error.url} [#{payload.error.exceptionClass}]
+= GitHub::Markdown.to_html(payload.comment.message, :gfm).html_safe
