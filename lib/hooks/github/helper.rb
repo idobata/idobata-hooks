@@ -31,7 +31,7 @@ module Idobata::Hook
       private
 
       def labeled_action?(action)
-        %w(labeled unlabeled).include?(payload.action)
+        %w(labeled unlabeled).include?(action)
       end
 
       def render_labeled(payload)
