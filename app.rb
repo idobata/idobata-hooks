@@ -48,6 +48,18 @@ module Idobata::Hook
       Idobata::Hook.find(params[:identifier])
     end
 
+    error Idobata::Hook::SkipProcessing do |e|
+      status 200
+
+      e.message
+    end
+
+    error Idobata::Hook::BadRequest do |e|
+      status 422
+
+      e.message
+    end
+
     private
 
     def post_to_idobata(payload)
