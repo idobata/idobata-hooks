@@ -172,6 +172,15 @@ describe Idobata::Hook::Github, type: :hook do
         HTML
       end
 
+      describe 'issue (delete label as unlabeled) event' do
+        let(:fixture)           { 'issue_label_deleted.json' }
+        let(:github_event_type) { 'issues' }
+
+        subject { ->{ hook.process_payload } }
+
+        it { expect(subject).to raise_error(Idobata::Hook::SkipProcessing) }
+      end
+
       describe 'issue (assigned) event' do
         let(:fixture)           { 'issue_assigned.json' }
         let(:github_event_type) { 'issues' }
