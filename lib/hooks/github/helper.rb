@@ -10,6 +10,32 @@ module Idobata::Hook
 
       Pipeline = ::HTML::Pipeline.new(filters, gfm: true, base_url: 'https://github.com/')
 
+      GITHUB_DEFAULT_LABEL_COLORS = {
+        '84b6eb' => '1c2733',
+        'bfe5bf' => '2a332a',
+        'bfdadc' => '2c3233',
+        'c7def8' => '282d33',
+        'bfd4f2' => '282c33',
+        'd4c5f9' => '2b2833',
+        'fbca04' => '332900',
+        'f7c6c7' => '332829',
+        'fad8c7' => '332c28',
+        'fef2c0' => '333026',
+        'cccccc' => '333333',
+        'e6e6e6' => '333333',
+        'ffffff' => '333333',
+        '159818' => 'ffffff',
+        'fc2929' => 'ffffff',
+        'cc317c' => 'ffffff',
+        'e11d21' => 'ffffff',
+        'eb6420' => 'ffffff',
+        '009800' => 'ffffff',
+        '006b75' => 'ffffff',
+        '207de5' => 'ffffff',
+        '0052cc' => 'ffffff',
+        '5319e7' => 'ffffff'
+      }
+
       def md(source)
         result = Pipeline.call(source)
 
@@ -37,7 +63,7 @@ module Idobata::Hook
       def render_labeled(payload)
         render_as_haml(<<-'HAML'.strip_heredoc, payload: payload)
           = payload.action
-          %span.label(style="background-color: ##{payload.label.color}")= payload.label.name
+          %span.label(style="background-color: ##{payload.label.color}; color: ##{text_color_from_label_color(payload.label.color)};")= payload.label.name
           = payload.action == 'labeled' ? 'to' : 'from'
         HAML
       end
@@ -68,6 +94,15 @@ module Idobata::Hook
         else
           nil
         end
+      end
+
+      def text_color_from_label_color(label_color)
+        if text_color = GITHUB_DEFAULT_LABEL_COLORS[label_color]
+          return text_color
+        end
+
+        label_lightness = Sass::Script::Color.new(label_color.scan(/../).map(&:hex)).lightness
+        label_lightness >= 60 ? '333' : 'fff'
       end
     end
   end

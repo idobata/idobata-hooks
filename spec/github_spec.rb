@@ -163,7 +163,7 @@ describe Idobata::Hook::Github, type: :hook do
             <span><img src="https://avatars.githubusercontent.com/u/290782?v=2" width="16" height="16" alt="" /></span>
             <a href='https://github.com/tricknotes'>tricknotes</a>
             labeled
-            <span class='label' style='background-color: #84b6eb'>enhancement</span>
+            <span class='label' style='background-color: #84b6eb; color: #1c2733;'>enhancement</span>
             to
             <a href='https://github.com/idobata/idobata-hooks/issues/14'>idobata/idobata-hooks#14</a>
             <b>Need more kindness info about GitHub events</b>
@@ -256,7 +256,7 @@ describe Idobata::Hook::Github, type: :hook do
             <span><img src="https://avatars.githubusercontent.com/u/290782?v=2" width="16" height="16" alt="" /></span>
             <a href='https://github.com/tricknotes'>tricknotes</a>
             labeled
-            <span class='label' style='background-color: #84b6eb'>enhancement</span>
+            <span class='label' style='background-color: #84b6eb; color: #1c2733;'>enhancement</span>
             to
             <a href='https://github.com/idobata/idobata-hooks/pull/16'>idobata/idobata-hooks#16</a>
             <b>[WIP] Support to show Github PR's label name and assignee</b>
