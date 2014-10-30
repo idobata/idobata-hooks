@@ -63,7 +63,7 @@ module Idobata::Hook
       def render_labeled(payload)
         render_as_haml(<<-'HAML'.strip_heredoc, payload: payload)
           = payload.action
-          %span.label(style="background-color: ##{payload.label.color}; color: ##{text_color_from_label_color(payload.label.color)};")= payload.label.name
+          %span.label(style="background-color: ##{payload.label.color}; color: ##{label_fg_color(payload.label.color)};")= payload.label.name
           = payload.action == 'labeled' ? 'to' : 'from'
         HAML
       end
@@ -96,13 +96,14 @@ module Idobata::Hook
         end
       end
 
-      def text_color_from_label_color(label_color)
-        if text_color = GITHUB_DEFAULT_LABEL_COLORS[label_color]
-          return text_color
-        end
+      def label_fg_color(bg_color)
+        GITHUB_DEFAULT_LABEL_COLORS[bg_color] || obtain_label_fg_color(bg_color)
+      end
 
-        label_lightness = Sass::Script::Color.new(label_color.scan(/../).map(&:hex)).lightness
-        label_lightness >= 60 ? '333' : 'fff'
+      def obtain_label_fg_color(bg_color)
+        lightness = Sass::Script::Color.new(bg_color.scan(/../).map(&:hex)).lightness
+
+        lightness >= 60 ? '333' : 'fff'
       end
     end
   end
