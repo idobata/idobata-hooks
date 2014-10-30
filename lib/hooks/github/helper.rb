@@ -101,6 +101,7 @@ module Idobata::Hook
       end
 
       def obtain_label_fg_color(bg_color)
+        # TODO Use `.from_hex` method after upgrading Sass used by Idobata to 3.4.
         lightness = Sass::Script::Color.new(bg_color.scan(/../).map(&:hex)).lightness
 
         lightness >= 60 ? '333' : 'fff'
