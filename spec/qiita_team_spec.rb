@@ -127,8 +127,17 @@ describe Idobata::Hook::QiitaTeam, type: :hook do
       its([:format]) { should eq(:html) }
     end
 
+    describe 'project created event' do
+      subject { -> { hook.process_payload } }
+
+      let(:fixture) { 'project_created.json' }
+      let(:qiita_event_model_type) { 'project' }
+
+      it { expect(subject).to raise_error(Idobata::Hook::SkipProcessing) }
+    end
+
     describe 'destroy actions' do
-      subject { ->{ hook.process_payload } }
+      subject { -> { hook.process_payload } }
 
       describe 'item destroyed event' do
         let(:fixture) { 'item_destroyed.json' }
