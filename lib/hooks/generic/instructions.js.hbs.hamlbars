@@ -9,5 +9,3 @@
 
     %p Additionally, you can post image with <code>image</code> parameter:
     %pre $ curl --form image=@/path/to/image.png #{hb 'endpoint'}
-
-  = hb 'yield'
