@@ -1,3 +1,12 @@
+GIT
+  remote: git://github.com/ursm/html-pipeline.git
+  revision: 077a789054b2c0df76e72ab2c58cc01470ea746d
+  branch: pygments
+  specs:
+    html-pipeline (1.11.0)
+      activesupport (>= 2)
+      nokogiri (~> 1.4)
+
 PATH
   remote: .
   specs:
@@ -10,28 +19,29 @@ PATH
       hashie
       html-pipeline
       mime-types
+      pygments.rb
       sass
       tilt
 
 GEM
   remote: https://rubygems.org/
   specs:
-    actionpack (4.1.6)
-      actionview (= 4.1.6)
-      activesupport (= 4.1.6)
+    actionpack (4.1.8)
+      actionview (= 4.1.8)
+      activesupport (= 4.1.8)
       rack (~> 1.5.2)
       rack-test (~> 0.6.2)
-    actionview (4.1.6)
-      activesupport (= 4.1.6)
+    actionview (4.1.8)
+      activesupport (= 4.1.8)
       builder (~> 3.1)
       erubis (~> 2.7.0)
-    activesupport (4.1.6)
+    activesupport (4.1.8)
       i18n (~> 0.6, >= 0.6.9)
       json (~> 1.7, >= 1.7.7)
       minitest (~> 5.1)
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
-    backports (3.6.3)
+    backports (3.6.4)
     builder (3.2.2)
     charlock_holmes (0.7.3)
     coderay (1.1.0)
@@ -40,12 +50,11 @@ GEM
     escape_utils (1.0.1)
     execjs (2.2.2)
     gemoji (2.1.0)
-    github-linguist (3.1.5)
+    github-linguist (4.0.3)
       charlock_holmes (~> 0.7.3)
       escape_utils (~> 1.0.1)
-      mime-types (~> 1.19)
-      pygments.rb (~> 0.6.0)
-      rugged (~> 0.21.0)
+      mime-types (>= 1.19)
+      rugged (~> 0.22.0b1)
     github-markdown (0.6.7)
     haml (4.0.5)
       tilt
@@ -54,20 +63,17 @@ GEM
       haml
       sprockets (>= 2.0)
       tilt
-    hashie (3.3.1)
+    hashie (3.3.2)
     hike (1.2.3)
-    html-pipeline (1.11.0)
-      activesupport (>= 2)
-      nokogiri (~> 1.4)
     i18n (0.6.11)
     json (1.8.1)
     method_source (0.8.2)
-    mime-types (1.25.1)
-    mini_portile (0.6.0)
-    minitest (5.4.2)
+    mime-types (2.4.3)
+    mini_portile (0.6.1)
+    minitest (5.4.3)
     multi_json (1.10.1)
-    nokogiri (1.6.3.1)
-      mini_portile (= 0.6.0)
+    nokogiri (1.6.5)
+      mini_portile (~> 0.6.0)
     posix-spawn (0.3.9)
     pry (0.10.1)
       coderay (~> 1.1.0)
@@ -81,7 +87,7 @@ GEM
       rack
     rack-test (0.6.2)
       rack (>= 1.0)
-    rake (10.3.2)
+    rake (10.4.0)
     rspec (3.0.0)
       rspec-core (~> 3.0.0)
       rspec-expectations (~> 3.0.0)
@@ -97,8 +103,8 @@ GEM
     rspec-mocks (3.0.4)
       rspec-support (~> 3.0.0)
     rspec-support (3.0.4)
-    rugged (0.21.0)
-    sass (3.4.6)
+    rugged (0.22.0b4)
+    sass (3.4.9)
     sinatra (1.4.5)
       rack (~> 1.4)
       rack-protection (~> 1.4)
@@ -111,7 +117,7 @@ GEM
       sinatra (~> 1.4.0)
       tilt (~> 1.3)
     slop (3.6.0)
-    sprockets (2.12.2)
+    sprockets (2.12.3)
       hike (~> 1.2)
       multi_json (~> 1.0)
       rack (~> 1.0)
@@ -132,6 +138,7 @@ DEPENDENCIES
   bundler (~> 1.6)
   github-linguist
   hamlbars
+  html-pipeline!
   idobata-hooks!
   pry
   rake
