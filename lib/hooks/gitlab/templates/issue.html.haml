@@ -1,0 +1,23 @@
+:ruby
+  issue           = payload.object_attributes
+  has_url         = issue.url?
+  has_user        = payload.user?
+  repository_name = has_url ? issue.url.split('/', 5)[-2] : '' # http://example.com/owner/:name/issues/:id
+
+%p
+  - if has_user
+    %span= avatar_image_tag payload.user.avatar_url
+    = payload.user.name
+    = issue.state
+    issue
+  - else
+    The issue was #{issue.state}:
+
+  - if has_url
+    %a{href: issue.url} #{repository_name}##{issue.iid}
+  - else
+    #{repository_name}##{issue.iid}
+
+  %b= issue.title
+
+= md issue.description if issue.action == 'open'

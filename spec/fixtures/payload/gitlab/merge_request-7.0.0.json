@@ -1,0 +1,21 @@
+{
+  "object_kind": "merge_request",
+  "object_attributes": {
+    "id": 49,
+    "target_branch": "master",
+    "source_branch": "ping",
+    "source_project_id": 226,
+    "author_id": 143,
+    "assignee_id": null,
+    "title": "Ping!",
+    "created_at": "2014-11-27 16:36:21 +0900",
+    "updated_at": "2014-11-28 15:16:20 +0900",
+    "milestone_id": null,
+    "state": "closed",
+    "merge_status": "can_be_merged",
+    "target_project_id": 226,
+    "iid": 1,
+    "description": "This is a ping...",
+    "position": 0
+  }
+}
