@@ -1,0 +1,36 @@
+{
+  "error":{
+    "id":37463546,
+    "error_message":"RuntimeError: You threw an exception for testing",
+    "error_class":"RuntimeError",
+    "file":"[PROJECT_ROOT]/app/controllers/pages_controller.rb",
+    "line_number":35,
+    "project":{
+      "id":1055,
+      "name":"Airbrake"
+    },
+    "last_notice":{
+      "id":4505303522,
+      "request_method":null,
+      "request_url":"http://airbrake.io:445/pages/exception_test",
+      "backtrace":[
+        "[PROJECT_ROOT]/app/controllers/pages_controller.rb:35:in `exception_tester'",
+        "[PROJECT_ROOT]/app/middleware/conditional_heroku_nav.rb:19:in `_call'",
+        "[PROJECT_ROOT]/app/middleware/conditional_heroku_nav.rb:11:in `call_without_newrelic'",
+        "[PROJECT_ROOT]/app/middleware/notifier_api.rb:33:in `_call'",
+        "[PROJECT_ROOT]/app/middleware/notifier_api.rb:23:in `call_without_newrelic'",
+        "[PROJECT_ROOT]/app/middleware/notifier_post_body_translator.rb:8:in `call'",
+        "[PROJECT_ROOT]/app/middleware/xml_request_truncator.rb:34:in `_call'",
+        "[PROJECT_ROOT]/app/middleware/xml_request_truncator.rb:23:in `call_without_newrelic'",
+        "[PROJECT_ROOT]/app/middleware/deprecated_notifier_api.rb:33:in `_call'",
+        "[PROJECT_ROOT]/app/middleware/deprecated_notifier_api.rb:23:in `call_without_newrelic'",
+        "[PROJECT_ROOT]/app/middleware/notifier_api_request_verification.rb:33:in `_call'",
+        "[PROJECT_ROOT]/app/middleware/notifier_api_request_verification.rb:23:in `call_without_newrelic'"
+      ]
+    },
+    "environment":"production",
+    "first_occurred_at":"2012-02-23T22:03:03Z",
+    "last_occurred_at":"2012-03-21T08:37:15Z",
+    "times_occurred":118
+  }
+}

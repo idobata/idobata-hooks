@@ -1,0 +1,5 @@
+%dl
+  %dt Set Webhooks
+  %dd
+    %p Set idobata hook url to your Airbrake: Project Setting -> Integrations -> Webhook
+    %p See <a href='https://help.airbrake.io/kb/integrations/webhooks' target='_blank'><i class='fa.fa-external-link'></i>Webhooks / Integrations / Knowledge Base - Airbrake Support</a> for more details.
