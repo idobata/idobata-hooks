@@ -18,7 +18,7 @@ module Idobata::Hook
   class Application < Sinatra::Application
     register Sinatra::MultiRoute
 
-    set :idobta_hook_url, ENV['IDOBATA_HOOK_URL']
+    set :idobata_hook_url, ENV['IDOBATA_HOOK_URL']
 
     set :sprockets, Sprockets::Environment.new
 
@@ -63,7 +63,7 @@ module Idobata::Hook
     private
 
     def post_to_idobata(payload)
-      url  = URI(settings.idobta_hook_url)
+      url  = URI(settings.idobata_hook_url)
       post = Net::HTTP::Post.new(url)
 
       post.set_form generate_form(payload), 'multipart/form-data'
