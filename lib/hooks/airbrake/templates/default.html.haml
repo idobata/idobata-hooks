@@ -1,12 +1,9 @@
-%span.label.label-info
-  = payload.error.project.name
-%span.label.label-info
-  = payload.error.environment
-%span.badge.badge-important
-  = payload.error.times_occurred
 %p
-  %b
-    = payload.error.error_message
-  &nbsp;from&nbsp;
-  %a{href: payload.error.last_notice.request_url}
-    = payload.error.last_notice.request_url
+  %span.label.label-info= payload.error.project.name
+  %span.label.label-info= payload.error.environment
+  %span.badge.badge-important= payload.error.times_occurred
+
+%p
+  %b= payload.error.error_message
+  from
+  %a{href: payload.error.last_notice.request_url}= payload.error.last_notice.request_url
