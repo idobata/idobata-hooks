@@ -1,0 +1,19 @@
+:ruby
+  merge_request = payload.object_attributes
+  has_user      = payload.user?
+  has_target    = merge_request.target?
+  homepage      = has_target ? merge_request.target.http_url.sub(/\.git$/, '') : ''
+
+%p
+  - if has_user
+    %span= avatar_image_tag payload.user.avatar_url
+    = payload.user.name
+    = merge_request.state
+    merge request
+  - else
+    The merge request was #{merge_request.state}:
+
+  - if has_target
+    %a{href: "#{homepage}/merge_requests/#{merge_request.iid}"} #{merge_request.target.namespace}/#{merge_request.target.name}##{merge_request.iid}
+
+  %b= merge_request.title

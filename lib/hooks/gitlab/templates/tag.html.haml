@@ -1,0 +1,14 @@
+:ruby
+  tag_name = payload.ref.split('/', 3).last # refs/tags/:tag_name
+
+%p
+  %span= payload.user_name
+
+  #{tag_type(payload)} tag
+
+  - if tag_type(payload) == :created
+    %a{href: "#{payload.repository.homepage}/commits/#{tag_name}"}= tag_name
+  - else
+    = tag_name
+  at
+  %a{href: payload.repository.homepage}= repository_name(payload.repository)

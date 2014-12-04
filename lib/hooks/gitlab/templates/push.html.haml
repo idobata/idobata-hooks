@@ -1,0 +1,24 @@
+:ruby
+  branch = payload.ref.split('/', 3).last # refs/heads/:branch_name
+
+%p
+  %span= payload.user_name
+  pushed to
+
+  %a{href: "#{payload.repository.homepage}/tree/#{branch}"}= branch
+  at
+  %a{href: payload.repository.homepage}= repository_name(payload.repository)
+
+  = surround '(', ')' do
+    %a{href: "#{payload.repository.homepage}/compare/#{payload.before}...#{payload.after}"} compare
+
+- if payload.commits.present?
+  %ul
+    - payload.commits.each do |commit|
+      %li
+        - head, *tail = commit.message.lines
+
+        %a{href: commit.url}<
+          %span.commit-id= commit.id[0...7]
+        = head
+        = md tail.join

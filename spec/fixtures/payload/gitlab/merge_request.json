@@ -1,0 +1,50 @@
+{
+  "object_kind": "merge_request",
+  "user": {
+    "name": "Ryunosuke SATO",
+    "username": "tricknotes",
+    "avatar_url": "https://secure.gravatar.com/avatar/5c22169c1f836709eea59cebfcd6356a?s=40&d=identicon"
+  },
+  "object_attributes": {
+    "id": 37854,
+    "target_branch": "master",
+    "source_branch": "ping",
+    "source_project_id": 122940,
+    "author_id": 73183,
+    "assignee_id": null,
+    "title": "Ping",
+    "created_at": "2014-11-28 05:24:42 UTC",
+    "updated_at": "2014-11-28 05:24:42 UTC",
+    "milestone_id": null,
+    "state": "opened",
+    "merge_status": "unchecked",
+    "target_project_id": 122940,
+    "iid": 1,
+    "description": "",
+    "position": 0,
+    "source": {
+      "name": "test",
+      "ssh_url": "git@gitlab.com:tricknotes/test.git",
+      "http_url": "https://gitlab.com/tricknotes/test.git",
+      "namespace": "tricknotes",
+      "visibility_level": 0
+    },
+    "target": {
+      "name": "test",
+      "ssh_url": "git@gitlab.com:tricknotes/test.git",
+      "http_url": "https://gitlab.com/tricknotes/test.git",
+      "namespace": "tricknotes",
+      "visibility_level": 0
+    },
+    "last_commit": {
+      "id": "0f61f67e3b8d0f5af0af8201143dd3cb71eb0b7f",
+      "message": "ping! ping!\n",
+      "timestamp": "2014-11-27T07:35:33+00:00",
+      "url": "https://gitlab.com/tricknotes/test/commit/0f61f67e3b8d0f5af0af8201143dd3cb71eb0b7f",
+      "author": {
+        "name": "Ryunosuke SATO",
+        "email": "tricknotes.rs@gmail.com"
+      }
+    }
+  }
+}
