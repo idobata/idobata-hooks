@@ -123,7 +123,7 @@ describe Idobata::Hook::Bitbucket, type: :hook do
           <a href='https://bitbucket.org/tricknotes'>Ryunosuke SATO</a>
           commented on pull request
           <a href='https://bitbucket.org/ursm/hello/pull-request/20/_/diff#comment-1236863'>ursm/hello#20</a>
-          <p>+1 for me</p>
+          <div class='bitbucket-html'><p>+1 for me</p></div>
         HTML
       end
 
@@ -137,7 +137,7 @@ describe Idobata::Hook::Bitbucket, type: :hook do
           <a href='https://bitbucket.org/tricknotes'>Ryunosuke SATO</a>
           updated comment on pull request
           <a href='https://bitbucket.org/tricknotes/notification-test/pull-request/11/_/diff#comment-1316114'>tricknotes/notification-test#11</a>
-          <p>updated!</p>
+          <div class='bitbucket-html'><p>updated!</p></div>
         HTML
       end
 

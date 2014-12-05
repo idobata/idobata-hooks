@@ -9,4 +9,4 @@
 #{action} on pull request
 %a{href: comment_url}= pull_request_name_from_api_url(body.links.self.href)
 
-!= body.content.html
+.bitbucket-html!= body.content.html
