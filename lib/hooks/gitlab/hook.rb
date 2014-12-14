@@ -2,7 +2,7 @@ module Idobata::Hook
   class Gitlab < Base
     screen_name   'Gitlab'
     identifier    :gitlab
-    icon_url      'https://avatars2.githubusercontent.com/u/1086321?s=84'
+    icon_url      'https://github.com/gitlabhq.png'
     template_name { "#{event_type}.html.haml" }
 
     helper Helper
