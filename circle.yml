@@ -1,0 +1,7 @@
+machine:
+  ruby:
+    version: 2.1.5
+
+notify:
+  webhooks:
+    - url: https://idobata.io/hook/464c9912-c717-41fb-94d0-09bef5bfbab4
