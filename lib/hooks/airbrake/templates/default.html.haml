@@ -5,5 +5,6 @@
 
 %p
   %b= payload.error.error_message
-  from
-  %a{href: payload.error.last_notice.request_url}= payload.error.last_notice.request_url
+  - if payload.error.last_notice.request_url
+    from
+    %a{href: payload.error.last_notice.request_url}= payload.error.last_notice.request_url
