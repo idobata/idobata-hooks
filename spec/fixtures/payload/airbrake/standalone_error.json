@@ -1,0 +1,40 @@
+{
+  "error": {
+    "id": "1313464069162558766",
+    "error_message": "NameError: undefined local variable or method `hi' for main:Object",
+    "error_class": "NameError",
+    "file": "(irb)",
+    "line_number": 3,
+    "project": {
+      "id": 107206,
+      "name": "idobata-hooks"
+    },
+    "last_notice": {
+      "id": "1313465798557984066",
+      "request_url": null,
+      "backtrace": [
+        "(irb):3:in irb_binding",
+        "/home/hibariya/.rbenv/versions/2.1.5/lib/ruby/2.1.0/irb/workspace.rb:86:in eval",
+        "/home/hibariya/.rbenv/versions/2.1.5/lib/ruby/2.1.0/irb/workspace.rb:86:in evaluate",
+        "/home/hibariya/.rbenv/versions/2.1.5/lib/ruby/2.1.0/irb/context.rb:380:in evaluate",
+        "/home/hibariya/.rbenv/versions/2.1.5/lib/ruby/2.1.0/irb.rb:492:in block (2 levels) in eval_input",
+        "/home/hibariya/.rbenv/versions/2.1.5/lib/ruby/2.1.0/irb.rb:624:in signal_status",
+        "/home/hibariya/.rbenv/versions/2.1.5/lib/ruby/2.1.0/irb.rb:489:in block in eval_input",
+        "/home/hibariya/.rbenv/versions/2.1.5/lib/ruby/2.1.0/irb/ruby-lex.rb:247:in block (2 levels) in each_top_level_statement",
+        "/home/hibariya/.rbenv/versions/2.1.5/lib/ruby/2.1.0/irb/ruby-lex.rb:233:in loop",
+        "/home/hibariya/.rbenv/versions/2.1.5/lib/ruby/2.1.0/irb/ruby-lex.rb:233:in block in each_top_level_statement",
+        "/home/hibariya/.rbenv/versions/2.1.5/lib/ruby/2.1.0/irb/ruby-lex.rb:232:in catch",
+        "/home/hibariya/.rbenv/versions/2.1.5/lib/ruby/2.1.0/irb/ruby-lex.rb:232:in each_top_level_statement",
+        "/home/hibariya/.rbenv/versions/2.1.5/lib/ruby/2.1.0/irb.rb:488:in eval_input",
+        "/home/hibariya/.rbenv/versions/2.1.5/lib/ruby/2.1.0/irb.rb:397:in block in start",
+        "/home/hibariya/.rbenv/versions/2.1.5/lib/ruby/2.1.0/irb.rb:396:in catch",
+        "/home/hibariya/.rbenv/versions/2.1.5/lib/ruby/2.1.0/irb.rb:396:in start",
+        "/home/hibariya/.rbenv/versions/2.1.5/bin/irb:11:in <main>"
+      ]
+    },
+    "environment": "",
+    "first_occurred_at": "2014-12-18T05:38:38.53545Z",
+    "last_occurred_at": "2014-12-18T05:38:38.53545Z",
+    "times_occurred": 1
+  }
+}
