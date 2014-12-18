@@ -18,29 +18,17 @@ describe Idobata::Hook do
     end
   end
 
-  describe 'instructions.js.hbs.hamlbars' do
+  describe 'assets compiling' do
     Idobata::Hook.all.each do |hook|
       describe hook do
         subject { hook }
 
-        let(:path) { hook.hook_root.join('instructions.js.hbs.hamlbars').to_s }
+        let(:paths) { Dir.glob(hook.hook_root.join('**/*.{hamlbars,sass}')) }
 
         it 'should be compiled successfully' do
-          Tilt.new(path).render
-        end
-      end
-    end
-  end
-
-  describe 'style.css.sass' do
-    Idobata::Hook.all.each do |hook|
-      describe hook do
-        subject { hook }
-
-        let(:path) { hook.hook_root.join('style.css.sass').to_s }
-
-        it 'should be compiled successfully' do
-          Tilt.new(path).render if File.exist?(path)
+          paths.each do |path|
+            expect { Tilt.new(path).render }.to_not raise_error
+          end
         end
       end
     end
