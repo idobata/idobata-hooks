@@ -390,6 +390,20 @@ describe Idobata::Hook::Github, type: :hook do
         HTML
       end
 
+      describe 'repository event' do
+        let(:fixture)           { 'repository.json' }
+        let(:github_event_type) { 'repository' }
+
+        its([:source]) { should eq(<<-HTML.strip_heredoc) }
+          <p>
+            <span><img src="https://avatars.githubusercontent.com/u/7548?v=3" width="16" height="16" alt="" /></span>
+            <a href='https://github.com/ursm'>ursm</a>
+            created repository
+            <a href='https://github.com/idobata/flexing'>idobata/flexing</a>
+          </p>
+        HTML
+      end
+
       describe 'status event as pending' do
         let(:fixture)           { 'status_pending.json' }
         let(:github_event_type) { 'status' }
