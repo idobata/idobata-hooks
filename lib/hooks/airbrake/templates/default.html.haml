@@ -1,7 +1,7 @@
 %p
   %span.label.label-info= payload.error.project.name
   %span.label.label-info= payload.error.environment
-  %span.badge.badge-important= payload.error.times_occurred
+  %span.badge.progress-bar-danger= payload.error.times_occurred
 
 %p
   %b= payload.error.error_message

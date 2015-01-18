@@ -32,7 +32,7 @@ describe Idobata::Hook::Newrelic, type: :hook do
       its([:source]) { should == <<-HTML.strip_heredoc }
         <p>
           <b>Alert opened on Server_name</b>
-          <span class='label label-important'>Critical</span>
+          <span class='label label-danger'>Critical</span>
         </p>
         <p>
           Memory &gt; 13%

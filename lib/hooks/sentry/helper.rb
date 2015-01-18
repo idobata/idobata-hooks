@@ -4,13 +4,13 @@ module Idobata::Hook
       def label_class_from_level(level)
         case level
         when 'fatal', 'error'
-          'label-important'
+          'label-danger'
         when 'warning'
           'label-warning'
         when 'info', 'debug'
           'label-info'
         else
-          nil
+          'label-default'
         end
       end
     end

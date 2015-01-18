@@ -18,7 +18,7 @@ describe Idobata::Hook::Sentry, type: :hook do
           Project Project Name received an event
           <a href='https://app.getsentry.com/getsentry/project-slug/group/27379932/'>#27379932</a>
           :
-          <span class='label label-important'>fatal</span>
+          <span class='label label-danger'>fatal</span>
         </p>
       HTML
 
@@ -33,7 +33,7 @@ describe Idobata::Hook::Sentry, type: :hook do
           Project Project Name received an event
           <a href='https://app.getsentry.com/getsentry/project-slug/group/27379932/'>#27379932</a>
           :
-          <span class='label label-important'>error</span>
+          <span class='label label-danger'>error</span>
         </p>
       HTML
 
@@ -93,7 +93,7 @@ describe Idobata::Hook::Sentry, type: :hook do
           Project Project Name received an event
           <a href='https://app.getsentry.com/getsentry/project-slug/group/27379932/'>#27379932</a>
           :
-          <span class='label'>unknown</span>
+          <span class='label label-default'>unknown</span>
         </p>
       HTML
 

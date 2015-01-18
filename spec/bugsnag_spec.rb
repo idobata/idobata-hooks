@@ -29,7 +29,7 @@ describe Idobata::Hook::Bugsnag, type: :hook do
       let(:payload_type) { 'error' }
       its([:source]) { should eq(<<-HTML.strip_heredoc) }
         <p>
-          <span class='label label-important'>Error</span>
+          <span class='label label-danger'>Error</span>
           <a href='https://bugsnag.com/example/rails/errors/2345bcds?event_id=12345abc'>
             <b>RuntimeError</b> rake#test_exception
           </a>

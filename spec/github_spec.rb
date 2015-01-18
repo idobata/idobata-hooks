@@ -442,7 +442,7 @@ describe Idobata::Hook::Github, type: :hook do
             The Travis CI build failed: idobata/idobata-hooks
             (<a href='https://travis-ci.org/idobata/idobata-hooks/builds/36560867'>build</a>)
             :
-            <span class='label label-important'>
+            <span class='label label-danger'>
               Failure
             </span>
           </p>

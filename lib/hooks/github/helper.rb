@@ -90,9 +90,9 @@ module Idobata::Hook
         when 'success'
           'label-success'
         when 'failure'
-          'label-important'
+          'label-danger'
         else
-          nil
+          'label-default'
         end
       end
 
