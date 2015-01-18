@@ -31,12 +31,12 @@ describe Idobata::Hook::Github, type: :hook do
           </p>
           <ul>
             <li>
-              <a href='https://github.com/esminc/idobata/commit/dc98741098f3fc245055ff76571dc1a257ccfc35'><span class='commit-id'>dc98741</span></a>
+              <a href='https://github.com/esminc/idobata/commit/dc98741098f3fc245055ff76571dc1a257ccfc35'><tt>dc98741</tt></a>
               add validations to User#name
               
             </li>
             <li>
-              <a href='https://github.com/esminc/idobata/commit/9f5102f9c2129a14577fd8c17bb55526547a5642'><span class='commit-id'>9f5102f</span></a>
+              <a href='https://github.com/esminc/idobata/commit/9f5102f9c2129a14577fd8c17bb55526547a5642'><tt>9f5102f</tt></a>
               give over to html5_validations
               
             </li>
@@ -81,7 +81,7 @@ describe Idobata::Hook::Github, type: :hook do
           </p>
           <ul>
             <li>
-              <a href='https://github.com/tricknotes/notification-test/commit/24b298f847d9bd36246fd3da5b6ff1bce90f362e'><span class='commit-id'>24b298f</span></a>
+              <a href='https://github.com/tricknotes/notification-test/commit/24b298f847d9bd36246fd3da5b6ff1bce90f362e'><tt>24b298f</tt></a>
               commit comment with newlines
               <p>hi<br>
               :smile:<br>

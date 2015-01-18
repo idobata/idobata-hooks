@@ -25,12 +25,12 @@ describe Idobata::Hook::Gitlab, type: :hook do
         </p>
         <ul>
           <li>
-            <a href='http://example.com/diaspora/commits/b6568db1bc1dcd7f8b4d5a946b0b91f9dacd7327'><span class='commit-id'>b6568db</span></a>
+            <a href='http://example.com/diaspora/commits/b6568db1bc1dcd7f8b4d5a946b0b91f9dacd7327'><tt>b6568db</tt></a>
             Update Catalan translation to e38cb41.
             
           </li>
           <li>
-            <a href='http://example.com/diaspora/commits/da1560886d4f094c3e6c9ef40349f7d38b5d27d7'><span class='commit-id'>da15608</span></a>
+            <a href='http://example.com/diaspora/commits/da1560886d4f094c3e6c9ef40349f7d38b5d27d7'><tt>da15608</tt></a>
             fixed readme
             <h1>hi</h1>
             

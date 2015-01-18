@@ -14,7 +14,7 @@ describe Idobata::Hook::TravisCI, type: :hook do
     its([:source]) { should eq(<<-HTML.strip_heredoc) }
       <p>
         esminc/idobata<a href='https://magnum.travis-ci.com/esminc/idobata/builds/2663'>#124</a>
-        (travis-ci-integration - <span class="commit-id">25d6fc1</span>):
+        (travis-ci-integration - <tt>25d6fc1</tt>):
         <span class='label label-success'>Passed</span>
         (Finished in 86 seconds)
       </p>

@@ -22,7 +22,7 @@ describe Idobata::Hook::Bitbucket, type: :hook do
           <a href='https://bitbucket.org/ursm/hello/'>ursm/hello</a>
           <ul>
             <li>
-              <a href='https://bitbucket.org/ursm/hello/commits/b1e452d885d6'><span class='commit-id'>b1e452d</span></a>
+              <a href='https://bitbucket.org/ursm/hello/commits/b1e452d885d6'><tt>b1e452d</tt></a>
               hi
             </li>
           </ul>

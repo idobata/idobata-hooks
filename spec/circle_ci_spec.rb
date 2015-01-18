@@ -13,7 +13,7 @@ describe Idobata::Hook::CircleCI, type: :hook do
     its([:source]) { should eq(<<-HTML.strip_heredoc) }
       <p>
         circleci/mongofinil<a href='https://circleci.com/gh/circleci/mongofinil/22'>#22</a>
-        (master - <span class="commit-id">1d23162</span>):
+        (master - <tt>1d23162</tt>):
         <span class='label label-success'>Success</span>
         (Finished in 23 seconds)
       </p>

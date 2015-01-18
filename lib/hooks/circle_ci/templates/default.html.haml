@@ -12,7 +12,7 @@
   = precede "#{payload.username}/#{payload.reponame}" do
     %a{href: payload.build_url} ##{payload.build_num}
 
-  (#{payload.branch} - <span class="commit-id">#{payload.vcs_revision[0...7]}</span>):
+  (#{payload.branch} - <tt>#{payload.vcs_revision[0...7]}</tt>):
   %span.label(class=label_class)= payload.status.camelize
   (Finished in #{payload.build_time_millis / 1000} seconds)
 

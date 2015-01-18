@@ -10,5 +10,5 @@ pushed to
   - payload.commits.each do |commit|
     %li
       %a{href: repository_url + "commits/#{commit.node}"}<
-        %span.commit-id= commit.node[0...7]
+        %tt= commit.node[0...7]
       = commit.message

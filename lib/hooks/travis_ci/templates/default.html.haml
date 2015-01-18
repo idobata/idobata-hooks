@@ -12,7 +12,7 @@
   = precede "#{payload.repository.owner_name}/#{payload.repository.name}" do
     %a{href: payload.build_url} ##{payload.number}
 
-  (#{payload.branch} - <span class="commit-id">#{payload.commit[0...7]}</span>):
+  (#{payload.branch} - <tt>#{payload.commit[0...7]}</tt>):
   %span.label(class=label_class)= payload.status_message
   (Finished in #{payload.duration} seconds)
 

@@ -19,6 +19,6 @@
         - head, *tail = commit.message.lines
 
         %a{href: commit.url}<
-          %span.commit-id= commit.id[0...7]
+          %tt= commit.id[0...7]
         = head
         = md tail.join

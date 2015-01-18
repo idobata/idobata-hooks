@@ -23,7 +23,7 @@ describe Idobata::Hook::Heroku, type: :hook do
       <p>
         ursm@ursm.jp deployed a new version of
         <a href='http://idobata.herokuapp.com'>idobata</a>
-        (<span class='commit-id'>2907ff8</span>)
+        (<tt>2907ff8</tt>)
       </p>
     HTML
 
