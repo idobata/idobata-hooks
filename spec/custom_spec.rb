@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Idobata::Hook::Generic, type: :hook do
+describe Idobata::Hook::Custom, type: :hook do
   describe '#process_payload' do
     subject { hook.process_payload }
 
