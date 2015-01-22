@@ -38,6 +38,7 @@ describe Idobata::Hook::Custom, type: :hook do
 
       its([:source]) { should eq(source) }
       its([:format]) { should eq(:plain) }
+
       it {
         filenames = subject[:images].map {|image| image['filename'] }
         expect(filenames).to eq([image.original_filename])
@@ -48,13 +49,14 @@ describe Idobata::Hook::Custom, type: :hook do
       let(:params) { {source: source, image: [image, image]} }
 
       before do
-        pending "`Rack::Multipart.build_multipart` couldn't generate multipart value as Array."
+        pending 'ArgumentError: invalid byte sequence in UTF-8'
 
         post Rack::Multipart.build_multipart(params), 'Content-Type' => "multipart/form-data; boundary=#{Rack::Utils::Multipart::MULTIPART_BOUNDARY}"
       end
 
       its([:source]) { should eq(source) }
       its([:format]) { should eq(:plain) }
+
       it {
         filenames = subject[:images].map {|image| image['filename'] }
         expect(filenames).to eq([image.original_filename] * 2)
