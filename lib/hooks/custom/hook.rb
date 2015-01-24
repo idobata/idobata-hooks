@@ -1,7 +1,6 @@
 module Idobata::Hook
   class Custom < Base
     screen_name 'Custom Webhook'
-    identifier  :custom
     icon_url    gravatar('9fef32520aa08836d774873cb8b7df28')
 
     before_render do

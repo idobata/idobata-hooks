@@ -3,7 +3,6 @@ module Idobata::Hook
     UNSUPPORTED_EVENTS = Set.new(%w(project))
 
     screen_name   'Qiita:Team'
-    identifier    :qiita_team
     icon_url      gravatar('a42654d10bb5293ca1bfe6ab3ea049e5')
     template_name { "#{event_model_type}.html.haml" }
 

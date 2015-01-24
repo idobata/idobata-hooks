@@ -1,8 +1,0 @@
-%dl
-  %dt Usage
-  %dd
-    <code>POST</code> / <code>Pull Request POST</code> hooks are available.<br>
-    You can use one or both hooks.
-
-    %p
-      See <a href="https://confluence.atlassian.com/display/BITBUCKET/Manage+Bitbucket+hooks" target="_blank"><i class="fa fa-external-link"></i>Manage Bitbucket hooks | Bitbucket</a> for more details.

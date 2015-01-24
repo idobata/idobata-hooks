@@ -23,7 +23,7 @@ describe Idobata::Hook do
       describe hook do
         subject { hook }
 
-        let(:paths) { Dir.glob(hook.hook_root.join('**/*.{hamlbars,sass}')) }
+        let(:paths) { Dir.glob(hook.hook_root.join('{style.sass,help.html.haml}')) }
 
         it 'should be compiled successfully' do
           paths.each do |path|

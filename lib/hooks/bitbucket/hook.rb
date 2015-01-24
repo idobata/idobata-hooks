@@ -1,7 +1,6 @@
 module Idobata::Hook
   class Bitbucket < Base
     screen_name   'Bitbucket'
-    identifier    :bitbucket
     icon_url      hook_image_url('icon.png')
     form_json_key 'payload'
     template_name { "#{event_type}.html.haml" }

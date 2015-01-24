@@ -1,7 +1,6 @@
 module Idobata::Hook
   class PivotalTracker < Base
     screen_name   'Pivotal Tracker'
-    identifier    :pivotal_tracker
     icon_url      gravatar('cb76d5e8ca3eebb5b627f6194b14370c')
     template_name { "#{detect_api_version}.html.haml" }
 

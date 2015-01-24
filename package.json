@@ -1,0 +1,38 @@
+{
+  "name": "idobata-hooks",
+  "version": "1.0.0",
+  "description": "A collection of Idobata hooks",
+  "files": [
+    "index.js",
+    "app"
+  ],
+  "scripts": {
+    "preinstall": "rm -rf app && broccoli build app",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/idobata/idobata-hooks.git"
+  },
+  "keywords": [
+    "ember-addon",
+    "idobata"
+  ],
+  "author": "Keita Urashima",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/idobata/idobata-hooks/issues"
+  },
+  "homepage": "https://github.com/idobata/idobata-hooks",
+  "devDependencies": {
+    "broccoli-cli": "0.0.1",
+    "broccoli-rename-files": "0.0.2",
+    "broccoli-render-template": "0.0.3",
+    "broccoli-static-compiler": "^0.2.1",
+    "broccoli-template": "^0.1.1",
+    "hamljs": "^0.6.2"
+  },
+  "dependencies": {
+    "broccoli": "^0.13.3"
+  }
+}

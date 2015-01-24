@@ -14,13 +14,12 @@ First, you would create a new directory `my_hook` under `lib/hooks`.
 `my_hook` is your new hook name.
 
 The minimal requirements are:
-* **hook.rb**: `lib/hooks/my_hook/hook.rb`
+* **hook.rb**: `lib/hooks/my-hook/hook.rb`
 
   ``` ruby
   module Idobata::Hook
     class MyHook < Base
       screen_name 'My Hook'
-      identifier  :my_hook
       icon_url    'http://example.com/path/to/icon.png'
     end
   end
@@ -28,7 +27,6 @@ The minimal requirements are:
 
   * (required)
     * `screen_name`: The hook name. The is displayed as message sender.
-    * `identifier`: The internal identifier. This should not be duplicated as other identifier.
     * `icon_url`: The icon url. The icon linked by URL is displayed as message sender.
 
   * (optional)
@@ -36,7 +34,7 @@ The minimal requirements are:
     * [`form_json_key`](#treating-url-encoded-json)
     * [`forced_content_type`](#specifying-content-type-against-content-type-header)
 
-* **templates/default.html.haml**: `lib/hooks/my_hook/templates/default.html.haml`
+* **templates/default.html.haml**: `lib/hooks/my-hook/templates/default.html.haml`
 
   ``` haml
   hi from #{payload.message}.
@@ -45,7 +43,7 @@ The minimal requirements are:
   You can access request body via `payload` in template.
   `payload` is like a `struct` that is automatically parsed by `Content-Type`.
 
-* **instructions.js.hbs.hamlbars**: `lib/hooks/my_hook/instructions.js.hbs.hamlbars`
+* **help.html.haml**: `lib/hooks/my-hook/help.html.haml`
 
   ``` haml
   %dl
@@ -61,11 +59,10 @@ The minimal requirements are:
 You can customize template using `template_name` method.
 
 ``` ruby
-# lib/hooks/my_hook/hook.rb
+# lib/hooks/my-hook/hook.rb
 module Idobata::Hook
   class MyHook < Base
     screen_name   'My Hook'
-    identifier    :my_hook
     icon_url      'http://example.com/path/to/icon.png'
     template_name { custom_template_name }
 
@@ -95,11 +92,10 @@ payload={"message":"hi"}
 `form_json_key 'payload'` is required.
 
 ``` ruby
-# lib/hooks/my_hook/hook.rb
+# lib/hooks/my-hook/hook.rb
 module Idobata::Hook
   class MyHook < Base
     screen_name   'My Hook'
-    identifier    :my_hook
     icon_url      'http://example.com/path/to/icon.png'
     form_json_key 'payload'
   end
@@ -111,11 +107,10 @@ end
 You can use `forced_content_type` for the service that lie about content type.
 
 ``` ruby
-# lib/hooks/my_hook/hook.rb
+# lib/hooks/my-hook/hook.rb
 module Idobata::Hook
   class MyHook < Base
     screen_name         'My Hook'
-    identifier          :my_hook
     icon_url            'http://example.com/path/to/icon.png'
     forced_content_type :json
   end
@@ -131,11 +126,10 @@ The available values are:
 You can use `skip_processing!` at `before_render` callback to ignore posting message.
 
 ``` ruby
-# lib/hooks/my_hook/hook.rb
+# lib/hooks/my-hook/hook.rb
 module Idobata::Hook
   class MyHook < Base
     screen_name 'My Hook'
-    identifier  :my_hook
     icon_url    'http://example.com/path/to/icon.png'
 
     before_render do
@@ -168,12 +162,12 @@ When idobata-hooks receive a HTTP request, it posts a new message via generic ho
 ## hookを追加するには
 
 まずは新しいhookのためにディレクトリを作ります。
-hookの名前が`my_hook`である場合、`lib/hooks`の下に`my_hook`を作ります。
+hookの名前が`my_hook`である場合、`lib/hooks`の下に`my-hook`を作ります。
 
 このディレクトリ配下に必要なファイルは3つです:
 * `hook.rb`
 * `templates/default.html.haml`
-* `instructions.js.hbs.hamlbars`
+* `help.html.haml`
 
 それぞれのファイルについて説明します:arrow_down:
 
@@ -185,7 +179,6 @@ hookの名前が`my_hook`である場合、`lib/hooks`の下に`my_hook`を作�
   module Idobata::Hook
     class MyHook < Base
       screen_name 'My Hook'
-      identifier  :my_hook
       icon_url    'http://example.com/path/to/icon.png'
     end
   end
@@ -193,7 +186,6 @@ hookの名前が`my_hook`である場合、`lib/hooks`の下に`my_hook`を作�
 
   * (必須設定)
     * `screen_name`: hookの名前です。hookが作成したメッセージの発言者として表示されます
-    * `identifier`: 内部的にhookを特定するための識別子です。他のhookと重複してはいけません。
     * `icon_url`: hookのアイコンです。メッセージの発言者として表示されます。
 
   * (任意設定)
@@ -212,7 +204,7 @@ hookの名前が`my_hook`である場合、`lib/hooks`の下に`my_hook`を作�
   リクエストパラメータには`payload`メソッド経由でアクセスできます。
   `payload`は`Content-Type`に応じて自動的にパースされたStructっぽいものです。
 
-* `instructions.js.hbs.hamlbars`
+* `html.html.haml`
 
   hookの設定方法として表示されます。
 
@@ -228,11 +220,10 @@ hookの名前が`my_hook`である場合、`lib/hooks`の下に`my_hook`を作�
 リクエストの種類によってテンプレートを切り替えたい場合、`template_name`メソッドを使うことができます。
 
 ``` ruby
-# lib/hooks/my_hook/hook.rb
+# lib/hooks/my-hook/hook.rb
 module Idobata::Hook
   class MyHook < Base
     screen_name   'My Hook'
-    identifier    :my_hook
     icon_url      'http://example.com/path/to/icon.png'
     template_name { custom_template_name }
 
@@ -249,7 +240,7 @@ module Idobata::Hook
 end
 ```
 
-この例の場合、`lib/hooks/my_hook/templates/`の下に`alert.html.haml`と`default.html.haml`を作成する必要があります。
+この例の場合、`lib/hooks/my-hook/templates/`の下に`alert.html.haml`と`default.html.haml`を作成する必要があります。
 
 ### urlencodedされたJSONを扱う
 
@@ -264,11 +255,10 @@ payload={"message":"hi"}
 `form_json_key 'payload'`を指定します。
 
 ```ruby
-# lib/hooks/my_hook/hook.rb
+# lib/hooks/my-hook/hook.rb
 module Idobata::Hook
   class MyHook < Base
     screen_name   'My Hook'
-    identifier    :my_hook
     icon_url      'http://example.com/path/to/icon.png'
     form_json_key 'payload'
   end
@@ -280,11 +270,10 @@ end
 `Content-Type`を偽ってリクエストを送ってくるサービスに対応するには`forced_content_type`を設定します。
 
 ```ruby
-# lib/hooks/my_hook/hook.rb
+# lib/hooks/my-hook/hook.rb
 module Idobata::Hook
   class MyHook < Base
     screen_name         'My Hook'
-    identifier          :my_hook
     icon_url            'http://example.com/path/to/icon.png'
     forced_content_type :json
   end
@@ -302,11 +291,10 @@ end
 リクエストの種類によってメッセージの投稿を無視したい場合、`before_render`の中で`skip_processing!`メソッドを呼び出します。
 
 ``` ruby
-# lib/hooks/my_hook/hook.rb
+# lib/hooks/my-hook/hook.rb
 module Idobata::Hook
   class MyHook < Base
     screen_name 'My Hook'
-    identifier  :my_hook
     icon_url    'http://example.com/path/to/icon.png'
 
     before_render do

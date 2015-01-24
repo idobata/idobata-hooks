@@ -20,22 +20,22 @@ module Idobata::Hook
         end
       end
 
+      def identifier
+        name.underscore.split('/').last
+      end
+
       def gravatar(id)
         "https://secure.gravatar.com/avatar/#{id}?d=mm"
       end
 
-      def hook_name
-        to_s.demodulize.underscore
-      end
-
       def hook_image_url(filename)
-        image_url = File.join(*[Idobata::Hook.image_host, Idobata::Hook.image_root].compact)
+        prefix = File.join(*[Idobata::Hook.image_host, Idobata::Hook.image_root].compact)
 
-        File.join(image_url, hook_name, 'images', filename)
+        File.join(prefix, identifier, 'images', filename)
       end
 
       def hook_root
-        Idobata::Hook.root.join('hooks', hook_name)
+        Idobata::Hook.root.join('hooks', identifier.dasherize)
       end
 
       def template_name(&block)
@@ -48,8 +48,8 @@ module Idobata::Hook
 
       private
 
-      def inherited(base)
-        base.autoload :Helper, "hooks/#{base.hook_name}/helper"
+      def inherited(klass)
+        klass.autoload :Helper, "hooks/#{klass.identifier.dasherize}/helper"
 
         super
       end
@@ -65,7 +65,7 @@ module Idobata::Hook
       end
     end
 
-    define_config_accessor :screen_name, :identifier, :icon_url, :forced_content_type, :form_json_key
+    define_config_accessor :screen_name, :icon_url, :forced_content_type, :form_json_key
 
     helper Helper
 
@@ -103,7 +103,9 @@ module Idobata::Hook
     private
 
     def render(template_name, locals = {})
-      Tilt.new(build_template_path(template_name), escape_html: true).render(self, locals)
+      template_path = self.class.hook_root.join('templates', template_name)
+
+      Tilt.new(template_path.to_s, escape_html: true).render(self, locals)
     end
 
     def payload
@@ -154,10 +156,6 @@ module Idobata::Hook
 
     def add_description(description)
       self.description << description
-    end
-
-    def build_template_path(template_name)
-      Idobata::Hook.root.join('hooks', self.class.hook_name, 'templates', template_name).to_s
     end
 
     def hook_image_url(filename)

@@ -3,7 +3,6 @@ require_relative 'template_name_mapper'
 module Idobata::Hook
   class Trello < Base
     screen_name   'Trello'
-    identifier    :trello
     icon_url      'https://s3.amazonaws.com/trello/images/og/trello-icon.png'
     template_name { custom_template_name }
 
