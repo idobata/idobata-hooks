@@ -11,10 +11,8 @@ var templates = pickFiles('lib/hooks', {
 
 templates = renderTemplates(templates);
 
-templates = renameFiles(templates, {
+module.exports = renameFiles(templates, {
   transformFilename: function(filename, basename, extname) {
     return basename.replace('.html', '.hbs');
   }
 });
-
-module.exports = renderTemplates(templates);
