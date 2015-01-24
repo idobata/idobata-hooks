@@ -7,7 +7,7 @@
     "app"
   ],
   "scripts": {
-    "preinstall": "rm -rf app && broccoli build app",
+    "prepublish": "rm -rf app && broccoli build app",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -25,14 +25,12 @@
   },
   "homepage": "https://github.com/idobata/idobata-hooks",
   "devDependencies": {
+    "broccoli": "^0.13.3",
     "broccoli-cli": "0.0.1",
     "broccoli-rename-files": "0.0.2",
     "broccoli-render-template": "0.0.3",
     "broccoli-static-compiler": "^0.2.1",
     "broccoli-template": "^0.1.1",
     "hamljs": "^0.6.2"
-  },
-  "dependencies": {
-    "broccoli": "^0.13.3"
   }
 }

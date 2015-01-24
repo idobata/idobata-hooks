@@ -1,0 +1,9 @@
+<dl>
+<dt>Usage</dt>
+<dd>
+<p>You can post a message with <code>source</code> parameter like below:</p>
+<pre>$ curl --data-urlencode &quot;source=hello, world&quot;</pre>
+<p>You can also use HTML format:</p>
+<pre>$ curl --data-urlencode &quot;source=&lt;h1&gt;hi&lt;/h1&gt;&quot; -d format=html {{endpoint}}</pre>
+<p>Additionally, you can post image with <code>image</code> parameter:</p>
+<pre>$ curl --form image=@/path/to/image.png {{endpoint}}</pre></dd></dl>

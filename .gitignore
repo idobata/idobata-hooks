@@ -10,7 +10,6 @@
 .yardoc
 InstalledFiles
 _yardoc
-app/
 coverage
 doc/
 lib/bundler/man
