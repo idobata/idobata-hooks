@@ -2,5 +2,8 @@
 <dt>Setup</dt>
 <dd>
 <p>Edit your <code>.travis.yml</code> as follows:</p>
-<pre></pre>
+<pre>notifications:
+  webhooks:
+    - {{endpoint}}
+</pre>
 <p>See <a href='http://about.travis-ci.org/docs/user/notifications/#Webhook-notification' target='_blank'><i class='fa.fa-external-link'></i>Travis CI: Configuring Build Notifications</a> for more details.</p></dd></dl>

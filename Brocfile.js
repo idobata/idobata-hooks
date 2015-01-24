@@ -3,10 +3,6 @@ var pickFiles       = require('broccoli-static-compiler');
 var renderTemplates = require('broccoli-render-template');
 var renameFiles     = require('broccoli-rename-files');
 
-haml.filters.preserve = function(str) {
-  return str;
-};
-
 var templates = pickFiles('lib/hooks', {
   srcDir:  '/',
   files:   ['*/help.html.haml'],

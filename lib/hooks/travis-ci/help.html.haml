@@ -4,9 +4,9 @@
     %p Edit your <code>.travis.yml</code> as follows:
 
     %pre
-      :preserve
+      :plain
         notifications:
           webhooks:
-            - #{hb 'endpoint'}
+            - {{endpoint}}
 
     %p See <a href='http://about.travis-ci.org/docs/user/notifications/#Webhook-notification' target='_blank'><i class='fa.fa-external-link'></i>Travis CI: Configuring Build Notifications</a> for more details.
