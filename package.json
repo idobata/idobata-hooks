@@ -7,8 +7,7 @@
     "app"
   ],
   "scripts": {
-    "prepublish": "rm -rf app && broccoli build app",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prepublish": "rm -rf app && broccoli build app"
   },
   "repository": {
     "type": "git",
