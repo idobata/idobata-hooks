@@ -1,4 +1,3 @@
-var haml            = require('hamljs');
 var pickFiles       = require('broccoli-static-compiler');
 var renderTemplates = require('broccoli-render-template');
 var renameFiles     = require('broccoli-rename-files');
