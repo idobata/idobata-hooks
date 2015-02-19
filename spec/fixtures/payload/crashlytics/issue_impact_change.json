@@ -1,0 +1,16 @@
+{
+  "event": "issue_impact_change",
+  "payload_type": "issue",
+  "payload": {
+    "display_id": 123 ,
+    "title": "Issue Title" ,
+    "subtitle": "com.example.myapp.MyAppUtil.methodName",
+    "method": "methodName",
+    "synthesized_build": "1.0.3 (4)",
+    "impact_level": 2,
+    "crashes_count": 54,
+    "impacted_devices_count": 16,
+    "url": "http://crashlytics.com/full/url/to/issue",
+    "app": {"name": "MyApp", "bundle_identifier": "com.example.myapp", "platform":"android"}
+  }
+}

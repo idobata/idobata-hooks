@@ -1,0 +1,7 @@
+%p
+  %span.label{class: label_class_from_impact_level(payload.payload.impact_level)}
+    #{payload.payload.crashes_count} crashes, #{payload.payload.impacted_devices_count} devices
+  #{payload.payload.app.bundle_identifier} #{payload.payload.synthesized_build}
+%h4= payload.payload.title
+%h5= payload.payload.subtitle
+%p= payload.payload.url
