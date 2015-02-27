@@ -11,9 +11,10 @@ module Idobata::Hook
     private
 
     def custom_template_name
-      if payload['event'] == 'verification'
+      case payload.event
+      when 'verification'
         'verification.html.haml'
-      elsif payload['event'] == 'issue_impact_change'
+      when 'issue_impact_change'
         'default.html.haml'
       end
     end
