@@ -9,7 +9,7 @@ describe Idobata::Hook::Crashlytics, type: :hook do
     subject { hook.process_payload }
 
     context 'verification' do
-      let(:payload) { fixture_payload("crashlytics/verification.json") }
+      let(:payload) { fixture_payload('crashlytics/verification.json') }
 
       its([:source]) { should eq(<<-HTML.strip_heredoc) }
         <h4>Crashlytics WebHook has been registered!</h4>
@@ -17,7 +17,7 @@ describe Idobata::Hook::Crashlytics, type: :hook do
     end
 
     context 'issue_impact_change' do
-      let(:payload) { fixture_payload("crashlytics/issue_impact_change.json") }
+      let(:payload) { fixture_payload('crashlytics/issue_impact_change.json') }
 
       its([:source]) { should eq(<<-HTML.strip_heredoc) }
         <p>
