@@ -1,0 +1,27 @@
+{
+  "event": "alert",
+  "host": {
+    "id": "22D4...",
+    "name": "app01",
+    "url": "https://mackerel.io/orgs/.../hosts/...",
+    "type": "unknown",
+    "status": "working",
+    "memo": "",
+    "isRetired": false,
+    "roles": [
+      {
+        "fullname": "Service: role",
+        "serviceUrl": "https://mackerel.io/orgs/.../services/...",
+        "roleUrl": "https://mackerel.io/orgs/.../services/..."
+      }
+    ]
+  },
+  "alert": {
+    "url": "https://mackerel.io/orgs/.../alerts/2bj...",
+    "createdAt": 1409823378983,
+    "status": "critical",
+    "isOpen": true,
+    "trigger": "monitor",
+    "monitorName": "connectivity"
+  }
+}
