@@ -2,7 +2,7 @@ module Idobata::Hook
   class Crashlytics
     module Helper
       def label_class_from_impact_level(impact_level)
-        if impact_level >= 5
+        if impact_level && impact_level >= 5
           'label-important'
         elsif impact_level == 4
           'label-warning'
