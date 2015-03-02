@@ -1,0 +1,5 @@
+%p
+  %span.label{class: label_class_from_build_status(payload.alert.status)}= payload.alert.status.upcase
+  #{payload.alert.monitorName} at #{payload.host.name} (#{payload.host.status}) #{payload.host.roles.first.try(:fullname)}
+  = surround '(', ')' do
+    %a{href: payload.alert.url} detail
