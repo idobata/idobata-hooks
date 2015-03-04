@@ -1,10 +1,9 @@
 module Idobata::Hook
   class Mackerel < Base
-    screen_name 'Mackerel'
-    identifier  :mackerel
-    icon_url    'https://github.com/mackerelio.png'
+    screen_name   'Mackerel'
+    icon_url      'https://github.com/mackerelio.png'
     template_name { custom_template_name }
-    helper Helper
+    helper        Helper
 
     private
 
