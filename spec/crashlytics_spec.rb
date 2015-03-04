@@ -21,7 +21,7 @@ describe Idobata::Hook::Crashlytics, type: :hook do
 
       its([:source]) { should eq(<<-HTML.strip_heredoc) }
         <p>
-          <span class='label label-info'>
+          <span class='label label-success'>
             54 crashes, 16 devices
           </span>
           com.example.myapp 1.0.3 (4)

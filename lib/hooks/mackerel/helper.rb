@@ -6,11 +6,11 @@ module Idobata::Hook
         when 'ok'
           'label-success'
         when 'critical'
-          'label-important'
+          'label-danger'
         when 'warning'
           'label-warning'
         else
-          nil
+          'label-default'
         end
       end
     end

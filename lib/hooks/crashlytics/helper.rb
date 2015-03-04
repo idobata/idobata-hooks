@@ -3,15 +3,15 @@ module Idobata::Hook
     module Helper
       def label_class_from_impact_level(impact_level)
         if impact_level && impact_level >= 5
-          'label-important'
+          'label-danger'
         elsif impact_level == 4
           'label-warning'
         elsif impact_level == 3
-          'label-success'
-        elsif impact_level == 2
           'label-info'
+        elsif impact_level == 2
+          'label-success'
         else
-          'label-inverse'
+          'label-default'
         end
       end
     end

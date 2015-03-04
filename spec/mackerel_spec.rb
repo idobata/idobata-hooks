@@ -14,7 +14,7 @@ describe Idobata::Hook::Mackerel, type: :hook do
       let(:payload_type) { 'alert' }
       its([:source]) { should eq(<<-HTML.strip_heredoc) }
         <p>
-          <span class='label label-important'>CRITICAL</span>
+          <span class='label label-danger'>CRITICAL</span>
           connectivity at app01 (working) Service: role
           (<a href='https://mackerel.io/orgs/.../alerts/2bj...'>detail</a>)
         </p>
