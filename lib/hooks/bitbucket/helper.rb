@@ -1,3 +1,5 @@
+require 'pygments'
+
 module Idobata::Hook
   class Bitbucket
     module Helper

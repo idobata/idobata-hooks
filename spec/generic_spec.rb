@@ -48,14 +48,14 @@ describe Idobata::Hook::Generic, type: :hook do
       let(:params) { {source: source, image: [image, image]} }
 
       before do
+        pending "`Rack::Multipart.build_multipart` couldn't generate multipart value as Array."
+
         post Rack::Multipart.build_multipart(params), 'Content-Type' => "multipart/form-data; boundary=#{Rack::Utils::Multipart::MULTIPART_BOUNDARY}"
       end
 
       its([:source]) { should eq(source) }
       its([:format]) { should eq(:plain) }
       it {
-        pending "`Rack::Multipart.build_multipart` couldn't generate multipart value as Array."
-
         filenames = subject[:images].map {|image| image['filename'] }
         expect(filenames).to eq([image.original_filename] * 2)
       }
