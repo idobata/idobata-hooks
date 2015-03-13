@@ -23,11 +23,25 @@ describe Idobata::Hook do
       describe hook do
         subject { hook }
 
-        let(:paths) { Dir.glob(hook.hook_root.join('{style.sass,help.html.haml}')) }
+        describe 'style.sass' do
+          it 'should be compiled successfully' do
+            path = hook.hook_root.join('style.sass')
 
-        it 'should be compiled successfully' do
-          paths.each do |path|
-            expect { Tilt.new(path).render }.to_not raise_error
+            next unless path.exist?
+
+            expect {
+              Tilt.new(path.to_s).render
+            }.to_not raise_error
+          end
+        end
+
+        describe 'help.html.haml' do
+          it 'should be compiled successfully' do
+            path = hook.hook_root.join('help.html.haml')
+
+            expect {
+              Haml::Engine.new(path.read).render
+            }.to_not raise_error
           end
         end
       end

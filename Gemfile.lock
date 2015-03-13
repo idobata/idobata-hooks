@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    idobata-hooks (1.0.1)
+    idobata-hooks (2.0.0)
       actionpack (~> 4.2.0)
       activesupport (~> 4.2.0)
       gemoji
@@ -44,20 +44,14 @@ GEM
     diff-lcs (1.2.5)
     erubis (2.7.0)
     escape_utils (1.0.1)
-    execjs (2.3.0)
     gemoji (2.1.0)
-    github-linguist (4.4.2)
+    github-linguist (4.4.3)
       charlock_holmes (~> 0.7.3)
       escape_utils (~> 1.0.1)
       mime-types (>= 1.19)
       rugged (~> 0.22.0b4)
     github-markdown (0.6.8)
     haml (4.0.6)
-      tilt
-    hamlbars (2.1.1)
-      execjs (>= 1.2)
-      haml
-      sprockets (>= 2.0)
       tilt
     hashie (3.4.0)
     hike (1.2.3)
@@ -94,7 +88,7 @@ GEM
       activesupport (>= 4.2.0.beta, < 5.0)
       nokogiri (~> 1.6.0)
       rails-deprecated_sanitizer (>= 1.0.1)
-    rails-html-sanitizer (1.0.1)
+    rails-html-sanitizer (1.0.2)
       loofah (~> 2.0)
     rake (10.4.2)
     rspec (3.0.0)
@@ -112,7 +106,7 @@ GEM
     rspec-mocks (3.0.4)
       rspec-support (~> 3.0.0)
     rspec-support (3.0.4)
-    rugged (0.22.0b5)
+    rugged (0.22.1b1)
     sass (3.4.13)
     sinatra (1.4.5)
       rack (~> 1.4)
@@ -134,7 +128,7 @@ GEM
     tapp (1.5.0)
       thor
     thor (0.19.1)
-    thread_safe (0.3.4)
+    thread_safe (0.3.5)
     tilt (1.4.1)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
@@ -146,7 +140,6 @@ PLATFORMS
 DEPENDENCIES
   bundler (~> 1.6)
   github-linguist
-  hamlbars
   idobata-hooks!
   pry
   rake
