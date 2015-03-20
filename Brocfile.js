@@ -1,7 +1,13 @@
-var pickFiles       = require('broccoli-static-compiler');
-var renderTemplates = require('broccoli-render-template');
-var renameFiles     = require('broccoli-rename-files');
+var concat          = require('broccoli-concat');
 var mergeTrees      = require('broccoli-merge-trees');
+var pickFiles       = require('broccoli-static-compiler');
+var renameFiles     = require('broccoli-rename-files');
+var renderTemplates = require('broccoli-render-template');
+
+var styles = concat('lib/hooks', {
+  inputFiles: ['*/style.sass'],
+  outputFile: '/styles/_idobata-hooks.sass'
+});
 
 var templates = pickFiles('lib/hooks', {
   srcDir:  '/',
@@ -16,10 +22,4 @@ templates = renameFiles(templates, {
   }
 });
 
-var styles = pickFiles('lib/hooks', {
-  srcDir: '/',
-  files:  ['*/style.sass'],
-  destDir: 'styles/idobata-hooks'
-});
-
-module.exports = mergeTrees([templates, styles]);
+module.exports = mergeTrees([styles, templates]);
