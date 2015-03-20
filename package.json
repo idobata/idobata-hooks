@@ -26,6 +26,7 @@
   "devDependencies": {
     "broccoli": "^0.13.3",
     "broccoli-cli": "0.0.1",
+    "broccoli-merge-trees": "^0.2.1",
     "broccoli-rename-files": "0.0.2",
     "broccoli-render-template": "0.0.3",
     "broccoli-static-compiler": "^0.2.1",
