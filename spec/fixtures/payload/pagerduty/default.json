@@ -1,0 +1,58 @@
+{
+  "messages": [
+    {
+      "id": "xxxxx",
+      "created_on": "2015-06-15T14:57:32Z",
+      "type": "incident.trigger",
+      "data": {
+        "incident": {
+          "id": "xxxxx",
+          "incident_number": 1,
+          "created_on": "2015-06-15T14:57:32Z",
+          "status": "triggered",
+          "html_url": "https://subdomain.pagerduty.com/incidents/xxxxx",
+          "incident_key": "xxxxx",
+          "service": {
+            "deleted_at": null,
+            "html_url": "https://subdomain.pagerduty.com/services/xxxxx",
+            "id": "xxxxx",
+            "name": "Service"
+          },
+          "assigned_to": [
+            {
+              "at": "2015-06-15T14:57:32Z",
+              "object": {
+                "email": "xxxxx@example.com",
+                "html_url": "https://subdomain.pagerduty.com/users/xxxxx",
+                "id": "xxxxx",
+                "name": "User",
+                "type": "user"
+              }
+            }
+          ],
+          "assigned_to_user": {
+            "email": "xxxxx@example.com",
+            "html_url": "https://spicelife.pagerduty.com/users/xxxxx",
+            "id": "xxxxx",
+            "name": "User"
+          },
+          "trigger_summary_data": {
+            "subject": "Description"
+          },
+          "trigger_details_html_url": "https://subdomain.pagerduty.com/incidents/xxxxx/log_entries/xxxxx",
+          "last_status_change_on": "2015-06-15T14:57:32Z",
+          "last_status_change_by": null,
+
+          "escalation_policy": {
+            "deleted_at": null,
+            "id": "xxxxx",
+            "name": "Escalation Policy"
+          },
+          "number_of_escalations": 0,
+          "pending_actions": [],
+          "trigger_type": "web_trigger"
+        }
+      }
+    }
+  ]
+}
