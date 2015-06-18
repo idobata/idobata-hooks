@@ -3,5 +3,5 @@
     %span{class: "label label-#{label_type(message.data.incident.status)}"}= message.data.incident.status
     %b #{message.data.incident.service.name}:
     = message.data.incident.trigger_summary_data.subject
-    = surround "(", ")" do
+    = surround '(', ')' do
       %a{href: message.data.incident.html_url} detail
