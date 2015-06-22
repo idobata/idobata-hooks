@@ -1,0 +1,6 @@
+%p
+  = user_with_icon(payload.user)
+  created
+  = link_to_post(payload.team, payload.post)
+
+%blockquote= payload.post.message
