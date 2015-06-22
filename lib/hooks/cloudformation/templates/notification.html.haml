@@ -1,0 +1,9 @@
+%p
+  %span{class: "label label-#{label_type(message['ResourceStatus'])}"}= message['ResourceStatus']
+  %b #{message['StackName']}:
+  = message['LogicalResourceId']
+  = surround '(', ')' do
+    = message['ResourceType']
+- unless message['ResourceStatusReason'].empty?
+  %p
+    = message['ResourceStatusReason']
