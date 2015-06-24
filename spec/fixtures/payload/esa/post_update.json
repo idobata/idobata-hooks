@@ -1,0 +1,35 @@
+{
+    "kind": "post_update",
+    "team": {
+        "name": "esa"
+    },
+    "post": {
+        "name": "たいとる",
+        "body_md": "ほんぶん",
+        "body_html": "<p>ほんぶん</p>\n",
+        "message": "Update post.",
+        "wip": false,
+        "number": 1253,
+        "url": "https://example.esa.io/posts/1253",
+        "diff_url": "https://example.esa.io/posts/1253/revisions/3"
+    },
+    "user": {
+        "icon": {
+            "url": "http://img.esa.io/uploads/production/users/1/icon/402685a258cf2a33c1d6c13a89adec92.png",
+            "thumb_s": {
+                "url": "http://img.esa.io/uploads/production/users/1/icon/thumb_s_402685a258cf2a33c1d6c13a89adec92.png"
+            },
+            "thumb_ms": {
+                "url": "http://img.esa.io/uploads/production/users/1/icon/thumb_ms_402685a258cf2a33c1d6c13a89adec92.png"
+            },
+            "thumb_m": {
+                "url": "http://img.esa.io/uploads/production/users/1/icon/thumb_m_402685a258cf2a33c1d6c13a89adec92.png"
+            },
+            "thumb_l": {
+                "url": "http://img.esa.io/uploads/production/users/1/icon/thumb_l_402685a258cf2a33c1d6c13a89adec92.png"
+            }
+        },
+        "name": "Atsuo Fukaya",
+        "screen_name": "fukayatsu"
+    }
+}

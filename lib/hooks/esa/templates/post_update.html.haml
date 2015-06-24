@@ -1,0 +1,6 @@
+%p
+  = user_with_icon(payload.user)
+  updated
+  = link_to_post(payload.team, payload.post, with_diff: true)
+
+%blockquote= payload.post.message

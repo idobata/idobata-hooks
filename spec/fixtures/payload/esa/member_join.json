@@ -1,0 +1,25 @@
+{
+    "kind": "member_join",
+    "team": {
+        "name": "esa"
+    },
+    "user": {
+        "icon": {
+            "url": "http://img.esa.io/uploads/production/users/1/icon/402685a258cf2a33c1d6c13a89adec92.png",
+            "thumb_s": {
+                "url": "http://img.esa.io/uploads/production/users/1/icon/thumb_s_402685a258cf2a33c1d6c13a89adec92.png"
+            },
+            "thumb_ms": {
+                "url": "http://img.esa.io/uploads/production/users/1/icon/thumb_ms_402685a258cf2a33c1d6c13a89adec92.png"
+            },
+            "thumb_m": {
+                "url": "http://img.esa.io/uploads/production/users/1/icon/thumb_m_402685a258cf2a33c1d6c13a89adec92.png"
+            },
+            "thumb_l": {
+                "url": "http://img.esa.io/uploads/production/users/1/icon/thumb_l_402685a258cf2a33c1d6c13a89adec92.png"
+            }
+        },
+        "name": "Atsuo Fukaya",
+        "screen_name": "fukayatsu"
+    }
+}
