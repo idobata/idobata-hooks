@@ -127,6 +127,15 @@ describe Idobata::Hook::QiitaTeam, type: :hook do
       its([:format]) { should eq(:html) }
     end
 
+    describe 'ping event' do
+      let(:fixture) { 'ping.json' }
+      let(:qiita_event_model_type) { 'ping' }
+
+      its([:source]) { should eq(<<-HTML.strip_heredoc) }
+        <p>Ping from Qiita:Team received. Your hook seems to be successfully configured.</p>
+      HTML
+    end
+
     describe 'project created event' do
       subject { -> { hook.process_payload } }
 
