@@ -111,5 +111,13 @@ describe Idobata::Hook::Gitlab, type: :hook do
        </p>
       HTML
     end
+
+    describe 'project create event' do
+      let(:fixture) { 'project_create.json' }
+
+      its([:source]) { should eq(<<-HTML.strip_heredoc) }
+        The new project <b>alice/hoi</b> is created.
+      HTML
+    end
   end
 end

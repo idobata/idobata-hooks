@@ -12,6 +12,7 @@ module Idobata::Hook
       return 'push'              if payload.has_key?('commits')
       return 'tag'               if payload.has_key?('ref')
       return payload.object_kind if payload.has_key?('object_kind')
+      return payload.event_name  if payload.has_key?('event_name')
 
       raise "Unknown Gitlab event: #{payload.to_json}"
     end
