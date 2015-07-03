@@ -1,0 +1,12 @@
+{
+  "Type": "SubscriptionConfirmation",
+  "MessageId": "xxxxx",
+  "Token": "xxxxx",
+  "TopicArn": "arn:aws:sns:us-east-1:xxxxx:topic",
+  "Message": "You have chosen to subscribe to the topic arn:aws:sns:us-east-1:xxxxx:topic.\nTo confirm the subscription, visit the SubscribeURL included in this message.",
+  "SubscribeURL": "https://sns.us-east-1.amazonaws.com/?Action=ConfirmSubscription&TopicArn=arn:aws:sns:us-east-1:xxxxx:topic&Token=xxxxx",
+  "Timestamp": "2015-06-19T19:29:05.751Z",
+  "SignatureVersion": "1",
+  "Signature" : "xxxxx",
+  "SigningCertURL" : "https://sns.us-east-1.amazonaws.com/SimpleNotificationService-xxxxx.pem"
+}

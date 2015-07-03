@@ -1,0 +1,7 @@
+%p
+  = succeed '.' do
+    You have chosen to subscribe to the topic
+    %b= payload.TopicArn
+  = succeed '.' do
+    To confirm the subscription, visit the
+    %a{href: payload.SubscribeURL} SubscribeURL

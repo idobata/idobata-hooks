@@ -1,0 +1,12 @@
+{
+  "Type": "Notification",
+  "MessageId": "xxxxx",
+  "TopicArn": "arn:aws:sns:us-east-1:xxxxx:xxxxx",
+  "Subject": "AWS CloudFormation Notification",
+  "Message": "StackId='arn:aws:cloudformation:us-east-1:xxxxx:stack/stack/xxxxx'\nTimestamp='2015-06-19T19:33:19.133Z'\nEventId='xxxxx'\nLogicalResourceId='VPC'\nNamespace='xxxxx'\nPhysicalResourceId='vpc-xxxxx'\nResourceProperties='{\"CidrBlock\":\"10.0.0.0/16\"}\n'\nResourceStatus='CREATE_IN_PROGRESS'\nResourceStatusReason='Resource creation Initiated'\nResourceType='AWS::EC2::VPC'\nStackName='stack'\n",
+  "Timestamp": "2015-06-19T19:33:19.210Z",
+  "SignatureVersion": "1",
+  "Signature": "xxxxx",
+  "SigningCertURL": "https://sns.us-east-1.amazonaws.com/SimpleNotificationService-xxxxx.pem",
+  "UnsubscribeURL": "https://sns.us-east-1.amazonaws.com/?Action=Unsubscribe&SubscriptionArn=arn:aws:sns:ap-northeast-1:xxxxx:xxxxx:xxxxx"
+}
