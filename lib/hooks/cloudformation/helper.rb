@@ -3,7 +3,7 @@ module Idobata::Hook
     module Helper
       def message
         payload['Message'].gsub(/\n(?=')/, '').split("\n").map{ |s|
-          s.match(/\A(.+)='(.+)'\z/).to_a.drop(1)
+          s.match(/\A(.+)='(.*)'\z/).to_a.drop(1)
         }.to_h
       end
 

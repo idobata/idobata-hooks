@@ -8,7 +8,7 @@ describe Idobata::Hook::Cloudformation, type: :hook do
 
     subject { hook.process_payload }
 
-    context 'subscription_confirmation' do
+    describe 'subscription_confirmation' do
       let(:payload) { fixture_payload('cloudformation/subscription_confirmation.json') }
 
       its([:source]) { should eq <<-HTML.strip_heredoc }
@@ -22,21 +22,37 @@ describe Idobata::Hook::Cloudformation, type: :hook do
       its([:format]) { should eq :html }
     end
 
-    context 'notification' do
-      let(:payload) { fixture_payload('cloudformation/notification.json') }
+    describe 'notification' do
+      context 'resource status reason is included' do
+        let(:payload) { fixture_payload('cloudformation/notification_including_reason.json') }
 
-      its([:source]) { should eq <<-HTML.strip_heredoc }
-        <p>
-          <span class='label label-warning'>CREATE_IN_PROGRESS</span>
-          <b>stack:</b>
-          VPC
-          (AWS::EC2::VPC)
-        </p>
-        <p>
-          Resource creation Initiated
-        </p>
-      HTML
-      its([:format]) { should eq :html }
+        its([:source]) { should eq <<-HTML.strip_heredoc }
+          <p>
+            <span class='label label-warning'>CREATE_IN_PROGRESS</span>
+            <b>stack:</b>
+            VPC
+            (AWS::EC2::VPC)
+          </p>
+          <p>
+            Resource creation Initiated
+          </p>
+        HTML
+        its([:format]) { should eq :html }
+      end
+
+      context %q{resource status reason isn't included} do
+        let(:payload) { fixture_payload('cloudformation/notification.json') }
+
+        its([:source]) { should eq <<-HTML.strip_heredoc }
+          <p>
+            <span class='label label-success'>CREATE_COMPLETE</span>
+            <b>stack:</b>
+            VPC
+            (AWS::EC2::VPC)
+          </p>
+        HTML
+        its([:format]) { should eq :html }
+      end
     end
   end
 end
