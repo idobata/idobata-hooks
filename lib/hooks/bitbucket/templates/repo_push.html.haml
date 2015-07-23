@@ -1,0 +1,10 @@
+%a{href: payload.actor.links.html.href}= payload.actor.username
+pushed to
+%a{href: payload.repository.links.html.href}= payload.repository.full_name
+
+%ul
+  - payload.push.changes.select {|c| c.new.target.type == 'commit' }.each do |commit|
+    %li
+      %a{href: commit.links.html.href}<
+        %tt= commit.new.target['hash'][0..6]
+      = commit.new.target.message

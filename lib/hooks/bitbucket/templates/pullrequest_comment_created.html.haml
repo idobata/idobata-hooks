@@ -1,1 +1,13 @@
-= render '_pull_request_comment.html.haml', action: 'commented', body: payload.pullrequest_comment_created
+:ruby
+  comment = payload.comment
+  actor   = payload.actor
+
+%span
+  = avatar_image_tag(actor.links.avatar.href)
+
+%a{href: actor.links.html.href}= actor.display_name
+
+commented on pull request
+%a{href: comment.links.html.href} #{payload.repository.full_name}##{payload.pullrequest.id}
+
+.bitbucket-html!= comment.content.html
