@@ -49,7 +49,7 @@ module Idobata::Hook
       private
 
       def inherited(klass)
-        klass.autoload :Helper, "hooks/#{klass.identifier.dasherize}/helper"
+        klass.autoload :Helper, "hooks/#{klass.identifier.dasherize}/helper" if klass.name
 
         super
       end

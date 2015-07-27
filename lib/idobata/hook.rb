@@ -35,7 +35,7 @@ module Idobata
       def all
         load!
 
-        Base.subclasses
+        Base.subclasses.select(&:name)
       end
 
       def find(identifier)
