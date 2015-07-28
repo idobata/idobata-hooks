@@ -35,7 +35,7 @@ module Idobata
       def all
         load!
 
-        Base.subclasses.select(&:name)
+        Base.subclasses.select(&:proper_hook?)
       end
 
       def find(identifier)
