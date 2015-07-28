@@ -1,40 +1,223 @@
 {
-  "pullrequest_comment_created": {
-    "links": {
-      "self": {
-        "href": "https://api.bitbucket.org/2.0/repositories/ursm/hello/pullrequests/20/comments/1236863"
+  "pullrequest": {
+    "destination": {
+      "commit": {
+        "hash": "937ad90ec4ad",
+        "links": {
+          "self": {
+            "href": "https://api.bitbucket.org/2.0/repositories/hibariya/test/commit/937ad90ec4ad"
+          }
+        }
       },
-      "code": {
-        "href": "https://api.bitbucket.org/2.0/repositories/ursm/hello/diff/ursm/hello:79c0510941f3..a81ff1622a46?path=README.md"
+      "repository": {
+        "type": "repository",
+        "full_name": "hibariya/test",
+        "links": {
+          "avatar": {
+            "href": "https://bitbucket.org/hibariya/test/avatar/16/"
+          },
+          "html": {
+            "href": "https://bitbucket.org/hibariya/test"
+          },
+          "self": {
+            "href": "https://api.bitbucket.org/2.0/repositories/hibariya/test"
+          }
+        },
+        "uuid": "{2796f0fa-602d-4c73-9dd3-4c2a25ac877a}",
+        "name": "test"
       },
-      "html": {
-        "href": "https://api.bitbucket.org/ursm/hello/pull-request/20/_/diff#comment-1236863"
+      "branch": {
+        "name": "master"
       }
     },
-    "content": {
-      "raw": "+1 for me",
-      "markup": "markdown",
-      "html": "<p>+1 for me</p>"
-    },
-    "created_on": "2014-02-14T06:54:14.357822+00:00",
-    "user": {
-      "username": "tricknotes",
-      "display_name": "Ryunosuke SATO",
-      "links": {
-        "self": {
-          "href": "https://api.bitbucket.org/2.0/users/tricknotes"
+    "state": "OPEN",
+    "closed_by": null,
+    "merge_commit": null,
+    "id": 1,
+    "title": "This is ursm",
+    "type": "pullrequest",
+    "source": {
+      "commit": {
+        "hash": "f182dbbacee5",
+        "links": {
+          "self": {
+            "href": "https://api.bitbucket.org/2.0/repositories/ursm/test/commit/f182dbbacee5"
+          }
+        }
+      },
+      "repository": {
+        "type": "repository",
+        "full_name": "ursm/test",
+        "links": {
+          "avatar": {
+            "href": "https://bitbucket.org/ursm/test/avatar/16/"
+          },
+          "html": {
+            "href": "https://bitbucket.org/ursm/test"
+          },
+          "self": {
+            "href": "https://api.bitbucket.org/2.0/repositories/ursm/test"
+          }
         },
-        "avatar": {
-          "href": "https://secure.gravatar.com/avatar/dc03a27ae31ba428c560c00c9128cd75?d=https%3A%2F%2Fd3oaxc4q5k2d6q.cloudfront.net%2Fm%2Fd7db0fdaad19%2Fimg%2Fdefault_avatar%2F32%2Fuser_blue.png&s=32"
+        "uuid": "{477e5835-cbae-4435-99e5-06771228fb72}",
+        "name": "test"
+      },
+      "branch": {
+        "name": "master"
+      }
+    },
+    "reviewers": [],
+    "participants": [
+      {
+        "approved": false,
+        "role": "PARTICIPANT",
+        "user": {
+          "display_name": "hibariya",
+          "uuid": "{28a17576-0bc2-40ff-994e-a3a6aac4ac42}",
+          "links": {
+            "avatar": {
+              "href": "https://bitbucket.org/account/hibariya/avatar/32/"
+            },
+            "html": {
+              "href": "https://bitbucket.org/hibariya"
+            },
+            "self": {
+              "href": "https://api.bitbucket.org/2.0/users/hibariya"
+            }
+          },
+          "username": "hibariya",
+          "type": "user"
         }
       }
+    ],
+    "close_source_branch": false,
+    "reason": "",
+    "created_on": "2015-07-23T10:20:34.989861+00:00",
+    "updated_on": "2015-07-23T10:24:57.690632+00:00",
+    "links": {
+      "html": {
+        "href": "https://bitbucket.org/hibariya/test/pull-request/1"
+      },
+      "self": {
+        "href": "https://api.bitbucket.org/2.0/repositories/hibariya/test/pullrequests/1"
+      }
     },
-    "updated_on": "2014-02-14T06:54:14.361369+00:00",
-    "inline": {
-      "to": 3,
-      "from": null,
-      "path": "README.md"
+    "description": "hi",
+    "author": {
+      "display_name": "Keita Urashima",
+      "uuid": "{fa2a9b44-4f63-4684-a44b-4f0481c2b347}",
+      "links": {
+        "avatar": {
+          "href": "https://bitbucket.org/account/ursm/avatar/32/"
+        },
+        "html": {
+          "href": "https://bitbucket.org/ursm"
+        },
+        "self": {
+          "href": "https://api.bitbucket.org/2.0/users/ursm"
+        }
+      },
+      "username": "ursm",
+      "type": "user"
+    }
+  },
+  "actor": {
+    "display_name": "hibariya",
+    "uuid": "{28a17576-0bc2-40ff-994e-a3a6aac4ac42}",
+    "links": {
+      "avatar": {
+        "href": "https://bitbucket.org/account/hibariya/avatar/32/"
+      },
+      "html": {
+        "href": "https://bitbucket.org/hibariya"
+      },
+      "self": {
+        "href": "https://api.bitbucket.org/2.0/users/hibariya"
+      }
     },
-    "id": 1236863
+    "username": "hibariya",
+    "type": "user"
+  },
+  "repository": {
+    "uuid": "{2796f0fa-602d-4c73-9dd3-4c2a25ac877a}",
+    "owner": {
+      "display_name": "hibariya",
+      "uuid": "{28a17576-0bc2-40ff-994e-a3a6aac4ac42}",
+      "links": {
+        "avatar": {
+          "href": "https://bitbucket.org/account/hibariya/avatar/32/"
+        },
+        "html": {
+          "href": "https://bitbucket.org/hibariya"
+        },
+        "self": {
+          "href": "https://api.bitbucket.org/2.0/users/hibariya"
+        }
+      },
+      "username": "hibariya",
+      "type": "user"
+    },
+    "full_name": "hibariya/test",
+    "type": "repository",
+    "name": "test",
+    "links": {
+      "avatar": {
+        "href": "https://bitbucket.org/hibariya/test/avatar/16/"
+      },
+      "html": {
+        "href": "https://bitbucket.org/hibariya/test"
+      },
+      "self": {
+        "href": "https://api.bitbucket.org/2.0/repositories/hibariya/test"
+      }
+    }
+  },
+  "comment": {
+    "pullrequest": {
+      "title": "This is ursm",
+      "type": "pullrequest",
+      "links": {
+        "html": {
+          "href": "https://bitbucket.org/hibariya/test/pull-request/1"
+        },
+        "self": {
+          "href": "https://api.bitbucket.org/2.0/repositories/hibariya/test/pullrequests/1"
+        }
+      },
+      "id": 1
+    },
+    "user": {
+      "display_name": "hibariya",
+      "uuid": "{28a17576-0bc2-40ff-994e-a3a6aac4ac42}",
+      "links": {
+        "avatar": {
+          "href": "https://bitbucket.org/account/hibariya/avatar/32/"
+        },
+        "html": {
+          "href": "https://bitbucket.org/hibariya"
+        },
+        "self": {
+          "href": "https://api.bitbucket.org/2.0/users/hibariya"
+        }
+      },
+      "username": "hibariya",
+      "type": "user"
+    },
+    "id": 8475483,
+    "links": {
+      "html": {
+        "href": "https://bitbucket.org/hibariya/test/pull-request/1/_/diff#comment-8475483"
+      },
+      "self": {
+        "href": "https://api.bitbucket.org/2.0/repositories/hibariya/test/pullrequests/1/comments/8475483"
+      }
+    },
+    "updated_on": "2015-07-23T10:24:57.685719+00:00",
+    "content": {
+      "html": "<p>That is ursm!</p>",
+      "raw": "That is ursm!",
+      "markup": "markdown"
+    },
+    "created_on": "2015-07-23T10:24:57.682564+00:00"
   }
 }

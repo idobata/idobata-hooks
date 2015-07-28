@@ -4,26 +4,24 @@ describe Idobata::Hook::Bitbucket, type: :hook do
   describe '#process_payload' do
     subject { hook.process_payload }
 
-    let(:payload) { fixture_payload("bitbucket/#{event_type}.json") }
+    let(:payload) { fixture_payload("bitbucket/#{event_type.sub(/:/, '_')}.json") }
+
+    before do
+      post payload, 'Content-Type' => 'application/json', 'X-Event-Key' => event_type
+    end
 
     describe 'POST hook' do
-      let(:params) { {payload: payload} }
-
-      before do
-        post params.to_param, 'Content-Type' => 'application/x-www-form-urlencoded'
-      end
-
       describe 'push event' do
-        let(:event_type) { 'push' }
+        let(:event_type) { 'repo:push' }
 
         its([:source]) { should == <<-HTML.strip_heredoc }
-          <a href='https://bitbucket.org/tricknotes'>tricknotes</a>
+          <a href='https://bitbucket.org/hibariya'>hibariya</a>
           pushed to
-          <a href='https://bitbucket.org/ursm/hello/'>ursm/hello</a>
+          <a href='https://bitbucket.org/hibariya/test'>hibariya/test</a>
           <ul>
             <li>
-              <a href='https://bitbucket.org/ursm/hello/commits/b1e452d885d6'><tt>b1e452d</tt></a>
-              hi
+              <a href='https://bitbucket.org/hibariya/test/branches/compare/725b0f6ffbc616ddce92602fa3ad88d9e61a81db..636f8eb6548e819f6ea7b0e3bf59e43b03ec2709'><tt>725b0f6</tt></a>
+              Improve README
             </li>
           </ul>
         HTML
@@ -31,126 +29,78 @@ describe Idobata::Hook::Bitbucket, type: :hook do
     end
 
     describe 'Pull Request POST hook' do
-      before do
-        post payload, 'Content-Type' => 'application/json'
-      end
 
-      describe 'pullrequest_created event' do
-        let(:event_type) { 'pullrequest_created' }
+      describe 'pullrequest:created event' do
+        let(:event_type) { 'pullrequest:created' }
 
         its([:source]) { should == <<-HTML.strip_heredoc }
           <p>
             <span>
-              <img src="https://secure.gravatar.com/avatar/dc03a27ae31ba428c560c00c9128cd75?d=https%3A%2F%2Fd3oaxc4q5k2d6q.cloudfront.net%2Fm%2F9d3d19e361c2%2Fimg%2Fdefault_avatar%2F32%2Fuser_blue.png&amp;s=32" width="16" height="16" alt="" />
+              <img src="https://bitbucket.org/account/ursm/avatar/32/" width="16" height="16" alt="" />
             </span>
-            <a href='https://bitbucket.org/tricknotes'>
-              Ryunosuke SATO
+            <a href='https://bitbucket.org/ursm'>
+              Keita Urashima
             </a>
             created pull request to
-            <a href='https://bitbucket.org/ursm/hello/pull-request/13'>
-              ursm/hello#13
+            <a href='https://bitbucket.org/hibariya/test/pull-request/1'>
+              hibariya/test#1
             </a>
-            <b>ping!</b>
+            <b>This is ursm</b>
           </p>
-          <h1>This is a pull request</h1>
-
-          <ul>
-          <li>hi</li>
-          <li>hoi</li>
-          <li>yo</li>
-          </ul>
+          <p>hi</p>
         HTML
       end
 
-      describe 'pullrequest_merged event' do
-        let(:event_type) { 'pullrequest_merged' }
+      describe 'pullrequest:fulfilled event' do
+        let(:event_type) { 'pullrequest:fulfilled' }
 
         its([:source]) { should == <<-HTML.strip_heredoc }
           <p>
             <span>
-              <img src="https://secure.gravatar.com/avatar/dc03a27ae31ba428c560c00c9128cd75?d=https%3A%2F%2Fd3oaxc4q5k2d6q.cloudfront.net%2Fm%2F9d3d19e361c2%2Fimg%2Fdefault_avatar%2F32%2Fuser_blue.png&amp;s=32" width="16" height="16" alt="" />
+              <img src="https://bitbucket.org/account/hibariya/avatar/32/" width="16" height="16" alt="" />
             </span>
-            <a href='https://bitbucket.org/tricknotes'>Ryunosuke SATO</a>
-            merged pull request.
-            <b>ping!</b>
+            <a href='https://bitbucket.org/hibariya'>hibariya</a>
+            merged pull request
+            <a href='https://bitbucket.org/hibariya/test/pull-request/2'>
+              hibariya/test#2
+            </a>
           </p>
         HTML
       end
 
-      describe 'pullrequest_updated event' do
-        let(:event_type) { 'pullrequest_updated' }
+      describe 'pullrequest:rejected event' do
+        let(:event_type) { 'pullrequest:rejected' }
 
         its([:source]) { should == <<-HTML.strip_heredoc }
           <p>
             <span>
-              <img src="https://secure.gravatar.com/avatar/dc03a27ae31ba428c560c00c9128cd75?d=https%3A%2F%2Fd3oaxc4q5k2d6q.cloudfront.net%2Fm%2F9d3d19e361c2%2Fimg%2Fdefault_avatar%2F32%2Fuser_blue.png&amp;s=32" width="16" height="16" alt="" />
+              <img src="https://bitbucket.org/account/hibariya/avatar/32/" width="16" height="16" alt="" />
             </span>
-            <a href='https://bitbucket.org/tricknotes'>Ryunosuke SATO</a>
-            updated pull request.
-            <b>ping!</b>
-          </p>
-          <h1>This is a pull request</h1>
-
-          <div class="highlight highlight-ruby"><pre><span class="k">def</span> <span class="nf">hell</span>
-            <span class="ss">:hi</span>
-          <span class="k">end</span>
-          </pre></div>
-        HTML
-      end
-
-      describe 'pullrequest_declined event' do
-        let(:event_type) { 'pullrequest_declined' }
-
-        its([:source]) { should == <<-HTML.strip_heredoc }
-          <p>
-            <span>
-              <img src="https://secure.gravatar.com/avatar/dc03a27ae31ba428c560c00c9128cd75?d=https%3A%2F%2Fd3oaxc4q5k2d6q.cloudfront.net%2Fm%2F9d3d19e361c2%2Fimg%2Fdefault_avatar%2F32%2Fuser_blue.png&amp;s=32" width="16" height="16" alt="" />
-            </span>
-            <a href='https://bitbucket.org/tricknotes'>Ryunosuke SATO</a>
-            declined pull request.
-            <b>ping!</b>
+            <a href='https://bitbucket.org/hibariya'>hibariya</a>
+            declined pull request
+            <a href='https://bitbucket.org/hibariya/test/pull-request/1'>
+              hibariya/test#1
+            </a>
           </p>
         HTML
       end
 
       describe 'pullrequest comment created event' do
-        let(:event_type) { 'pullrequest_comment_created' }
+        let(:event_type) { 'pullrequest:comment_created' }
 
         its([:source]) { should == <<-HTML.strip_heredoc }
           <span>
-            <img src="https://secure.gravatar.com/avatar/dc03a27ae31ba428c560c00c9128cd75?d=https%3A%2F%2Fd3oaxc4q5k2d6q.cloudfront.net%2Fm%2Fd7db0fdaad19%2Fimg%2Fdefault_avatar%2F32%2Fuser_blue.png&amp;s=32" width="16" height="16" alt="" />
+            <img src="https://bitbucket.org/account/hibariya/avatar/32/" width="16" height="16" alt="" />
           </span>
-          <a href='https://bitbucket.org/tricknotes'>Ryunosuke SATO</a>
+          <a href='https://bitbucket.org/hibariya'>hibariya</a>
           commented on pull request
-          <a href='https://bitbucket.org/ursm/hello/pull-request/20/_/diff#comment-1236863'>ursm/hello#20</a>
-          <div class='bitbucket-html'><p>+1 for me</p></div>
-        HTML
-      end
-
-      describe 'pullrequest_comment_updated event' do
-        let(:event_type) { 'pullrequest_comment_updated' }
-
-        its([:source]) { should == <<-HTML.strip_heredoc }
-          <span>
-            <img src="https://secure.gravatar.com/avatar/dc03a27ae31ba428c560c00c9128cd75?d=https%3A%2F%2Fd3oaxc4q5k2d6q.cloudfront.net%2Fm%2Fe6bd9f5793a0%2Fimg%2Fdefault_avatar%2F32%2Fuser_blue.png&amp;s=32" width="16" height="16" alt="" />
-          </span>
-          <a href='https://bitbucket.org/tricknotes'>Ryunosuke SATO</a>
-          updated comment on pull request
-          <a href='https://bitbucket.org/tricknotes/notification-test/pull-request/11/_/diff#comment-1316114'>tricknotes/notification-test#11</a>
-          <div class='bitbucket-html'><p>updated!</p></div>
+          <a href='https://bitbucket.org/hibariya/test/pull-request/1/_/diff#comment-8475483'>hibariya/test#1</a>
+          <div class='bitbucket-html'><p>That is ursm!</p></div>
         HTML
       end
 
       describe 'pullrequest approve event' do
-        let(:event_type) { 'pullrequest_approve' }
-
-        subject { ->{ hook.process_payload } }
-
-        it { expect(subject).to raise_error(Idobata::Hook::SkipProcessing) }
-      end
-
-      describe 'pullrequest_comment_deleted event' do
-        let(:event_type) { 'pullrequest_comment_deleted' }
+        let(:event_type) { 'pullrequest:approved' }
 
         subject { ->{ hook.process_payload } }
 

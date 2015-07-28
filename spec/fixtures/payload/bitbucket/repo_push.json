@@ -1,0 +1,165 @@
+{
+  "repository": {
+    "type": "repository",
+    "uuid": "{2796f0fa-602d-4c73-9dd3-4c2a25ac877a}",
+    "name": "test",
+    "owner": {
+      "uuid": "{28a17576-0bc2-40ff-994e-a3a6aac4ac42}",
+      "type": "user",
+      "username": "hibariya",
+      "links": {
+        "html": {
+          "href": "https://bitbucket.org/hibariya"
+        },
+        "self": {
+          "href": "https://api.bitbucket.org/2.0/users/hibariya"
+        },
+        "avatar": {
+          "href": "https://bitbucket.org/account/hibariya/avatar/32/"
+        }
+      },
+      "display_name": "hibariya"
+    },
+    "links": {
+      "html": {
+        "href": "https://bitbucket.org/hibariya/test"
+      },
+      "self": {
+        "href": "https://api.bitbucket.org/2.0/repositories/hibariya/test"
+      },
+      "avatar": {
+        "href": "https://bitbucket.org/hibariya/test/avatar/16/"
+      }
+    },
+    "full_name": "hibariya/test"
+  },
+  "push": {
+    "changes": [
+      {
+        "forced": false,
+        "old": {
+          "type": "branch",
+          "name": "master",
+          "links": {
+            "html": {
+              "href": "https://bitbucket.org/hibariya/test/branch/master"
+            },
+            "self": {
+              "href": "https://api.bitbucket.org/2.0/repositories/hibariya/test/refs/branches/master"
+            },
+            "commits": {
+              "href": "https://api.bitbucket.org/2.0/repositories/hibariya/test/commits/master"
+            }
+          },
+          "target": {
+            "type": "commit",
+            "date": "2015-07-23T09:05:53+00:00",
+            "parents": [
+              {
+                "type": "commit",
+                "hash": "89067f3af891a14253707a9227782a7d4a78500d",
+                "links": {
+                  "html": {
+                    "href": "https://bitbucket.org/hibariya/test/commits/89067f3af891a14253707a9227782a7d4a78500d"
+                  },
+                  "self": {
+                    "href": "https://api.bitbucket.org/2.0/repositories/hibariya/test/commit/89067f3af891a14253707a9227782a7d4a78500d"
+                  }
+                }
+              }
+            ],
+            "message": "A\n",
+            "hash": "636f8eb6548e819f6ea7b0e3bf59e43b03ec2709",
+            "links": {
+              "html": {
+                "href": "https://bitbucket.org/hibariya/test/commits/636f8eb6548e819f6ea7b0e3bf59e43b03ec2709"
+              },
+              "self": {
+                "href": "https://api.bitbucket.org/2.0/repositories/hibariya/test/commit/636f8eb6548e819f6ea7b0e3bf59e43b03ec2709"
+              }
+            },
+            "author": {
+              "raw": "Hika Hibariya <hibariya@gmail.com>"
+            }
+          }
+        },
+        "new": {
+          "type": "branch",
+          "name": "master",
+          "links": {
+            "html": {
+              "href": "https://bitbucket.org/hibariya/test/branch/master"
+            },
+            "self": {
+              "href": "https://api.bitbucket.org/2.0/repositories/hibariya/test/refs/branches/master"
+            },
+            "commits": {
+              "href": "https://api.bitbucket.org/2.0/repositories/hibariya/test/commits/master"
+            }
+          },
+          "target": {
+            "type": "commit",
+            "date": "2015-07-23T09:20:52+00:00",
+            "parents": [
+              {
+                "type": "commit",
+                "hash": "02a462bf9f2007e97fae66681217f9aa4e98a63d",
+                "links": {
+                  "html": {
+                    "href": "https://bitbucket.org/hibariya/test/commits/02a462bf9f2007e97fae66681217f9aa4e98a63d"
+                  },
+                  "self": {
+                    "href": "https://api.bitbucket.org/2.0/repositories/hibariya/test/commit/02a462bf9f2007e97fae66681217f9aa4e98a63d"
+                  }
+                }
+              }
+            ],
+            "message": "Improve README\n",
+            "hash": "725b0f6ffbc616ddce92602fa3ad88d9e61a81db",
+            "links": {
+              "html": {
+                "href": "https://bitbucket.org/hibariya/test/commits/725b0f6ffbc616ddce92602fa3ad88d9e61a81db"
+              },
+              "self": {
+                "href": "https://api.bitbucket.org/2.0/repositories/hibariya/test/commit/725b0f6ffbc616ddce92602fa3ad88d9e61a81db"
+              }
+            },
+            "author": {
+              "raw": "Hika Hibariya <hibariya@gmail.com>"
+            }
+          }
+        },
+        "created": false,
+        "links": {
+          "html": {
+            "href": "https://bitbucket.org/hibariya/test/branches/compare/725b0f6ffbc616ddce92602fa3ad88d9e61a81db..636f8eb6548e819f6ea7b0e3bf59e43b03ec2709"
+          },
+          "commits": {
+            "href": "https://api.bitbucket.org/2.0/repositories/hibariya/test/commits?include=725b0f6ffbc616ddce92602fa3ad88d9e61a81db&exclude=636f8eb6548e819f6ea7b0e3bf59e43b03ec2709"
+          },
+          "diff": {
+            "href": "https://api.bitbucket.org/2.0/repositories/hibariya/test/diff/725b0f6ffbc616ddce92602fa3ad88d9e61a81db..636f8eb6548e819f6ea7b0e3bf59e43b03ec2709"
+          }
+        },
+        "closed": false
+      }
+    ]
+  },
+  "actor": {
+    "uuid": "{28a17576-0bc2-40ff-994e-a3a6aac4ac42}",
+    "type": "user",
+    "username": "hibariya",
+    "links": {
+      "html": {
+        "href": "https://bitbucket.org/hibariya"
+      },
+      "self": {
+        "href": "https://api.bitbucket.org/2.0/users/hibariya"
+      },
+      "avatar": {
+        "href": "https://bitbucket.org/account/hibariya/avatar/32/"
+      }
+    },
+    "display_name": "hibariya"
+  }
+}

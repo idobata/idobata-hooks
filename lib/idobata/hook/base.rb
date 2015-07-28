@@ -46,10 +46,14 @@ module Idobata::Hook
         end
       end
 
+      def proper_hook?
+        name.present?
+      end
+
       private
 
       def inherited(klass)
-        klass.autoload :Helper, "hooks/#{klass.identifier.dasherize}/helper"
+        klass.autoload :Helper, "hooks/#{klass.identifier.dasherize}/helper" if klass.proper_hook?
 
         super
       end

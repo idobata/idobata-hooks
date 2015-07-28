@@ -6,12 +6,8 @@
   %span
     = avatar_image_tag(actor.links.avatar.href)
 
-  %a{href: actor.links.html.href}
-    = actor.display_name
-  created pull request to
+  %a{href: actor.links.html.href}= actor.display_name
+  merged pull request
+
   %a{href: pullrequest.links.html.href}
     #{payload.repository.full_name}##{pullrequest.id}
-
-  %b= pullrequest.title
-
-= md pullrequest.description
