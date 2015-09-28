@@ -204,7 +204,7 @@ hookの名前が`my_hook`である場合、`lib/hooks`の下に`my-hook`を作�
   リクエストパラメータには`payload`メソッド経由でアクセスできます。
   `payload`は`Content-Type`に応じて自動的にパースされたStructっぽいものです。
 
-* `html.html.haml`
+* `help.html.haml`
 
   hookの設定方法として表示されます。
 
