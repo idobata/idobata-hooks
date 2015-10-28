@@ -44,6 +44,8 @@ describe Idobata::Hook::Esa, type: :hook do
         <b>たいとる</b>
       </p>
       <blockquote>Create post.</blockquote>
+      <br />
+      <p>ほんぶん</p>
       HTML
     end
 
@@ -67,6 +69,8 @@ describe Idobata::Hook::Esa, type: :hook do
         <b>たいとる</b>
       </p>
       <blockquote>Update post.</blockquote>
+      <br />
+      <p>ほんぶん</p>
       HTML
     end
 
