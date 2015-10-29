@@ -1,5 +1,3 @@
-require 'spec_helper'
-
 describe Idobata::Hook::QiitaTeam, type: :hook do
   let(:payload) { fixture_payload("qiita_team/#{fixture}") }
 

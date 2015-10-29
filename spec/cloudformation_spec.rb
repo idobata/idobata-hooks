@@ -1,5 +1,3 @@
-require 'spec_helper'
-
 describe Idobata::Hook::Cloudformation, type: :hook do
   describe '#process_payload' do
     before do

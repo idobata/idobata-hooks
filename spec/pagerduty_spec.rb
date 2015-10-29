@@ -1,5 +1,3 @@
-require 'spec_helper'
-
 describe Idobata::Hook::Pagerduty, type: :hook do
   describe '#process_payload' do
     let(:payload) { fixture_payload('pagerduty/default.json') }

@@ -1,5 +1,3 @@
-require 'spec_helper'
-
 describe Idobata::Hook::TravisCI, type: :hook do
   let(:payload) { fixture_payload('travis_ci.json') }
   let(:params)  { {payload: payload} }

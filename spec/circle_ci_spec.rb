@@ -1,5 +1,3 @@
-require 'spec_helper'
-
 describe Idobata::Hook::CircleCI, type: :hook do
   let(:payload) { fixture_payload('circle_ci.json') }
 

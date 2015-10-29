@@ -1,5 +1,3 @@
-require 'spec_helper'
-
 describe Idobata::Hook::Sentry, type: :hook do
   let(:payload) { fixture_payload("sentry/#{fixture}") }
 

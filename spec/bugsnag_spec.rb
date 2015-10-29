@@ -1,5 +1,3 @@
-require 'spec_helper'
-
 describe Idobata::Hook::Bugsnag, type: :hook do
   let(:payload) { fixture_payload("bugsnag/#{payload_type}.json") }
 

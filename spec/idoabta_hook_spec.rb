@@ -1,5 +1,3 @@
-require 'spec_helper'
-
 describe Idobata::Hook do
   describe 'configuration' do
     Idobata::Hook.all.each do |hook|

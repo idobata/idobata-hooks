@@ -1,5 +1,3 @@
-require 'spec_helper'
-
 describe Idobata::Hook::JenkinsNotification, type: :hook do
   describe '#process_payload' do
     subject { hook.process_payload }

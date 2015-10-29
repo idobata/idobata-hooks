@@ -1,5 +1,3 @@
-require 'spec_helper'
-
 describe Idobata::Hook::Crashlytics, type: :hook do
   before do
     post payload, 'Content-Type' => 'application/json'

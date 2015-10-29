@@ -1,5 +1,3 @@
-require 'spec_helper'
-
 describe Idobata::Hook::Bitbucket, type: :hook do
   describe '#process_payload' do
     subject { hook.process_payload }
