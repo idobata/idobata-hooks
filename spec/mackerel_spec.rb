@@ -1,5 +1,3 @@
-require 'spec_helper'
-
 describe Idobata::Hook::Mackerel, type: :hook do
   let(:payload) { fixture_payload("mackerel/#{payload_type}.json") }
 

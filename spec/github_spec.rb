@@ -1,5 +1,3 @@
-require 'spec_helper'
-
 describe Idobata::Hook::Github, type: :hook do
   let(:payload) { fixture_payload("github/#{fixture}") }
 

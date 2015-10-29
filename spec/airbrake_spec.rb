@@ -1,5 +1,3 @@
-require 'spec_helper'
-
 describe Idobata::Hook::Airbrake, type: :hook do
   let(:payload) { fixture_payload("airbrake/#{fixture}.json") }
 

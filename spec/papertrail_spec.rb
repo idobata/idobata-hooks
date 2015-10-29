@@ -1,5 +1,3 @@
-require 'spec_helper'
-
 describe Idobata::Hook::Papertrail, type: :hook do
   let(:payload) { fixture_payload('papertrail.json') }
   let(:params)  { {payload: payload} }

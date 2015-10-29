@@ -1,5 +1,3 @@
-require 'spec_helper'
-
 describe Idobata::Hook::Esa, type: :hook do
   let(:payload) { fixture_payload("esa/#{event_type}.json") }
 

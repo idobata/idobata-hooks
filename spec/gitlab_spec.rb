@@ -1,5 +1,3 @@
-require 'spec_helper'
-
 describe Idobata::Hook::Gitlab, type: :hook do
   let(:payload) { fixture_payload("gitlab/#{fixture}") }
   let(:params)  { JSON.parse(payload) }

@@ -1,5 +1,3 @@
-require 'spec_helper'
-
 describe Idobata::Hook::Heroku, type: :hook do
   let(:params) {
     {
