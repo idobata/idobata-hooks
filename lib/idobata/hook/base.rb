@@ -5,7 +5,7 @@ module Idobata::Hook
     include ActiveSupport::Callbacks
     define_callbacks :render
 
-    attr_reader :raw_body, :headers
+    attr_reader :raw_body, :headers, :params
 
     class << self
       def define_config_accessor(*names)
@@ -73,9 +73,10 @@ module Idobata::Hook
 
     helper Helper
 
-    def initialize(raw_body, headers)
+    def initialize(raw_body, headers, params)
       @raw_body = raw_body
       @headers  = headers
+      @params   = params
     end
 
     def process_payload
