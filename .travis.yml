@@ -3,8 +3,10 @@ sudo: false
 rvm: 2.2.3
 cache: [bundler, apt]
 
-before_install:
-  - sudo apt-get install libicu-dev
+addons:
+  apt:
+    packages:
+      - libicu-dev
 
 script: bundle exec rake
 
