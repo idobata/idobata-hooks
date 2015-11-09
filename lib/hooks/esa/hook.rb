@@ -10,5 +10,9 @@ module Idobata::Hook
     def event_type
       payload.kind
     end
+
+    def hide_body?
+      value_to_boolean(params[:hide_body])
+    end
   end
 end
