@@ -1,3 +1,5 @@
+require 'active_support/hash_with_indifferent_access'
+
 module HookHelper
   def self.included(base)
     base.subject { hook }
@@ -5,8 +7,8 @@ module HookHelper
     base.let(:hook) { @hook }
   end
 
-  def post(raw_body, headers = {})
-    @hook = described_class.new(raw_body, Rack::Utils::HeaderHash.new(headers))
+  def post(raw_body, headers = {}, params = {})
+    @hook = described_class.new(raw_body, Rack::Utils::HeaderHash.new(headers), ActiveSupport::HashWithIndifferentAccess.new(params))
   end
 
   def fixture_payload(filename)

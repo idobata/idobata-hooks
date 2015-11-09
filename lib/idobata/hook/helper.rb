@@ -26,5 +26,9 @@ module Idobata::Hook
 
       parts.join(delimiter)
     end
+
+    def value_to_boolean(value)
+      %w(1 true).include?(value.to_s)
+    end
   end
 end

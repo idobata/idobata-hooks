@@ -42,8 +42,29 @@ describe Idobata::Hook::Esa, type: :hook do
         <b>たいとる</b>
       </p>
       <blockquote>Create post.</blockquote>
-      <br />
-      <p>ほんぶん</p>
+      <div><p>ほんぶん</p></div>
+      HTML
+    end
+
+    context 'on post_create with hide_body=true' do
+      let(:event_type) { 'post_create' }
+
+      before do
+        post payload, {'Content-Type' => 'application/json'}, {hide_body: 'true'}
+      end
+
+      its([:format]) { should eq(:html) }
+      its([:source]) { should eq(<<-'HTML'.strip_heredoc) }
+      <p>
+        <span>
+          <img src="http://img.esa.io/uploads/production/users/1/icon/thumb_s_402685a258cf2a33c1d6c13a89adec92.png" width="16" height="16" alt="" />
+        </span>
+        fukayatsu
+        created
+        <a href='https://example.esa.io/posts/1253'>esa#1253</a>
+        <b>たいとる</b>
+      </p>
+      <blockquote>Create post.</blockquote>
       HTML
     end
 

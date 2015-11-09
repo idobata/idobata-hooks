@@ -4,5 +4,6 @@
   = link_to_post(payload.team, payload.post)
 
 %blockquote= payload.post.message
-<br />
-= md payload.post.body_md
+
+- unless hide_body?
+  %div= md payload.post.body_md

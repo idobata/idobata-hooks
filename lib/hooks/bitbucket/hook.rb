@@ -35,7 +35,7 @@ module Idobata::Hook
     end
 
     def process_payload
-      return @@services_hook.new(raw_body, headers).process_payload if service?
+      return @@services_hook.new(raw_body, headers, params).process_payload if service?
 
       super
     end
