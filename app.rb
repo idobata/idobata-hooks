@@ -37,7 +37,7 @@ module Idobata::Hook
 
       headers = ActionDispatch::Http::Headers.new(env)
 
-      payload = hook.new(raw_body, headers).process_payload
+      payload = hook.new(raw_body, headers, params).process_payload
 
       post_to_idobata payload
 
