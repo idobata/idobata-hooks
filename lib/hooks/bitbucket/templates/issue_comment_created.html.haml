@@ -1,0 +1,16 @@
+:ruby
+  issue   = payload.issue
+  actor   = payload.actor
+  comment = payload.comment
+
+%p
+  %span
+    = avatar_image_tag(actor.links.avatar.href)
+
+  %a{href: actor.links.html.href}
+    = actor.display_name
+  created issue comment to
+  %a{href: comment.links.html.href}
+    #{comment.id}##{comment.parent.id}
+
+= md comment.content.html

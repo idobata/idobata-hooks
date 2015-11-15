@@ -1,0 +1,13 @@
+:ruby
+  pullrequest = payload.pullrequest
+  actor       = payload.actor
+
+%p
+  %span
+    = avatar_image_tag(actor.links.avatar.href)
+
+  %a{href: actor.links.html.href}= actor.display_name
+  approved pull request
+
+  %a{href: pullrequest.links.html.href}
+    #{payload.repository.full_name}##{pullrequest.id}

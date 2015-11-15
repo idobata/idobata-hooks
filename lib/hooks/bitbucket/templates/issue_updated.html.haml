@@ -1,0 +1,16 @@
+:ruby
+  issue   = payload.issue
+  actor   = payload.actor
+  changes = payload.changes
+
+%p
+  %span
+    = avatar_image_tag(actor.links.avatar.href)
+
+  %a{href: actor.links.html.href}
+    = actor.display_name
+  updated issue to
+  %a{href: issue.links.html.href}
+    #{issue.title}##{issue.id}
+
+  %b= issue.title

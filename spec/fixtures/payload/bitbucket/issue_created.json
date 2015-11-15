@@ -1,0 +1,44 @@
+{
+  "actor": {
+    "display_name": "Yuichi Masumiya",
+    "links": {
+      "self": {
+        "href": "https://api.bitbucket.org/2.0/users/masumiya"
+      },
+      "avatar": {
+        "href": "https://bitbucket.org/account/masumiya/avatar/32/"
+      },
+      "html": {
+        "href": "https://bitbucket.org/masumiya"
+      }
+    },
+    "type": "user",
+    "username": "masumiya",
+    "uuid": "{fa2a9b44-4f63-4684-a44b-4f0481c2b347}"
+  },
+  "issue": {
+     "id": 1,
+     "component": "component",
+     "title": "issue test",
+     "content": {
+       "raw": "Issue description",
+       "html": "<p>Issue description</p>",
+       "markup": "markdown"
+     },
+     "priority": "critical",
+     "state": "new",
+     "type": "bug",
+     "milestone": { "name": "milestone 1" },
+     "version": { "name": "version 1" },
+     "created_on": "2015-04-06T15:23:38.179678+00:00",
+     "updated_on": "2015-04-06T15:23:38.179678+00:00",
+    "links": {
+      "self": {
+        "href": "https://api.bitbucket.org/api/2.0/issues/1"
+      },
+      "html": {
+        "href": "https://bitbucket.org/masumiya/test/issues/1"
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+:ruby
+  repository = payload.repository
+  actor      = payload.actor
+  comment    = payload.comment
+  commit     = payload.commit
+
+%p
+  %span
+    = avatar_image_tag(actor.links.avatar.href)
+
+  %a{href: actor.links.html.href}
+    = actor.display_name
+  created commit comment to
+  %a{href: comment.links.html.href}
+    #{comment.id}##{comment.parent}
+
+  %a{href: repository.links.html.href}
+    #{commit.hash}
+
+= md comment.content.html
