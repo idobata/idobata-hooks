@@ -1,0 +1,9 @@
+%p
+  %a{ href: payload.url }
+    #{payload.repo_name}
+  #{message_from_coverage_change(payload.coverage_change)}
+  %span.label{class: 'label-info'}#{two_places_of_float(payload.covered_percent)}%
+  on #{payload.branch} after commit
+  %ul
+    %li
+      #{payload.commit_message} by #{payload.committer_name} &lt;#{payload.committer_email}&gt;
