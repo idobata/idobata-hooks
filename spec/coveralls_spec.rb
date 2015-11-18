@@ -21,7 +21,7 @@ describe Idobata::Hook::Coveralls, type: :hook do
         on branch-name
       </p>
       <p>
-        commit message by Committer Name &lt;user@example.com&gt;
+        commit message by Committer Name
       </p>
       HTML
 
@@ -41,7 +41,7 @@ describe Idobata::Hook::Coveralls, type: :hook do
         on branch-name
       </p>
       <p>
-        commit message by Committer Name &lt;user@example.com&gt;
+        commit message by Committer Name
       </p>
       HTML
 
@@ -59,7 +59,7 @@ describe Idobata::Hook::Coveralls, type: :hook do
         on branch-name
       </p>
       <p>
-        commit message by Committer Name &lt;user@example.com&gt;
+        commit message by Committer Name
       </p>
       HTML
 
@@ -77,7 +77,7 @@ describe Idobata::Hook::Coveralls, type: :hook do
         on branch-name
       </p>
       <p>
-        commit message by Committer Name &lt;user@example.com&gt;
+        commit message by Committer Name
       </p>
       HTML
 
