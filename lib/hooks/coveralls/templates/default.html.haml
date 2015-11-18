@@ -1,6 +1,16 @@
 %p
   %a{href: payload.url}= payload.repo_name
-  = message_from_coverage_change(payload.coverage_change)
+  - if payload.coverage_change.to_f > 0.0
+    coverage increased
+    %span.badge.progress-bar-success= two_places_of_float(payload.coverage_change)
+    to
+  - elsif payload.coverage_change.to_f < 0.0
+    coverage decreased
+    %span.badge.progress-bar-danger= two_places_of_float(payload.coverage_change)
+    to
+  - else
+    coverage remained the same at
+
   %span.label.label-info #{two_places_of_float(payload.covered_percent)}%
   on #{payload.branch} (<a href='#{payload.url}'>detail</a>)
 %p
