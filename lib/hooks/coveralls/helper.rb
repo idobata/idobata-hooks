@@ -8,7 +8,7 @@ module Idobata::Hook
             %span.badge.progress-bar-success=coverage_change
             to
           HAML
-        elsif  payload.coverage_change.to_f < 0.0
+        elsif  coverage_change.to_f < 0.0
           render_as_haml(<<-HAML.strip_heredoc, coverage_change: two_places_of_float(coverage_change))
             coverage decreased
             %span.badge.progress-bar-danger=coverage_change
