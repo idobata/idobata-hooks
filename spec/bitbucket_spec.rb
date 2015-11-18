@@ -41,11 +41,19 @@ describe Idobata::Hook::Bitbucket, type: :hook do
         let(:event_type) { 'repo:commit_comment_created' }
 
         its([:source]) { should == <<-HTML.strip_heredoc }
-          <a href='https://bitbucket.org/masumiya'>masumiya</a>
-          fork from
-          <a href='https://bitbucket.org/masumiya/test'>masumiya/test</a>
-          to
-          <a href='https://bitbucket.org/forked_user/test'>forked_usertest/test</a>
+          <p>
+            <span>
+              <img src="https://bitbucket.org/account/masumiya/avatar/32/" width="16" height="16" alt="" />
+            </span>
+            <a href='https://bitbucket.org/masumiya'>
+              Yuichi Masumiya
+            </a>
+            created commit comment to
+            <a href='https://bitbucket.org/masumiya/test/issues/1#comment-23357395'>
+              17
+            </a>
+          </p>
+          <p>Comment text</p>
         HTML
       end
     end
@@ -211,7 +219,7 @@ describe Idobata::Hook::Bitbucket, type: :hook do
             </a>
             created issue comment to
             <a href='https://bitbucket.org/masumiya/test/issues/1#comment-23357395'>
-              17#16
+              17
             </a>
           </p>
           <p>Comment text</p>

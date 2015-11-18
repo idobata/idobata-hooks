@@ -160,6 +160,33 @@
         "href": "https://bitbucket.org/account/masumiya/avatar/32/"
       }
     },
-    "display_name": "masumiya"
+    "display_name": "Yuichi Masumiya"
+  },
+  "comment": {
+    "id": 17 ,
+    "parent": { "id": 16 },
+    "content": {
+      "raw": "Comment text",
+      "html": "<p>Comment text</p>",
+      "markup": "markdown"
+    },
+    "inline": {
+      "path": "path/to/file",
+      "from": null,
+      "to": 10
+    },
+    "created_on": "2015-04-06T16:52:29.982346+00:00",
+    "updated_on": "2015-04-06T16:52:29.983730+00:00",
+    "links": {
+      "self": {
+        "href": "https://api.bitbucket.org/api/2.0/comments/23357395"
+      },
+      "html": {
+        "href": "https://bitbucket.org/masumiya/test/issues/1#comment-23357395"
+      }
+    }
+  },
+  "commit": {
+    "hash": "d3022fc0ca3d65c7f6654eea129d6bf0cf0ee08e"
   }
 }
