@@ -2,4 +2,7 @@ source 'https://rubygems.org'
 
 gemspec
 
-gem 'github-linguist', group: 'test'
+group :test do
+  gem 'github-linguist'
+  gem 'coveralls', require: false
+end
