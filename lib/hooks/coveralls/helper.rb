@@ -5,22 +5,22 @@ module Idobata::Hook
         if coverage_change.to_f > 0.0
           render_as_haml(<<-HAML.strip_heredoc, coverage_change: two_places_of_float(coverage_change))
             coverage increased
-            %span.badge.progress-bar-success=coverage_change
+            %span.badge.progress-bar-success= coverage_change
             to
           HAML
-        elsif  coverage_change.to_f < 0.0
+        elsif coverage_change.to_f < 0.0
           render_as_haml(<<-HAML.strip_heredoc, coverage_change: two_places_of_float(coverage_change))
             coverage decreased
-            %span.badge.progress-bar-danger=coverage_change
+            %span.badge.progress-bar-danger= coverage_change
             to
           HAML
         else
-          "coverage remained the same at"
+          'coverage remained the same at'
         end
       end
 
       def two_places_of_float(covered_percent)
-        sprintf("%.2f", covered_percent.to_f)
+        sprintf('%.2f', covered_percent.to_f)
       end
 
       def render_as_haml(haml, locals)
