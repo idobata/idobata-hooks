@@ -21,11 +21,9 @@ describe Idobata::Hook::Coveralls, type: :hook do
         to
         <span class='label label-info'>99.35%</span>
         on branch-name after commit
-        <ul>
-          <li>
-            commit message by Committer Name &lt;user@example.com&gt;
-          </li>
-        </ul>
+      </p>
+      <p>
+        commit message by Committer Name &lt;user@example.com&gt;
       </p>
       HTML
 
@@ -45,11 +43,9 @@ describe Idobata::Hook::Coveralls, type: :hook do
         to
         <span class='label label-info'>88.19%</span>
         on branch-name after commit
-        <ul>
-          <li>
-            commit message by Committer Name &lt;user@example.com&gt;
-          </li>
-        </ul>
+      </p>
+      <p>
+        commit message by Committer Name &lt;user@example.com&gt;
       </p>
       HTML
 
@@ -67,11 +63,9 @@ describe Idobata::Hook::Coveralls, type: :hook do
         coverage remained the same at
         <span class='label label-info'>100.00%</span>
         on branch-name after commit
-        <ul>
-          <li>
-            commit message by Committer Name &lt;user@example.com&gt;
-          </li>
-        </ul>
+      </p>
+      <p>
+        commit message by Committer Name &lt;user@example.com&gt;
       </p>
       HTML
 
@@ -89,11 +83,9 @@ describe Idobata::Hook::Coveralls, type: :hook do
         coverage remained the same at
         <span class='label label-info'>0.00%</span>
         on branch-name after commit
-        <ul>
-          <li>
-            commit message by Committer Name &lt;user@example.com&gt;
-          </li>
-        </ul>
+      </p>
+      <p>
+        commit message by Committer Name &lt;user@example.com&gt;
       </p>
       HTML
 
