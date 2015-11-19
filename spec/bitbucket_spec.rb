@@ -50,10 +50,10 @@ describe Idobata::Hook::Bitbucket, type: :hook do
             </a>
             created commit comment to
             <a href='https://bitbucket.org/masumiya/test/issues/1#comment-23357395'>
-              17
+              masumiya/test#17
             </a>
           </p>
-          <p>Comment text</p>
+          <div class='bitbucket-html'><p>Comment text</p></div>
         HTML
       end
     end
@@ -178,7 +178,7 @@ describe Idobata::Hook::Bitbucket, type: :hook do
             </a>
             created issue to
             <a href='https://bitbucket.org/masumiya/test/issues/1'>
-              issue test#1
+              masumiya/test#1
             </a>
             <b>issue test</b>
           </p>
@@ -199,7 +199,7 @@ describe Idobata::Hook::Bitbucket, type: :hook do
             </a>
             updated issue to
             <a href='https://bitbucket.org/masumiya/test/issues/1'>
-              issue test#1
+              masumiya/test#1
             </a>
             <b>issue test</b>
           </p>
@@ -219,10 +219,10 @@ describe Idobata::Hook::Bitbucket, type: :hook do
             </a>
             created issue comment to
             <a href='https://bitbucket.org/masumiya/test/issues/1#comment-23357395'>
-              17
+              masumiya/test#17
             </a>
           </p>
-          <p>Comment text</p>
+          <div class='bitbucket-html'><p>Comment text</p></div>
         HTML
       end
     end

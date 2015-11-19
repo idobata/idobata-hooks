@@ -1,7 +1,8 @@
 :ruby
-  issue   = payload.issue
-  actor   = payload.actor
-  comment = payload.comment
+  repository = payload.repository
+  issue      = payload.issue
+  actor      = payload.actor
+  comment    = payload.comment
 
 %p
   %span
@@ -11,6 +12,6 @@
     = actor.display_name
   created issue comment to
   %a{href: comment.links.html.href}
-    #{comment.id}
+    #{repository.full_name}##{comment.id}
 
-= md comment.content.html
+.bitbucket-html!= comment.content.html

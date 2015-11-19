@@ -1,6 +1,7 @@
 :ruby
-  issue = payload.issue
-  actor = payload.actor
+  repository = payload.repository
+  issue      = payload.issue
+  actor      = payload.actor
 
 %p
   %span
@@ -10,7 +11,7 @@
     = actor.display_name
   created issue to
   %a{href: issue.links.html.href}
-    #{issue.title}##{issue.id}
+    #{repository.full_name}##{issue.id}
 
   %b= issue.title
 

@@ -1,4 +1,38 @@
 {
+  "repository": {
+    "type": "repository",
+    "uuid": "{2796f0fa-602d-4c73-9dd3-4c2a25ac877a}",
+    "name": "test",
+    "owner": {
+      "uuid": "{28a17576-0bc2-40ff-994e-a3a6aac4ac42}",
+      "type": "user",
+      "username": "masumiya",
+      "links": {
+        "html": {
+          "href": "https://bitbucket.org/masumiya"
+        },
+        "self": {
+          "href": "https://api.bitbucket.org/2.0/users/masumiya"
+        },
+        "avatar": {
+          "href": "https://bitbucket.org/account/masumiya/avatar/32/"
+        }
+      },
+      "display_name": "masumiya"
+    },
+    "links": {
+      "html": {
+        "href": "https://bitbucket.org/masumiya/test"
+      },
+      "self": {
+        "href": "https://api.bitbucket.org/2.0/repositories/masumiya/test"
+      },
+      "avatar": {
+        "href": "https://bitbucket.org/masumiya/test/avatar/16/"
+      }
+    },
+    "full_name": "masumiya/test"
+  },
   "actor": {
     "display_name": "Yuichi Masumiya",
     "links": {

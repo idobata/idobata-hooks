@@ -11,6 +11,6 @@
     = actor.display_name
   created commit comment to
   %a{href: comment.links.html.href}
-    #{comment.id}
+    #{repository.full_name}##{comment.id}
 
-= md comment.content.html
+.bitbucket-html!= comment.content.html
