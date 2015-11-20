@@ -1,0 +1,18 @@
+:ruby
+  repository = payload.repository
+  issue      = payload.issue
+  actor      = payload.actor
+
+%p
+  %span
+    = avatar_image_tag(actor.links.avatar.href)
+
+  %a{href: actor.links.html.href}
+    = actor.display_name
+  created issue to
+  %a{href: issue.links.html.href}
+    #{repository.full_name}##{issue.id}
+
+  %b= issue.title
+
+= md issue.content.html

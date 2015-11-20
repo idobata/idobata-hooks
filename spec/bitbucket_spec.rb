@@ -24,6 +24,38 @@ describe Idobata::Hook::Bitbucket, type: :hook do
           </ul>
         HTML
       end
+
+      describe 'fork event' do
+        let(:event_type) { 'repo:fork' }
+
+        its([:source]) { should == <<-HTML.strip_heredoc }
+          <a href='https://bitbucket.org/masumiya'>masumiya</a>
+          fork from
+          <a href='https://bitbucket.org/masumiya/test'>masumiya/test</a>
+          to
+          <a href='https://bitbucket.org/forked_user/test'>forked_usertest/test</a>
+        HTML
+      end
+
+      describe 'commit comment created event' do
+        let(:event_type) { 'repo:commit_comment_created' }
+
+        its([:source]) { should == <<-HTML.strip_heredoc }
+          <p>
+            <span>
+              <img src="https://bitbucket.org/account/masumiya/avatar/32/" width="16" height="16" alt="" />
+            </span>
+            <a href='https://bitbucket.org/masumiya'>
+              Yuichi Masumiya
+            </a>
+            created commit comment to
+            <a href='https://bitbucket.org/masumiya/test/issues/1#comment-23357395'>
+              masumiya/test#17
+            </a>
+          </p>
+          <div class='bitbucket-html'><p>Comment text</p></div>
+        HTML
+      end
     end
 
     describe 'Pull Request POST hook' do
@@ -100,9 +132,98 @@ describe Idobata::Hook::Bitbucket, type: :hook do
       describe 'pullrequest approve event' do
         let(:event_type) { 'pullrequest:approved' }
 
-        subject { ->{ hook.process_payload } }
+        its([:source]) { should == <<-HTML.strip_heredoc }
+          <p>
+            <span>
+              <img src="https://bitbucket.org/account/hibariya/avatar/32/" width="16" height="16" alt="" />
+            </span>
+            <a href='https://bitbucket.org/hibariya'>hibariya</a>
+            approved pull request
+            <a href='https://bitbucket.org/hibariya/test/pull-request/1'>
+              hibariya/test#1
+            </a>
+          </p>
+        HTML
+      end
 
-        it { expect(subject).to raise_error(Idobata::Hook::SkipProcessing) }
+      describe 'pullrequest unapprove event' do
+        let(:event_type) { 'pullrequest:unapproved' }
+
+        its([:source]) { should == <<-HTML.strip_heredoc }
+          <p>
+            <span>
+              <img src="https://bitbucket.org/account/masumiya/avatar/32/" width="16" height="16" alt="" />
+            </span>
+            <a href='https://bitbucket.org/masumiya'>masumiya</a>
+            unapproved pull request
+            <a href='https://bitbucket.org/masumiya/test/pull-request/1'>
+              masumiya/test#1
+            </a>
+          </p>
+        HTML
+      end
+    end
+
+    describe 'Issue POST hook' do
+      context 'created' do
+        let(:event_type) { 'issue:created' }
+
+        its([:source]) { should == <<-HTML.strip_heredoc }
+          <p>
+            <span>
+              <img src="https://bitbucket.org/account/masumiya/avatar/32/" width="16" height="16" alt="" />
+            </span>
+            <a href='https://bitbucket.org/masumiya'>
+              Yuichi Masumiya
+            </a>
+            created issue to
+            <a href='https://bitbucket.org/masumiya/test/issues/1'>
+              masumiya/test#1
+            </a>
+            <b>issue test</b>
+          </p>
+          <p>Issue description</p>
+        HTML
+      end
+
+      context 'updated' do
+        let(:event_type) { 'issue:updated' }
+
+        its([:source]) { should == <<-HTML.strip_heredoc }
+          <p>
+            <span>
+              <img src="https://bitbucket.org/account/masumiya/avatar/32/" width="16" height="16" alt="" />
+            </span>
+            <a href='https://bitbucket.org/masumiya'>
+              Yuichi Masumiya
+            </a>
+            updated issue to
+            <a href='https://bitbucket.org/masumiya/test/issues/1'>
+              masumiya/test#1
+            </a>
+            <b>issue test</b>
+          </p>
+        HTML
+      end
+
+      context 'comment created' do
+        let(:event_type) { 'issue:comment_created' }
+
+        its([:source]) { should == <<-HTML.strip_heredoc }
+          <p>
+            <span>
+              <img src="https://bitbucket.org/account/masumiya/avatar/32/" width="16" height="16" alt="" />
+            </span>
+            <a href='https://bitbucket.org/masumiya'>
+              Yuichi Masumiya
+            </a>
+            created issue comment to
+            <a href='https://bitbucket.org/masumiya/test/issues/1#comment-23357395'>
+              masumiya/test#17
+            </a>
+          </p>
+          <div class='bitbucket-html'><p>Comment text</p></div>
+        HTML
       end
     end
   end
