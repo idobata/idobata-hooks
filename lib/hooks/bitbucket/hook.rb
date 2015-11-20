@@ -22,7 +22,20 @@ module Idobata::Hook
       end
     }
 
-    EVENTS = %w(repo:push repo:fork repo:commit_comment_created issue:created issue:updated issue:comment_created pullrequest:created pullrequest:updated pullrequest:approved pullrequest:unapproved pullrequest:fulfilled pullrequest:rejected pullrequest:comment_created pull_request:comment_updated pull_request:comment_deleted)
+    EVENTS = %w(
+      repo:push
+      repo:fork
+      repo:commit_comment_created
+      issue:created
+      issue:updated
+      issue:comment_created
+      pullrequest:created
+      pullrequest:approved
+      pullrequest:unapproved
+      pullrequest:fulfilled
+      pullrequest:rejected
+      pullrequest:comment_created
+    )
 
     screen_name   'Bitbucket'
     icon_url      hook_image_url('icon.png')
