@@ -4,13 +4,10 @@
   comment    = payload.comment
 
 %p
-  %span
-    = avatar_image_tag(actor.links.avatar.href)
+  %span= avatar_image_tag(actor.links.avatar.href)
 
-  %a{href: actor.links.html.href}
-    = actor.display_name
+  %a{href: actor.links.html.href}= actor.display_name
   created commit comment to
-  %a{href: comment.links.html.href}
-    #{repository.full_name}##{comment.id}
+  %a{href: comment.links.html.href} #{repository.full_name}##{comment.id}
 
 .bitbucket-html!= comment.content.html

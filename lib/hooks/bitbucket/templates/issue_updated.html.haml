@@ -5,13 +5,10 @@
   changes    = payload.changes
 
 %p
-  %span
-    = avatar_image_tag(actor.links.avatar.href)
+  %span= avatar_image_tag(actor.links.avatar.href)
 
-  %a{href: actor.links.html.href}
-    = actor.display_name
+  %a{href: actor.links.html.href}= actor.display_name
   updated issue to
-  %a{href: issue.links.html.href}
-    #{repository.full_name}##{issue.id}
+  %a{href: issue.links.html.href} #{repository.full_name}##{issue.id}
 
   %b= issue.title

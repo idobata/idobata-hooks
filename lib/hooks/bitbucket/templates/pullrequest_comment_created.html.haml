@@ -2,8 +2,7 @@
   comment = payload.comment
   actor   = payload.actor
 
-%span
-  = avatar_image_tag(actor.links.avatar.href)
+%span= avatar_image_tag(actor.links.avatar.href)
 
 %a{href: actor.links.html.href}= actor.display_name
 

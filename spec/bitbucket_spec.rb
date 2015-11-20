@@ -30,7 +30,7 @@ describe Idobata::Hook::Bitbucket, type: :hook do
 
         its([:source]) { should == <<-HTML.strip_heredoc }
           <a href='https://bitbucket.org/masumiya'>masumiya</a>
-          fork from
+          forked from
           <a href='https://bitbucket.org/masumiya/test'>masumiya/test</a>
           to
           <a href='https://bitbucket.org/forked_user/test'>forked_usertest/test</a>
@@ -42,16 +42,10 @@ describe Idobata::Hook::Bitbucket, type: :hook do
 
         its([:source]) { should == <<-HTML.strip_heredoc }
           <p>
-            <span>
-              <img src="https://bitbucket.org/account/masumiya/avatar/32/" width="16" height="16" alt="" />
-            </span>
-            <a href='https://bitbucket.org/masumiya'>
-              Yuichi Masumiya
-            </a>
+            <span><img src="https://bitbucket.org/account/masumiya/avatar/32/" width="16" height="16" alt="" /></span>
+            <a href='https://bitbucket.org/masumiya'>Yuichi Masumiya</a>
             created commit comment to
-            <a href='https://bitbucket.org/masumiya/test/issues/1#comment-23357395'>
-              masumiya/test#17
-            </a>
+            <a href='https://bitbucket.org/masumiya/test/issues/1#comment-23357395'>masumiya/test#17</a>
           </p>
           <div class='bitbucket-html'><p>Comment text</p></div>
         HTML
@@ -65,16 +59,10 @@ describe Idobata::Hook::Bitbucket, type: :hook do
 
         its([:source]) { should == <<-HTML.strip_heredoc }
           <p>
-            <span>
-              <img src="https://bitbucket.org/account/ursm/avatar/32/" width="16" height="16" alt="" />
-            </span>
-            <a href='https://bitbucket.org/ursm'>
-              Keita Urashima
-            </a>
+            <span><img src="https://bitbucket.org/account/ursm/avatar/32/" width="16" height="16" alt="" /></span>
+            <a href='https://bitbucket.org/ursm'>Keita Urashima</a>
             created pull request to
-            <a href='https://bitbucket.org/hibariya/test/pull-request/1'>
-              hibariya/test#1
-            </a>
+            <a href='https://bitbucket.org/hibariya/test/pull-request/1'>hibariya/test#1</a>
             <b>This is ursm</b>
           </p>
           <p>hi</p>
@@ -86,14 +74,10 @@ describe Idobata::Hook::Bitbucket, type: :hook do
 
         its([:source]) { should == <<-HTML.strip_heredoc }
           <p>
-            <span>
-              <img src="https://bitbucket.org/account/hibariya/avatar/32/" width="16" height="16" alt="" />
-            </span>
+            <span><img src="https://bitbucket.org/account/hibariya/avatar/32/" width="16" height="16" alt="" /></span>
             <a href='https://bitbucket.org/hibariya'>hibariya</a>
             merged pull request
-            <a href='https://bitbucket.org/hibariya/test/pull-request/2'>
-              hibariya/test#2
-            </a>
+            <a href='https://bitbucket.org/hibariya/test/pull-request/2'>hibariya/test#2</a>
           </p>
         HTML
       end
@@ -103,14 +87,10 @@ describe Idobata::Hook::Bitbucket, type: :hook do
 
         its([:source]) { should == <<-HTML.strip_heredoc }
           <p>
-            <span>
-              <img src="https://bitbucket.org/account/hibariya/avatar/32/" width="16" height="16" alt="" />
-            </span>
+            <span><img src="https://bitbucket.org/account/hibariya/avatar/32/" width="16" height="16" alt="" /></span>
             <a href='https://bitbucket.org/hibariya'>hibariya</a>
             declined pull request
-            <a href='https://bitbucket.org/hibariya/test/pull-request/1'>
-              hibariya/test#1
-            </a>
+            <a href='https://bitbucket.org/hibariya/test/pull-request/1'>hibariya/test#1</a>
           </p>
         HTML
       end
@@ -119,9 +99,7 @@ describe Idobata::Hook::Bitbucket, type: :hook do
         let(:event_type) { 'pullrequest:comment_created' }
 
         its([:source]) { should == <<-HTML.strip_heredoc }
-          <span>
-            <img src="https://bitbucket.org/account/hibariya/avatar/32/" width="16" height="16" alt="" />
-          </span>
+          <span><img src="https://bitbucket.org/account/hibariya/avatar/32/" width="16" height="16" alt="" /></span>
           <a href='https://bitbucket.org/hibariya'>hibariya</a>
           commented on pull request
           <a href='https://bitbucket.org/hibariya/test/pull-request/1/_/diff#comment-8475483'>hibariya/test#1</a>
@@ -134,14 +112,10 @@ describe Idobata::Hook::Bitbucket, type: :hook do
 
         its([:source]) { should == <<-HTML.strip_heredoc }
           <p>
-            <span>
-              <img src="https://bitbucket.org/account/hibariya/avatar/32/" width="16" height="16" alt="" />
-            </span>
+            <span><img src="https://bitbucket.org/account/hibariya/avatar/32/" width="16" height="16" alt="" /></span>
             <a href='https://bitbucket.org/hibariya'>hibariya</a>
             approved pull request
-            <a href='https://bitbucket.org/hibariya/test/pull-request/1'>
-              hibariya/test#1
-            </a>
+            <a href='https://bitbucket.org/hibariya/test/pull-request/1'>hibariya/test#1</a>
           </p>
         HTML
       end
@@ -151,14 +125,10 @@ describe Idobata::Hook::Bitbucket, type: :hook do
 
         its([:source]) { should == <<-HTML.strip_heredoc }
           <p>
-            <span>
-              <img src="https://bitbucket.org/account/masumiya/avatar/32/" width="16" height="16" alt="" />
-            </span>
+            <span><img src="https://bitbucket.org/account/masumiya/avatar/32/" width="16" height="16" alt="" /></span>
             <a href='https://bitbucket.org/masumiya'>masumiya</a>
             unapproved pull request
-            <a href='https://bitbucket.org/masumiya/test/pull-request/1'>
-              masumiya/test#1
-            </a>
+            <a href='https://bitbucket.org/masumiya/test/pull-request/1'>masumiya/test#1</a>
           </p>
         HTML
       end
@@ -170,19 +140,13 @@ describe Idobata::Hook::Bitbucket, type: :hook do
 
         its([:source]) { should == <<-HTML.strip_heredoc }
           <p>
-            <span>
-              <img src="https://bitbucket.org/account/masumiya/avatar/32/" width="16" height="16" alt="" />
-            </span>
-            <a href='https://bitbucket.org/masumiya'>
-              Yuichi Masumiya
-            </a>
+            <span><img src="https://bitbucket.org/account/masumiya/avatar/32/" width="16" height="16" alt="" /></span>
+            <a href='https://bitbucket.org/masumiya'>Yuichi Masumiya</a>
             created issue to
-            <a href='https://bitbucket.org/masumiya/test/issues/1'>
-              masumiya/test#1
-            </a>
+            <a href='https://bitbucket.org/masumiya/test/issues/1'>masumiya/test#1</a>
             <b>issue test</b>
           </p>
-          <p>Issue description</p>
+          <div class='bitbucket-html'><p>Issue description</p></div>
         HTML
       end
 
@@ -191,16 +155,10 @@ describe Idobata::Hook::Bitbucket, type: :hook do
 
         its([:source]) { should == <<-HTML.strip_heredoc }
           <p>
-            <span>
-              <img src="https://bitbucket.org/account/masumiya/avatar/32/" width="16" height="16" alt="" />
-            </span>
-            <a href='https://bitbucket.org/masumiya'>
-              Yuichi Masumiya
-            </a>
+            <span><img src="https://bitbucket.org/account/masumiya/avatar/32/" width="16" height="16" alt="" /></span>
+            <a href='https://bitbucket.org/masumiya'>Yuichi Masumiya</a>
             updated issue to
-            <a href='https://bitbucket.org/masumiya/test/issues/1'>
-              masumiya/test#1
-            </a>
+            <a href='https://bitbucket.org/masumiya/test/issues/1'>masumiya/test#1</a>
             <b>issue test</b>
           </p>
         HTML
@@ -211,16 +169,10 @@ describe Idobata::Hook::Bitbucket, type: :hook do
 
         its([:source]) { should == <<-HTML.strip_heredoc }
           <p>
-            <span>
-              <img src="https://bitbucket.org/account/masumiya/avatar/32/" width="16" height="16" alt="" />
-            </span>
-            <a href='https://bitbucket.org/masumiya'>
-              Yuichi Masumiya
-            </a>
+            <span><img src="https://bitbucket.org/account/masumiya/avatar/32/" width="16" height="16" alt="" /></span>
+            <a href='https://bitbucket.org/masumiya'>Yuichi Masumiya</a>
             created issue comment to
-            <a href='https://bitbucket.org/masumiya/test/issues/1#comment-23357395'>
-              masumiya/test#17
-            </a>
+            <a href='https://bitbucket.org/masumiya/test/issues/1#comment-23357395'>masumiya/test#17</a>
           </p>
           <div class='bitbucket-html'><p>Comment text</p></div>
         HTML
