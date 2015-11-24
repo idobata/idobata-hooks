@@ -1,0 +1,28 @@
+{
+  "created":"2015-11-24T00:00:00Z",
+  "project":{
+    "archived":false,
+    "projectKey":"TEST",
+    "name":"TestProject",
+    "chartEnabled":false,
+    "id":100,
+    "subtaskingEnabled":false
+  },
+  "id":10,
+  "type":1,
+  "content":{
+    "summary":"test issue",
+    "key_id":100,
+    "description":"test description",
+    "id":100
+  },
+  "notifications":[],
+  "createdUser":{
+    "name":"ozamasa",
+    "mailAddress":null,
+    "id":6336,
+    "roleType":1,
+    "lang":"ja",
+    "userId":null
+  }
+}

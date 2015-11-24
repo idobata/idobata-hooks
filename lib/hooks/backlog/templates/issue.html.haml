@@ -1,0 +1,13 @@
+%p
+  %b= payload.content.summary
+  #{type_label} by #{payload.createdUser.name}.
+
+  - backlog_urls.each do |url|
+    %p
+      %a{href: url}= url
+
+  - if payload.type == 1
+    %p=hbr payload.content.description
+
+  - if payload.content.comment
+    %p=hbr payload.content.comment.content
