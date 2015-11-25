@@ -4,6 +4,18 @@ describe Idobata::Hook::Backlog, type: :hook do
   describe '#process_payload' do
     subject { hook.process_payload }
 
+    context 'on type error' do
+      let(:payload_type) { 'type_error' }
+
+      before do
+        post payload, 'Content-Type' => 'application/json'
+      end
+
+      subject { ->{ hook.process_payload } }
+
+      it { expect(subject).to raise_error(Idobata::Hook::SkipProcessing) }
+    end
+
     context 'on issue create without space_id' do
       let(:payload_type) { 'issue_create' }
 
@@ -13,7 +25,7 @@ describe Idobata::Hook::Backlog, type: :hook do
 
       its([:source]) { should eq(<<-HTML.strip_heredoc) }
         <p>
-          <b>test issue</b>
+          test issue
           created by ozamasa.
           <p>test description</p>
         </p>
@@ -31,11 +43,8 @@ describe Idobata::Hook::Backlog, type: :hook do
 
       its([:source]) { should eq(<<-HTML.strip_heredoc) }
         <p>
-          <b>test issue</b>
+          <a href='https://test.backlog.jp/view/TEST-100'>test issue</a>
           created by ozamasa.
-          <p>
-            <a href='https://test.backlog.jp/view/TEST-100'>https://test.backlog.jp/view/TEST-100</a>
-          </p>
           <p>test description</p>
         </p>
       HTML
@@ -52,11 +61,8 @@ describe Idobata::Hook::Backlog, type: :hook do
 
       its([:source]) { should eq(<<-HTML.strip_heredoc) }
         <p>
-          <b>test issue</b>
+          <a href='https://test.backlog.jp/view/TEST-100#comment-200'>test issue</a>
           updated by ozamasa.
-          <p>
-            <a href='https://test.backlog.jp/view/TEST-100#comment-200'>https://test.backlog.jp/view/TEST-100#comment-200</a>
-          </p>
           <p></p>
         </p>
       HTML
@@ -73,32 +79,8 @@ describe Idobata::Hook::Backlog, type: :hook do
 
       its([:source]) { should eq(<<-HTML.strip_heredoc) }
         <p>
-          <b>test issue</b>
+          <a href='https://test.backlog.jp/view/TEST-100#comment-200'>test issue</a>
           commented by ozamasa.
-          <p>
-            <a href='https://test.backlog.jp/view/TEST-100#comment-200'>https://test.backlog.jp/view/TEST-100#comment-200</a>
-          </p>
-          <p>test comment</p>
-        </p>
-      HTML
-
-      its([:format]) { should eq(:html) }
-    end
-
-    context 'on issue comment' do
-      let(:payload_type) { 'issue_comment' }
-
-      before do
-        post payload, {'Content-Type' => 'application/json'}, {space_id: 'test'}
-      end
-
-      its([:source]) { should eq(<<-HTML.strip_heredoc) }
-        <p>
-          <b>test issue</b>
-          commented by ozamasa.
-          <p>
-            <a href='https://test.backlog.jp/view/TEST-100#comment-200'>https://test.backlog.jp/view/TEST-100#comment-200</a>
-          </p>
           <p>test comment</p>
         </p>
       HTML
@@ -115,11 +97,8 @@ describe Idobata::Hook::Backlog, type: :hook do
 
       its([:source]) { should eq(<<-HTML.strip_heredoc) }
         <p>
-          <b></b>
+          TEST-100
           issue deleted by ozamasa.
-          <p>
-            <a href='https://test.backlog.jp/view/TEST-100'>https://test.backlog.jp/view/TEST-100</a>
-          </p>
         </p>
       HTML
 
@@ -135,14 +114,16 @@ describe Idobata::Hook::Backlog, type: :hook do
 
       its([:source]) { should eq(<<-HTML.strip_heredoc) }
         <p>
-          <b></b>
+          
           multiple issues updated by ozamasa.
-          <p>
-            <a href='https://test.backlog.jp/view/TEST-100'>https://test.backlog.jp/view/TEST-100</a>
-          </p>
-          <p>
-            <a href='https://test.backlog.jp/view/TEST-101'>https://test.backlog.jp/view/TEST-101</a>
-          </p>
+          <ul>
+            <li>
+              <a href='https://test.backlog.jp/view/TEST-100'>https://test.backlog.jp/view/TEST-100</a>
+            </li>
+            <li>
+              <a href='https://test.backlog.jp/view/TEST-101'>https://test.backlog.jp/view/TEST-101</a>
+            </li>
+          </ul>
         </p>
       HTML
 
@@ -158,11 +139,8 @@ describe Idobata::Hook::Backlog, type: :hook do
 
       its([:source]) { should eq(<<-HTML.strip_heredoc) }
         <p>
-          <b>test issue</b>
+          <a href='https://test.backlog.jp/view/TEST-100#comment-200'>test issue</a>
           noticed by ozamasa.
-          <p>
-            <a href='https://test.backlog.jp/view/TEST-100#comment-200'>https://test.backlog.jp/view/TEST-100#comment-200</a>
-          </p>
           <p>test comment</p>
         </p>
       HTML
