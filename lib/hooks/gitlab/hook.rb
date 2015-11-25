@@ -6,6 +6,18 @@ module Idobata::Hook
 
     helper Helper
 
+    EVENTS = %w(
+      issue
+      merge_request
+      project_create
+      push
+      tag
+    )
+
+    before_render do
+      skip_processing! unless EVENTS.include?(event_type)
+    end
+
     private
 
     def event_type
