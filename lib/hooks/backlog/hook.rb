@@ -6,12 +6,18 @@ module Idobata::Hook
 
     helper Helper
 
+    before_render do
+      skip_processing! unless type
+    end
+
     private
 
     def type
       case payload.type
       when 1, 2, 3, 4, 14, 17
         'issue'
+      else
+        nil
       end
     end
 
