@@ -20,27 +20,33 @@ module Idobata::Hook
       end
 
       def backlog_url_base
-        "https://#{space_id}.backlog.jp/view/#{payload.project.projectKey}" if space_id
+        "https://#{space_id}.backlog.jp/view/" if space_id
+      end
+
+      def backlog_url
+        if backlog_url_base && payload.content.key_id && payload.content.summary
+          url  = "#{backlog_url_base}#{project_key_id}"
+          url += "#comment-#{payload.content.comment.id}" if payload.content.comment.try(:id)
+        end
+        url
       end
 
       def backlog_urls
         urls = []
-        if backlog_url_base
-          if payload.content.key_id
-            url  = "#{backlog_url_base}-#{payload.content.key_id}"
-            url += "#comment-#{payload.content.comment.id}" if payload.content.comment && payload.content.comment.id
-            urls << url
-          else
-            payload.content.link.each do |link|
-              urls << "#{backlog_url_base}-#{link.key_id}" if link.key_id
-            end
+        if backlog_url_base && payload.content.link
+          payload.content.link.each do |link|
+            urls << "#{backlog_url_base}#{payload.project.projectKey}-#{link.key_id}" if link.key_id
           end
         end
         urls
       end
 
-      def md(source)
-        HTML::Pipeline::MarkdownFilter.new(source, gfm: true).call.to_s.html_safe
+      def project_key_id
+        "#{payload.project.projectKey}-#{payload.content.key_id}" if payload.content.key_id
+      end
+
+      def summary
+        payload.content.summary || project_key_id
       end
 
       def hbr(source)
