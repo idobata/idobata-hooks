@@ -1,6 +1,6 @@
 module Idobata::Hook
   class Backlog < Base
-    screen_name 'backlog'
+    screen_name 'Backlog'
     icon_url hook_image_url('icon.png')
     template_name { "#{event_type}.html.haml" }
 
