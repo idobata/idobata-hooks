@@ -1,24 +1,6 @@
 module Idobata::Hook
   class Backlog < Base
     module Helper
-      def type_label
-        case payload.type
-        when 1
-          label = 'created'
-        when 2
-          label = 'updated'
-        when 3
-          label = 'commented'
-        when 4
-          label = 'issue deleted'
-        when 17
-          label = 'noticed'
-        when 14
-          label = 'multiple issues updated'
-        end
-        label
-      end
-
       def backlog_url_base
         "https://#{space_id}.backlog.jp/view/" if space_id
       end
