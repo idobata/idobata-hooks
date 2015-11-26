@@ -43,7 +43,7 @@ describe Idobata::Hook::Backlog, type: :hook do
 
       its([:source]) { should eq(<<-HTML.strip_heredoc) }
         <p>
-          <a href='https://test.backlog.jp/view/TEST-100'>test issue</a>
+          <a href="https://test.backlog.jp/view/TEST-100">test issue</a>
           created by ozamasa.
           <p>test description</p>
         </p>
@@ -61,9 +61,8 @@ describe Idobata::Hook::Backlog, type: :hook do
 
       its([:source]) { should eq(<<-HTML.strip_heredoc) }
         <p>
-          <a href='https://test.backlog.jp/view/TEST-100#comment-200'>test issue</a>
+          <a href="https://test.backlog.jp/view/TEST-100#comment-200">test issue</a>
           updated by ozamasa.
-          <p></p>
         </p>
       HTML
 
@@ -79,10 +78,10 @@ describe Idobata::Hook::Backlog, type: :hook do
 
       its([:source]) { should eq(<<-HTML.strip_heredoc) }
         <p>
-          <a href='https://test.backlog.jp/view/TEST-100#comment-200'>test issue</a>
+          <a href="https://test.backlog.jp/view/TEST-100#comment-200">test issue</a>
           commented by ozamasa.
-          <p>test comment</p>
         </p>
+        <p>test comment</p>
       HTML
 
       its([:format]) { should eq(:html) }
@@ -96,10 +95,7 @@ describe Idobata::Hook::Backlog, type: :hook do
       end
 
       its([:source]) { should eq(<<-HTML.strip_heredoc) }
-        <p>
-          TEST-100
-          issue deleted by ozamasa.
-        </p>
+        <p>TEST-100 issue deleted by ozamasa.</p>
       HTML
 
       its([:format]) { should eq(:html) }
@@ -113,14 +109,11 @@ describe Idobata::Hook::Backlog, type: :hook do
       end
 
       its([:source]) { should eq(<<-HTML.strip_heredoc) }
-        <p>
-          
-          multiple issues updated by ozamasa.
-          <ul>
-            <li><a href='https://test.backlog.jp/view/TEST-100'>test issue1</a></li>
-            <li><a href='https://test.backlog.jp/view/TEST-101'>test issue2</a></li>
-          </ul>
-        </p>
+        <p>multiple issues updated by ozamasa.</p>
+        <ul>
+          <li><a href="https://test.backlog.jp/view/TEST-100">test issue1</a></li>
+          <li><a href="https://test.backlog.jp/view/TEST-101">test issue2</a></li>
+        </ul>
       HTML
 
       its([:format]) { should eq(:html) }
@@ -135,10 +128,10 @@ describe Idobata::Hook::Backlog, type: :hook do
 
       its([:source]) { should eq(<<-HTML.strip_heredoc) }
         <p>
-          <a href='https://test.backlog.jp/view/TEST-100#comment-200'>test issue</a>
+          <a href="https://test.backlog.jp/view/TEST-100#comment-200">test issue</a>
           noticed by ozamasa.
-          <p>test comment</p>
         </p>
+        <p>test comment</p>
       HTML
 
       its([:format]) { should eq(:html) }

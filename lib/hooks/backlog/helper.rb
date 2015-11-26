@@ -1,29 +1,29 @@
+require 'action_view/helpers/capture_helper'
+require 'action_view/helpers/output_safety_helper'
+require 'action_view/helpers/url_helper'
+
 module Idobata::Hook
   class Backlog < Base
     module Helper
+      include ActionView::Helpers::UrlHelper
+
       def backlog_url_base
-        "https://#{space_id}.backlog.jp/view/" if space_id
+        return nil unless space_id
+
+        "https://#{space_id}.backlog.jp/view/"
       end
 
-      def issue_link(summary, key_id, comment=nil)
-        issue_key = "#{payload.project.projectKey}-#{key_id}" if key_id
+      def issue_link(summary, key_id, comment = nil)
+        return summary unless space_id
 
-        if backlog_url_base && issue_key
-          url  = "#{backlog_url_base}#{issue_key}"
-          url += "#comment-#{comment.id}" if comment.try(:id)
+        url  = "#{backlog_url_base}#{payload.project.projectKey}-#{key_id}"
+        url += "#comment-#{comment.id}" if comment
 
-          anker = render_as_haml("%a{href: url}= summary", url: url, summary: summary) if summary
-        end
-
-        anker || summary || issue_key
-      end
-
-      def render_as_haml(haml, locals)
-        Haml::Engine.new(haml, escape_html: true).render(self, locals)
+        link_to(summary, url)
       end
 
       def hbr(source)
-        html_escape(source).gsub(/\r\n|\r|\n/, "<br />").html_safe
+        html_escape(source).gsub(/\r\n|\r|\n/, '<br />').html_safe
       end
     end
   end

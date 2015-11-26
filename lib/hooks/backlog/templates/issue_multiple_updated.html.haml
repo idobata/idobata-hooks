@@ -1,0 +1,5 @@
+%p multiple issues updated by #{payload.createdUser.name}.
+
+%ul
+  - payload.content.link.each do |link|
+    %li= issue_link link.title, link.key_id

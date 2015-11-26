@@ -1,0 +1,5 @@
+%p
+  = issue_link payload.content.summary, payload.content.key_id, payload.content.comment
+  commented by #{payload.createdUser.name}.
+
+%p=hbr payload.content.comment.content
