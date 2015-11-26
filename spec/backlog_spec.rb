@@ -105,8 +105,8 @@ describe Idobata::Hook::Backlog, type: :hook do
       its([:format]) { should eq(:html) }
     end
 
-    context 'on issue multipul update' do
-      let(:payload_type) { 'issue_multipul_update' }
+    context 'on issue multiple update' do
+      let(:payload_type) { 'issue_multiple_update' }
 
       before do
         post payload, {'Content-Type' => 'application/json'}, {space_id: 'test'}
@@ -117,12 +117,8 @@ describe Idobata::Hook::Backlog, type: :hook do
           
           multiple issues updated by ozamasa.
           <ul>
-            <li>
-              <a href='https://test.backlog.jp/view/TEST-100'>https://test.backlog.jp/view/TEST-100</a>
-            </li>
-            <li>
-              <a href='https://test.backlog.jp/view/TEST-101'>https://test.backlog.jp/view/TEST-101</a>
-            </li>
+            <li><a href='https://test.backlog.jp/view/TEST-100'>test issue1</a></li>
+            <li><a href='https://test.backlog.jp/view/TEST-101'>test issue2</a></li>
           </ul>
         </p>
       HTML

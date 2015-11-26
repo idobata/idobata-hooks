@@ -23,30 +23,21 @@ module Idobata::Hook
         "https://#{space_id}.backlog.jp/view/" if space_id
       end
 
-      def backlog_url
-        if backlog_url_base && payload.content.key_id && payload.content.summary
-          url  = "#{backlog_url_base}#{project_key_id}"
-          url += "#comment-#{payload.content.comment.id}" if payload.content.comment.try(:id)
+      def issue_link(summary, key_id, comment=nil)
+        issue_key = "#{payload.project.projectKey}-#{key_id}" if key_id
+
+        if backlog_url_base && issue_key
+          url  = "#{backlog_url_base}#{issue_key}"
+          url += "#comment-#{comment.id}" if comment.try(:id)
+
+          anker = render_as_haml("%a{href: url}= summary", url: url, summary: summary) if summary
         end
-        url
+
+        anker || summary || issue_key
       end
 
-      def backlog_urls
-        urls = []
-        if backlog_url_base && payload.content.link
-          payload.content.link.each do |link|
-            urls << "#{backlog_url_base}#{payload.project.projectKey}-#{link.key_id}" if link.key_id
-          end
-        end
-        urls
-      end
-
-      def project_key_id
-        "#{payload.project.projectKey}-#{payload.content.key_id}" if payload.content.key_id
-      end
-
-      def summary
-        payload.content.summary || project_key_id
+      def render_as_haml(haml, locals)
+        Haml::Engine.new(haml, escape_html: true).render(self, locals)
       end
 
       def hbr(source)
