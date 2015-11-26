@@ -1,0 +1,22 @@
+{
+  "created":"2015-11-24T00:00:00Z",
+  "project":{
+    "archived":false,
+    "projectKey":"TEST",
+    "name":"TestProject",
+    "chartEnabled":false,
+    "id":100,
+    "subtaskingEnabled":false
+  },
+  "id":10,
+  "type":9999,
+  "notifications":[],
+  "createdUser":{
+    "name":"ozamasa",
+    "mailAddress":null,
+    "id":6336,
+    "roleType":1,
+    "lang":"ja",
+    "userId":null
+  }
+}

@@ -1,0 +1,14 @@
+%p
+  = issue_link payload.content.summary, payload.content.key_id, payload.content.comment
+  #{type_label} by #{payload.createdUser.name}.
+
+  - if payload.content.link
+    %ul
+      - payload.content.link.each do |link|
+        %li= issue_link link.title, link.key_id
+
+  - if payload.type == 1
+    %p=hbr payload.content.description
+
+  - if payload.content.comment
+    %p=hbr payload.content.comment.content

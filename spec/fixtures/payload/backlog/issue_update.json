@@ -1,0 +1,38 @@
+{
+  "created":"2015-11-24T00:00:00Z",
+  "project":{
+    "archived":false,
+    "projectKey":"TEST",
+    "name":"TestProject",
+    "chartEnabled":false,
+    "id":100,
+    "subtaskingEnabled":false
+  },
+  "id":10,
+  "type":2,
+  "content":{
+    "summary":"test issue",
+    "key_id":100,
+    "changes":[{
+      "field":"priority",
+      "old_value":"3",
+      "type":"standard",
+      "new_value":"2"
+    }],
+    "description":"test description",
+    "comment":{
+      "id":200,
+      "content":""
+    },
+    "id":100
+  },
+  "notifications":[],
+  "createdUser":{
+    "name":"ozamasa",
+    "mailAddress":null,
+    "id":6336,
+    "roleType":1,
+    "lang":"ja",
+    "userId":null
+  }
+}

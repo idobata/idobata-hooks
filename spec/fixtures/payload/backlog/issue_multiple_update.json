@@ -1,0 +1,44 @@
+{
+  "created":"2015-11-24T00:00:00Z",
+  "project":{
+    "archived":false,
+    "projectKey":"TEST",
+    "name":"TestProject",
+    "chartEnabled":false,
+    "id":100,
+    "subtaskingEnabled":false
+  },
+  "id":10,
+  "type":14,
+  "content":{
+    "link":[
+      {
+        "key_id":"100",
+        "id":"100",
+        "title":"test issue1"
+      },
+      {
+        "key_id":"101",
+        "id":"101",
+        "title":"test issue2"
+      }
+    ],
+    "changes":[
+      {
+        "field":"priority",
+        "type":"standard",
+        "new_value":"高"
+      }
+    ],
+    "tx_id":"200"
+  },
+  "notifications":[],
+  "createdUser":{
+    "name":"ozamasa",
+    "mailAddress":null,
+    "id":6336,
+    "roleType":1,
+    "lang":"ja",
+    "userId":null
+  }
+}
