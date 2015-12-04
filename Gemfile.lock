@@ -54,13 +54,13 @@ GEM
     domain_name (0.5.25)
       unf (>= 0.0.5, < 1.0.0)
     erubis (2.7.0)
-    escape_utils (1.1.0)
+    escape_utils (1.0.1)
     gemoji (2.1.0)
-    github-linguist (4.7.2)
+    github-linguist (4.2.7)
       charlock_holmes (~> 0.7.3)
-      escape_utils (~> 1.1.0)
+      escape_utils (~> 1.0.1)
       mime-types (>= 1.19)
-      rugged (>= 0.23.0b)
+      rugged (~> 0.22.0b4)
     github-markdown (0.6.9)
     haml (4.0.7)
       tilt
@@ -123,7 +123,7 @@ GEM
     rspec-mocks (3.0.4)
       rspec-support (~> 3.0.0)
     rspec-support (3.0.4)
-    rugged (0.24.0b8)
+    rugged (0.22.2)
     sass (3.4.19)
     simplecov (0.11.1)
       docile (~> 1.1.0)
@@ -166,7 +166,7 @@ PLATFORMS
 DEPENDENCIES
   bundler (~> 1.6)
   coveralls
-  github-linguist
+  github-linguist (= 4.2.7)
   idobata-hooks!
   pry
   rake
