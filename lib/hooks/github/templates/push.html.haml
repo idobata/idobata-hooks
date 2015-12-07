@@ -3,7 +3,7 @@
   branch     = payload.ref.split('/', 3).last # refs/heads/:branch_name
 
 %p
-  %span= gravatar_image_tag payload.pusher.email
+  %span= avatar_image_tag payload.sender.avatar_url
   %a{href: "#{github_url}/#{payload.pusher.name}"}= payload.pusher.name
 
   - if payload.forced && !payload.created # Somehow `payload.forced` is `true` on created
