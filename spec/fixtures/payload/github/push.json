@@ -1,122 +1,187 @@
 {
-   "pusher":{
-      "name":"ursm",
-      "email":"ursm@ursm.jp"
-   },
-   "repository":{
-      "name":"idobata",
-      "size":380,
-      "has_wiki":true,
-      "created_at":"2012-06-20T02:50:09-07:00",
-      "private":true,
-      "watchers":4,
-      "language":"Ruby",
-      "fork":false,
-      "url":"https://github.com/esminc/idobata",
-      "pushed_at":"2012-06-21T11:24:50-07:00",
-      "has_downloads":true,
-      "open_issues":0,
-      "homepage":"https://idobata.herokuapp.com/",
-      "has_issues":true,
-      "forks":0,
-      "description":"",
-      "organization":"esminc",
-      "owner":{
-         "name":"esminc",
-         "email":"rubyagile@esm.co.jp"
-      }
-   },
-   "forced":false,
-   "head_commit":{
-      "added":[
-
-      ],
-      "modified":[
-         "app/controllers/sessions_controller.rb",
-         "app/models/user.rb",
-         "app/views/sessions/new.html.haml"
-      ],
-      "removed":[
-
-      ],
-      "author":{
-         "name":"Keita Urashima",
-         "username":"ursm",
-         "email":"ursm@ursm.jp"
+  "ref": "refs/heads/master",
+  "before": "a61d33c7ca88593da023964423c721e66fcd2228",
+  "after": "fe77ebad85c4557f944174fcb8bf14eace15840d",
+  "created": false,
+  "deleted": false,
+  "forced": false,
+  "base_ref": null,
+  "compare": "https://github.com/mtsmfm/notificaiton-test/compare/a61d33c7ca88...fe77ebad85c4",
+  "commits": [
+    {
+      "id": "ddccd1ccfb871dc798ae903021e5ad7e22c78326",
+      "distinct": true,
+      "message": "Remove line",
+      "timestamp": "2015-12-08T00:45:17+09:00",
+      "url": "https://github.com/mtsmfm/notificaiton-test/commit/ddccd1ccfb871dc798ae903021e5ad7e22c78326",
+      "author": {
+        "name": "Fumiaki MATSUSHIMA",
+        "email": "mtsmfm@gmail.com",
+        "username": "mtsmfm"
       },
-      "timestamp":"2012-06-21T08:28:25-07:00",
-      "url":"https://github.com/esminc/idobata/commit/9f5102f9c2129a14577fd8c17bb55526547a5642",
-      "id":"9f5102f9c2129a14577fd8c17bb55526547a5642",
-      "distinct":true,
-      "message":"give over to html5_validations",
-      "committer":{
-         "name":"Keita Urashima",
-         "username":"ursm",
-         "email":"ursm@ursm.jp"
-      }
-   },
-   "after":"9f5102f9c2129a14577fd8c17bb55526547a5642",
-   "deleted":false,
-   "ref":"refs/heads/foo/bar",
-   "commits":[
-      {
-         "added":[
-            "db/migrate/20120621151042_add_index_users_on_name.rb"
-         ],
-         "modified":[
-            "app/models/user.rb",
-            "app/views/sessions/new.html.haml",
-            "db/structure.sql"
-         ],
-         "removed":[
-
-         ],
-         "author":{
-            "name":"Keita Urashima",
-            "username":"ursm",
-            "email":"ursm@ursm.jp"
-         },
-         "timestamp":"2012-06-21T08:23:23-07:00",
-         "url":"https://github.com/esminc/idobata/commit/dc98741098f3fc245055ff76571dc1a257ccfc35",
-         "id":"dc98741098f3fc245055ff76571dc1a257ccfc35",
-         "distinct":true,
-         "message":"add validations to User#name",
-         "committer":{
-            "name":"Keita Urashima",
-            "username":"ursm",
-            "email":"ursm@ursm.jp"
-         }
+      "committer": {
+        "name": "Fumiaki MATSUSHIMA",
+        "email": "mtsmfm@gmail.com",
+        "username": "mtsmfm"
       },
-      {
-         "added":[
+      "added": [
 
-         ],
-         "modified":[
-            "app/controllers/sessions_controller.rb",
-            "app/models/user.rb",
-            "app/views/sessions/new.html.haml"
-         ],
-         "removed":[
+      ],
+      "removed": [
 
-         ],
-         "author":{
-            "name":"Keita Urashima",
-            "username":"ursm",
-            "email":"ursm@ursm.jp"
-         },
-         "timestamp":"2012-06-21T08:28:25-07:00",
-         "url":"https://github.com/esminc/idobata/commit/9f5102f9c2129a14577fd8c17bb55526547a5642",
-         "id":"9f5102f9c2129a14577fd8c17bb55526547a5642",
-         "distinct":true,
-         "message":"give over to html5_validations",
-         "committer":{
-            "name":"Keita Urashima",
-            "username":"ursm",
-            "email":"ursm@ursm.jp"
-         }
-      }
-   ],
-   "before":"359eaf8de7c3845b7a3f83953c30e4d02bb20a53",
-   "compare":"https://github.com/esminc/idobata/compare/359eaf8de7c3...9f5102f9c212",
-   "created":false
+      ],
+      "modified": [
+        "README.md"
+      ]
+    },
+    {
+      "id": "fe77ebad85c4557f944174fcb8bf14eace15840d",
+      "distinct": true,
+      "message": "Add line",
+      "timestamp": "2015-12-08T00:45:33+09:00",
+      "url": "https://github.com/mtsmfm/notificaiton-test/commit/fe77ebad85c4557f944174fcb8bf14eace15840d",
+      "author": {
+        "name": "Fumiaki MATSUSHIMA",
+        "email": "mtsmfm@gmail.com",
+        "username": "mtsmfm"
+      },
+      "committer": {
+        "name": "Fumiaki MATSUSHIMA",
+        "email": "mtsmfm@gmail.com",
+        "username": "mtsmfm"
+      },
+      "added": [
+
+      ],
+      "removed": [
+
+      ],
+      "modified": [
+        "README.md"
+      ]
+    }
+  ],
+  "head_commit": {
+    "id": "fe77ebad85c4557f944174fcb8bf14eace15840d",
+    "distinct": true,
+    "message": "Add line",
+    "timestamp": "2015-12-08T00:45:33+09:00",
+    "url": "https://github.com/mtsmfm/notificaiton-test/commit/fe77ebad85c4557f944174fcb8bf14eace15840d",
+    "author": {
+      "name": "Fumiaki MATSUSHIMA",
+      "email": "mtsmfm@gmail.com",
+      "username": "mtsmfm"
+    },
+    "committer": {
+      "name": "Fumiaki MATSUSHIMA",
+      "email": "mtsmfm@gmail.com",
+      "username": "mtsmfm"
+    },
+    "added": [
+
+    ],
+    "removed": [
+
+    ],
+    "modified": [
+      "README.md"
+    ]
+  },
+  "repository": {
+    "id": 47559792,
+    "name": "notificaiton-test",
+    "full_name": "mtsmfm/notificaiton-test",
+    "owner": {
+      "name": "mtsmfm",
+      "email": "mtsmfm@gmail.com"
+    },
+    "private": false,
+    "html_url": "https://github.com/mtsmfm/notificaiton-test",
+    "description": null,
+    "fork": false,
+    "url": "https://github.com/mtsmfm/notificaiton-test",
+    "forks_url": "https://api.github.com/repos/mtsmfm/notificaiton-test/forks",
+    "keys_url": "https://api.github.com/repos/mtsmfm/notificaiton-test/keys{/key_id}",
+    "collaborators_url": "https://api.github.com/repos/mtsmfm/notificaiton-test/collaborators{/collaborator}",
+    "teams_url": "https://api.github.com/repos/mtsmfm/notificaiton-test/teams",
+    "hooks_url": "https://api.github.com/repos/mtsmfm/notificaiton-test/hooks",
+    "issue_events_url": "https://api.github.com/repos/mtsmfm/notificaiton-test/issues/events{/number}",
+    "events_url": "https://api.github.com/repos/mtsmfm/notificaiton-test/events",
+    "assignees_url": "https://api.github.com/repos/mtsmfm/notificaiton-test/assignees{/user}",
+    "branches_url": "https://api.github.com/repos/mtsmfm/notificaiton-test/branches{/branch}",
+    "tags_url": "https://api.github.com/repos/mtsmfm/notificaiton-test/tags",
+    "blobs_url": "https://api.github.com/repos/mtsmfm/notificaiton-test/git/blobs{/sha}",
+    "git_tags_url": "https://api.github.com/repos/mtsmfm/notificaiton-test/git/tags{/sha}",
+    "git_refs_url": "https://api.github.com/repos/mtsmfm/notificaiton-test/git/refs{/sha}",
+    "trees_url": "https://api.github.com/repos/mtsmfm/notificaiton-test/git/trees{/sha}",
+    "statuses_url": "https://api.github.com/repos/mtsmfm/notificaiton-test/statuses/{sha}",
+    "languages_url": "https://api.github.com/repos/mtsmfm/notificaiton-test/languages",
+    "stargazers_url": "https://api.github.com/repos/mtsmfm/notificaiton-test/stargazers",
+    "contributors_url": "https://api.github.com/repos/mtsmfm/notificaiton-test/contributors",
+    "subscribers_url": "https://api.github.com/repos/mtsmfm/notificaiton-test/subscribers",
+    "subscription_url": "https://api.github.com/repos/mtsmfm/notificaiton-test/subscription",
+    "commits_url": "https://api.github.com/repos/mtsmfm/notificaiton-test/commits{/sha}",
+    "git_commits_url": "https://api.github.com/repos/mtsmfm/notificaiton-test/git/commits{/sha}",
+    "comments_url": "https://api.github.com/repos/mtsmfm/notificaiton-test/comments{/number}",
+    "issue_comment_url": "https://api.github.com/repos/mtsmfm/notificaiton-test/issues/comments{/number}",
+    "contents_url": "https://api.github.com/repos/mtsmfm/notificaiton-test/contents/{+path}",
+    "compare_url": "https://api.github.com/repos/mtsmfm/notificaiton-test/compare/{base}...{head}",
+    "merges_url": "https://api.github.com/repos/mtsmfm/notificaiton-test/merges",
+    "archive_url": "https://api.github.com/repos/mtsmfm/notificaiton-test/{archive_format}{/ref}",
+    "downloads_url": "https://api.github.com/repos/mtsmfm/notificaiton-test/downloads",
+    "issues_url": "https://api.github.com/repos/mtsmfm/notificaiton-test/issues{/number}",
+    "pulls_url": "https://api.github.com/repos/mtsmfm/notificaiton-test/pulls{/number}",
+    "milestones_url": "https://api.github.com/repos/mtsmfm/notificaiton-test/milestones{/number}",
+    "notifications_url": "https://api.github.com/repos/mtsmfm/notificaiton-test/notifications{?since,all,participating}",
+    "labels_url": "https://api.github.com/repos/mtsmfm/notificaiton-test/labels{/name}",
+    "releases_url": "https://api.github.com/repos/mtsmfm/notificaiton-test/releases{/id}",
+    "created_at": 1449501251,
+    "updated_at": "2015-12-07T15:14:11Z",
+    "pushed_at": 1449503149,
+    "git_url": "git://github.com/mtsmfm/notificaiton-test.git",
+    "ssh_url": "git@github.com:mtsmfm/notificaiton-test.git",
+    "clone_url": "https://github.com/mtsmfm/notificaiton-test.git",
+    "svn_url": "https://github.com/mtsmfm/notificaiton-test",
+    "homepage": null,
+    "size": 0,
+    "stargazers_count": 0,
+    "watchers_count": 0,
+    "language": null,
+    "has_issues": true,
+    "has_downloads": true,
+    "has_wiki": true,
+    "has_pages": false,
+    "forks_count": 0,
+    "mirror_url": null,
+    "open_issues_count": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "watchers": 0,
+    "default_branch": "master",
+    "stargazers": 0,
+    "master_branch": "master"
+  },
+  "pusher": {
+    "name": "mtsmfm",
+    "email": "mtsmfm@gmail.com"
+  },
+  "sender": {
+    "login": "mtsmfm",
+    "id": 1796864,
+    "avatar_url": "https://avatars.githubusercontent.com/u/1796864?v=3",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/mtsmfm",
+    "html_url": "https://github.com/mtsmfm",
+    "followers_url": "https://api.github.com/users/mtsmfm/followers",
+    "following_url": "https://api.github.com/users/mtsmfm/following{/other_user}",
+    "gists_url": "https://api.github.com/users/mtsmfm/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/mtsmfm/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/mtsmfm/subscriptions",
+    "organizations_url": "https://api.github.com/users/mtsmfm/orgs",
+    "repos_url": "https://api.github.com/users/mtsmfm/repos",
+    "events_url": "https://api.github.com/users/mtsmfm/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/mtsmfm/received_events",
+    "type": "User",
+    "site_admin": false
+  }
 }

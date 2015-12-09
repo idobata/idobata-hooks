@@ -1,10 +1,9 @@
 :ruby
-  github_url = 'https://github.com'
-  branch     = payload.ref.split('/', 3).last # refs/heads/:branch_name
+  branch = payload.ref.split('/', 3).last # refs/heads/:branch_name
 
 %p
-  %span= gravatar_image_tag payload.pusher.email
-  %a{href: "#{github_url}/#{payload.pusher.name}"}= payload.pusher.name
+  %span= avatar_image_tag payload.sender.avatar_url
+  %a{href: payload.sender.html_url}= payload.sender.login
 
   - if payload.forced && !payload.created # Somehow `payload.forced` is `true` on created
     force-pushed to

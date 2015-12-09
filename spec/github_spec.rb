@@ -19,23 +19,23 @@ describe Idobata::Hook::Github, type: :hook do
 
         its([:source]) { should eq(<<-HTML.strip_heredoc) }
           <p>
-            <span><img src="https://secure.gravatar.com/avatar/f966e93db0fbaf3aa07f7df5fa136933?s=32&amp;d=mm" width="16" height="16" alt="" /></span>
-            <a href='https://github.com/ursm'>ursm</a>
+            <span><img src="https://avatars.githubusercontent.com/u/1796864?v=3" width="16" height="16" alt="" /></span>
+            <a href='https://github.com/mtsmfm'>mtsmfm</a>
             pushed to
-            <a href='https://github.com/esminc/idobata/tree/foo/bar'>foo/bar</a>
+            <a href='https://github.com/mtsmfm/notificaiton-test/tree/master'>master</a>
             at
-            <a href='https://github.com/esminc/idobata'>esminc/idobata</a>
-            (<a href='https://github.com/esminc/idobata/compare/359eaf8de7c3...9f5102f9c212'>compare</a>)
+            <a href='https://github.com/mtsmfm/notificaiton-test'>mtsmfm/notificaiton-test</a>
+            (<a href='https://github.com/mtsmfm/notificaiton-test/compare/a61d33c7ca88...fe77ebad85c4'>compare</a>)
           </p>
           <ul>
             <li>
-              <a href='https://github.com/esminc/idobata/commit/dc98741098f3fc245055ff76571dc1a257ccfc35'><tt>dc98741</tt></a>
-              add validations to User#name
+              <a href='https://github.com/mtsmfm/notificaiton-test/commit/ddccd1ccfb871dc798ae903021e5ad7e22c78326'><tt>ddccd1c</tt></a>
+              Remove line
               
             </li>
             <li>
-              <a href='https://github.com/esminc/idobata/commit/9f5102f9c2129a14577fd8c17bb55526547a5642'><tt>9f5102f</tt></a>
-              give over to html5_validations
+              <a href='https://github.com/mtsmfm/notificaiton-test/commit/fe77ebad85c4557f944174fcb8bf14eace15840d'><tt>fe77eba</tt></a>
+              Add line
               
             </li>
           </ul>
@@ -69,17 +69,17 @@ describe Idobata::Hook::Github, type: :hook do
 
         its([:source]) { should eq(<<-HTML.strip_heredoc) }
           <p>
-            <span><img src="https://secure.gravatar.com/avatar/5c22169c1f836709eea59cebfcd6356a?s=32&amp;d=mm" width="16" height="16" alt="" /></span>
-            <a href='https://github.com/tricknotes'>tricknotes</a>
+            <span><img src="https://avatars.githubusercontent.com/u/1796864?v=3" width="16" height="16" alt="" /></span>
+            <a href='https://github.com/mtsmfm'>mtsmfm</a>
             pushed to
-            <a href='https://github.com/tricknotes/notification-test/tree/master'>master</a>
+            <a href='https://github.com/mtsmfm/notificaiton-test/tree/master'>master</a>
             at
-            <a href='https://github.com/tricknotes/notification-test'>tricknotes/notification-test</a>
-            (<a href='https://github.com/tricknotes/notification-test/compare/82e1f8ee0d69...24b298f847d9'>compare</a>)
+            <a href='https://github.com/mtsmfm/notificaiton-test'>mtsmfm/notificaiton-test</a>
+            (<a href='https://github.com/mtsmfm/notificaiton-test/compare/538961d8584d...a61d33c7ca88'>compare</a>)
           </p>
           <ul>
             <li>
-              <a href='https://github.com/tricknotes/notification-test/commit/24b298f847d9bd36246fd3da5b6ff1bce90f362e'><tt>24b298f</tt></a>
+              <a href='https://github.com/mtsmfm/notificaiton-test/commit/a61d33c7ca88593da023964423c721e66fcd2228'><tt>a61d33c</tt></a>
               commit comment with newlines
               <p>hi<br>
               :smile:<br>
