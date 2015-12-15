@@ -1,5 +1,4 @@
-ENV['IDOBATA_HOOK_URL'] = 'https://idobata.io/hook/custom/7e90939f-d82b-40fa-9677-427a5366de4d'
-require './app'
+require 'app_helper'
 
 describe Idobata::Hook::Application, type: :app do
   let(:app) { Idobata::Hook::Application.new }
