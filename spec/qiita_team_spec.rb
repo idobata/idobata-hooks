@@ -154,15 +154,15 @@ describe Idobata::Hook::QiitaTeam, type: :hook do
       its([:format]) { should eq(:html) }
     end
 
-    describe 'achieved project updated event' do
-      let(:fixture) { 'project_updated_for_achieved.json' }
+    describe 'archived project updated event' do
+      let(:fixture) { 'project_updated_for_archived.json' }
       let(:qiita_event_model_type) { 'project' }
 
       its([:source]) { should eq(<<-HTML.strip_heredoc) }
         <p>
           <span><img src="user_image.jpg" width="16" height="16" alt="" /></span>
           qiitan
-          achieved
+          archived
           project
           updated
           <a href='http://increments.qiita.dev/projects/12'>Sample Project</a>

@@ -6,7 +6,7 @@
     %span= avatar_image_tag payload.project.user.profile_image_url
     = payload.project.user.url_name
   - if payload.project.archived == true
-    achieved 
+    archived 
   project 
   = payload.action
   %a{href: payload.project.url}= payload.project.name
