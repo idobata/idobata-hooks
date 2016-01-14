@@ -122,12 +122,53 @@ describe Idobata::Hook::QiitaTeam, type: :hook do
     end
 
     describe 'project created event' do
-      subject { -> { hook.process_payload } }
-
       let(:fixture) { 'project_created.json' }
       let(:qiita_event_model_type) { 'project' }
 
-      it { expect(subject).to raise_error(Idobata::Hook::SkipProcessing) }
+      its([:source]) { should eq(<<-HTML.strip_heredoc) }
+        <p>
+          <span><img src="user_image.jpg" width="16" height="16" alt="" /></span>
+          qiitan
+          project
+          created
+          <a href='http://increments.qiita.dev/projects/12'>Sample Project</a>
+        </p>
+        <p>this is a test project</p>
+      HTML
+      its([:format]) { should eq(:html) }
+    end
+
+    describe 'project updated event' do
+      let(:fixture) { 'project_updated.json' }
+      let(:qiita_event_model_type) { 'project' }
+
+      its([:source]) { should eq(<<-HTML.strip_heredoc) }
+        <p>
+          <span><img src="user_image.jpg" width="16" height="16" alt="" /></span>
+          qiitan
+          project
+          updated
+          <a href='http://increments.qiita.dev/projects/12'>Sample Project</a>
+        </p>
+      HTML
+      its([:format]) { should eq(:html) }
+    end
+
+    describe 'achieved project updated event' do
+      let(:fixture) { 'project_updated_for_achieved.json' }
+      let(:qiita_event_model_type) { 'project' }
+
+      its([:source]) { should eq(<<-HTML.strip_heredoc) }
+        <p>
+          <span><img src="user_image.jpg" width="16" height="16" alt="" /></span>
+          qiitan
+          achieved
+          project
+          updated
+          <a href='http://increments.qiita.dev/projects/12'>Sample Project</a>
+        </p>
+      HTML
+      its([:format]) { should eq(:html) }
     end
 
     describe 'destroy actions' do

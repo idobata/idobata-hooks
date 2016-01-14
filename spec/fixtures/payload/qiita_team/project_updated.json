@@ -1,0 +1,28 @@
+{
+  "model": "project",
+  "action": "updated",
+  "project": {
+    "id": 12,
+    "name": "Sample Project",
+    "created_at": "2014-07-03 17:07:55 +0900",
+    "created_at_in_words": "1分未満",
+    "created_at_as_seconds": 1404374875,
+    "updated_at": "2016-01-14 13:20:00 +0900",
+    "updated_at_in_words": "1分未満",
+    "tags": [{
+      "name": "python",
+      "url_name": "python",
+      "icon_url": "/icons/medium/missing.png"
+    }],
+    "raw_body": "this is a UPDATED test project\n",
+    "body": "<p>this is a UPDATED test project</p>\n",
+    "comment_count": 0,
+    "url": "http://increments.qiita.dev/projects/12",
+    "archived": false
+  },
+  "user": {
+    "id": 9,
+    "url_name": "qiitan",
+    "profile_image_url": "user_image.jpg"
+  }
+}
