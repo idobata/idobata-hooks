@@ -129,8 +129,8 @@ describe Idobata::Hook::QiitaTeam, type: :hook do
         <p>
           <span><img src="user_image.jpg" width="16" height="16" alt="" /></span>
           qiitan
-          project
           created
+          project
           <a href='http://increments.qiita.dev/projects/12'>Sample Project</a>
         </p>
         <p>this is a test project</p>
@@ -146,8 +146,8 @@ describe Idobata::Hook::QiitaTeam, type: :hook do
         <p>
           <span><img src="user_image.jpg" width="16" height="16" alt="" /></span>
           qiitan
-          project
           updated
+          project
           <a href='http://increments.qiita.dev/projects/12'>Sample Project</a>
         </p>
       HTML
@@ -162,9 +162,8 @@ describe Idobata::Hook::QiitaTeam, type: :hook do
         <p>
           <span><img src="user_image.jpg" width="16" height="16" alt="" /></span>
           qiitan
-          archived
-          project
           updated
+          archived project
           <a href='http://increments.qiita.dev/projects/12'>Sample Project</a>
         </p>
       HTML
