@@ -1,0 +1,16 @@
+%p
+  - if %w(created updated).include?(payload.action)
+    %span= avatar_image_tag payload.user.profile_image_url
+    = payload.user.url_name
+  - else
+    %span= avatar_image_tag payload.project.user.profile_image_url
+    = payload.project.user.url_name
+  - if payload.project.archived == true
+    archived 
+  project 
+  = payload.action
+  %a{href: payload.project.url}= payload.project.name
+
+- if payload.action == 'created'
+  = md payload.project.raw_body
+
