@@ -5,12 +5,15 @@
   - else
     %span= avatar_image_tag payload.project.user.profile_image_url
     = payload.project.user.url_name
-  - if payload.project.archived == true
-    archived 
-  project 
+
   = payload.action
+
+  - if payload.project.archived
+    archived project
+  - else
+    project
+
   %a{href: payload.project.url}= payload.project.name
 
 - if payload.action == 'created'
   = md payload.project.raw_body
-
