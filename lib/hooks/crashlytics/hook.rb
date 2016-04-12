@@ -1,7 +1,7 @@
 module Idobata::Hook
   class Crashlytics < Base
     screen_name         'Crashlytics'
-    icon_url            'https://crashlytics.com/apple-touch-icon-crashlytics.png'
+    icon_url            'https://github.com/crashlytics.png'
     forced_content_type :json
     template_name       { custom_template_name }
 
