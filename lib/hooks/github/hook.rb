@@ -51,7 +51,7 @@ module Idobata::Hook
     end
 
     def edit_or_delete_issue_comment_event?
-      event_type == 'issue_comment' && ['edited','deleted'].include?(payload.action)
+      event_type == 'issue_comment' && %w(edited deleted).include?(payload.action)
     end
 
     def event_type
