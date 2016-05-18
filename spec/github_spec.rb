@@ -307,7 +307,7 @@ describe Idobata::Hook::Github, type: :hook do
         HTML
       end
 
-      context 'issue comment event' do
+      context 'issue comment create event' do
         let(:fixture)           { 'issue_comment.json' }
         let(:github_event_type) { 'issue_comment' }
 
@@ -321,6 +321,15 @@ describe Idobata::Hook::Github, type: :hook do
           </p>
           <p>mottomotto</p>
         HTML
+      end
+
+      describe 'issue comment delete event' do
+        let(:fixture)           { 'issue_comment_delete.json' }
+        let(:github_event_type) { 'issue_comment' }
+
+        subject { ->{ hook.process_payload } }
+
+        it { expect(subject).to raise_error(Idobata::Hook::SkipProcessing) }
       end
 
       context 'pull request review comment event' do
