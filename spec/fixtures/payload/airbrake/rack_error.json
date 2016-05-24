@@ -32,5 +32,6 @@
     "first_occurred_at":"2012-02-23T22:03:03Z",
     "last_occurred_at":"2012-03-21T08:37:15Z",
     "times_occurred":118
-  }
+  },
+  "airbrake_error_url": "https://airbrake.io/airbrake-error-url"
 }
