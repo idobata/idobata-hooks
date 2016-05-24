@@ -18,6 +18,9 @@ describe Idobata::Hook::Airbrake, type: :hook do
           <span class='badge progress-bar-danger'>118</span>
         </p>
         <p>
+          <a href='https://airbrake.io/airbrake-error-url'>https://airbrake.io/airbrake-error-url</a>
+        </p>
+        <p>
           <b>RuntimeError: You threw an exception for testing</b>
           from
           <a href='http://airbrake.io:445/pages/exception_test'>http://airbrake.io:445/pages/exception_test</a>
@@ -35,6 +38,9 @@ describe Idobata::Hook::Airbrake, type: :hook do
           <span class='label label-info'>idobata-hooks</span>
           <span class='label label-info'></span>
           <span class='badge progress-bar-danger'>1</span>
+        </p>
+        <p>
+          <a href='https://airbrake.io/airbrake-error-url'>https://airbrake.io/airbrake-error-url</a>
         </p>
         <p>
           <b>NameError: undefined local variable or method `hi' for main:Object</b>

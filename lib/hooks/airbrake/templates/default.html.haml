@@ -4,6 +4,9 @@
   %span.badge.progress-bar-danger= payload.error.times_occurred
 
 %p
+  %a{href: payload.airbrake_error_url}= payload.airbrake_error_url
+
+%p
   %b= payload.error.error_message
   - if payload.error.last_notice.request_url
     from
