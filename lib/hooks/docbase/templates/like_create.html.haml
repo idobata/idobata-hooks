@@ -1,0 +1,3 @@
+%p
+  %span= avatar_image_tag payload.sender.profile_image_url
+  #{link_to_user payload.team.domain, payload.sender.id, payload.sender.name} likes #{link_to_post payload.post.title, payload.post.url} at #{payload.trigger.name}

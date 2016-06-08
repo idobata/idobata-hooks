@@ -1,0 +1,28 @@
+{
+  "trigger": {
+    "name": "idobata",
+    "label": ""
+  },
+  "message": "eiwakunさん、他1名が「idobata」に参加しました\nhttps://idobata.docbase.io/groups/1",
+  "action": "team_join",
+  "sender": {
+    "id": 10,
+    "name": "kanda"
+  },
+  "users": [
+    {
+    "id": 1,
+    "name": "eiwakun",
+    "profile_image_url": "https://secure.gravatar.com/avatar/9922bb39304a94c92e862211c23d60fc.png"
+    },
+    {
+      "id": 2,
+      "name": "hukui",
+      "profile_image_url": "https://secure.gravatar.com/avatar/9922bb39304a94c92e862211c23d60fc.png"
+    }
+  ],
+  "team": { 
+    "domain": "idobata",
+    "name": "idobata"
+  }
+}
