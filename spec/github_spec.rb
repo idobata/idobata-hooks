@@ -89,6 +89,46 @@ describe Idobata::Hook::Github, type: :hook do
         HTML
       end
 
+      describe 'push with branch including fragment hash' do
+        let(:fixture)           { 'push_with_branch_including_fragment_hash.json' }
+        let(:github_event_type) { 'push' }
+
+        its([:source]) { should eq(<<-HTML.strip_heredoc) }
+          <p>
+            <span><img src="https://avatars.githubusercontent.com/u/290782?v=3" width="16" height="16" alt="" /></span>
+            <a href='https://github.com/tricknotes'>tricknotes</a>
+            pushed to
+            <a href='https://github.com/idobata/idobata-hooks/tree/welcome%23index'>welcome#index</a>
+            at
+            <a href='https://github.com/idobata/idobata-hooks'>idobata/idobata-hooks</a>
+            (<a href='https://github.com/idobata/idobata-hooks/compare/9a8aebeacabc...586d5918dc26'>compare</a>)
+          </p>
+          <ul>
+            <li>
+              <a href='https://github.com/idobata/idobata-hooks/commit/586d5918dc260a42bcf6be302893de0e561737ea'><tt>586d591</tt></a>
+              Hi
+              
+            </li>
+          </ul>
+        HTML
+      end
+
+      describe 'branch (including fragment hash) create event' do
+        let(:fixture)           { 'create_branch_including_fragment_hash.json' }
+        let(:github_event_type) { 'create' }
+
+        its([:source]) { should eq(<<-HTML.strip_heredoc) }
+          <p>
+            <span><img src="https://avatars.githubusercontent.com/u/290782?v=3" width="16" height="16" alt="" /></span>
+            <a href='https://github.com/tricknotes'>tricknotes</a>
+            created branch
+            <a href='https://github.com/idobata/idobata-hooks/tree/welcome%23index'>welcome#index</a>
+            at
+            <a href='https://github.com/idobata/idobata-hooks'>idobata/idobata-hooks</a>
+          </p>
+        HTML
+      end
+
       describe 'tag create event' do
         let(:fixture)           { 'tag_create.json' }
         let(:github_event_type) { 'create' }
