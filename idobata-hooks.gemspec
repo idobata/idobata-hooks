@@ -25,7 +25,6 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'hashie'
   spec.add_dependency 'html-pipeline'
   spec.add_dependency 'mime-types'
-  spec.add_dependency 'nokogiri', '1.6.5' # Invalid expression: .//child::text() | self::child::text()
   spec.add_dependency 'pygments.rb'
   spec.add_dependency 'sass'
   spec.add_dependency 'tilt'
