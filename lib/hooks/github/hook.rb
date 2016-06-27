@@ -25,7 +25,7 @@ module Idobata::Hook
     before_render do
       raise BadRequest, 'This is GitHub hook, who are you?' unless event_type
 
-      skip_processing! if EVENTS_TO_IGNORE.include?(event_type) || synchronize_event? || create_branch_push_event? || delete_branch_push_event? || delete_label_event? || pending_status_event? || edit_or_delete_issue_comment_event?
+      skip_processing! if EVENTS_TO_IGNORE.include?(event_type) || synchronize_event? || create_branch_push_event? || delete_branch_push_event? || delete_label_event? || pending_status_event? || edit_or_delete_comment_event?
     end
 
     private
@@ -50,8 +50,8 @@ module Idobata::Hook
       event_type == 'status' && payload.state == 'pending'
     end
 
-    def edit_or_delete_issue_comment_event?
-      event_type == 'issue_comment' && %w(edited deleted).include?(payload.action)
+    def edit_or_delete_comment_event?
+      %w(issue_comment pull_request_review_comment).include?(event_type) && %w(edited deleted).include?(payload.action)
     end
 
     def event_type
