@@ -387,6 +387,15 @@ describe Idobata::Hook::Github, type: :hook do
         HTML
       end
 
+      context 'pull request review comment edited event' do
+        let(:fixture)           { 'pull_request_review_comment_edited.json' }
+        let(:github_event_type) { 'pull_request_review_comment' }
+
+        subject { ->{ hook.process_payload } }
+
+        it { expect(subject).to raise_error(Idobata::Hook::SkipProcessing) }
+      end
+
       context 'commit comment event' do
         let(:fixture)           { 'commit_comment.json' }
         let(:github_event_type) { 'commit_comment' }
