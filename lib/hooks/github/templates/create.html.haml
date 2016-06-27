@@ -4,6 +4,6 @@
 
   created #{payload.ref_type}
 
-  %a{href: "#{payload.repository.html_url}/tree/#{payload.ref}"}= payload.ref
+  %a{href: "#{payload.repository.html_url}/tree/#{URI.escape(payload.ref)}"}= payload.ref
   at
   %a{href: payload.repository.html_url}= payload.repository.full_name

@@ -10,7 +10,7 @@
   - else
     pushed to
 
-  %a{href: "#{payload.repository.url}/tree/#{branch}"}= branch
+  %a{href: "#{payload.repository.url}/tree/#{URI.escape(branch)}"}= branch
   at
   %a{href: payload.repository.url} #{payload.repository.owner.name}/#{payload.repository.name}
 
