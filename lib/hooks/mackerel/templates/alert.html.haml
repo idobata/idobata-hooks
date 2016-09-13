@@ -1,5 +1,9 @@
+- alert = payload.alert
 %p
-  %span.label{class: label_class_from_build_status(payload.alert.status)}= payload.alert.status.upcase
-  #{payload.alert.monitorName} at #{payload.host.name} (#{payload.host.status}) #{payload.host.roles.first.try(:fullname)}
+  %span.label{class: label_class_from_build_status(alert.status)}= alert.status.upcase
+  - if host = payload.host
+    #{alert.monitorName} at #{host.name} (#{host.status}) #{host.roles.first.try(:fullname)}
+  - else
+    #{alert.monitorName}
   = surround '(', ')' do
-    %a{href: payload.alert.url} detail
+    %a{href: alert.url} detail
