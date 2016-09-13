@@ -1,0 +1,11 @@
+{
+  "event": "alert",
+  "alert": {
+    "url": "https://mackerel.io/orgs/hibariya/alerts/2NqjowLMnZn",
+    "createdAt": 1473750189269,
+    "status": "critical",
+    "isOpen": true,
+    "trigger": "monitor",
+    "monitorName": "An external http monitor"
+  }
+}

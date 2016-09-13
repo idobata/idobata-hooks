@@ -8,8 +8,9 @@ describe Idobata::Hook::Mackerel, type: :hook do
   describe '#process_payload' do
     subject { hook.process_payload }
 
-    context 'on alert' do
+    context 'on alert which has host information' do
       let(:payload_type) { 'alert' }
+
       its([:source]) { should eq(<<-HTML.strip_heredoc) }
         <p>
           <span class='label label-danger'>CRITICAL</span>
@@ -21,8 +22,23 @@ describe Idobata::Hook::Mackerel, type: :hook do
       its([:format]) { should eq(:html) }
     end
 
+    context "on alert which doesn't have any host information" do
+      let(:payload_type) { 'alert_external_monitor' }
+
+      its([:source]) { should eq(<<-HTML.strip_heredoc) }
+        <p>
+          <span class='label label-danger'>CRITICAL</span>
+          An external http monitor
+          (<a href='https://mackerel.io/orgs/hibariya/alerts/2NqjowLMnZn'>detail</a>)
+        </p>
+      HTML
+
+      its([:format]) { should eq(:html) }
+    end
+
     context 'on sample' do
       let(:payload_type) { 'sample' }
+
       its([:source]) { should eq(<<-HTML.strip_heredoc) }
         <p>
           sample: Sample Notification from Mackerel
