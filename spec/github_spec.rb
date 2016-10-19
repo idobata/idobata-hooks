@@ -406,7 +406,7 @@ describe Idobata::Hook::Github, type: :hook do
             <a href='https://github.com/obatan'>obatan</a>
             commented on pull request
             <a href='https://github.com/idobata/idobata-hooks/pull/73#pullrequestreview-4794622'>idobata/idobata-hooks#73</a>
-            Collecting review-event payload
+            <b>Collecting review-event payload</b>
           </p>
           <p>leaving a review comment</p>
         HTML
@@ -431,7 +431,7 @@ describe Idobata::Hook::Github, type: :hook do
             <a href='https://github.com/obatan'>obatan</a>
             approved pull request
             <a href='https://github.com/idobata/idobata-hooks/pull/73#pullrequestreview-4794931'>idobata/idobata-hooks#73</a>
-            Collecting review-event payload
+            <b>Collecting review-event payload</b>
           </p>
           <p>I'd like to approve this :robot: </p>
         HTML
@@ -447,7 +447,7 @@ describe Idobata::Hook::Github, type: :hook do
             <a href='https://github.com/obatan'>obatan</a>
             requested changes on pull request
             <a href='https://github.com/idobata/idobata-hooks/pull/73#pullrequestreview-4794838'>idobata/idobata-hooks#73</a>
-            Collecting review-event payload
+            <b>Collecting review-event payload</b>
           </p>
           <p>We'd like to change ...</p>
         HTML
