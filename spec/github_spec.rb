@@ -405,7 +405,8 @@ describe Idobata::Hook::Github, type: :hook do
             <span><img src="https://avatars.githubusercontent.com/u/17717895?v=3" width="16" height="16" alt="" /></span>
             <a href='https://github.com/obatan'>obatan</a>
             commented on pull request
-            <a href='https://github.com/idobata/idobata-hooks/pull/73#pullrequestreview-4794622'>idobata/idobata-hooks#73 Collecting review-event payload</a>
+            <a href='https://github.com/idobata/idobata-hooks/pull/73#pullrequestreview-4794622'>idobata/idobata-hooks#73</a>
+            Collecting review-event payload
           </p>
           <p>leaving a review comment</p>
         HTML
@@ -429,7 +430,8 @@ describe Idobata::Hook::Github, type: :hook do
             <span><img src="https://avatars.githubusercontent.com/u/17717895?v=3" width="16" height="16" alt="" /></span>
             <a href='https://github.com/obatan'>obatan</a>
             approved pull request
-            <a href='https://github.com/idobata/idobata-hooks/pull/73#pullrequestreview-4794931'>idobata/idobata-hooks#73 Collecting review-event payload</a>
+            <a href='https://github.com/idobata/idobata-hooks/pull/73#pullrequestreview-4794931'>idobata/idobata-hooks#73</a>
+            Collecting review-event payload
           </p>
           <p>I'd like to approve this :robot: </p>
         HTML
@@ -444,7 +446,8 @@ describe Idobata::Hook::Github, type: :hook do
             <span><img src="https://avatars.githubusercontent.com/u/17717895?v=3" width="16" height="16" alt="" /></span>
             <a href='https://github.com/obatan'>obatan</a>
             requested changes on pull request
-            <a href='https://github.com/idobata/idobata-hooks/pull/73#pullrequestreview-4794838'>idobata/idobata-hooks#73 Collecting review-event payload</a>
+            <a href='https://github.com/idobata/idobata-hooks/pull/73#pullrequestreview-4794838'>idobata/idobata-hooks#73</a>
+            Collecting review-event payload
           </p>
           <p>We'd like to change ...</p>
         HTML

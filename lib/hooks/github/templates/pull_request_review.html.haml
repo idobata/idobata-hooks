@@ -6,6 +6,7 @@
   - when 'changes_requested' then 'requested changes on pull request'
   - when 'commented'         then 'commented on pull request'
 
-  %a{href: payload.review.html_url} #{payload.repository.full_name}##{payload.pull_request.number} #{payload.pull_request.title}
+  %a{href: payload.review.html_url} #{payload.repository.full_name}##{payload.pull_request.number}
+  #{payload.pull_request.title}
 
 = md payload.review.body
