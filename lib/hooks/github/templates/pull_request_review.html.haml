@@ -1,0 +1,12 @@
+- approved = payload.review.state == 'approved'
+
+%p
+  %span= avatar_image_tag payload.sender.avatar_url
+  %a{href: payload.sender.html_url}= payload.sender.login
+  - if approved
+    approved
+  - else
+    requested changes
+
+  on pull request
+  %a{href: payload.review.html_url} #{payload.repository.full_name}##{payload.pull_request.number}
