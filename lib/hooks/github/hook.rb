@@ -25,14 +25,10 @@ module Idobata::Hook
     before_render do
       raise BadRequest, 'This is GitHub hook, who are you?' unless event_type
 
-      skip_processing! if EVENTS_TO_IGNORE.include?(event_type) || synchronize_event? || create_branch_push_event? || delete_branch_push_event? || delete_label_event? || pending_status_event? || edit_or_delete_comment_event? || not_supported_pull_request_review_event?
+      skip_processing! if EVENTS_TO_IGNORE.include?(event_type) || synchronize_event? || create_branch_push_event? || delete_branch_push_event? || delete_label_event? || pending_status_event? || edit_or_delete_comment_event?
     end
 
     private
-
-    def not_supported_pull_request_review_event?
-      event_type == 'pull_request_review' && !%w(approved changes_requested).include?(payload.review.state)
-    end
 
     def synchronize_event?
       event_type == 'pull_request' && payload.action == 'synchronize'
