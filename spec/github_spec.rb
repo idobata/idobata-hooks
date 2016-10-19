@@ -404,11 +404,20 @@ describe Idobata::Hook::Github, type: :hook do
           <p>
             <span><img src="https://avatars.githubusercontent.com/u/17717895?v=3" width="16" height="16" alt="" /></span>
             <a href='https://github.com/obatan'>obatan</a>
-            reviewed pull request
+            commented on pull request
             <a href='https://github.com/idobata/idobata-hooks/pull/73#pullrequestreview-4794622'>idobata/idobata-hooks#73 Collecting review-event payload</a>
           </p>
           <p>leaving a review comment</p>
         HTML
+      end
+
+      context 'pull request review event (commented but no body)' do
+        let(:fixture)           { 'pull_request_review_commented_with_no_body.json' }
+        let(:github_event_type) { 'pull_request_review' }
+
+        subject { ->{ hook.process_payload } }
+
+        it { expect(subject).to raise_error(Idobata::Hook::SkipProcessing) }
       end
 
       context 'pull request review event (approved)' do
