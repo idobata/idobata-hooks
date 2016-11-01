@@ -6,7 +6,7 @@ describe Idobata::Hook::Trello, type: :hook do
 
     describe 'POST hook' do
       before do
-        post payload, 'Content-Type' => Mime::JSON.to_s
+        post payload, 'Content-Type' => 'application/json'
       end
 
       describe 'createCard event' do

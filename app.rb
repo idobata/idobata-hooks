@@ -3,6 +3,7 @@ require 'idobata/hook'
 require 'net/http'
 
 require 'action_dispatch/http/headers'
+require 'action_dispatch/http/request'
 require 'sinatra/base'
 require 'sinatra/multi_route'
 require 'sprockets'
@@ -35,7 +36,7 @@ module Idobata::Hook
 
       raw_body = env['rack.input'].read
 
-      headers = ActionDispatch::Http::Headers.new(env)
+      headers = ActionDispatch::Http::Headers.from_hash(env)
 
       payload = hook.new(raw_body, headers, params).process_payload
 

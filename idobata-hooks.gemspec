@@ -17,8 +17,8 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ['lib']
 
-  spec.add_dependency 'actionpack', '~> 4.2.0'
-  spec.add_dependency 'activesupport', '~> 4.2.0'
+  spec.add_dependency 'actionpack', '~> 5.0.0'
+  spec.add_dependency 'activesupport', '~> 5.0.0'
   spec.add_dependency 'gemoji'
   spec.add_dependency 'github-markdown'
   spec.add_dependency 'haml'
@@ -35,8 +35,8 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rake'
   spec.add_development_dependency 'rspec', '~> 3.0'
   spec.add_development_dependency 'rspec-its'
-  spec.add_development_dependency 'sinatra', '~> 1.4'
-  spec.add_development_dependency 'sinatra-contrib'
+  spec.add_development_dependency 'sinatra', '~> 2.0.0.beta'
+  spec.add_development_dependency 'sinatra-contrib', '~> 2.0.0.beta'
   spec.add_development_dependency 'sprockets'
   spec.add_development_dependency 'tapp'
   spec.add_development_dependency 'vcr'
