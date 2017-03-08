@@ -1,4 +1,4 @@
-%p
+%div
   #{payload.description}: #{payload.name}
   = surround '(', ')' do
     %a{href: payload.target_url} build
@@ -6,7 +6,7 @@
   %span.label{class: label_class_from_build_status(payload.state)}
     = payload.state.titleize
 
-%p
+%div
   #{payload.commit.commit.author.name}: #{payload.commit.commit.message.lines.first}
   = surround '(', ')' do
     %a{href: payload.commit.html_url}= payload.sha[0..7]

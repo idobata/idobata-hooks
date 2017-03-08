@@ -18,7 +18,7 @@ describe Idobata::Hook::Github, type: :hook do
         let(:github_event_type) { 'push' }
 
         its([:source]) { should eq(<<-HTML.strip_heredoc) }
-          <p>
+          <div>
             <span><img src="https://avatars.githubusercontent.com/u/1796864?v=3" width="16" height="16" alt="" /></span>
             <a href='https://github.com/mtsmfm'>mtsmfm</a>
             pushed to
@@ -26,7 +26,7 @@ describe Idobata::Hook::Github, type: :hook do
             at
             <a href='https://github.com/mtsmfm/notificaiton-test'>mtsmfm/notificaiton-test</a>
             (<a href='https://github.com/mtsmfm/notificaiton-test/compare/a61d33c7ca88...fe77ebad85c4'>compare</a>)
-          </p>
+          </div>
           <ul>
             <li>
               <a href='https://github.com/mtsmfm/notificaiton-test/commit/ddccd1ccfb871dc798ae903021e5ad7e22c78326'><tt>ddccd1c</tt></a>
@@ -57,7 +57,7 @@ describe Idobata::Hook::Github, type: :hook do
         let(:github_event_type) { 'ping' }
 
         its([:source]) { should eq(<<-HTML.strip_heredoc) }
-          <p>Ping from GitHub received. Your hook seems to be successfully configured.</p>
+          <div>Ping from GitHub received. Your hook seems to be successfully configured.</div>
         HTML
 
         its([:format]) { should eq(:html) }
@@ -68,7 +68,7 @@ describe Idobata::Hook::Github, type: :hook do
         let(:github_event_type) { 'push' }
 
         its([:source]) { should eq(<<-HTML.strip_heredoc) }
-          <p>
+          <div>
             <span><img src="https://avatars.githubusercontent.com/u/1796864?v=3" width="16" height="16" alt="" /></span>
             <a href='https://github.com/mtsmfm'>mtsmfm</a>
             pushed to
@@ -76,7 +76,7 @@ describe Idobata::Hook::Github, type: :hook do
             at
             <a href='https://github.com/mtsmfm/notificaiton-test'>mtsmfm/notificaiton-test</a>
             (<a href='https://github.com/mtsmfm/notificaiton-test/compare/538961d8584d...a61d33c7ca88'>compare</a>)
-          </p>
+          </div>
           <ul>
             <li>
               <a href='https://github.com/mtsmfm/notificaiton-test/commit/a61d33c7ca88593da023964423c721e66fcd2228'><tt>a61d33c</tt></a>
@@ -94,7 +94,7 @@ describe Idobata::Hook::Github, type: :hook do
         let(:github_event_type) { 'push' }
 
         its([:source]) { should eq(<<-HTML.strip_heredoc) }
-          <p>
+          <div>
             <span><img src="https://avatars.githubusercontent.com/u/290782?v=3" width="16" height="16" alt="" /></span>
             <a href='https://github.com/tricknotes'>tricknotes</a>
             pushed to
@@ -102,7 +102,7 @@ describe Idobata::Hook::Github, type: :hook do
             at
             <a href='https://github.com/idobata/idobata-hooks'>idobata/idobata-hooks</a>
             (<a href='https://github.com/idobata/idobata-hooks/compare/9a8aebeacabc...586d5918dc26'>compare</a>)
-          </p>
+          </div>
           <ul>
             <li>
               <a href='https://github.com/idobata/idobata-hooks/commit/586d5918dc260a42bcf6be302893de0e561737ea'><tt>586d591</tt></a>
@@ -118,14 +118,14 @@ describe Idobata::Hook::Github, type: :hook do
         let(:github_event_type) { 'create' }
 
         its([:source]) { should eq(<<-HTML.strip_heredoc) }
-          <p>
+          <div>
             <span><img src="https://avatars.githubusercontent.com/u/290782?v=3" width="16" height="16" alt="" /></span>
             <a href='https://github.com/tricknotes'>tricknotes</a>
             created branch
             <a href='https://github.com/idobata/idobata-hooks/tree/welcome%23index'>welcome#index</a>
             at
             <a href='https://github.com/idobata/idobata-hooks'>idobata/idobata-hooks</a>
-          </p>
+          </div>
         HTML
       end
 
@@ -134,14 +134,14 @@ describe Idobata::Hook::Github, type: :hook do
         let(:github_event_type) { 'create' }
 
         its([:source]) { should eq(<<-HTML.strip_heredoc) }
-          <p>
+          <div>
             <span><img src="https://avatars.githubusercontent.com/u/290782?" width="16" height="16" alt="" /></span>
             <a href='https://github.com/tricknotes'>tricknotes</a>
             created tag
             <a href='https://github.com/tricknotes/notification-test/tree/hoi'>hoi</a>
             at
             <a href='https://github.com/tricknotes/notification-test'>tricknotes/notification-test</a>
-          </p>
+          </div>
         HTML
       end
 
@@ -150,12 +150,12 @@ describe Idobata::Hook::Github, type: :hook do
         let(:github_event_type) { 'delete' }
 
         its([:source]) { should eq(<<-HTML.strip_heredoc) }
-          <p>
+          <div>
             <span><img src="https://avatars.githubusercontent.com/u/290782?" width="16" height="16" alt="" /></span>
             <a href='https://github.com/tricknotes'>tricknotes</a>
             deleted tag 168 at
             <a href='https://github.com/tricknotes/notification-test'>tricknotes/notification-test</a>
-          </p>
+          </div>
         HTML
       end
 
@@ -164,13 +164,13 @@ describe Idobata::Hook::Github, type: :hook do
         let(:github_event_type) { 'issues' }
 
         its([:source]) { should eq(<<-HTML.strip_heredoc) }
-          <p>
+          <div>
             <span><img src="https://secure.gravatar.com/avatar/dc03a27ae31ba428c560c00c9128cd75?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png" width="16" height="16" alt="" /></span>
             <a href='https://github.com/tricknotes'>tricknotes</a>
             opened issue
             <a href='https://github.com/tricknotes/notification-test/issues/10'>tricknotes/notification-test#10</a>
             <b>issue opened</b>
-          </p>
+          </div>
           <p>This is a issue.<br>
           <code>puts :hi</code></p>
         HTML
@@ -181,13 +181,13 @@ describe Idobata::Hook::Github, type: :hook do
         let(:github_event_type) { 'issues' }
 
         its([:source]) { should eq(<<-HTML.strip_heredoc) }
-          <p>
+          <div>
             <span><img src="https://secure.gravatar.com/avatar/dc03a27ae31ba428c560c00c9128cd75?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png" width="16" height="16" alt="" /></span>
             <a href='https://github.com/tricknotes'>tricknotes</a>
             closed issue
             <a href='https://github.com/tricknotes/notification-test/issues/10'>tricknotes/notification-test#10</a>
             <b>Oops!!</b>
-          </p>
+          </div>
 
         HTML
       end
@@ -197,7 +197,7 @@ describe Idobata::Hook::Github, type: :hook do
         let(:github_event_type) { 'issues' }
 
         its([:source]) { should eq(<<-HTML.strip_heredoc) }
-          <p>
+          <div>
             <span><img src="https://avatars.githubusercontent.com/u/290782?v=2" width="16" height="16" alt="" /></span>
             <a href='https://github.com/tricknotes'>tricknotes</a>
             labeled
@@ -205,7 +205,7 @@ describe Idobata::Hook::Github, type: :hook do
             to
             <a href='https://github.com/idobata/idobata-hooks/issues/14'>idobata/idobata-hooks#14</a>
             <b>Need more kindness info about GitHub events</b>
-          </p>
+          </div>
 
         HTML
       end
@@ -224,7 +224,7 @@ describe Idobata::Hook::Github, type: :hook do
         let(:github_event_type) { 'issues' }
 
         its([:source]) { should eq(<<-HTML.strip_heredoc) }
-          <p>
+          <div>
             <span><img src="https://avatars.githubusercontent.com/u/290782?v=2" width="16" height="16" alt="" /></span>
             <a href='https://github.com/tricknotes'>tricknotes</a>
             assigned
@@ -233,7 +233,7 @@ describe Idobata::Hook::Github, type: :hook do
             to
             <a href='https://github.com/idobata/idobata-hooks/issues/14'>idobata/idobata-hooks#14</a>
             <b>Need more kindness info about GitHub events</b>
-          </p>
+          </div>
 
         HTML
       end
@@ -243,13 +243,13 @@ describe Idobata::Hook::Github, type: :hook do
         let(:github_event_type) { 'pull_request' }
 
         its([:source]) { should eq(<<-HTML.strip_heredoc) }
-          <p>
+          <div>
             <span><img src="https://secure.gravatar.com/avatar/dc03a27ae31ba428c560c00c9128cd75?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png" width="16" height="16" alt="" /></span>
             <a href='https://github.com/tricknotes'>tricknotes</a>
             opened pull request
             <a href='https://github.com/tricknotes/notification-test/pull/2'>tricknotes/notification-test#2</a>
             <b>Test for PR</b>
-          </p>
+          </div>
           <div class='pull-info'>
             <b>1</b>
             commit
@@ -273,13 +273,13 @@ describe Idobata::Hook::Github, type: :hook do
         let(:github_event_type) { 'pull_request' }
 
         its([:source]) { should eq(<<-HTML.strip_heredoc) }
-          <p>
+          <div>
             <span><img src="https://secure.gravatar.com/avatar/dc03a27ae31ba428c560c00c9128cd75?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png" width="16" height="16" alt="" /></span>
             <a href='https://github.com/tricknotes'>tricknotes</a>
             closed pull request
             <a href='https://github.com/tricknotes/notification-test/pull/12'>tricknotes/notification-test#12</a>
             <b>:soy_milk:</b>
-          </p>
+          </div>
           <div class='pull-info'>
             <b>1</b>
             commit
@@ -299,7 +299,7 @@ describe Idobata::Hook::Github, type: :hook do
         let(:github_event_type) { 'pull_request' }
 
         its([:source]) { should eq(<<-HTML.strip_heredoc) }
-          <p>
+          <div>
             <span><img src="https://avatars.githubusercontent.com/u/290782?v=2" width="16" height="16" alt="" /></span>
             <a href='https://github.com/tricknotes'>tricknotes</a>
             labeled
@@ -307,7 +307,7 @@ describe Idobata::Hook::Github, type: :hook do
             to
             <a href='https://github.com/idobata/idobata-hooks/pull/16'>idobata/idobata-hooks#16</a>
             <b>[WIP] Support to show Github PR's label name and assignee</b>
-          </p>
+          </div>
 
         HTML
       end
@@ -317,7 +317,7 @@ describe Idobata::Hook::Github, type: :hook do
         let(:github_event_type) { 'pull_request' }
 
         its([:source]) { should eq(<<-HTML.strip_heredoc) }
-          <p>
+          <div>
             <span><img src="https://avatars.githubusercontent.com/u/290782?v=2" width="16" height="16" alt="" /></span>
             <a href='https://github.com/tricknotes'>tricknotes</a>
             assigned
@@ -326,7 +326,7 @@ describe Idobata::Hook::Github, type: :hook do
             to
             <a href='https://github.com/idobata/idobata-hooks/pull/16'>idobata/idobata-hooks#16</a>
             <b>[WIP] Support to show Github PR's label name and assignee</b>
-          </p>
+          </div>
 
         HTML
       end
@@ -336,13 +336,13 @@ describe Idobata::Hook::Github, type: :hook do
         let(:github_event_type) { 'issue_comment' }
 
         its([:source]) { should eq(<<-HTML.strip_heredoc) }
-          <p>
+          <div>
             <span><img src="https://secure.gravatar.com/avatar/dc03a27ae31ba428c560c00c9128cd75?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png" width="16" height="16" alt="" /></span>
             <a href='https://github.com/tricknotes'>tricknotes</a>
             commented on pull request
             <a href='https://github.com/tricknotes/notification-test/issues/2#issuecomment-19731401'>tricknotes/notification-test#2</a>
             <b>Test for PR</b>
-          </p>
+          </div>
           <p>This is a comment :smile: </p>
         HTML
       end
@@ -352,13 +352,13 @@ describe Idobata::Hook::Github, type: :hook do
         let(:github_event_type) { 'issue_comment' }
 
         its([:source]) { should eq(<<-HTML.strip_heredoc) }
-          <p>
+          <div>
             <span><img src="https://avatars.githubusercontent.com/u/290782?" width="16" height="16" alt="" /></span>
             <a href='https://github.com/tricknotes'>tricknotes</a>
             commented on issue
             <a href='https://github.com/tricknotes/notification-test/issues/21#issuecomment-39527529'>tricknotes/notification-test#21</a>
             <b>Hey!</b>
-          </p>
+          </div>
           <p>mottomotto</p>
         HTML
       end
@@ -377,12 +377,12 @@ describe Idobata::Hook::Github, type: :hook do
         let(:github_event_type) { 'pull_request_review_comment' }
 
         its([:source]) { should eq(<<-HTML.strip_heredoc) }
-          <p>
+          <div>
             <span><img src="https://secure.gravatar.com/avatar/dc03a27ae31ba428c560c00c9128cd75?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png" width="16" height="16" alt="" /></span>
             <a href='https://github.com/tricknotes'>tricknotes</a>
             commented on pull request
             <a href='https://github.com/tricknotes/notification-test/pull/5#discussion_r4791306'>tricknotes/notification-test#5</a>
-          </p>
+          </div>
           <p>:angel: :innocent: :angel: </p>
         HTML
       end
@@ -401,13 +401,13 @@ describe Idobata::Hook::Github, type: :hook do
         let(:github_event_type) { 'pull_request_review' }
 
         its([:source]) { should eq(<<~HTML) }
-          <p>
+          <div>
             <span><img src="https://avatars.githubusercontent.com/u/17717895?v=3" width="16" height="16" alt="" /></span>
             <a href='https://github.com/obatan'>obatan</a>
             commented on pull request
             <a href='https://github.com/idobata/idobata-hooks/pull/73#pullrequestreview-4794622'>idobata/idobata-hooks#73</a>
             <b>Collecting review-event payload</b>
-          </p>
+          </div>
           <p>leaving a review comment</p>
         HTML
       end
@@ -426,13 +426,13 @@ describe Idobata::Hook::Github, type: :hook do
         let(:github_event_type) { 'pull_request_review' }
 
         its([:source]) { should eq(<<~HTML) }
-          <p>
+          <div>
             <span><img src="https://avatars.githubusercontent.com/u/17717895?v=3" width="16" height="16" alt="" /></span>
             <a href='https://github.com/obatan'>obatan</a>
             approved pull request
             <a href='https://github.com/idobata/idobata-hooks/pull/73#pullrequestreview-4794931'>idobata/idobata-hooks#73</a>
             <b>Collecting review-event payload</b>
-          </p>
+          </div>
           <p>I'd like to approve this :robot: </p>
         HTML
       end
@@ -442,13 +442,13 @@ describe Idobata::Hook::Github, type: :hook do
         let(:github_event_type) { 'pull_request_review' }
 
         its([:source]) { should eq(<<~HTML) }
-          <p>
+          <div>
             <span><img src="https://avatars.githubusercontent.com/u/17717895?v=3" width="16" height="16" alt="" /></span>
             <a href='https://github.com/obatan'>obatan</a>
             requested changes on pull request
             <a href='https://github.com/idobata/idobata-hooks/pull/73#pullrequestreview-4794838'>idobata/idobata-hooks#73</a>
             <b>Collecting review-event payload</b>
-          </p>
+          </div>
           <p>We'd like to change ...</p>
         HTML
       end
@@ -458,12 +458,12 @@ describe Idobata::Hook::Github, type: :hook do
         let(:github_event_type) { 'commit_comment' }
 
         its([:source]) { should eq(<<-HTML.strip_heredoc) }
-          <p>
+          <div>
             <span><img src="https://secure.gravatar.com/avatar/dc03a27ae31ba428c560c00c9128cd75?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png" width="16" height="16" alt="" /></span>
             <a href='https://github.com/tricknotes'>tricknotes</a>
             commented on commit
             <a href='https://github.com/tricknotes/notification-test/commit/6c2eacbf8ef360a90508383574e488c3db67caf5#commitcomment-3685259'>tricknotes/notification-test@6c2eacb</a>
-          </p>
+          </div>
           <p>This is a commit comment!</p>
         HTML
       end
@@ -473,7 +473,7 @@ describe Idobata::Hook::Github, type: :hook do
         let(:github_event_type) { 'gollum' }
 
         its([:source]) { should eq(<<-HTML.strip_heredoc) }
-          <p>
+          <div>
             <span><img src="https://secure.gravatar.com/avatar/dc03a27ae31ba428c560c00c9128cd75?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png" width="16" height="16" alt="" /></span>
             <a href='https://github.com/tricknotes'>tricknotes</a>
             edited the
@@ -485,7 +485,7 @@ describe Idobata::Hook::Github, type: :hook do
                 <a href='https://github.com/tricknotes/notification-test/wiki/About-wiki/_compare/35da4ba^...35da4ba'>View the diff &raquo;</a>
               </li>
             </ul>
-          </p>
+          </div>
         HTML
       end
 
@@ -494,12 +494,12 @@ describe Idobata::Hook::Github, type: :hook do
         let(:github_event_type) { 'watch' }
 
         its([:source]) { should eq(<<-HTML.strip_heredoc) }
-          <p>
+          <div>
             <span><img src="https://avatars.githubusercontent.com/u/290782?v=2" width="16" height="16" alt="" /></span>
             <a href='https://github.com/tricknotes'>tricknotes</a>
             starred
             <a href='https://github.com/idobata/capybara_screenshot_idobata'>idobata/capybara_screenshot_idobata</a>
-          </p>
+          </div>
         HTML
       end
 
@@ -508,12 +508,12 @@ describe Idobata::Hook::Github, type: :hook do
         let(:github_event_type) { 'repository' }
 
         its([:source]) { should eq(<<-HTML.strip_heredoc) }
-          <p>
+          <div>
             <span><img src="https://avatars.githubusercontent.com/u/7548?v=3" width="16" height="16" alt="" /></span>
             <a href='https://github.com/ursm'>ursm</a>
             created repository
             <a href='https://github.com/idobata/flexing'>idobata/flexing</a>
-          </p>
+          </div>
         HTML
       end
 
@@ -531,18 +531,18 @@ describe Idobata::Hook::Github, type: :hook do
         let(:github_event_type) { 'status' }
 
         its([:source]) { should eq(<<-HTML.strip_heredoc) }
-          <p>
+          <div>
             The Travis CI build passed: idobata/idobata-hooks
             (<a href='https://travis-ci.org/idobata/idobata-hooks/builds/36738881'>build</a>)
             :
             <span class='label label-success'>
               Success
             </span>
-          </p>
-          <p>
+          </div>
+          <div>
             Keita Urashima: Merge pull request #18 from idobata/github-status-event
             (<a href='https://github.com/idobata/idobata-hooks/commit/433db95a768426ecf7ac77a9ef1ad9a3b0557367'>433db95a</a>)
-          </p>
+          </div>
         HTML
       end
 
@@ -551,18 +551,18 @@ describe Idobata::Hook::Github, type: :hook do
         let(:github_event_type) { 'status' }
 
         its([:source]) { should eq(<<-HTML.strip_heredoc) }
-          <p>
+          <div>
             The Travis CI build failed: idobata/idobata-hooks
             (<a href='https://travis-ci.org/idobata/idobata-hooks/builds/36560867'>build</a>)
             :
             <span class='label label-danger'>
               Failure
             </span>
-          </p>
-          <p>
+          </div>
+          <div>
             Ryunosuke SATO: WIP: Support GitHub's status event
             (<a href='https://github.com/idobata/idobata-hooks/commit/d4fcd0513cfce99f646b9f18e351a68bf9476fe6'>d4fcd051</a>)
-          </p>
+          </div>
         HTML
       end
 
