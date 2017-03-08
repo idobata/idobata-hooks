@@ -1,7 +1,7 @@
 :ruby
   branch = payload.ref.split('/', 3).last # refs/heads/:branch_name
 
-%p
+%div
   %span= avatar_image_tag payload.sender.avatar_url
   %a{href: payload.sender.html_url}= payload.sender.login
 
