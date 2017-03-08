@@ -121,15 +121,15 @@ module Idobata::Hook
       raw_content_type = headers['Content-Type']
 
       case normalized_content_type
-      when Mime::JSON
+      when Mime[:json]
         JSON.parse(raw_body)
-      when Mime::XML
+      when Mime[:xml]
         Hash.from_xml(raw_body)
-      when Mime::URL_ENCODED_FORM
+      when Mime[:url_encoded_form]
         payload = Rack::Utils.parse_nested_query(raw_body)
 
         parse_json_in_form(payload)
-      when Mime::MULTIPART_FORM
+      when Mime[:multipart_form]
         payload = Rack::Multipart.parse_multipart(
           'CONTENT_TYPE'   => raw_content_type,
           'CONTENT_LENGTH' => raw_body.length,
@@ -146,10 +146,10 @@ module Idobata::Hook
       return Mime[self.class.forced_content_type] if self.class.forced_content_type
 
       case type = headers['Content-Type']
-      when /\A#{Regexp.quote(Mime::MULTIPART_FORM)}\b/
-        Mime::MULTIPART_FORM
+      when /\A#{Regexp.quote(Mime[:multipart_form])}\b/
+        Mime[:multipart_form]
       when nil
-        Mime::URL_ENCODED_FORM
+        Mime[:url_encoded_form]
       else
         Mime::Type.parse(type)
       end

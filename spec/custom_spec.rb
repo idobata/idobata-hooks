@@ -31,7 +31,7 @@ describe Idobata::Hook::Custom, type: :hook do
       let(:params) { {source: source, image: image} }
 
       before do
-        post Rack::Multipart.build_multipart(params), 'Content-Type' => "multipart/form-data; boundary=#{Rack::Utils::Multipart::MULTIPART_BOUNDARY}"
+        post Rack::Multipart.build_multipart(params), 'Content-Type' => "multipart/form-data; boundary=#{Rack::Multipart::MULTIPART_BOUNDARY}"
       end
 
       its([:source]) { should eq(source) }
@@ -49,7 +49,7 @@ describe Idobata::Hook::Custom, type: :hook do
       before do
         pending 'ArgumentError: invalid byte sequence in UTF-8'
 
-        post Rack::Multipart.build_multipart(params), 'Content-Type' => "multipart/form-data; boundary=#{Rack::Utils::Multipart::MULTIPART_BOUNDARY}"
+        post Rack::Multipart.build_multipart(params), 'Content-Type' => "multipart/form-data; boundary=#{Rack::Multipart::MULTIPART_BOUNDARY}"
       end
 
       its([:source]) { should eq(source) }
