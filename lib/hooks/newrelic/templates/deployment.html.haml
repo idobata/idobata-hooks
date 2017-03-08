@@ -1,10 +1,10 @@
 :ruby
   body = payload.deployment
 
-%p
+%div
   %b #{body.application_name} was deployed by #{body.deployed_by}
 
-%p
+%div
   = body.description
 
   = surround '(', ')' do

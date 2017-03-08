@@ -13,13 +13,13 @@ describe Idobata::Hook::Esa, type: :hook do
 
       its([:format]) { should eq(:html) }
       its([:source]) { should eq(<<-'HTML'.strip_heredoc) }
-       <p>
+       <div>
          <span><img src="http://img.esa.io/uploads/production/users/1/icon/thumb_s_402685a258cf2a33c1d6c13a89adec92.png" width="16" height="16" alt="" /></span>
          Atsuo Fukaya (fukayatsu)
          joined
          <a href='https://esa.esa.io/team'>esa team</a>
          (\( ⁰⊖⁰)/)
-       </p>
+       </div>
       HTML
     end
 
@@ -32,7 +32,7 @@ describe Idobata::Hook::Esa, type: :hook do
 
       its([:format]) { should eq(:html) }
       its([:source]) { should eq(<<-'HTML'.strip_heredoc) }
-      <p>
+      <div>
         <span>
           <img src="http://img.esa.io/uploads/production/users/1/icon/thumb_s_402685a258cf2a33c1d6c13a89adec92.png" width="16" height="16" alt="" />
         </span>
@@ -40,7 +40,7 @@ describe Idobata::Hook::Esa, type: :hook do
         created
         <a href='https://example.esa.io/posts/1253'>esa#1253</a>
         <b>たいとる</b>
-      </p>
+      </div>
       <blockquote>Create post.</blockquote>
       <div><p>ほんぶん</p></div>
       HTML
@@ -55,7 +55,7 @@ describe Idobata::Hook::Esa, type: :hook do
 
       its([:format]) { should eq(:html) }
       its([:source]) { should eq(<<-'HTML'.strip_heredoc) }
-      <p>
+      <div>
         <span>
           <img src="http://img.esa.io/uploads/production/users/1/icon/thumb_s_402685a258cf2a33c1d6c13a89adec92.png" width="16" height="16" alt="" />
         </span>
@@ -63,7 +63,7 @@ describe Idobata::Hook::Esa, type: :hook do
         created
         <a href='https://example.esa.io/posts/1253'>esa#1253</a>
         <b>たいとる</b>
-      </p>
+      </div>
       <blockquote>Create post.</blockquote>
       HTML
     end
@@ -77,7 +77,7 @@ describe Idobata::Hook::Esa, type: :hook do
 
       its([:format]) { should eq(:html) }
       its([:source]) { should eq(<<-'HTML'.strip_heredoc) }
-      <p>
+      <div>
         <span>
           <img src="http://img.esa.io/uploads/production/users/1/icon/thumb_s_402685a258cf2a33c1d6c13a89adec92.png" width="16" height="16" alt="" />
         </span>
@@ -86,7 +86,7 @@ describe Idobata::Hook::Esa, type: :hook do
         <a href='https://example.esa.io/posts/1253'>esa#1253</a>
         (<a href='https://example.esa.io/posts/1253/revisions/3'>diff</a>)
         <b>たいとる</b>
-      </p>
+      </div>
       <blockquote>Update post.</blockquote>
       HTML
     end
@@ -100,7 +100,7 @@ describe Idobata::Hook::Esa, type: :hook do
 
       its([:format]) { should eq(:html) }
       its([:source]) { should eq(<<-'HTML'.strip_heredoc) }
-      <p>
+      <div>
         <span>
           <img src="http://img.esa.io/uploads/production/users/1/icon/thumb_s_402685a258cf2a33c1d6c13a89adec92.png" width="16" height="16" alt="" />
         </span>
@@ -108,7 +108,7 @@ describe Idobata::Hook::Esa, type: :hook do
         archived
         <a href='https://example.esa.io/posts/1253'>esa#1253</a>
         <b>Archived/たいとる</b>
-      </p>
+      </div>
       <blockquote>Archived!</blockquote>
       HTML
     end
@@ -122,7 +122,7 @@ describe Idobata::Hook::Esa, type: :hook do
 
       its([:format]) { should eq(:html) }
       its([:source]) { should eq(<<-'HTML'.strip_heredoc) }
-      <p>
+      <div>
         <span>
           <img src="http://img.esa.io/uploads/production/users/1/icon/thumb_s_402685a258cf2a33c1d6c13a89adec92.png" width="16" height="16" alt="" />
         </span>
@@ -130,7 +130,7 @@ describe Idobata::Hook::Esa, type: :hook do
         commented on
         <a href='https://example.esa.io/posts/1253#comment-6385'>esa#1253</a>
         <b>Archived/たいとる</b>
-      </p>
+      </div>
       <p>こめんと</p>
       HTML
     end

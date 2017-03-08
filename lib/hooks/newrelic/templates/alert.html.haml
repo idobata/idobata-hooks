@@ -1,11 +1,11 @@
 :ruby
   body = payload.alert
 
-%p
+%div
   %b= body.short_description
   %span.label.label-danger= body.severity.titleize
 
-%p
+%div
   = body.message
 
   = surround '(', ')' do

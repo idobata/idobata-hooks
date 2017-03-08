@@ -9,16 +9,16 @@ describe Idobata::Hook::CircleCI, type: :hook do
     subject { hook.process_payload }
 
     its([:source]) { should eq(<<-HTML.strip_heredoc) }
-      <p>
+      <div>
         circleci/mongofinil<a href='https://circleci.com/gh/circleci/mongofinil/22'>#22</a>
         (master - <tt>1d23162</tt>):
         <span class='label label-success'>Success</span>
         (Finished in 23 seconds)
-      </p>
-      <p>
+      </div>
+      <div>
         Allen Rohner: Don't explode when the system clock shifts backwards
         (<a href='https://github.com/circleci/mongofinil/compare/0553ba86b3...1d231626ba1d'>changeset</a>)
-      </p>
+      </div>
     HTML
 
     its([:format]) { should eq(:html) }

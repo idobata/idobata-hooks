@@ -11,13 +11,13 @@ describe Idobata::Hook::Newrelic, type: :hook do
       let(:params)  { {deployment: payload} }
 
       its([:source]) { should == <<-HTML.strip_heredoc }
-        <p>
+        <div>
           <b>Application name was deployed by Name of person deploying</b>
-        </p>
-        <p>
+        </div>
+        <div>
           Information about deployment
           (<a href='https://rpm.newrelic.com/accounts/[account_id]/applications/[application_id]/deployments/[deployment_id]'>detail</a>)
-        </p>
+        </div>
       HTML
 
       its([:format]) { should eq(:html) }
@@ -28,14 +28,14 @@ describe Idobata::Hook::Newrelic, type: :hook do
       let(:params)  { {alert: payload} }
 
       its([:source]) { should == <<-HTML.strip_heredoc }
-        <p>
+        <div>
           <b>Alert opened on Server_name</b>
           <span class='label label-danger'>Critical</span>
-        </p>
-        <p>
+        </div>
+        <div>
           Memory &gt; 13%
           (<a href='https://rpm.newrelic.com/accounts/?????/incidents/????????'>detail</a>)
-        </p>
+        </div>
       HTML
 
       its([:format]) { should eq(:html) }

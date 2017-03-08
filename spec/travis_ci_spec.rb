@@ -10,16 +10,16 @@ describe Idobata::Hook::TravisCI, type: :hook do
     subject { hook.process_payload }
 
     its([:source]) { should eq(<<-HTML.strip_heredoc) }
-      <p>
+      <div>
         esminc/idobata<a href='https://magnum.travis-ci.com/esminc/idobata/builds/2663'>#124</a>
         (travis-ci-integration - <tt>25d6fc1</tt>):
         <span class='label label-success'>Passed</span>
         (Finished in 86 seconds)
-      </p>
-      <p>
+      </div>
+      <div>
         hibariya: (test) hook!
         (<a href='https://github.com/esminc/idobata/compare/676b88ee9966...25d6fc1811e3'>changeset</a>)
-      </p>
+      </div>
     HTML
 
     its([:format]) { should eq(:html) }

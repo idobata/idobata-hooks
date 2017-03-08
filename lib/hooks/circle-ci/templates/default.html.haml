@@ -8,7 +8,7 @@
                   'label-default'
                 end
 
-%p
+%div
   = precede "#{payload.username}/#{payload.reponame}" do
     %a{href: payload.build_url} ##{payload.build_num}
 
@@ -16,7 +16,7 @@
   %span.label(class=label_class)= payload.status.camelize
   (Finished in #{payload.build_time_millis / 1000} seconds)
 
-%p
+%div
   #{payload.committer_name}: #{payload.subject}
 
   = surround '(', ')' do

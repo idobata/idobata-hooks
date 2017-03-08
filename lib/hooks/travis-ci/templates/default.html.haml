@@ -8,7 +8,7 @@
                   'label-default'
                 end
 
-%p
+%div
   = precede "#{payload.repository.owner_name}/#{payload.repository.name}" do
     %a{href: payload.build_url} ##{payload.number}
 
@@ -16,7 +16,7 @@
   %span.label(class=label_class)= payload.status_message
   (Finished in #{payload.duration} seconds)
 
-%p
+%div
   #{payload.author_name}: #{payload.message.lines.first}
 
   = surround '(', ')' do
