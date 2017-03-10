@@ -23,7 +23,9 @@ describe Idobata::Hook::Kibela, type: :hook do
         created
         <a href='https://docs.kibe.la/@kibe/1'>sample request</a>
       </div>
-      <h2>sample request</h2>
+      <div>
+        <h2>sample request</h2>
+      </div>
       HTML
     end
 
@@ -31,7 +33,7 @@ describe Idobata::Hook::Kibela, type: :hook do
       let(:event_type) { 'wiki_update' }
 
       before do
-        post payload, 'Content-Type' => 'application/json'
+        post payload, {'Content-Type' => 'application/json'}, {hide_body: 'true'}
       end
 
       its([:format]) { should eq(:html) }
@@ -49,7 +51,6 @@ describe Idobata::Hook::Kibela, type: :hook do
         <a href='https://docs.kibe.la/wikis/1/versions/1'>diff</a>
         )
       </div>
-      <h2>sample request</h2>
       HTML
     end
 

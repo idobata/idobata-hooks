@@ -10,4 +10,6 @@
   (
   %a{ href: payload[resource_type].diff_url } diff
   )
-= HTML::Pipeline::MarkdownFilter.new(payload[resource_type].content_md, gfm: true).call.to_s.html_safe
+- unless hide_body?
+  %div
+    = HTML::Pipeline::MarkdownFilter.new(payload[resource_type].content_md, gfm: true).call.to_s.html_safe

@@ -12,5 +12,9 @@ module Idobata::Hook
     def action
       payload.action
     end
+
+    def hide_body?
+      value_to_boolean(params[:hide_body])
+    end
   end
 end
