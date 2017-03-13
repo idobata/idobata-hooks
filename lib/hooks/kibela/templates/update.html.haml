@@ -8,7 +8,7 @@
   updated
   %a{ href: payload[resource_type].url }= payload[resource_type].title
   (
-  %a{ href: payload[resource_type].diff_url } diff
+  %a{ href: payload[resource_type].revision_url } diff
   )
 - unless hide_body?
   %div

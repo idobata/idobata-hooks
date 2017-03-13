@@ -35,8 +35,8 @@
     ],
     "content_html": "<h2>sample request</h2>",
     "content_md": "## sample request",
-    "diff_text": "+sample request\n-[WIP]sample request",
-    "diff_url": "https://docs.kibe.la/wikis/1/versions/1",
+    "content_diff": "+sample request\n-[WIP]sample request",
+    "revision_url": "https://docs.kibe.la/wikis/1/versions/1",
     "id": "1",
     "title": "sample request",
     "url": "https://docs.kibe.la/wikis/sample_request/1"
