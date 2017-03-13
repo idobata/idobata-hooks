@@ -4,10 +4,14 @@ module Idobata::Hook
     icon_url hook_image_url('icon.png')
     template_name { "#{action}.html.haml" }
     before_render do
-      skip_processing! if payload.action == "update" && !payload.notify
+      skip_processing! if skip?
     end
 
     private
+
+    def skip?
+      payload.action == "update" && (action == "comment" || !payload.notify)
+    end
 
     def action
       payload.action
