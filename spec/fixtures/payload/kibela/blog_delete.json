@@ -1,0 +1,52 @@
+{
+  "action": "delete",
+  "action_user": {
+    "account": "kibe",
+    "avatar_photo": {
+      "url": "https://cdn.kibe.la/media/public/1/kibe.png"
+    },
+    "id": "1",
+    "real_name": "kibe-san",
+    "url": "https://docs.kibe.la/@kibe"
+  },
+  "blog": {
+    "author": {
+      "account": "kibe",
+      "avatar_photo": {
+        "url": "https://cdn.kibe.la/media/public/1/kibe.png"
+      },
+      "id": "1",
+      "real_name": "kibe-san",
+      "url": "https://docs.kibe.la/@kibe"
+    },
+    "boards": [
+      {
+        "id": "1",
+        "name": "Product Team"
+      }
+    ],
+    "comments": [
+      {
+        "author": {
+          "account": "kibe",
+          "avatar_photo": {
+            "url": "https://cdn.kibe.la/media/public/1/kibe.png"
+          },
+          "id": "1",
+          "real_name": "kibe-san",
+          "url": "https://docs.kibe.la/@kibe"
+        },
+        "id": "1",
+        "url": "https://docs.kibe.la/@kibe/1#comment_1"
+      }
+    ],
+    "id": "1",
+    "title": "sample request",
+    "url": "https://docs.kibe.la/@kibe/1"
+  },
+  "resource_type": "blog",
+  "team": {
+    "name": "docs",
+    "url": "https://docs.kibe.la"
+  }
+}

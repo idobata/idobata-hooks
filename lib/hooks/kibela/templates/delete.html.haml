@@ -1,9 +1,0 @@
-- resource_type = payload.resource_type
-%div
-  %i.fa.fa-trash
-  【#{resource_type}】
-  %span
-    = avatar_image_tag(payload.action_user.avatar_photo.url)
-  = payload.action_user.account
-  deleted
-  %a{ href: payload[resource_type].url }= payload[resource_type].title
