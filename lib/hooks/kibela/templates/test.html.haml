@@ -1,0 +1,5 @@
+%div
+  %span
+    = avatar_image_tag(payload.action_user.avatar_photo.url)
+  #{payload.action_user.account} set on
+  %a{ href: payload.team.url }= payload.team.name

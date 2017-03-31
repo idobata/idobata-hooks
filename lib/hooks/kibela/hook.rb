@@ -16,7 +16,14 @@ module Idobata::Hook
     end
 
     def template
-      payload.resource_type == "comment" ? "comment" : "page"
+      case payload.resource_type
+      when "comment"
+        "comment"
+      when "test"
+        "test"
+      else
+        "page"
+      end
     end
 
     def hide_body?

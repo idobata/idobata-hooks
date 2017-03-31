@@ -102,5 +102,22 @@ describe Idobata::Hook::Kibela, type: :hook do
         HTML
       end
     end
+
+    context 'test' do
+      context 'on test_send' do
+        let(:event_type) { 'test_send' }
+
+        its([:format]) { should eq(:html) }
+        its([:source]) { should eq(<<-'HTML'.strip_heredoc) }
+        <div>
+          <span>
+            <img src="https://cdn.kibe.la/media/public/1/kibe.png" width="16" height="16" alt="" />
+          </span>
+          kibe set on
+          <a href='https://docs.kibe.la/'>docs</a>
+        </div>
+        HTML
+      end
+    end
   end
 end
