@@ -1,16 +1,9 @@
 %div
   %span
     = avatar_image_tag(payload.action_user.avatar_photo.url)
-  #{payload.action_user.account} #{payload.action}d a #{resource_type} "
-  - if payload.action == "delete"
-    = title
-  - else
-    %a{ href: url }= title
-  ".
-  - if payload.action == "update"
-    (
-    %a{ href: payload[resource_type].revision_url } diff
-    )
+  #{payload.action_user.account} #{payload.action}d a #{resource_type} "#{payload.action == 'delete' ? title : link_to(title, url)}".
+  - if payload.action == 'update'
+    (#{link_to('diff', payload[resource_type].revision_url)})
 - if !hide_body? && payload[resource_type].content_md
   %div
     = md(payload[resource_type].content_md)

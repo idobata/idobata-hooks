@@ -3,7 +3,7 @@ module Idobata::Hook
     screen_name 'kibe.la'
     icon_url hook_image_url('icon.png')
     template_name { "#{template}.html.haml" }
-    helper        Helper
+    helper Helper
 
     before_render do
       skip_processing! if skip?
@@ -12,17 +12,15 @@ module Idobata::Hook
     private
 
     def skip?
-      payload.action == "update" && (payload.resource_type == "comment" || !payload.notify)
+      payload.action == 'update' && (payload.resource_type == 'comment' || !payload.notify)
     end
 
     def template
-      case payload.resource_type
-      when "comment"
-        "comment"
-      when "test"
-        "test"
+      case type = payload.resource_type
+      when 'comment', 'test'
+        type
       else
-        "page"
+        'page'
       end
     end
 

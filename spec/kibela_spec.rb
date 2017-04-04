@@ -8,7 +8,7 @@ describe Idobata::Hook::Kibela, type: :hook do
       post payload, 'Content-Type' => 'application/json'
     end
 
-    context "page" do
+    context 'page' do
       context 'on blog_create' do
         let(:event_type) { 'blog_create' }
 
@@ -18,9 +18,7 @@ describe Idobata::Hook::Kibela, type: :hook do
           <span>
             <img src="https://cdn.kibe.la/media/public/1/kibe.png" width="16" height="16" alt="" />
           </span>
-          kibe created a blog "
-          <a href='https://docs.kibe.la/@kibe/1'>sample request</a>
-          ".
+          kibe created a blog "<a href="https://docs.kibe.la/@kibe/1">sample request</a>".
         </div>
         <div>
           <h2>sample request</h2>
@@ -37,12 +35,8 @@ describe Idobata::Hook::Kibela, type: :hook do
           <span>
             <img src="https://cdn.kibe.la/media/public/1/kibe.png" width="16" height="16" alt="" />
           </span>
-          kibe updated a wiki "
-          <a href='https://docs.kibe.la/wikis/sample_request/1'>sample request</a>
-          ".
-          (
-          <a href='https://docs.kibe.la/wikis/1/versions/1'>diff</a>
-          )
+          kibe updated a wiki "<a href="https://docs.kibe.la/wikis/sample_request/1">sample request</a>".
+          (<a href="https://docs.kibe.la/wikis/1/versions/1">diff</a>)
         </div>
         <div>
           <h2>sample request</h2>
@@ -59,14 +53,12 @@ describe Idobata::Hook::Kibela, type: :hook do
           <span>
             <img src="https://cdn.kibe.la/media/public/1/kibe.png" width="16" height="16" alt="" />
           </span>
-          kibe deleted a blog "
-          sample request
-          ".
+          kibe deleted a blog "sample request".
         </div>
         HTML
       end
     end
-    context "comment" do
+    context 'comment' do
       context 'on comment_create' do
         let(:event_type) { 'comment_create' }
 
@@ -76,9 +68,7 @@ describe Idobata::Hook::Kibela, type: :hook do
           <span>
             <img src="https://cdn.kibe.la/media/public/1/kibe.png" width="16" height="16" alt="" />
           </span>
-          kibe commented on "
-          <a href='https://docs.kibe.la/@kibe/1#comment_1'>sample request</a>
-          ".
+          kibe commented on "<a href="https://docs.kibe.la/@kibe/1#comment_1">sample request</a>".
         </div>
         <div>
           <h2>sample request</h2>
@@ -95,9 +85,7 @@ describe Idobata::Hook::Kibela, type: :hook do
           <span>
             <img src="https://cdn.kibe.la/media/public/1/kibe.png" width="16" height="16" alt="" />
           </span>
-          kibe deleted a comment on "
-          <a href='https://docs.kibe.la/@kibe/1#comment_1'>sample request</a>
-          ".
+          kibe deleted a comment on "<a href="https://docs.kibe.la/@kibe/1#comment_1">sample request</a>".
         </div>
         HTML
       end
