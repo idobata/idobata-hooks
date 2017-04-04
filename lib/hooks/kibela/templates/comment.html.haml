@@ -1,0 +1,12 @@
+%div
+  %span
+    = avatar_image_tag(payload.action_user.avatar_photo.url)
+  - if payload.action == "create"
+    #{payload.action_user.account} commented on "
+  - else
+    #{payload.action_user.account} deleted a comment on "
+  %a{ href: url }= title
+  ".
+- if !hide_body? && payload.comment.content_md
+  %div
+    = md(payload.comment.content_md)

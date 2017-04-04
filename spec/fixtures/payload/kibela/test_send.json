@@ -1,0 +1,17 @@
+{
+  "team": {
+    "name": "docs",
+    "url": "https://docs.kibe.la/"
+  },
+  "resource_type": "test",
+  "action": "send",
+  "action_user": {
+    "id": 1,
+    "account": "kibe",
+    "real_name": "",
+    "url": "https://docs.kibe.la/@kibe",
+    "avatar_photo": {
+      "url": "https://cdn.kibe.la/media/public/1/kibe.png"
+    }
+  }
+}
