@@ -43,10 +43,15 @@ module Idobata::Hook
       end
 
       def render_action(payload, suffix)
-        if labeled_action?(payload.action)
+        case payload.action
+        when 'labeled', 'unlabeled'
           render_labeled(payload)
-        elsif assigned_action?(payload.action)
+        when 'assigned', 'unassigned'
           render_assigned(payload)
+        when 'review_requested'
+          render_review_request(payload)
+        when 'review_request_removed'
+          render_review_request_removed(payload)
         else
           action = payload.pull_request.try(:merged) ? 'merged' : payload.action # `payload.action` is 'closed' on merge.
 
@@ -56,10 +61,6 @@ module Idobata::Hook
 
       private
 
-      def labeled_action?(action)
-        %w(labeled unlabeled).include?(action)
-      end
-
       def render_labeled(payload)
         render_as_haml(<<-'HAML'.strip_heredoc, payload: payload)
           = payload.action
@@ -68,16 +69,30 @@ module Idobata::Hook
         HAML
       end
 
-      def assigned_action?(action)
-        %w(assigned unassigned).include?(payload.action)
-      end
-
       def render_assigned(paylaod)
         render_as_haml(<<-HAML.strip_heredoc, payload: payload)
           = payload.action
           %span= avatar_image_tag payload.assignee.avatar_url
           %a{href: payload.assignee.html_url}= payload.assignee.login
           = payload.action == 'assigned' ? 'to' : 'from'
+        HAML
+      end
+
+      def render_review_request(paylaod)
+        render_as_haml(<<-HAML.strip_heredoc, payload: payload)
+          requested
+          %span= avatar_image_tag payload.requested_reviewer.avatar_url
+          %a{href: payload.requested_reviewer.html_url}= payload.requested_reviewer.login
+          to review
+        HAML
+      end
+
+      def render_review_request_removed(paylaod)
+        render_as_haml(<<-HAML.strip_heredoc, payload: payload)
+          removed
+          a review request for
+          %span= avatar_image_tag payload.requested_reviewer.avatar_url
+          %a{href: payload.requested_reviewer.html_url}= payload.requested_reviewer.login
         HAML
       end
 

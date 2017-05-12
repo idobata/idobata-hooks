@@ -331,6 +331,44 @@ describe Idobata::Hook::Github, type: :hook do
         HTML
       end
 
+      describe 'pull request (review requested) event' do
+        let(:fixture)           { 'pull_request_review_requested.json' }
+        let(:github_event_type) { 'pull_request' }
+
+        its([:source]) { should eq(<<-HTML.strip_heredoc) }
+          <div>
+            <span><img src="https://avatars1.githubusercontent.com/u/43346?v=3" width="16" height="16" alt="" /></span>
+            <a href='https://github.com/hibariya'>hibariya</a>
+            requested
+            <span><img src="https://avatars3.githubusercontent.com/u/7548?v=3" width="16" height="16" alt="" /></span>
+            <a href='https://github.com/ursm'>ursm</a>
+            to review
+            <a href='https://github.com/idobata/idobata-hooks/pull/76'>idobata/idobata-hooks#76</a>
+            <b>Update dependencies to enable Greenkeeper 🌴</b>
+          </div>
+
+        HTML
+      end
+
+      describe 'pull request (review request removed) event' do
+        let(:fixture)           { 'pull_request_review_request_removed.json' }
+        let(:github_event_type) { 'pull_request' }
+
+        its([:source]) { should eq(<<-HTML.strip_heredoc) }
+          <div>
+            <span><img src="https://avatars1.githubusercontent.com/u/43346?v=3" width="16" height="16" alt="" /></span>
+            <a href='https://github.com/hibariya'>hibariya</a>
+            removed
+            a review request for
+            <span><img src="https://avatars3.githubusercontent.com/u/7548?v=3" width="16" height="16" alt="" /></span>
+            <a href='https://github.com/ursm'>ursm</a>
+            <a href='https://github.com/idobata/idobata-hooks/pull/76'>idobata/idobata-hooks#76</a>
+            <b>Update dependencies to enable Greenkeeper 🌴</b>
+          </div>
+
+        HTML
+      end
+
       context 'pull request comment event' do
         let(:fixture)           { 'pull_request_comment.json' }
         let(:github_event_type) { 'issue_comment' }
