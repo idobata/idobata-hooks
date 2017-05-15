@@ -1,5 +1,7 @@
 # idobata-hooks
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/idobata/idobata-hooks.svg)](https://greenkeeper.io/)
+
 [![Build Status](https://travis-ci.org/idobata/idobata-hooks.svg?branch=master)](https://travis-ci.org/idobata/idobata-hooks)
 [![Dependency Status](https://gemnasium.com/idobata/idobata-hooks.svg)](https://gemnasium.com/idobata/idobata-hooks)
 [![Code Climate](https://codeclimate.com/github/idobata/idobata-hooks.png)](https://codeclimate.com/github/idobata/idobata-hooks)
