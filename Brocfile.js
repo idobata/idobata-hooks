@@ -1,25 +1,28 @@
-var concat          = require('broccoli-concat');
-var mergeTrees      = require('broccoli-merge-trees');
-var pickFiles       = require('broccoli-static-compiler');
-var renameFiles     = require('broccoli-rename-files');
-var renderTemplates = require('broccoli-render-template');
+const Filter     = require('broccoli-filter');
+const Funnel     = require('broccoli-funnel');
+const concat     = require('broccoli-concat');
+const haml       = require('hamljs');
+const mergeTrees = require('broccoli-merge-trees');
 
-var styles = concat('lib/hooks', {
+class RenderHaml extends Filter {
+  processString(content) {
+    return haml.render(content).trimLeft();
+  }
+
+  getDestFilePath(relativePath) {
+    return `templates/idobata-hooks/${relativePath.replace(/\.html\.haml$/, '.hbs')}`;
+  }
+}
+
+const styles = concat('lib/hooks', {
   inputFiles: ['*/style.sass'],
   outputFile: '/styles/_idobata-hooks.sass'
 });
 
-var templates = pickFiles('lib/hooks', {
-  srcDir:  '/',
-  files:   ['*/help.html.haml'],
-  destDir: 'templates/idobata-hooks'
+const templates = new Funnel('lib/hooks', {
+  include: ['*/help.html.haml']
 });
 
-templates = renderTemplates(templates);
-templates = renameFiles(templates, {
-  transformFilename: function(filename, basename, extname) {
-    return basename.replace('.html', '.hbs');
-  }
-});
+const helps = new RenderHaml(templates);
 
-module.exports = mergeTrees([styles, templates]);
+module.exports = mergeTrees([styles, helps]);
