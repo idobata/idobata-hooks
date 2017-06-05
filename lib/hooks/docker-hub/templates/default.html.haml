@@ -1,4 +1,2 @@
 %div
-  #{payload.push_data.pusher} pushed #{payload.repository.repo_name}:#{payload.push_data.tag}
-  %br
-  #{payload.repository.repo_url}
+  #{payload.push_data.pusher} pushed <a href="#{payload.repository.repo_url}">#{payload.repository.repo_name}</a>:#{payload.push_data.tag}
