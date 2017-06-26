@@ -9,7 +9,7 @@ describe Idobata::Hook::Papertrail, type: :hook do
   describe '#process_payload' do
     subject { hook.process_payload }
 
-    its([:source]) { should eq(<<-HTML.strip_heredoc) }
+    it { expect(subject[:source]).to be_dom_equal <<~HTML }
       <p>
         <b>Jul 30 01:13:56 idobata heroku/router:</b>
         POST esm.idobata.io/rooms/6/hooks/13 dyno=web.1 queue=0 wait=0ms service=200ms status=200 bytes=1

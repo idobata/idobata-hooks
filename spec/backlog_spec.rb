@@ -23,7 +23,7 @@ describe Idobata::Hook::Backlog, type: :hook do
         post payload, {'Content-Type' => 'application/json'}
       end
 
-      its([:source]) { should eq(<<-HTML.strip_heredoc) }
+      it { expect(subject[:source]).to be_dom_equal <<~HTML }
         <p>
           test issue
           created by ozamasa.
@@ -41,7 +41,7 @@ describe Idobata::Hook::Backlog, type: :hook do
         post payload, {'Content-Type' => 'application/json'}, {space_id: 'test'}
       end
 
-      its([:source]) { should eq(<<-HTML.strip_heredoc) }
+      it { expect(subject[:source]).to be_dom_equal <<~HTML }
         <p>
           <a href="https://test.backlog.jp/view/TEST-100">test issue</a>
           created by ozamasa.
@@ -59,7 +59,7 @@ describe Idobata::Hook::Backlog, type: :hook do
         post payload, {'Content-Type' => 'application/json'}, {space_id: 'test'}
       end
 
-      its([:source]) { should eq(<<-HTML.strip_heredoc) }
+      it { expect(subject[:source]).to be_dom_equal <<~HTML }
         <p>
           <a href="https://test.backlog.jp/view/TEST-100#comment-200">test issue</a>
           updated by ozamasa.
@@ -76,7 +76,7 @@ describe Idobata::Hook::Backlog, type: :hook do
         post payload, {'Content-Type' => 'application/json'}, {space_id: 'test'}
       end
 
-      its([:source]) { should eq(<<-HTML.strip_heredoc) }
+      it { expect(subject[:source]).to be_dom_equal <<~HTML }
         <p>
           <a href="https://test.backlog.jp/view/TEST-100#comment-200">test issue</a>
           commented by ozamasa.
@@ -94,7 +94,7 @@ describe Idobata::Hook::Backlog, type: :hook do
         post payload, {'Content-Type' => 'application/json'}, {space_id: 'test'}
       end
 
-      its([:source]) { should eq(<<-HTML.strip_heredoc) }
+      it { expect(subject[:source]).to be_dom_equal <<~HTML }
         <p>TEST-100 issue deleted by ozamasa.</p>
       HTML
 
@@ -108,7 +108,7 @@ describe Idobata::Hook::Backlog, type: :hook do
         post payload, {'Content-Type' => 'application/json'}, {space_id: 'test'}
       end
 
-      its([:source]) { should eq(<<-HTML.strip_heredoc) }
+      it { expect(subject[:source]).to be_dom_equal <<~HTML }
         <p>multiple issues updated by ozamasa.</p>
         <ul>
           <li><a href="https://test.backlog.jp/view/TEST-100">test issue1</a></li>
@@ -126,7 +126,7 @@ describe Idobata::Hook::Backlog, type: :hook do
         post payload, {'Content-Type' => 'application/json'}, {space_id: 'test'}
       end
 
-      its([:source]) { should eq(<<-HTML.strip_heredoc) }
+      it { expect(subject[:source]).to be_dom_equal <<~HTML }
         <p>
           <a href="https://test.backlog.jp/view/TEST-100#comment-200">test issue</a>
           noticed by ozamasa.

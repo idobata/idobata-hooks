@@ -12,7 +12,7 @@ describe Idobata::Hook::Bitbucket, type: :hook do
       describe 'push event' do
         let(:event_type) { 'repo:push' }
 
-        its([:source]) { should == <<-HTML.strip_heredoc }
+        it { expect(subject[:source]).to be_dom_equal <<~HTML }
           <a href='https://bitbucket.org/hibariya'>hibariya</a>
           pushed to
           <a href='https://bitbucket.org/hibariya/test'>hibariya/test</a>
@@ -28,7 +28,7 @@ describe Idobata::Hook::Bitbucket, type: :hook do
       describe 'fork event' do
         let(:event_type) { 'repo:fork' }
 
-        its([:source]) { should == <<-HTML.strip_heredoc }
+        it { expect(subject[:source]).to be_dom_equal <<~HTML }
           <a href='https://bitbucket.org/masumiya'>masumiya</a>
           forked from
           <a href='https://bitbucket.org/masumiya/test'>masumiya/test</a>
@@ -40,7 +40,7 @@ describe Idobata::Hook::Bitbucket, type: :hook do
       describe 'commit comment created event' do
         let(:event_type) { 'repo:commit_comment_created' }
 
-        its([:source]) { should == <<-HTML.strip_heredoc }
+        it { expect(subject[:source]).to be_dom_equal <<~HTML }
           <p>
             <span><img src="https://bitbucket.org/account/masumiya/avatar/32/" width="16" height="16" alt="" /></span>
             <a href='https://bitbucket.org/masumiya'>Yuichi Masumiya</a>
@@ -57,7 +57,7 @@ describe Idobata::Hook::Bitbucket, type: :hook do
       describe 'pullrequest:created event' do
         let(:event_type) { 'pullrequest:created' }
 
-        its([:source]) { should == <<-HTML.strip_heredoc }
+        it { expect(subject[:source]).to be_dom_equal <<~HTML }
           <p>
             <span><img src="https://bitbucket.org/account/ursm/avatar/32/" width="16" height="16" alt="" /></span>
             <a href='https://bitbucket.org/ursm'>Keita Urashima</a>
@@ -72,7 +72,7 @@ describe Idobata::Hook::Bitbucket, type: :hook do
       describe 'pullrequest:fulfilled event' do
         let(:event_type) { 'pullrequest:fulfilled' }
 
-        its([:source]) { should == <<-HTML.strip_heredoc }
+        it { expect(subject[:source]).to be_dom_equal <<~HTML }
           <p>
             <span><img src="https://bitbucket.org/account/hibariya/avatar/32/" width="16" height="16" alt="" /></span>
             <a href='https://bitbucket.org/hibariya'>hibariya</a>
@@ -85,7 +85,7 @@ describe Idobata::Hook::Bitbucket, type: :hook do
       describe 'pullrequest:rejected event' do
         let(:event_type) { 'pullrequest:rejected' }
 
-        its([:source]) { should == <<-HTML.strip_heredoc }
+        it { expect(subject[:source]).to be_dom_equal <<~HTML }
           <p>
             <span><img src="https://bitbucket.org/account/hibariya/avatar/32/" width="16" height="16" alt="" /></span>
             <a href='https://bitbucket.org/hibariya'>hibariya</a>
@@ -98,7 +98,7 @@ describe Idobata::Hook::Bitbucket, type: :hook do
       describe 'pullrequest comment created event' do
         let(:event_type) { 'pullrequest:comment_created' }
 
-        its([:source]) { should == <<-HTML.strip_heredoc }
+        it { expect(subject[:source]).to be_dom_equal <<~HTML }
           <span><img src="https://bitbucket.org/account/hibariya/avatar/32/" width="16" height="16" alt="" /></span>
           <a href='https://bitbucket.org/hibariya'>hibariya</a>
           commented on pull request
@@ -110,7 +110,7 @@ describe Idobata::Hook::Bitbucket, type: :hook do
       describe 'pullrequest approve event' do
         let(:event_type) { 'pullrequest:approved' }
 
-        its([:source]) { should == <<-HTML.strip_heredoc }
+        it { expect(subject[:source]).to be_dom_equal <<~HTML }
           <p>
             <span><img src="https://bitbucket.org/account/hibariya/avatar/32/" width="16" height="16" alt="" /></span>
             <a href='https://bitbucket.org/hibariya'>hibariya</a>
@@ -123,7 +123,7 @@ describe Idobata::Hook::Bitbucket, type: :hook do
       describe 'pullrequest unapprove event' do
         let(:event_type) { 'pullrequest:unapproved' }
 
-        its([:source]) { should == <<-HTML.strip_heredoc }
+        it { expect(subject[:source]).to be_dom_equal <<~HTML }
           <p>
             <span><img src="https://bitbucket.org/account/masumiya/avatar/32/" width="16" height="16" alt="" /></span>
             <a href='https://bitbucket.org/masumiya'>masumiya</a>
@@ -138,7 +138,7 @@ describe Idobata::Hook::Bitbucket, type: :hook do
       context 'created' do
         let(:event_type) { 'issue:created' }
 
-        its([:source]) { should == <<-HTML.strip_heredoc }
+        it { expect(subject[:source]).to be_dom_equal <<~HTML }
           <p>
             <span><img src="https://bitbucket.org/account/masumiya/avatar/32/" width="16" height="16" alt="" /></span>
             <a href='https://bitbucket.org/masumiya'>Yuichi Masumiya</a>
@@ -153,7 +153,7 @@ describe Idobata::Hook::Bitbucket, type: :hook do
       context 'updated' do
         let(:event_type) { 'issue:updated' }
 
-        its([:source]) { should == <<-HTML.strip_heredoc }
+        it { expect(subject[:source]).to be_dom_equal <<~HTML }
           <p>
             <span><img src="https://bitbucket.org/account/masumiya/avatar/32/" width="16" height="16" alt="" /></span>
             <a href='https://bitbucket.org/masumiya'>Yuichi Masumiya</a>
@@ -167,7 +167,7 @@ describe Idobata::Hook::Bitbucket, type: :hook do
       context 'comment created' do
         let(:event_type) { 'issue:comment_created' }
 
-        its([:source]) { should == <<-HTML.strip_heredoc }
+        it { expect(subject[:source]).to be_dom_equal <<~HTML }
           <p>
             <span><img src="https://bitbucket.org/account/masumiya/avatar/32/" width="16" height="16" alt="" /></span>
             <a href='https://bitbucket.org/masumiya'>Yuichi Masumiya</a>

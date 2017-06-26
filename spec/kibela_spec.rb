@@ -13,7 +13,7 @@ describe Idobata::Hook::Kibela, type: :hook do
         let(:event_type) { 'blog_create' }
 
         its([:format]) { should eq(:html) }
-        its([:source]) { should eq(<<-'HTML'.strip_heredoc) }
+        it { expect(subject[:source]).to be_dom_equal <<~'HTML' }
         <div>
           <span>
             <img src="https://cdn.kibe.la/media/public/1/kibe.png" width="16" height="16" alt="" />
@@ -30,7 +30,7 @@ describe Idobata::Hook::Kibela, type: :hook do
         let(:event_type) { 'wiki_update' }
 
         its([:format]) { should eq(:html) }
-        its([:source]) { should eq(<<-'HTML'.strip_heredoc) }
+        it { expect(subject[:source]).to be_dom_equal <<~'HTML' }
         <div>
           <span>
             <img src="https://cdn.kibe.la/media/public/1/kibe.png" width="16" height="16" alt="" />
@@ -48,7 +48,7 @@ describe Idobata::Hook::Kibela, type: :hook do
         let(:event_type) { 'blog_delete' }
 
         its([:format]) { should eq(:html) }
-        its([:source]) { should eq(<<-'HTML'.strip_heredoc) }
+        it { expect(subject[:source]).to be_dom_equal <<~'HTML' }
         <div>
           <span>
             <img src="https://cdn.kibe.la/media/public/1/kibe.png" width="16" height="16" alt="" />
@@ -63,7 +63,7 @@ describe Idobata::Hook::Kibela, type: :hook do
         let(:event_type) { 'comment_create' }
 
         its([:format]) { should eq(:html) }
-        its([:source]) { should eq(<<-'HTML'.strip_heredoc) }
+        it { expect(subject[:source]).to be_dom_equal <<~'HTML' }
         <div>
           <span>
             <img src="https://cdn.kibe.la/media/public/1/kibe.png" width="16" height="16" alt="" />
@@ -80,7 +80,7 @@ describe Idobata::Hook::Kibela, type: :hook do
         let(:event_type) { 'comment_delete' }
 
         its([:format]) { should eq(:html) }
-        its([:source]) { should eq(<<-'HTML'.strip_heredoc) }
+        it { expect(subject[:source]).to be_dom_equal <<~'HTML' }
         <div>
           <span>
             <img src="https://cdn.kibe.la/media/public/1/kibe.png" width="16" height="16" alt="" />
@@ -96,7 +96,7 @@ describe Idobata::Hook::Kibela, type: :hook do
         let(:event_type) { 'test_send' }
 
         its([:format]) { should eq(:html) }
-        its([:source]) { should eq(<<-'HTML'.strip_heredoc) }
+        it { expect(subject[:source]).to be_dom_equal <<~'HTML' }
         <div>
           <span>
             <img src="https://cdn.kibe.la/media/public/1/kibe.png" width="16" height="16" alt="" />

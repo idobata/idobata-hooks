@@ -4,7 +4,7 @@ describe Idobata::Hook::Github, type: :hook do
   describe '#process_payload' do
     subject { hook.process_payload }
 
-    describe 'paylaod encoded as "application/x-www-form-urlencoded"' do
+    describe 'payload encoded as "application/x-www-form-urlencoded"' do
       let(:params) { {payload: payload} }
 
       before do
@@ -17,7 +17,7 @@ describe Idobata::Hook::Github, type: :hook do
         let(:fixture)           { 'push.json' }
         let(:github_event_type) { 'push' }
 
-        its([:source]) { should eq(<<-HTML.strip_heredoc) }
+        it { expect(subject[:source]).to be_dom_equal(<<~HTML) }
           <div>
             <span><img src="https://avatars.githubusercontent.com/u/1796864?v=3" width="16" height="16" alt="" /></span>
             <a href='https://github.com/mtsmfm'>mtsmfm</a>
@@ -31,12 +31,12 @@ describe Idobata::Hook::Github, type: :hook do
             <li>
               <a href='https://github.com/mtsmfm/notificaiton-test/commit/ddccd1ccfb871dc798ae903021e5ad7e22c78326'><tt>ddccd1c</tt></a>
               Remove line
-              
+
             </li>
             <li>
               <a href='https://github.com/mtsmfm/notificaiton-test/commit/fe77ebad85c4557f944174fcb8bf14eace15840d'><tt>fe77eba</tt></a>
               Add line
-              
+
             </li>
           </ul>
         HTML
@@ -56,7 +56,7 @@ describe Idobata::Hook::Github, type: :hook do
         let(:fixture)           { 'ping.json' }
         let(:github_event_type) { 'ping' }
 
-        its([:source]) { should eq(<<-HTML.strip_heredoc) }
+        it { expect(subject[:source]).to be_dom_equal <<~HTML }
           <div>Ping from GitHub received. Your hook seems to be successfully configured.</div>
         HTML
 
@@ -67,7 +67,7 @@ describe Idobata::Hook::Github, type: :hook do
         let(:fixture)           { 'push_with_long_comment.json' }
         let(:github_event_type) { 'push' }
 
-        its([:source]) { should eq(<<-HTML.strip_heredoc) }
+        it { expect(subject[:source]).to be_dom_equal <<~HTML }
           <div>
             <span><img src="https://avatars.githubusercontent.com/u/1796864?v=3" width="16" height="16" alt="" /></span>
             <a href='https://github.com/mtsmfm'>mtsmfm</a>
@@ -93,7 +93,7 @@ describe Idobata::Hook::Github, type: :hook do
         let(:fixture)           { 'push_with_branch_including_fragment_hash.json' }
         let(:github_event_type) { 'push' }
 
-        its([:source]) { should eq(<<-HTML.strip_heredoc) }
+        it { expect(subject[:source]).to be_dom_equal <<~HTML }
           <div>
             <span><img src="https://avatars.githubusercontent.com/u/290782?v=3" width="16" height="16" alt="" /></span>
             <a href='https://github.com/tricknotes'>tricknotes</a>
@@ -117,7 +117,7 @@ describe Idobata::Hook::Github, type: :hook do
         let(:fixture)           { 'create_branch_including_fragment_hash.json' }
         let(:github_event_type) { 'create' }
 
-        its([:source]) { should eq(<<-HTML.strip_heredoc) }
+        it { expect(subject[:source]).to be_dom_equal <<~HTML }
           <div>
             <span><img src="https://avatars.githubusercontent.com/u/290782?v=3" width="16" height="16" alt="" /></span>
             <a href='https://github.com/tricknotes'>tricknotes</a>
@@ -133,7 +133,7 @@ describe Idobata::Hook::Github, type: :hook do
         let(:fixture)           { 'tag_create.json' }
         let(:github_event_type) { 'create' }
 
-        its([:source]) { should eq(<<-HTML.strip_heredoc) }
+        it { expect(subject[:source]).to be_dom_equal <<~HTML }
           <div>
             <span><img src="https://avatars.githubusercontent.com/u/290782?" width="16" height="16" alt="" /></span>
             <a href='https://github.com/tricknotes'>tricknotes</a>
@@ -149,7 +149,7 @@ describe Idobata::Hook::Github, type: :hook do
         let(:fixture)           { 'tag_delete.json' }
         let(:github_event_type) { 'delete' }
 
-        its([:source]) { should eq(<<-HTML.strip_heredoc) }
+        it { expect(subject[:source]).to be_dom_equal <<~HTML }
           <div>
             <span><img src="https://avatars.githubusercontent.com/u/290782?" width="16" height="16" alt="" /></span>
             <a href='https://github.com/tricknotes'>tricknotes</a>
@@ -163,7 +163,7 @@ describe Idobata::Hook::Github, type: :hook do
         let(:fixture)           { 'issue.json' }
         let(:github_event_type) { 'issues' }
 
-        its([:source]) { should eq(<<-HTML.strip_heredoc) }
+        it { expect(subject[:source]).to be_dom_equal <<~HTML }
           <div>
             <span><img src="https://secure.gravatar.com/avatar/dc03a27ae31ba428c560c00c9128cd75?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png" width="16" height="16" alt="" /></span>
             <a href='https://github.com/tricknotes'>tricknotes</a>
@@ -180,15 +180,14 @@ describe Idobata::Hook::Github, type: :hook do
         let(:fixture)           { 'issue_closed.json' }
         let(:github_event_type) { 'issues' }
 
-        its([:source]) { should eq(<<-HTML.strip_heredoc) }
+        it { expect(subject[:source]).to be_dom_equal <<~HTML }
           <div>
             <span><img src="https://secure.gravatar.com/avatar/dc03a27ae31ba428c560c00c9128cd75?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png" width="16" height="16" alt="" /></span>
             <a href='https://github.com/tricknotes'>tricknotes</a>
             closed issue
             <a href='https://github.com/tricknotes/notification-test/issues/10'>tricknotes/notification-test#10</a>
-            <b>Oops!!</b>
+            <b>Oops!! </b>
           </div>
-
         HTML
       end
 
@@ -196,7 +195,7 @@ describe Idobata::Hook::Github, type: :hook do
         let(:fixture)           { 'issue_labeled.json' }
         let(:github_event_type) { 'issues' }
 
-        its([:source]) { should eq(<<-HTML.strip_heredoc) }
+        it { expect(subject[:source]).to be_dom_equal <<~HTML }
           <div>
             <span><img src="https://avatars.githubusercontent.com/u/290782?v=2" width="16" height="16" alt="" /></span>
             <a href='https://github.com/tricknotes'>tricknotes</a>
@@ -223,7 +222,7 @@ describe Idobata::Hook::Github, type: :hook do
         let(:fixture)           { 'issue_assigned.json' }
         let(:github_event_type) { 'issues' }
 
-        its([:source]) { should eq(<<-HTML.strip_heredoc) }
+        it { expect(subject[:source]).to be_dom_equal <<~HTML }
           <div>
             <span><img src="https://avatars.githubusercontent.com/u/290782?v=2" width="16" height="16" alt="" /></span>
             <a href='https://github.com/tricknotes'>tricknotes</a>
@@ -242,7 +241,7 @@ describe Idobata::Hook::Github, type: :hook do
         let(:fixture)           { 'pull_request.json' }
         let(:github_event_type) { 'pull_request' }
 
-        its([:source]) { should eq(<<-HTML.strip_heredoc) }
+        it { expect(subject[:source]).to be_dom_equal <<~HTML }
           <div>
             <span><img src="https://secure.gravatar.com/avatar/dc03a27ae31ba428c560c00c9128cd75?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png" width="16" height="16" alt="" /></span>
             <a href='https://github.com/tricknotes'>tricknotes</a>
@@ -261,7 +260,6 @@ describe Idobata::Hook::Github, type: :hook do
             deletions
           </div>
           <p>This is a pull request</p>
-
           <ul>
           <li>ok</li>
           </ul>
@@ -272,7 +270,7 @@ describe Idobata::Hook::Github, type: :hook do
         let(:fixture)           { 'pull_request_closed.json' }
         let(:github_event_type) { 'pull_request' }
 
-        its([:source]) { should eq(<<-HTML.strip_heredoc) }
+        it { expect(subject[:source]).to be_dom_equal <<~HTML }
           <div>
             <span><img src="https://secure.gravatar.com/avatar/dc03a27ae31ba428c560c00c9128cd75?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png" width="16" height="16" alt="" /></span>
             <a href='https://github.com/tricknotes'>tricknotes</a>
@@ -298,7 +296,7 @@ describe Idobata::Hook::Github, type: :hook do
         let(:fixture)           { 'pull_request_labeled.json' }
         let(:github_event_type) { 'pull_request' }
 
-        its([:source]) { should eq(<<-HTML.strip_heredoc) }
+        it { expect(subject[:source]).to be_dom_equal <<~HTML }
           <div>
             <span><img src="https://avatars.githubusercontent.com/u/290782?v=2" width="16" height="16" alt="" /></span>
             <a href='https://github.com/tricknotes'>tricknotes</a>
@@ -316,7 +314,7 @@ describe Idobata::Hook::Github, type: :hook do
         let(:fixture)           { 'pull_request_assigned.json' }
         let(:github_event_type) { 'pull_request' }
 
-        its([:source]) { should eq(<<-HTML.strip_heredoc) }
+        it { expect(subject[:source]).to be_dom_equal <<~HTML }
           <div>
             <span><img src="https://avatars.githubusercontent.com/u/290782?v=2" width="16" height="16" alt="" /></span>
             <a href='https://github.com/tricknotes'>tricknotes</a>
@@ -335,7 +333,7 @@ describe Idobata::Hook::Github, type: :hook do
         let(:fixture)           { 'pull_request_review_requested.json' }
         let(:github_event_type) { 'pull_request' }
 
-        its([:source]) { should eq(<<-HTML.strip_heredoc) }
+        it { expect(subject[:source]).to be_dom_equal <<~HTML }
           <div>
             <span><img src="https://avatars1.githubusercontent.com/u/43346?v=3" width="16" height="16" alt="" /></span>
             <a href='https://github.com/hibariya'>hibariya</a>
@@ -354,7 +352,7 @@ describe Idobata::Hook::Github, type: :hook do
         let(:fixture)           { 'pull_request_review_request_removed.json' }
         let(:github_event_type) { 'pull_request' }
 
-        its([:source]) { should eq(<<-HTML.strip_heredoc) }
+        it { expect(subject[:source]).to be_dom_equal <<~HTML }
           <div>
             <span><img src="https://avatars1.githubusercontent.com/u/43346?v=3" width="16" height="16" alt="" /></span>
             <a href='https://github.com/hibariya'>hibariya</a>
@@ -373,7 +371,7 @@ describe Idobata::Hook::Github, type: :hook do
         let(:fixture)           { 'pull_request_comment.json' }
         let(:github_event_type) { 'issue_comment' }
 
-        its([:source]) { should eq(<<-HTML.strip_heredoc) }
+        it { expect(subject[:source]).to be_dom_equal <<~HTML }
           <div>
             <span><img src="https://secure.gravatar.com/avatar/dc03a27ae31ba428c560c00c9128cd75?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png" width="16" height="16" alt="" /></span>
             <a href='https://github.com/tricknotes'>tricknotes</a>
@@ -381,7 +379,7 @@ describe Idobata::Hook::Github, type: :hook do
             <a href='https://github.com/tricknotes/notification-test/issues/2#issuecomment-19731401'>tricknotes/notification-test#2</a>
             <b>Test for PR</b>
           </div>
-          <p>This is a comment :smile: </p>
+          <p>This is a comment :smile:</p>
         HTML
       end
 
@@ -389,7 +387,7 @@ describe Idobata::Hook::Github, type: :hook do
         let(:fixture)           { 'issue_comment.json' }
         let(:github_event_type) { 'issue_comment' }
 
-        its([:source]) { should eq(<<-HTML.strip_heredoc) }
+        it { expect(subject[:source]).to be_dom_equal <<~HTML }
           <div>
             <span><img src="https://avatars.githubusercontent.com/u/290782?" width="16" height="16" alt="" /></span>
             <a href='https://github.com/tricknotes'>tricknotes</a>
@@ -414,14 +412,14 @@ describe Idobata::Hook::Github, type: :hook do
         let(:fixture)           { 'pull_request_review_comment.json' }
         let(:github_event_type) { 'pull_request_review_comment' }
 
-        its([:source]) { should eq(<<-HTML.strip_heredoc) }
+        it { expect(subject[:source]).to be_dom_equal <<~HTML }
           <div>
             <span><img src="https://secure.gravatar.com/avatar/dc03a27ae31ba428c560c00c9128cd75?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png" width="16" height="16" alt="" /></span>
             <a href='https://github.com/tricknotes'>tricknotes</a>
             commented on pull request
             <a href='https://github.com/tricknotes/notification-test/pull/5#discussion_r4791306'>tricknotes/notification-test#5</a>
           </div>
-          <p>:angel: :innocent: :angel: </p>
+          <p>:angel: :innocent: :angel:</p>
         HTML
       end
 
@@ -438,7 +436,7 @@ describe Idobata::Hook::Github, type: :hook do
         let(:fixture)           { 'pull_request_review_commented.json' }
         let(:github_event_type) { 'pull_request_review' }
 
-        its([:source]) { should eq(<<~HTML) }
+        it { expect(subject[:source]).to be_dom_equal <<~HTML }
           <div>
             <span><img src="https://avatars.githubusercontent.com/u/17717895?v=3" width="16" height="16" alt="" /></span>
             <a href='https://github.com/obatan'>obatan</a>
@@ -463,7 +461,7 @@ describe Idobata::Hook::Github, type: :hook do
         let(:fixture)           { 'pull_request_review_approved.json' }
         let(:github_event_type) { 'pull_request_review' }
 
-        its([:source]) { should eq(<<~HTML) }
+        it { expect(subject[:source]).to be_dom_equal <<~HTML }
           <div>
             <span><img src="https://avatars.githubusercontent.com/u/17717895?v=3" width="16" height="16" alt="" /></span>
             <a href='https://github.com/obatan'>obatan</a>
@@ -471,7 +469,7 @@ describe Idobata::Hook::Github, type: :hook do
             <a href='https://github.com/idobata/idobata-hooks/pull/73#pullrequestreview-4794931'>idobata/idobata-hooks#73</a>
             <b>Collecting review-event payload</b>
           </div>
-          <p>I'd like to approve this :robot: </p>
+          <p>I'd like to approve this :robot:</p>
         HTML
       end
 
@@ -479,7 +477,7 @@ describe Idobata::Hook::Github, type: :hook do
         let(:fixture)           { 'pull_request_review_changes_requested.json' }
         let(:github_event_type) { 'pull_request_review' }
 
-        its([:source]) { should eq(<<~HTML) }
+        it { expect(subject[:source]).to be_dom_equal <<~HTML }
           <div>
             <span><img src="https://avatars.githubusercontent.com/u/17717895?v=3" width="16" height="16" alt="" /></span>
             <a href='https://github.com/obatan'>obatan</a>
@@ -495,7 +493,7 @@ describe Idobata::Hook::Github, type: :hook do
         let(:fixture)           { 'commit_comment.json' }
         let(:github_event_type) { 'commit_comment' }
 
-        its([:source]) { should eq(<<-HTML.strip_heredoc) }
+        it { expect(subject[:source]).to be_dom_equal <<~HTML }
           <div>
             <span><img src="https://secure.gravatar.com/avatar/dc03a27ae31ba428c560c00c9128cd75?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png" width="16" height="16" alt="" /></span>
             <a href='https://github.com/tricknotes'>tricknotes</a>
@@ -510,7 +508,7 @@ describe Idobata::Hook::Github, type: :hook do
         let(:fixture)           { 'gollum.json' }
         let(:github_event_type) { 'gollum' }
 
-        its([:source]) { should eq(<<-HTML.strip_heredoc) }
+        it { expect(subject[:source]).to be_dom_equal <<~HTML }
           <div>
             <span><img src="https://secure.gravatar.com/avatar/dc03a27ae31ba428c560c00c9128cd75?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png" width="16" height="16" alt="" /></span>
             <a href='https://github.com/tricknotes'>tricknotes</a>
@@ -531,7 +529,7 @@ describe Idobata::Hook::Github, type: :hook do
         let(:fixture)           { 'watch.json' }
         let(:github_event_type) { 'watch' }
 
-        its([:source]) { should eq(<<-HTML.strip_heredoc) }
+        it { expect(subject[:source]).to be_dom_equal <<~HTML }
           <div>
             <span><img src="https://avatars.githubusercontent.com/u/290782?v=2" width="16" height="16" alt="" /></span>
             <a href='https://github.com/tricknotes'>tricknotes</a>
@@ -545,7 +543,7 @@ describe Idobata::Hook::Github, type: :hook do
         let(:fixture)           { 'repository.json' }
         let(:github_event_type) { 'repository' }
 
-        its([:source]) { should eq(<<-HTML.strip_heredoc) }
+        it { expect(subject[:source]).to be_dom_equal <<~HTML }
           <div>
             <span><img src="https://avatars.githubusercontent.com/u/7548?v=3" width="16" height="16" alt="" /></span>
             <a href='https://github.com/ursm'>ursm</a>
@@ -568,7 +566,7 @@ describe Idobata::Hook::Github, type: :hook do
         let(:fixture)           { 'status_success.json' }
         let(:github_event_type) { 'status' }
 
-        its([:source]) { should eq(<<-HTML.strip_heredoc) }
+        it { expect(subject[:source]).to be_dom_equal <<~HTML }
           <div>
             The Travis CI build passed: idobata/idobata-hooks
             (<a href='https://travis-ci.org/idobata/idobata-hooks/builds/36738881'>build</a>)
@@ -588,7 +586,7 @@ describe Idobata::Hook::Github, type: :hook do
         let(:fixture)           { 'status_failure.json' }
         let(:github_event_type) { 'status' }
 
-        its([:source]) { should eq(<<-HTML.strip_heredoc) }
+        it { expect(subject[:source]).to be_dom_equal <<~HTML }
           <div>
             The Travis CI build failed: idobata/idobata-hooks
             (<a href='https://travis-ci.org/idobata/idobata-hooks/builds/36560867'>build</a>)

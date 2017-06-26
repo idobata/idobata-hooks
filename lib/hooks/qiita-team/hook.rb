@@ -4,8 +4,6 @@ module Idobata::Hook
     icon_url      gravatar('a42654d10bb5293ca1bfe6ab3ea049e5')
     template_name { "#{event_model_type}.html.haml" }
 
-    helper Helper
-
     before_render do
       skip_processing! if destroyed?
     end

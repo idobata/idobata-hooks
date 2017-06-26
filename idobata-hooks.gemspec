@@ -17,20 +17,19 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ['lib']
 
-  spec.add_dependency 'actionpack', '~> 5.0.0'
-  spec.add_dependency 'activesupport', '~> 5.0.0'
+  spec.add_dependency 'actionpack', '>= 5.0.0'
+  spec.add_dependency 'activesupport', '>= 5.0.0'
   spec.add_dependency 'gemoji'
-  spec.add_dependency 'github-markdown'
+  spec.add_dependency 'commonmarker'
   spec.add_dependency 'haml'
   spec.add_dependency 'hashie'
-  spec.add_dependency 'html-pipeline'
+  spec.add_dependency 'html-pipeline', '>= 2.6.0'
+  spec.add_dependency 'html-pipeline-rouge_filter'
   spec.add_dependency 'mime-types'
-  spec.add_dependency 'pygments.rb'
   spec.add_dependency 'sass'
   spec.add_dependency 'tilt'
 
   spec.add_development_dependency 'bundler', '~> 1.6'
-  # spec.add_development_dependency 'github-linguist' # optional
   spec.add_development_dependency 'pry'
   spec.add_development_dependency 'rake'
   spec.add_development_dependency 'rspec', '~> 3.0'

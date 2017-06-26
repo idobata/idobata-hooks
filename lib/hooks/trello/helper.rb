@@ -1,10 +1,6 @@
 module Idobata::Hook
   class Trello < Base
     module Helper
-      def md(source)
-        HTML::Pipeline::MarkdownFilter.new(source).call.to_s.html_safe
-      end
-
       def link_to_member(member)
         capture_haml do
           member.avatarHash.present? ? _avatar(member) : _initials(member)

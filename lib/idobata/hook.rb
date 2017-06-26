@@ -11,13 +11,7 @@ require 'active_support/core_ext/object/to_query'
 require 'active_support/core_ext/string/inflections'
 require 'active_support/core_ext/string/strip'
 
-begin
-  require 'linguist'
-rescue LoadError
-  # linguist doesn't work on Heroku, so ignore it
-end
-
-require 'idobata/hook/html_safe_haml' unless defined?(Rails)
+require 'idobata/hook/html_safe_haml' unless defined?(Rails.root)
 require 'idobata/hook/version'
 require 'idobata/hook/helper'
 require 'idobata/hook/base'

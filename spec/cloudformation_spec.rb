@@ -9,7 +9,7 @@ describe Idobata::Hook::Cloudformation, type: :hook do
     describe 'subscription_confirmation' do
       let(:payload) { fixture_payload('cloudformation/subscription_confirmation.json') }
 
-      its([:source]) { should eq <<-HTML.strip_heredoc }
+      it { expect(subject[:source]).to be_dom_equal <<~HTML }
         <p>
           You have chosen to subscribe to the topic
           <b>arn:aws:sns:us-east-1:xxxxx:topic</b>.
@@ -24,7 +24,7 @@ describe Idobata::Hook::Cloudformation, type: :hook do
       context 'resource status reason is included' do
         let(:payload) { fixture_payload('cloudformation/notification_including_reason.json') }
 
-        its([:source]) { should eq <<-HTML.strip_heredoc }
+        it { expect(subject[:source]).to be_dom_equal <<~HTML }
           <p>
             <span class='label label-warning'>CREATE_IN_PROGRESS</span>
             <b>stack:</b>
@@ -41,7 +41,7 @@ describe Idobata::Hook::Cloudformation, type: :hook do
       context %q{resource status reason isn't included} do
         let(:payload) { fixture_payload('cloudformation/notification.json') }
 
-        its([:source]) { should eq <<-HTML.strip_heredoc }
+        it { expect(subject[:source]).to be_dom_equal <<~HTML }
           <p>
             <span class='label label-success'>CREATE_COMPLETE</span>
             <b>stack:</b>

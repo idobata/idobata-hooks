@@ -6,7 +6,7 @@
   %span
     = avatar_image_tag(body.author.links.avatar.href)
 
-  %a{href: "#{bitbucket_url}/#{body.author.username}"}
+  %a{href: bitbucket_url("/#{body.author.username}")}
     = body.author.display_name
   created pull request to
   %a{href: bitbucket_url("#{repository_name}/pull-request/#{body.id}")}

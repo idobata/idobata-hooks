@@ -12,7 +12,7 @@ describe Idobata::Hook::Gitlab, type: :hook do
     describe 'push event' do
       let(:fixture) { 'push.json' }
 
-      its([:source]) { should eq(<<-HTML.strip_heredoc) }
+      it { expect(subject[:source]).to be_dom_equal <<~HTML }
         <p>
           <span>John Smith</span>
           pushed to
@@ -31,7 +31,6 @@ describe Idobata::Hook::Gitlab, type: :hook do
             <a href='http://example.com/diaspora/commits/da1560886d4f094c3e6c9ef40349f7d38b5d27d7'><tt>da15608</tt></a>
             fixed readme
             <h1>hi</h1>
-            
             <ul>
             <li>hoi</li>
             <li>hoi</li>
@@ -44,7 +43,7 @@ describe Idobata::Hook::Gitlab, type: :hook do
     describe 'tag event' do
       let(:fixture) { 'tag.json' }
 
-      its([:source]) { should eq(<<-HTML.strip_heredoc) }
+      it { expect(subject[:source]).to be_dom_equal <<~HTML }
         <p>
           <span>tricknotes</span>
           created tag
@@ -58,7 +57,7 @@ describe Idobata::Hook::Gitlab, type: :hook do
     describe 'issue event' do
       let(:fixture) { 'issue.json' }
 
-      its([:source]) { should eq(<<-HTML.strip_heredoc) }
+      it { expect(subject[:source]).to be_dom_equal <<~HTML }
         <p>
           <span><img src="https://secure.gravatar.com/avatar/5c22169c1f836709eea59cebfcd6356a?s=40&amp;d=identicon" width="16" height="16" alt="" /></span>
           Ryunosuke SATO
@@ -74,7 +73,7 @@ describe Idobata::Hook::Gitlab, type: :hook do
     describe 'old issue event (Gitlab 7.0.0)' do
       let(:fixture) { 'issue-7.0.0.json' }
 
-      its([:source]) { should eq(<<-HTML.strip_heredoc) }
+      it { expect(subject[:source]).to be_dom_equal <<~HTML }
         <p>
           The issue was reopened:
           #2
@@ -87,7 +86,7 @@ describe Idobata::Hook::Gitlab, type: :hook do
     describe 'merge request event' do
       let(:fixture) { 'merge_request.json' }
 
-      its([:source]) { should eq(<<-HTML.strip_heredoc) }
+      it { expect(subject[:source]).to be_dom_equal <<~HTML }
         <p>
           <span><img src="https://secure.gravatar.com/avatar/5c22169c1f836709eea59cebfcd6356a?s=40&amp;d=identicon" width="16" height="16" alt="" /></span>
           Ryunosuke SATO
@@ -102,7 +101,7 @@ describe Idobata::Hook::Gitlab, type: :hook do
     describe 'old merge request event (Gitlab 7.0.0)' do
       let(:fixture) { 'merge_request-7.0.0.json' }
 
-      its([:source]) { should eq(<<-HTML.strip_heredoc) }
+      it { expect(subject[:source]).to be_dom_equal <<~HTML }
        <p>
          The merge request was closed:
          <b>Ping!</b>
@@ -113,7 +112,7 @@ describe Idobata::Hook::Gitlab, type: :hook do
     describe 'project create event' do
       let(:fixture) { 'project_create.json' }
 
-      its([:source]) { should eq(<<-HTML.strip_heredoc) }
+      it { expect(subject[:source]).to be_dom_equal <<~HTML }
         The new project <b>alice/hoi</b> is created.
       HTML
     end

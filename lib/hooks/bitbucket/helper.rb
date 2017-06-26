@@ -1,15 +1,21 @@
-require 'pygments'
+require 'html/pipeline/rouge_filter'
 
 module Idobata::Hook
   class Bitbucket
     module Helper
       module Services
+        BITBUCKET_URL = 'https://bitbucket.org/'
+
         include Helper
 
+        def md(source)
+          markdown_pipeline(source, base_url: BITBUCKET_URL)
+        end
+
         def bitbucket_url(path = nil)
-          url = 'https://bitbucket.org'
-          url << '/' << path if path
-          url
+          _path = path&.start_with?('/') ? path[1..-1] : path
+
+          "#{BITBUCKET_URL}#{_path}"
         end
 
         def pull_request_name_from_api_url(api_url)
@@ -18,20 +24,6 @@ module Idobata::Hook
 
           "#{repository_name}##{number}"
         end
-      end
-
-      filters = [
-        ::HTML::Pipeline::MarkdownFilter
-      ]
-
-      filters << ::HTML::Pipeline::SyntaxHighlightFilter if defined?(Linguist) # This filter doesn't work on heroku
-
-      Pipeline = ::HTML::Pipeline.new(filters, gfm: true, base_url: 'https://bitbucket.org/')
-
-      def md(source)
-        result = Pipeline.call(source)
-
-        result[:output].to_s.html_safe
       end
     end
   end

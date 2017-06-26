@@ -10,7 +10,7 @@ describe Idobata::Hook::Newrelic, type: :hook do
       let(:payload) { fixture_payload('newrelic/deployment.json') }
       let(:params)  { {deployment: payload} }
 
-      its([:source]) { should == <<-HTML.strip_heredoc }
+      it { expect(subject[:source]).to be_dom_equal <<~HTML }
         <div>
           <b>Application name was deployed by Name of person deploying</b>
         </div>
@@ -27,7 +27,7 @@ describe Idobata::Hook::Newrelic, type: :hook do
       let(:payload) { fixture_payload('newrelic/server_alert.json') }
       let(:params)  { {alert: payload} }
 
-      its([:source]) { should == <<-HTML.strip_heredoc }
+      it { expect(subject[:source]).to be_dom_equal <<~HTML }
         <div>
           <b>Alert opened on Server_name</b>
           <span class='label label-danger'>Critical</span>

@@ -11,7 +11,7 @@ describe Idobata::Hook::Mackerel, type: :hook do
     context 'on alert which has host information' do
       let(:payload_type) { 'alert' }
 
-      its([:source]) { should eq(<<-HTML.strip_heredoc) }
+      it { expect(subject[:source]).to be_dom_equal <<~HTML }
         <p>
           <span class='label label-danger'>CRITICAL</span>
           connectivity at app01 (working) Service: role
@@ -25,7 +25,7 @@ describe Idobata::Hook::Mackerel, type: :hook do
     context "on alert which doesn't have any host information" do
       let(:payload_type) { 'alert_external_monitor' }
 
-      its([:source]) { should eq(<<-HTML.strip_heredoc) }
+      it { expect(subject[:source]).to be_dom_equal <<~HTML }
         <p>
           <span class='label label-danger'>CRITICAL</span>
           An external http monitor
@@ -39,7 +39,7 @@ describe Idobata::Hook::Mackerel, type: :hook do
     context 'on sample' do
       let(:payload_type) { 'sample' }
 
-      its([:source]) { should eq(<<-HTML.strip_heredoc) }
+      it { expect(subject[:source]).to be_dom_equal <<~HTML }
         <p>
           sample: Sample Notification from Mackerel
         </p>

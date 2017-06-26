@@ -11,7 +11,7 @@ describe Idobata::Hook::Sentry, type: :hook do
     describe 'event level is fatal' do
       let(:fixture) { 'fatal.json' }
 
-      its([:source]) { should eq(<<-HTML.strip_heredoc) }
+      it { expect(subject[:source]).to be_dom_equal <<~HTML }
         <p>
           Project Project Name received an event
           <a href='https://app.getsentry.com/getsentry/project-slug/group/27379932/'>#27379932</a>
@@ -26,7 +26,7 @@ describe Idobata::Hook::Sentry, type: :hook do
     describe 'event level is error' do
       let(:fixture) { 'error.json' }
 
-      its([:source]) { should eq(<<-HTML.strip_heredoc) }
+      it { expect(subject[:source]).to be_dom_equal <<~HTML }
         <p>
           Project Project Name received an event
           <a href='https://app.getsentry.com/getsentry/project-slug/group/27379932/'>#27379932</a>
@@ -41,7 +41,7 @@ describe Idobata::Hook::Sentry, type: :hook do
     describe 'event level is warning' do
       let(:fixture) { 'warning.json' }
 
-      its([:source]) { should eq(<<-HTML.strip_heredoc) }
+      it { expect(subject[:source]).to be_dom_equal <<~HTML }
         <p>
           Project Project Name received an event
           <a href='https://app.getsentry.com/getsentry/project-slug/group/27379932/'>#27379932</a>
@@ -56,7 +56,7 @@ describe Idobata::Hook::Sentry, type: :hook do
     describe 'event level is info' do
       let(:fixture) { 'info.json' }
 
-      its([:source]) { should eq(<<-HTML.strip_heredoc) }
+      it { expect(subject[:source]).to be_dom_equal <<~HTML }
         <p>
           Project Project Name received an event
           <a href='https://app.getsentry.com/getsentry/project-slug/group/27379932/'>#27379932</a>
@@ -71,7 +71,7 @@ describe Idobata::Hook::Sentry, type: :hook do
     describe 'event level is debug' do
       let(:fixture) { 'debug.json' }
 
-      its([:source]) { should eq(<<-HTML.strip_heredoc) }
+      it { expect(subject[:source]).to be_dom_equal <<~HTML }
         <p>
           Project Project Name received an event
           <a href='https://app.getsentry.com/getsentry/project-slug/group/27379932/'>#27379932</a>
@@ -86,7 +86,7 @@ describe Idobata::Hook::Sentry, type: :hook do
     describe 'event level is unknown' do
       let(:fixture) { 'unknown.json' }
 
-      its([:source]) { should eq(<<-HTML.strip_heredoc) }
+      it { expect(subject[:source]).to be_dom_equal <<~HTML }
         <p>
           Project Project Name received an event
           <a href='https://app.getsentry.com/getsentry/project-slug/group/27379932/'>#27379932</a>
