@@ -176,6 +176,15 @@ describe Idobata::Hook::Github, type: :hook do
         HTML
       end
 
+      context 'issue edited event' do
+        let(:fixture)           { 'issue_edited.json' }
+        let(:github_event_type) { 'issues' }
+
+        subject { ->{ hook.process_payload } }
+
+        it { expect(subject).to raise_error(Idobata::Hook::SkipProcessing) }
+      end
+
       describe 'issue (closed) event' do
         let(:fixture)           { 'issue_closed.json' }
         let(:github_event_type) { 'issues' }
@@ -266,6 +275,15 @@ describe Idobata::Hook::Github, type: :hook do
           <li>ok</li>
           </ul>
         HTML
+      end
+
+      context 'pull request edited event' do
+        let(:fixture)           { 'pull_request_edited.json' }
+        let(:github_event_type) { 'pull_request' }
+
+        subject { ->{ hook.process_payload } }
+
+        it { expect(subject).to raise_error(Idobata::Hook::SkipProcessing) }
       end
 
       describe 'pull request (closed) event' do
