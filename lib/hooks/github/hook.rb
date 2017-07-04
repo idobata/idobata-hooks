@@ -15,6 +15,18 @@ module Idobata::Hook
       )
     )
 
+    ACTIONS_TO_IGNORE = Set.new(
+      [
+        %w(pull_request synchronize),
+        %w(issue_comment edited),
+        %w(issue_comment deleted),
+        %w(pull_request_review_comment edited),
+        %w(pull_request_review_comment deleted),
+        %w(issues edited),
+        %w(pull_request edited)
+      ]
+    )
+
     screen_name   'GitHub'
     icon_url      gravatar('61024896f291303615bcd4f7a0dcfb74')
     form_json_key 'payload'
@@ -25,17 +37,23 @@ module Idobata::Hook
     before_render do
       raise BadRequest, 'This is GitHub hook, who are you?' unless event_type
 
-      skip_processing! if EVENTS_TO_IGNORE.include?(event_type) || synchronize_event? || create_branch_push_event? || delete_branch_push_event? || delete_label_event? || pending_status_event? || edit_or_delete_comment_event? || review_comment_has_blank_body?
+      skip_processing! if nop?
     end
 
     private
 
-    def review_comment_has_blank_body?
-      event_type == 'pull_request_review' && payload.review.state == 'commented' && payload.review.body.blank?
+    def nop?
+      EVENTS_TO_IGNORE.include?(event_type)                      ||
+        ACTIONS_TO_IGNORE.include?([event_type, payload.action]) ||
+        create_branch_push_event?                                ||
+        delete_branch_push_event?                                ||
+        delete_label_event?                                      ||
+        pending_status_event?                                    ||
+        review_comment_has_blank_body?
     end
 
-    def synchronize_event?
-      event_type == 'pull_request' && payload.action == 'synchronize'
+    def review_comment_has_blank_body?
+      event_type == 'pull_request_review' && payload.review.state == 'commented' && payload.review.body.blank?
     end
 
     def create_branch_push_event?
@@ -52,10 +70,6 @@ module Idobata::Hook
 
     def pending_status_event?
       event_type == 'status' && payload.state == 'pending'
-    end
-
-    def edit_or_delete_comment_event?
-      %w(issue_comment pull_request_review_comment).include?(event_type) && %w(edited deleted).include?(payload.action)
     end
 
     def event_type
