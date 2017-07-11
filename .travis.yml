@@ -1,12 +1,18 @@
 language: ruby
 sudo: false
-rvm: 2.3.1
+rvm: 2.3.3
 cache: [bundler, apt]
+git:
+  depth: 1
 
+# CMake 2.8.9 or higher is required
+# https://github.com/gjtorikian/commonmarker/blob/099344c91805000b0253f8aecbb96c38dfa95b9c/.travis.yml
 addons:
   apt:
+    sources:
+      - kalakris-cmake
     packages:
-      - libicu-dev
+      - cmake
 
 script: bundle exec rake
 

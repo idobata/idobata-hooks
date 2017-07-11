@@ -8,7 +8,7 @@ describe Idobata::Hook::CircleCI, type: :hook do
   describe '#process_payload' do
     subject { hook.process_payload }
 
-    its([:source]) { should eq(<<-HTML.strip_heredoc) }
+    it { expect(subject[:source]).to be_dom_equal <<~HTML }
       <div>
         circleci/mongofinil<a href='https://circleci.com/gh/circleci/mongofinil/22'>#22</a>
         (master - <tt>1d23162</tt>):

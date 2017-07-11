@@ -11,7 +11,7 @@ describe Idobata::Hook::Airbrake, type: :hook do
     context 'via rack' do
       let(:fixture) { 'rack_error' }
 
-      its([:source]) { should eq(<<-HTML.strip_heredoc) }
+      it { expect(subject[:source]).to be_dom_equal <<~HTML }
         <p>
           <span class='label label-info'>Airbrake</span>
           <span class='label label-info'>production</span>
@@ -33,7 +33,7 @@ describe Idobata::Hook::Airbrake, type: :hook do
     context 'standalone' do
       let(:fixture) { 'standalone_error' }
 
-      its([:source]) { should eq(<<-HTML.strip_heredoc) }
+      it { expect(subject[:source]).to be_dom_equal <<~HTML }
         <p>
           <span class='label label-info'>idobata-hooks</span>
           <span class='label label-info'></span>

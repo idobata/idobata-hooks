@@ -1,6 +1,11 @@
 require 'action_dispatch/http/mime_type'
 
 module Idobata::Hook
+  class Payload < Hashie::Mash
+    # XXX: payload contains :size ...
+    disable_warnings
+  end
+
   class Base
     include ActiveSupport::Callbacks
     define_callbacks :render
@@ -114,7 +119,7 @@ module Idobata::Hook
     end
 
     def payload
-      @payload ||= Hashie::Mash.new(_payload)
+      @payload ||= Payload.new(_payload)
     end
 
     def _payload

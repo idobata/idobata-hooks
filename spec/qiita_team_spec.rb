@@ -14,7 +14,7 @@ describe Idobata::Hook::QiitaTeam, type: :hook do
       let(:fixture) { 'item_created.json' }
       let(:qiita_event_model_type) { 'item' }
 
-      its([:source]) { should eq(<<-HTML.strip_heredoc) }
+      it { expect(subject[:source]).to be_dom_equal <<~HTML }
         <p>
           <span><img src="https://pbs.twimg.com/profile_images/429833774562439168/gEY-Y6IJ_normal.jpeg" width="16" height="16" alt="" /></span>
           hanachin_
@@ -30,7 +30,7 @@ describe Idobata::Hook::QiitaTeam, type: :hook do
       let(:fixture) { 'item_updated.json' }
       let(:qiita_event_model_type) { 'item' }
 
-      its([:source]) { should eq(<<-HTML.strip_heredoc) }
+      it { expect(subject[:source]).to be_dom_equal <<~HTML }
         <p>
           <span><img src="https://pbs.twimg.com/profile_images/1542801560/Qiita_normal.png" width="16" height="16" alt="" /></span>
           qiitan
@@ -46,7 +46,7 @@ describe Idobata::Hook::QiitaTeam, type: :hook do
       let(:fixture) { 'comment_created.json' }
       let(:qiita_event_model_type) { 'comment' }
 
-      its([:source]) { should eq(<<-HTML.strip_heredoc) }
+      it { expect(subject[:source]).to be_dom_equal <<~HTML }
         <p>
           <span><img src="https://secure.gravatar.com/avatar/f966e93db0fbaf3aa07f7df5fa136933?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png" width="16" height="16" alt="" /></span>
           ursm
@@ -54,7 +54,6 @@ describe Idobata::Hook::QiitaTeam, type: :hook do
           <a href='https://idobata.qiita.com/ursm/items/49d85f99ff57a01114a0#comment-5aa59b18b8c1cef060e0'>comment</a>
         </p>
         <h1>hoi</h1>
-
         <ul>
         <li>fuga</li>
         <li>piyo</li>
@@ -68,7 +67,7 @@ describe Idobata::Hook::QiitaTeam, type: :hook do
       let(:fixture) { 'comment_updated.json' }
       let(:qiita_event_model_type) { 'comment' }
 
-      its([:source]) { should eq(<<-HTML.strip_heredoc) }
+      it { expect(subject[:source]).to be_dom_equal <<~HTML }
         <p>
           <span><img src="https://pbs.twimg.com/profile_images/429833774562439168/gEY-Y6IJ_normal.jpeg" width="16" height="16" alt="" /></span>
           hanachin_
@@ -84,7 +83,7 @@ describe Idobata::Hook::QiitaTeam, type: :hook do
       let(:fixture) { 'member_added.json' }
       let(:qiita_event_model_type) { 'member' }
 
-      its([:source]) { should eq(<<-HTML.strip_heredoc) }
+      it { expect(subject[:source]).to be_dom_equal <<~HTML }
         <p>
           <span><img src="https://pbs.twimg.com/profile_images/3188172053/ae5b95121f109b762c565189fc65ff3a_normal.png" width="16" height="16" alt="" /></span>
           <a href='http://qiita.com/tompng'>tompng</a>
@@ -100,7 +99,7 @@ describe Idobata::Hook::QiitaTeam, type: :hook do
       let(:fixture) { 'member_removed.json' }
       let(:qiita_event_model_type) { 'member' }
 
-      its([:source]) { should eq(<<-HTML.strip_heredoc) }
+      it { expect(subject[:source]).to be_dom_equal <<~HTML }
         <p>
           <span><img src="https://pbs.twimg.com/profile_images/3188172053/ae5b95121f109b762c565189fc65ff3a_normal.png" width="16" height="16" alt="" /></span>
           <a href='http://qiita.com/tompng'>tompng</a>
@@ -116,7 +115,7 @@ describe Idobata::Hook::QiitaTeam, type: :hook do
       let(:fixture) { 'ping.json' }
       let(:qiita_event_model_type) { 'ping' }
 
-      its([:source]) { should eq(<<-HTML.strip_heredoc) }
+      it { expect(subject[:source]).to be_dom_equal <<~HTML }
         <p>Ping from Qiita:Team received. Your hook seems to be successfully configured.</p>
       HTML
     end
@@ -125,7 +124,7 @@ describe Idobata::Hook::QiitaTeam, type: :hook do
       let(:fixture) { 'project_created.json' }
       let(:qiita_event_model_type) { 'project' }
 
-      its([:source]) { should eq(<<-HTML.strip_heredoc) }
+      it { expect(subject[:source]).to be_dom_equal <<~HTML }
         <p>
           <span><img src="user_image.jpg" width="16" height="16" alt="" /></span>
           qiitan
@@ -142,7 +141,7 @@ describe Idobata::Hook::QiitaTeam, type: :hook do
       let(:fixture) { 'project_updated.json' }
       let(:qiita_event_model_type) { 'project' }
 
-      its([:source]) { should eq(<<-HTML.strip_heredoc) }
+      it { expect(subject[:source]).to be_dom_equal <<~HTML }
         <p>
           <span><img src="user_image.jpg" width="16" height="16" alt="" /></span>
           qiitan
@@ -158,7 +157,7 @@ describe Idobata::Hook::QiitaTeam, type: :hook do
       let(:fixture) { 'project_updated_for_archived.json' }
       let(:qiita_event_model_type) { 'project' }
 
-      its([:source]) { should eq(<<-HTML.strip_heredoc) }
+      it { expect(subject[:source]).to be_dom_equal <<~HTML }
         <p>
           <span><img src="user_image.jpg" width="16" height="16" alt="" /></span>
           qiitan

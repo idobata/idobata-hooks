@@ -1,14 +1,12 @@
 module Idobata::Hook
   class Github
     module Helper
+      GITHUB_URL = 'https://github.com/'
+
       filters = [
         ::HTML::Pipeline::MarkdownFilter,
         ::HTML::Pipeline::MentionFilter
       ]
-
-      filters << ::HTML::Pipeline::SyntaxHighlightFilter if defined?(Linguist) # This filter doesn't work on heroku
-
-      Pipeline = ::HTML::Pipeline.new(filters, gfm: true, base_url: 'https://github.com/')
 
       GITHUB_DEFAULT_LABEL_COLORS = {
         '84b6eb' => '1c2733',
@@ -37,9 +35,7 @@ module Idobata::Hook
       }
 
       def md(source)
-        result = Pipeline.call(source)
-
-        result[:output].to_s.html_safe
+        markdown_pipeline(source, base_url: GITHUB_URL)
       end
 
       def render_action(payload, suffix)

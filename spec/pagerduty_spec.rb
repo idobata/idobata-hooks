@@ -8,7 +8,7 @@ describe Idobata::Hook::Pagerduty, type: :hook do
 
     subject { hook.process_payload }
 
-    its([:source]) { should eq <<-HTML.strip_heredoc }
+    it { expect(subject[:source]).to be_dom_equal <<~HTML }
       <p>
         <span class='label label-danger'>triggered</span>
         <b>Service:</b>

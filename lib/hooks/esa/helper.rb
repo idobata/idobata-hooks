@@ -19,10 +19,6 @@ module Idobata::Hook
           %b= payload.post.name
         HAML
       end
-
-      def md(source)
-        HTML::Pipeline::MarkdownFilter.new(source, gfm: true).call.to_s.html_safe
-      end
     end
 
     def render_as_haml(haml, locals)

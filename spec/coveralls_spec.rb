@@ -11,7 +11,7 @@ describe Idobata::Hook::Coveralls, type: :hook do
     context 'coverage increased' do
       let(:fixture) { 'increased' }
 
-      its([:source]) { should eq(<<-HTML.strip_heredoc) }
+      it { expect(subject[:source]).to be_dom_equal <<~HTML }
       <p>
         <a href='https://example.io/builds/987654321'>gihub-user/repo-name</a>
         coverage increased
@@ -31,7 +31,7 @@ describe Idobata::Hook::Coveralls, type: :hook do
     context 'coverage decreased' do
       let(:fixture) { 'decreased' }
 
-      its([:source]) { should eq(<<-HTML.strip_heredoc) }
+      it { expect(subject[:source]).to be_dom_equal <<~HTML }
       <p>
         <a href='https://example.io/builds/987654321'>gihub-user/repo-name</a>
         coverage decreased
@@ -51,7 +51,7 @@ describe Idobata::Hook::Coveralls, type: :hook do
     context 'same coverage' do
       let(:fixture) { 'same' }
 
-      its([:source]) { should eq(<<-HTML.strip_heredoc) }
+      it { expect(subject[:source]).to be_dom_equal <<~HTML }
       <p>
         <a href='https://example.io/builds/987654321'>gihub-user/repo-name</a>
         coverage remained the same at
@@ -69,7 +69,7 @@ describe Idobata::Hook::Coveralls, type: :hook do
     context 'ambiguous coverage' do
       let(:fixture) { 'ambiguous' }
 
-      its([:source]) { should eq(<<-HTML.strip_heredoc) }
+      it { expect(subject[:source]).to be_dom_equal <<~HTML }
       <p>
         <a href='https://example.io/builds/987654321'>gihub-user/repo-name</a>
         coverage remained the same at

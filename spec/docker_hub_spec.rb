@@ -8,7 +8,7 @@ describe Idobata::Hook::DockerHub, type: :hook do
   describe '#process_payload' do
     subject { hook.process_payload }
 
-    its([:source]) { should eq(<<-HTML.strip_heredoc) }
+    it { expect(subject[:source]).to be_dom_equal <<~HTML }
       <div>
         hanachin pushed <a href="https://hub.docker.com/r/hanachin/tmp_docker_hub_webhook">hanachin/tmp_docker_hub_webhook</a>:latest
       </div>

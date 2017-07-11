@@ -12,7 +12,7 @@ describe Idobata::Hook::Trello, type: :hook do
       describe 'createCard event' do
         let(:event_type) { 'create_card' }
 
-        its([:source]) { should == <<-HTML.strip_heredoc }
+        it { expect(subject[:source]).to be_dom_equal <<~HTML }
           <span class='trello-member-initials'>EK</span>
           <a href='https://trello.com/eitokatagiri2'>eitokatagiri2</a>
           created
@@ -27,7 +27,7 @@ describe Idobata::Hook::Trello, type: :hook do
       describe 'deleteCard event' do
         let(:event_type) { 'delete_card' }
 
-        its([:source]) { should == <<-HTML.strip_heredoc }
+        it { expect(subject[:source]).to be_dom_equal <<~HTML }
           <span class='trello-member-initials'>EK</span>
           <a href='https://trello.com/eitokatagiri2'>eitokatagiri2</a>
           deleted card
@@ -43,7 +43,7 @@ describe Idobata::Hook::Trello, type: :hook do
         describe 'archive' do
           let(:event_type) { 'update_card_archive' }
 
-          its([:source]) { should == <<-HTML.strip_heredoc }
+          it { expect(subject[:source]).to be_dom_equal <<~HTML }
             <span class='trello-member-initials'>EK</span>
             <a href='https://trello.com/eitokatagiri2'>eitokatagiri2</a>
             archived
@@ -56,7 +56,7 @@ describe Idobata::Hook::Trello, type: :hook do
         describe 'unarchive' do
           let(:event_type) { 'update_card_unarchive' }
 
-          its([:source]) { should == <<-HTML.strip_heredoc }
+          it { expect(subject[:source]).to be_dom_equal <<~HTML }
             <span class='trello-member-initials'>EK</span>
             <a href='https://trello.com/eitokatagiri2'>eitokatagiri2</a>
             unarchived
@@ -69,7 +69,7 @@ describe Idobata::Hook::Trello, type: :hook do
         describe 'move' do
           let(:event_type) { 'update_card_move' }
 
-          its([:source]) { should == <<-HTML.strip_heredoc }
+          it { expect(subject[:source]).to be_dom_equal <<~HTML }
             <span class='trello-member-initials'>EK</span>
             <a href='https://trello.com/eitokatagiri2'>eitokatagiri2</a>
             moved
@@ -94,7 +94,7 @@ describe Idobata::Hook::Trello, type: :hook do
         describe 'update description' do
           let(:event_type) { 'update_card_update_description' }
 
-          its([:source]) { should == <<-HTML.strip_heredoc }
+          it { expect(subject[:source]).to be_dom_equal <<~HTML }
             <span class='trello-member-initials'>EK</span>
             <a href='https://trello.com/eitokatagiri2'>eitokatagiri2</a>
             updated description in
@@ -102,11 +102,8 @@ describe Idobata::Hook::Trello, type: :hook do
             on
             <a href='https://trello.com/b/zlgpqYq6'>Welcome Board</a>
             <h1>Description.</h1>
-
             <p><strong>This is a description.</strong></p>
-
             <hr>
-
             <p><a href="http://example.com">link</a></p>
           HTML
         end
@@ -117,7 +114,7 @@ describe Idobata::Hook::Trello, type: :hook do
           # FIXME: ugly
           let(:datetime) { DateTime.parse('2014-07-31 03:00:00+00:00').to_time.strftime('%Y/%m/%d %H:%M:%S') }
 
-          its([:source]) { should == <<-HTML.strip_heredoc }
+          it { expect(subject[:source]).to be_dom_equal <<~HTML }
             <span class='trello-member-initials'>EK</span>
             <a href='https://trello.com/eitokatagiri2'>eitokatagiri2</a>
             set due to
@@ -132,7 +129,7 @@ describe Idobata::Hook::Trello, type: :hook do
         describe 'remove due' do
           let(:event_type) { 'update_card_remove_due' }
 
-          its([:source]) { should == <<-HTML.strip_heredoc }
+          it { expect(subject[:source]).to be_dom_equal <<~HTML }
             <span class='trello-member-initials'>EK</span>
             <a href='https://trello.com/eitokatagiri2'>eitokatagiri2</a>
             removed due
@@ -146,7 +143,7 @@ describe Idobata::Hook::Trello, type: :hook do
         describe 'update name' do
           let(:event_type) { 'update_card_update_name' }
 
-          its([:source]) { should == <<-HTML.strip_heredoc }
+          it { expect(subject[:source]).to be_dom_equal <<~HTML }
             <span class='trello-member-initials'>EK</span>
             <a href='https://trello.com/eitokatagiri2'>eitokatagiri2</a>
             updated name to
@@ -160,7 +157,7 @@ describe Idobata::Hook::Trello, type: :hook do
       describe 'commentCard event' do
         let(:event_type) { 'comment_card' }
 
-        its([:source]) { should == <<-HTML.strip_heredoc }
+        it { expect(subject[:source]).to be_dom_equal <<~HTML }
           <span class='trello-member-initials'>EK</span>
           <a href='https://trello.com/eitokatagiri2'>eitokatagiri2</a>
           commented on
@@ -174,7 +171,7 @@ describe Idobata::Hook::Trello, type: :hook do
       describe 'addMemberToCard event' do
         let(:event_type) { 'add_member_to_card' }
 
-        its([:source]) { should == <<-HTML.strip_heredoc }
+        it { expect(subject[:source]).to be_dom_equal <<~HTML }
           <span class='trello-member-initials'>EK</span>
           <a href='https://trello.com/eitokatagiri2'>eitokatagiri2</a>
           added
@@ -190,7 +187,7 @@ describe Idobata::Hook::Trello, type: :hook do
       describe 'removeMemberFormCard event' do
         let(:event_type) { 'remove_member_from_card' }
 
-        its([:source]) { should == <<-HTML.strip_heredoc }
+        it { expect(subject[:source]).to be_dom_equal <<~HTML }
           <span class='trello-member-initials'>EK</span>
           <a href='https://trello.com/eitokatagiri2'>eitokatagiri2</a>
           removed
@@ -206,7 +203,7 @@ describe Idobata::Hook::Trello, type: :hook do
       describe 'addLabelFromCard event' do
         let(:event_type) { 'add_label_to_card' }
 
-        its([:source]) { should == <<-HTML.strip_heredoc }
+        it { expect(subject[:source]).to be_dom_equal <<~HTML }
           <span class='trello-member-initials'>EK</span>
           <a href='https://trello.com/eitokatagiri2'>eitokatagiri2</a>
           added
@@ -222,7 +219,7 @@ describe Idobata::Hook::Trello, type: :hook do
       describe 'removeLabelFromCard event' do
         let(:event_type) { 'remove_label_from_card' }
 
-        its([:source]) { should == <<-HTML.strip_heredoc }
+        it { expect(subject[:source]).to be_dom_equal <<~HTML }
           <span class='trello-member-initials'>EK</span>
           <a href='https://trello.com/eitokatagiri2'>eitokatagiri2</a>
           removed
@@ -238,7 +235,7 @@ describe Idobata::Hook::Trello, type: :hook do
       describe 'createList event' do
         let(:event_type) { 'create_list' }
 
-        its([:source]) { should == <<-HTML.strip_heredoc }
+        it { expect(subject[:source]).to be_dom_equal <<~HTML }
           <span class='trello-member-initials'>EK</span>
           <a href='https://trello.com/eitokatagiri2'>eitokatagiri2</a>
           created
@@ -252,7 +249,7 @@ describe Idobata::Hook::Trello, type: :hook do
         describe 'archive' do
           let(:event_type) { 'update_list_archive' }
 
-          its([:source]) { should == <<-HTML.strip_heredoc }
+          it { expect(subject[:source]).to be_dom_equal <<~HTML }
             <span class='trello-member-initials'>EK</span>
             <a href='https://trello.com/eitokatagiri2'>eitokatagiri2</a>
             archived
@@ -265,7 +262,7 @@ describe Idobata::Hook::Trello, type: :hook do
         describe 'unarchive' do
           let(:event_type) { 'update_list_unarchive' }
 
-          its([:source]) { should == <<-HTML.strip_heredoc }
+          it { expect(subject[:source]).to be_dom_equal <<~HTML }
             <span class='trello-member-initials'>EK</span>
             <a href='https://trello.com/eitokatagiri2'>eitokatagiri2</a>
             unarchived
@@ -278,7 +275,7 @@ describe Idobata::Hook::Trello, type: :hook do
         describe 'update name' do
           let(:event_type) { 'update_list_update_name' }
 
-          its([:source]) { should == <<-HTML.strip_heredoc }
+          it { expect(subject[:source]).to be_dom_equal <<~HTML }
             <span class='trello-member-initials'>EK</span>
             <a href='https://trello.com/eitokatagiri2'>eitokatagiri2</a>
             updated name to
@@ -292,7 +289,7 @@ describe Idobata::Hook::Trello, type: :hook do
       describe 'moveListFromBoard event' do
         let(:event_type) { 'move_list_to_board' }
 
-        its([:source]) { should == <<-HTML.strip_heredoc }
+        it { expect(subject[:source]).to be_dom_equal <<~HTML }
           <span class='trello-member-initials'>EK</span>
           <a href='https://trello.com/eitokatagiri2'>eitokatagiri2</a>
           moved
@@ -308,7 +305,7 @@ describe Idobata::Hook::Trello, type: :hook do
         describe 'add label' do
           let(:event_type) { 'update_board_add_label' }
 
-          its([:source]) { should == <<-HTML.strip_heredoc }
+          it { expect(subject[:source]).to be_dom_equal <<~HTML }
             <span class='trello-member-initials'>EK</span>
             <a href='https://trello.com/eitokatagiri2'>eitokatagiri2</a>
             named

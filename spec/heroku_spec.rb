@@ -17,7 +17,7 @@ describe Idobata::Hook::Heroku, type: :hook do
 
   describe '#process_payload' do
     subject { hook.process_payload }
-    its([:source]) { should eq(<<-HTML.strip_heredoc) }
+    it { expect(subject[:source]).to be_dom_equal <<~HTML }
       <p>
         ursm@ursm.jp deployed a new version of
         <a href='http://idobata.herokuapp.com'>idobata</a>

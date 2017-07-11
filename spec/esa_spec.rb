@@ -12,7 +12,7 @@ describe Idobata::Hook::Esa, type: :hook do
       end
 
       its([:format]) { should eq(:html) }
-      its([:source]) { should eq(<<-'HTML'.strip_heredoc) }
+      it { expect(subject[:source]).to be_dom_equal <<~'HTML' }
        <div>
          <span><img src="http://img.esa.io/uploads/production/users/1/icon/thumb_s_402685a258cf2a33c1d6c13a89adec92.png" width="16" height="16" alt="" /></span>
          Atsuo Fukaya (fukayatsu)
@@ -31,7 +31,7 @@ describe Idobata::Hook::Esa, type: :hook do
       end
 
       its([:format]) { should eq(:html) }
-      its([:source]) { should eq(<<-'HTML'.strip_heredoc) }
+      it { expect(subject[:source]).to be_dom_equal <<~'HTML' }
       <div>
         <span>
           <img src="http://img.esa.io/uploads/production/users/1/icon/thumb_s_402685a258cf2a33c1d6c13a89adec92.png" width="16" height="16" alt="" />
@@ -54,7 +54,7 @@ describe Idobata::Hook::Esa, type: :hook do
       end
 
       its([:format]) { should eq(:html) }
-      its([:source]) { should eq(<<-'HTML'.strip_heredoc) }
+      it { expect(subject[:source]).to be_dom_equal <<~'HTML' }
       <div>
         <span>
           <img src="http://img.esa.io/uploads/production/users/1/icon/thumb_s_402685a258cf2a33c1d6c13a89adec92.png" width="16" height="16" alt="" />
@@ -76,7 +76,7 @@ describe Idobata::Hook::Esa, type: :hook do
       end
 
       its([:format]) { should eq(:html) }
-      its([:source]) { should eq(<<-'HTML'.strip_heredoc) }
+      it { expect(subject[:source]).to be_dom_equal <<~'HTML' }
       <div>
         <span>
           <img src="http://img.esa.io/uploads/production/users/1/icon/thumb_s_402685a258cf2a33c1d6c13a89adec92.png" width="16" height="16" alt="" />
@@ -99,7 +99,7 @@ describe Idobata::Hook::Esa, type: :hook do
       end
 
       its([:format]) { should eq(:html) }
-      its([:source]) { should eq(<<-'HTML'.strip_heredoc) }
+      it { expect(subject[:source]).to be_dom_equal <<~'HTML' }
       <div>
         <span>
           <img src="http://img.esa.io/uploads/production/users/1/icon/thumb_s_402685a258cf2a33c1d6c13a89adec92.png" width="16" height="16" alt="" />
@@ -121,7 +121,7 @@ describe Idobata::Hook::Esa, type: :hook do
       end
 
       its([:format]) { should eq(:html) }
-      its([:source]) { should eq(<<-'HTML'.strip_heredoc) }
+      it { expect(subject[:source]).to be_dom_equal <<~'HTML' }
       <div>
         <span>
           <img src="http://img.esa.io/uploads/production/users/1/icon/thumb_s_402685a258cf2a33c1d6c13a89adec92.png" width="16" height="16" alt="" />

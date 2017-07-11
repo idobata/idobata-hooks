@@ -1,5 +1,19 @@
+require 'html/pipeline/rouge_filter'
+
 module Idobata::Hook
   module Helper
+    filters = [
+      ::HTML::Pipeline::MarkdownFilter,
+      ::HTML::Pipeline::RougeFilter,
+      ::HTML::Pipeline::MentionFilter,
+    ]
+
+    MarkdownPipeline = ::HTML::Pipeline.new(filters, gfm: true)
+
+    def md(source)
+      markdown_pipeline(source)
+    end
+
     def avatar_image_tag(src, size: 16)
       Haml::Util.html_safe(%(<img src="#{Haml::Helpers.escape_once(src)}" width="#{size}" height="#{size}" alt="" />))
     end
@@ -29,6 +43,14 @@ module Idobata::Hook
 
     def value_to_boolean(value)
       %w(1 true).include?(value.to_s)
+    end
+
+    private
+
+    def markdown_pipeline(source, **options)
+      result = MarkdownPipeline.call(source, options)
+
+      result[:output].to_s.html_safe
     end
   end
 end

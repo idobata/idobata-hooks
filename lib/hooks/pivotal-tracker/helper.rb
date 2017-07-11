@@ -3,18 +3,10 @@ require 'uri'
 module Idobata::Hook
   class PivotalTracker
     module Helper
-      filters = [
-        ::HTML::Pipeline::MarkdownFilter
-      ]
-
-      filters << ::HTML::Pipeline::SyntaxHighlightFilter if defined?(Linguist) # This filter doesn't work on heroku
-
-      Pipeline = ::HTML::Pipeline.new(filters, gfm: true, base_url: 'https://www.pivotaltracker.com/')
+      PIVOTAL_TRACKER_URL = 'https://www.pivotaltracker.com/'
 
       def md(source)
-        result = Pipeline.call(source)
-
-        result[:output].to_s.html_safe
+        markdown_pipeline(source, base_url: PIVOTAL_TRACKER_URL)
       end
 
       def new_value(kind)

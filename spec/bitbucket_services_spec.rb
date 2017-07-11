@@ -14,7 +14,7 @@ describe Idobata::Hook::Bitbucket, type: :hook do
       describe 'push event' do
         let(:event_type) { 'push' }
 
-        its([:source]) { should == <<-HTML.strip_heredoc }
+        it { expect(subject[:source]).to be_dom_equal <<~HTML }
           <a href='https://bitbucket.org/tricknotes'>tricknotes</a>
           pushed to
           <a href='https://bitbucket.org/ursm/hello/'>ursm/hello</a>
@@ -36,7 +36,7 @@ describe Idobata::Hook::Bitbucket, type: :hook do
       describe 'pullrequest_created event' do
         let(:event_type) { 'pullrequest_created' }
 
-        its([:source]) { should == <<-HTML.strip_heredoc }
+        it { expect(subject[:source]).to be_dom_equal <<~HTML }
           <p>
             <span>
               <img src="https://secure.gravatar.com/avatar/dc03a27ae31ba428c560c00c9128cd75?d=https%3A%2F%2Fd3oaxc4q5k2d6q.cloudfront.net%2Fm%2F9d3d19e361c2%2Fimg%2Fdefault_avatar%2F32%2Fuser_blue.png&amp;s=32" width="16" height="16" alt="" />
@@ -51,7 +51,6 @@ describe Idobata::Hook::Bitbucket, type: :hook do
             <b>ping!</b>
           </p>
           <h1>This is a pull request</h1>
-
           <ul>
           <li>hi</li>
           <li>hoi</li>
@@ -63,7 +62,7 @@ describe Idobata::Hook::Bitbucket, type: :hook do
       describe 'pullrequest_merged event' do
         let(:event_type) { 'pullrequest_merged' }
 
-        its([:source]) { should == <<-HTML.strip_heredoc }
+        it { expect(subject[:source]).to be_dom_equal <<~HTML }
           <p>
             <span>
               <img src="https://secure.gravatar.com/avatar/dc03a27ae31ba428c560c00c9128cd75?d=https%3A%2F%2Fd3oaxc4q5k2d6q.cloudfront.net%2Fm%2F9d3d19e361c2%2Fimg%2Fdefault_avatar%2F32%2Fuser_blue.png&amp;s=32" width="16" height="16" alt="" />
@@ -78,7 +77,7 @@ describe Idobata::Hook::Bitbucket, type: :hook do
       describe 'pullrequest_updated event' do
         let(:event_type) { 'pullrequest_updated' }
 
-        its([:source]) { should == <<-HTML.strip_heredoc }
+        it { expect(subject[:source]).to be_dom_equal <<~HTML }
           <p>
             <span>
               <img src="https://secure.gravatar.com/avatar/dc03a27ae31ba428c560c00c9128cd75?d=https%3A%2F%2Fd3oaxc4q5k2d6q.cloudfront.net%2Fm%2F9d3d19e361c2%2Fimg%2Fdefault_avatar%2F32%2Fuser_blue.png&amp;s=32" width="16" height="16" alt="" />
@@ -88,18 +87,17 @@ describe Idobata::Hook::Bitbucket, type: :hook do
             <b>ping!</b>
           </p>
           <h1>This is a pull request</h1>
-
-          <div class="highlight highlight-ruby"><pre><span class="k">def</span> <span class="nf">hell</span>
+          <pre class="highlight highlight-ruby"><code><span class="k">def</span> <span class="nf">hell</span>
             <span class="ss">:hi</span>
           <span class="k">end</span>
-          </pre></div>
+          </code></pre>
         HTML
       end
 
       describe 'pullrequest_declined event' do
         let(:event_type) { 'pullrequest_declined' }
 
-        its([:source]) { should == <<-HTML.strip_heredoc }
+        it { expect(subject[:source]).to be_dom_equal <<~HTML }
           <p>
             <span>
               <img src="https://secure.gravatar.com/avatar/dc03a27ae31ba428c560c00c9128cd75?d=https%3A%2F%2Fd3oaxc4q5k2d6q.cloudfront.net%2Fm%2F9d3d19e361c2%2Fimg%2Fdefault_avatar%2F32%2Fuser_blue.png&amp;s=32" width="16" height="16" alt="" />
@@ -114,7 +112,7 @@ describe Idobata::Hook::Bitbucket, type: :hook do
       describe 'pullrequest comment created event' do
         let(:event_type) { 'pullrequest_comment_created' }
 
-        its([:source]) { should == <<-HTML.strip_heredoc }
+        it { expect(subject[:source]).to be_dom_equal <<~HTML }
           <span>
             <img src="https://secure.gravatar.com/avatar/dc03a27ae31ba428c560c00c9128cd75?d=https%3A%2F%2Fd3oaxc4q5k2d6q.cloudfront.net%2Fm%2Fd7db0fdaad19%2Fimg%2Fdefault_avatar%2F32%2Fuser_blue.png&amp;s=32" width="16" height="16" alt="" />
           </span>
@@ -128,7 +126,7 @@ describe Idobata::Hook::Bitbucket, type: :hook do
       describe 'pullrequest_comment_updated event' do
         let(:event_type) { 'pullrequest_comment_updated' }
 
-        its([:source]) { should == <<-HTML.strip_heredoc }
+        it { expect(subject[:source]).to be_dom_equal <<~HTML }
           <span>
             <img src="https://secure.gravatar.com/avatar/dc03a27ae31ba428c560c00c9128cd75?d=https%3A%2F%2Fd3oaxc4q5k2d6q.cloudfront.net%2Fm%2Fe6bd9f5793a0%2Fimg%2Fdefault_avatar%2F32%2Fuser_blue.png&amp;s=32" width="16" height="16" alt="" />
           </span>

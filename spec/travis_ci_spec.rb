@@ -9,7 +9,7 @@ describe Idobata::Hook::TravisCI, type: :hook do
   describe '#process_payload' do
     subject { hook.process_payload }
 
-    its([:source]) { should eq(<<-HTML.strip_heredoc) }
+    it { expect(subject[:source]).to be_dom_equal <<~HTML }
       <div>
         esminc/idobata<a href='https://magnum.travis-ci.com/esminc/idobata/builds/2663'>#124</a>
         (travis-ci-integration - <tt>25d6fc1</tt>):

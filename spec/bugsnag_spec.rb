@@ -10,7 +10,7 @@ describe Idobata::Hook::Bugsnag, type: :hook do
 
     context 'on comment' do
       let(:payload_type) { 'comment' }
-      its([:source]) { should eq(<<-HTML.strip_heredoc) }
+      it { expect(subject[:source]).to be_dom_equal <<~HTML }
         <p>
           foobarbaz commented on
           <a href='https://bugsnag.com/example/rails/errors/2345bcds?event_id=12345abc'><b>RuntimeError</b> rake#test_exception</a>
@@ -25,7 +25,7 @@ describe Idobata::Hook::Bugsnag, type: :hook do
 
     context 'on error' do
       let(:payload_type) { 'error' }
-      its([:source]) { should eq(<<-HTML.strip_heredoc) }
+      it { expect(subject[:source]).to be_dom_equal <<~HTML }
         <p>
           <span class='label label-danger'>Error</span>
           <a href='https://bugsnag.com/example/rails/errors/2345bcds?event_id=12345abc'>

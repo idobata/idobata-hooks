@@ -9,7 +9,7 @@ describe Idobata::Hook::PivotalTracker, type: :hook do
         post payload, 'Content-Type' => 'application/xml'
       end
 
-      its([:source]) { should eq(<<-HTML.strip_heredoc) }
+      it { expect(subject[:source]).to be_dom_equal <<~HTML }
         <div>
           ursm added &quot;test&quot;
           <a href='http://www.pivotaltracker.com/story/show/31693177'>
@@ -27,7 +27,7 @@ describe Idobata::Hook::PivotalTracker, type: :hook do
         post payload, 'Content-Type' => 'application/json'
       end
 
-      its([:source]) { should eq(<<-HTML.strip_heredoc) }
+      it { expect(subject[:source]).to be_dom_equal <<~HTML }
         <p>
           Ryunosuke SATO added story
           <a href='http://www.pivotaltracker.com/story/show/56193170'>
@@ -46,7 +46,7 @@ describe Idobata::Hook::PivotalTracker, type: :hook do
         post payload, 'Content-Type' => 'application/json'
       end
 
-      its([:source]) { should eq(<<-HTML.strip_heredoc) }
+      it { expect(subject[:source]).to be_dom_equal <<~HTML }
         <p>
           Ryunosuke SATO added comment: story
           <a href='http://www.pivotaltracker.com/story/show/56193124'>
@@ -54,7 +54,6 @@ describe Idobata::Hook::PivotalTracker, type: :hook do
           </a>
           <img height='14' src='/assets/pivotal_tracker/images/icons/feature.png' width='14'>&nbsp;<b>ping</b></p>
         <h1>title</h1>
-
         <p>hey<br>
         hey<br>
         ho</p>
@@ -68,7 +67,7 @@ describe Idobata::Hook::PivotalTracker, type: :hook do
         post payload, 'Content-Type' => 'application/json'
       end
 
-      its([:source]) { should eq(<<-HTML.strip_heredoc) }
+      it { expect(subject[:source]).to be_dom_equal <<~HTML }
         <p>
           Ryunosuke SATO added comment with attachments: story
           <a href='https://www.pivotaltracker.com/story/show/70561082'>
@@ -99,7 +98,7 @@ describe Idobata::Hook::PivotalTracker, type: :hook do
         post payload, 'Content-Type' => 'application/json'
       end
 
-      its([:source]) { should eq(<<-HTML.strip_heredoc) }
+      it { expect(subject[:source]).to be_dom_equal <<~HTML }
         <p>
           Ryunosuke SATO added epic
           <a href='https://www.pivotaltracker.com/epic/show/1263316'>

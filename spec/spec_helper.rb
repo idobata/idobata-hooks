@@ -2,11 +2,10 @@ require 'rspec/its'
 require 'rack'
 require 'active_support/core_ext/string/strip'
 require 'active_support/core_ext/hash/conversions'
-require 'linguist'
 require 'tapp'
 require 'pry'
-require 'coveralls'
 
+require 'coveralls'
 Coveralls.wear!
 
 require 'idobata/hooks'

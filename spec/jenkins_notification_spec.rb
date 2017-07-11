@@ -7,7 +7,7 @@ describe Idobata::Hook::JenkinsNotification, type: :hook do
         post payload, 'Content-Type' => 'application/json'
       end
 
-      its([:source]) { should eq(<<-HTML.strip_heredoc) }
+      it { expect(subject[:source]).to be_dom_equal <<~HTML }
         <p>
           Project support build
           <a href='http://localhost:8080/job/support/148/'>#148</a>
@@ -37,7 +37,7 @@ describe Idobata::Hook::JenkinsNotification, type: :hook do
         post payload, 'Content-Type' => 'application/json'
       end
 
-      its([:source]) { should == <<-HTML.strip_heredoc }
+      it { expect(subject[:source]).to be_dom_equal <<~HTML }
         <p>
           Project support build
           #148
@@ -54,7 +54,7 @@ describe Idobata::Hook::JenkinsNotification, type: :hook do
         post payload
       end
 
-      its([:source]) { should eq(<<-HTML.strip_heredoc) }
+      it { expect(subject[:source]).to be_dom_equal <<~HTML }
         <p>
           Project support build
           <a href='http://localhost:8080/job/support/148/'>#148</a>
