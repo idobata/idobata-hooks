@@ -13,7 +13,7 @@ helper = Module.new {
 RSpec::Matchers.define :be_dom_equal do |expected|
   match do |actual|
     a, e = [actual, expected].map {|str|
-      str.gsub(/\s{2,}|\n/i, '').gsub(/></, ">\n<")
+      str.gsub(/\s{2,}|\n/i, '')
     }
 
     helper.dom_equal?(e, a)
