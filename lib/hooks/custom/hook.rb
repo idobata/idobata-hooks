@@ -3,6 +3,10 @@ module Idobata::Hook
     screen_name 'Custom Webhook'
     icon_url    gravatar('9fef32520aa08836d774873cb8b7df28')
 
+    rescue_from UnsupportedContentType do
+      skip_processing!
+    end
+
     before_render do
       add_description 'WARNING: "body" is deprecated. Use "source" instead.' if payload.body
     end

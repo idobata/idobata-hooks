@@ -37,10 +37,10 @@ describe Idobata::Hook::Custom, type: :hook do
       its([:source]) { should eq(source) }
       its([:format]) { should eq(:plain) }
 
-      it {
+      it do
         filenames = subject[:images].map {|image| image['filename'] }
         expect(filenames).to eq([image.original_filename])
-      }
+      end
     end
 
     context 'With two image' do
@@ -55,10 +55,10 @@ describe Idobata::Hook::Custom, type: :hook do
       its([:source]) { should eq(source) }
       its([:format]) { should eq(:plain) }
 
-      it {
+      it do
         filenames = subject[:images].map {|image| image['filename'] }
         expect(filenames).to eq([image.original_filename] * 2)
-      }
+      end
     end
 
     context 'urlencoded data without Content-Type' do
@@ -70,6 +70,20 @@ describe Idobata::Hook::Custom, type: :hook do
 
       its([:source]) { should eq(source) }
       its([:format]) { should eq(:plain) }
+    end
+
+    context 'With unsupported Content-Type' do
+      let(:params) { {source: source}.to_query }
+
+      before do
+        post params, 'Content-Type' => 'application/csp-report'
+      end
+
+      it do
+        expect {
+          hook.process_payload
+        }.to raise_error(Idobata::Hook::SkipProcessing)
+      end
     end
   end
 end
