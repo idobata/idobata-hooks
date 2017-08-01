@@ -1,4 +1,5 @@
 require 'action_dispatch/http/mime_type'
+require 'active_support/rescuable'
 
 module Idobata::Hook
   class Payload < Hashie::Mash
@@ -8,6 +9,8 @@ module Idobata::Hook
 
   class Base
     include ActiveSupport::Callbacks
+    include ActiveSupport::Rescuable
+
     define_callbacks :render
 
     attr_reader :raw_body, :headers, :params
@@ -143,8 +146,10 @@ module Idobata::Hook
 
         parse_json_in_form(payload)
       else
-        raise Error, "Unsupported content_type: `#{raw_content_type}`."
+        raise UnsupportedContentType, "Unsupported content_type: `#{raw_content_type}`."
       end
+    rescue => e
+      rescue_with_handler(e) || raise
     end
 
     def normalized_content_type
