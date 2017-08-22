@@ -2,5 +2,6 @@
     "id": "27379932",
     "project_name": "Project Name",
     "level": "error",
-    "url": "https://app.getsentry.com/getsentry/project-slug/group/27379932/"
+    "url": "https://app.getsentry.com/getsentry/project-slug/group/27379932/",
+    "message": "This is an example exception"
 }

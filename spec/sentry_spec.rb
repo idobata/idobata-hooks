@@ -18,6 +18,9 @@ describe Idobata::Hook::Sentry, type: :hook do
           :
           <span class='label label-danger'>fatal</span>
         </p>
+        <p>
+          <b>This is an example exception</b>
+        </p>
       HTML
 
       its([:format]) { should eq(:html) }
@@ -32,6 +35,9 @@ describe Idobata::Hook::Sentry, type: :hook do
           <a href='https://app.getsentry.com/getsentry/project-slug/group/27379932/'>#27379932</a>
           :
           <span class='label label-danger'>error</span>
+        </p>
+        <p>
+          <b>This is an example exception</b>
         </p>
       HTML
 
@@ -48,6 +54,9 @@ describe Idobata::Hook::Sentry, type: :hook do
           :
           <span class='label label-warning'>warning</span>
         </p>
+        <p>
+          <b>This is an example exception</b>
+        </p>
       HTML
 
       its([:format]) { should eq(:html) }
@@ -62,6 +71,9 @@ describe Idobata::Hook::Sentry, type: :hook do
           <a href='https://app.getsentry.com/getsentry/project-slug/group/27379932/'>#27379932</a>
           :
           <span class='label label-info'>info</span>
+        </p>
+        <p>
+          <b>This is an example exception</b>
         </p>
       HTML
 
@@ -78,6 +90,9 @@ describe Idobata::Hook::Sentry, type: :hook do
           :
           <span class='label label-info'>debug</span>
         </p>
+        <p>
+          <b>This is an example exception</b>
+        </p>
       HTML
 
       its([:format]) { should eq(:html) }
@@ -92,6 +107,9 @@ describe Idobata::Hook::Sentry, type: :hook do
           <a href='https://app.getsentry.com/getsentry/project-slug/group/27379932/'>#27379932</a>
           :
           <span class='label label-default'>unknown</span>
+        </p>
+        <p>
+          <b>This is an example exception</b>
         </p>
       HTML
 
