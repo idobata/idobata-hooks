@@ -1,8 +1,8 @@
-%p
+%div
   Project #{payload.project_name} received an event
   %a{href: payload.url} ##{payload.id}
   \:
   %span.label{class: label_class_from_level(payload.level)}= payload.level
 
-%p
+%div
   %b= payload.message

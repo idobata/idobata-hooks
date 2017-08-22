@@ -12,15 +12,15 @@ describe Idobata::Hook::Sentry, type: :hook do
       let(:fixture) { 'fatal.json' }
 
       it { expect(subject[:source]).to be_dom_equal <<~HTML }
-        <p>
+        <div>
           Project Project Name received an event
           <a href='https://app.getsentry.com/getsentry/project-slug/group/27379932/'>#27379932</a>
           :
           <span class='label label-danger'>fatal</span>
-        </p>
-        <p>
+        </div>
+        <div>
           <b>This is an example exception</b>
-        </p>
+        </div>
       HTML
 
       its([:format]) { should eq(:html) }
@@ -30,15 +30,15 @@ describe Idobata::Hook::Sentry, type: :hook do
       let(:fixture) { 'error.json' }
 
       it { expect(subject[:source]).to be_dom_equal <<~HTML }
-        <p>
+        <div>
           Project Project Name received an event
           <a href='https://app.getsentry.com/getsentry/project-slug/group/27379932/'>#27379932</a>
           :
           <span class='label label-danger'>error</span>
-        </p>
-        <p>
+        </div>
+        <div>
           <b>This is an example exception</b>
-        </p>
+        </div>
       HTML
 
       its([:format]) { should eq(:html) }
@@ -48,15 +48,15 @@ describe Idobata::Hook::Sentry, type: :hook do
       let(:fixture) { 'warning.json' }
 
       it { expect(subject[:source]).to be_dom_equal <<~HTML }
-        <p>
+        <div>
           Project Project Name received an event
           <a href='https://app.getsentry.com/getsentry/project-slug/group/27379932/'>#27379932</a>
           :
           <span class='label label-warning'>warning</span>
-        </p>
-        <p>
+        </div>
+        <div>
           <b>This is an example exception</b>
-        </p>
+        </div>
       HTML
 
       its([:format]) { should eq(:html) }
@@ -66,15 +66,15 @@ describe Idobata::Hook::Sentry, type: :hook do
       let(:fixture) { 'info.json' }
 
       it { expect(subject[:source]).to be_dom_equal <<~HTML }
-        <p>
+        <div>
           Project Project Name received an event
           <a href='https://app.getsentry.com/getsentry/project-slug/group/27379932/'>#27379932</a>
           :
           <span class='label label-info'>info</span>
-        </p>
-        <p>
+        </div>
+        <div>
           <b>This is an example exception</b>
-        </p>
+        </div>
       HTML
 
       its([:format]) { should eq(:html) }
@@ -84,15 +84,15 @@ describe Idobata::Hook::Sentry, type: :hook do
       let(:fixture) { 'debug.json' }
 
       it { expect(subject[:source]).to be_dom_equal <<~HTML }
-        <p>
+        <div>
           Project Project Name received an event
           <a href='https://app.getsentry.com/getsentry/project-slug/group/27379932/'>#27379932</a>
           :
           <span class='label label-info'>debug</span>
-        </p>
-        <p>
+        </div>
+        <div>
           <b>This is an example exception</b>
-        </p>
+        </div>
       HTML
 
       its([:format]) { should eq(:html) }
@@ -102,15 +102,15 @@ describe Idobata::Hook::Sentry, type: :hook do
       let(:fixture) { 'unknown.json' }
 
       it { expect(subject[:source]).to be_dom_equal <<~HTML }
-        <p>
+        <div>
           Project Project Name received an event
           <a href='https://app.getsentry.com/getsentry/project-slug/group/27379932/'>#27379932</a>
           :
           <span class='label label-default'>unknown</span>
-        </p>
-        <p>
+        </div>
+        <div>
           <b>This is an example exception</b>
-        </p>
+        </div>
       HTML
 
       its([:format]) { should eq(:html) }
