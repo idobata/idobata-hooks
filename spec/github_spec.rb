@@ -107,7 +107,7 @@ describe Idobata::Hook::Github, type: :hook do
             <li>
               <a href='https://github.com/idobata/idobata-hooks/commit/586d5918dc260a42bcf6be302893de0e561737ea'><tt>586d591</tt></a>
               Hi
-              
+
             </li>
           </ul>
         HTML
@@ -484,6 +484,25 @@ describe Idobata::Hook::Github, type: :hook do
             <span><img src="https://avatars.githubusercontent.com/u/17717895?v=3" width="16" height="16" alt="" /></span>
             <a href='https://github.com/obatan'>obatan</a>
             approved pull request
+            <a href='https://github.com/idobata/idobata-hooks/pull/73#pullrequestreview-4794931'>idobata/idobata-hooks#73</a>
+            <b>Collecting review-event payload</b>
+          </div>
+          <p>I'd like to approve this :robot:</p>
+        HTML
+      end
+
+      context 'pull request review event (dismissed)' do
+        let(:fixture)           { 'pull_request_review_dismissed.json' }
+        let(:github_event_type) { 'pull_request_review' }
+
+        it { expect(subject[:source]).to be_dom_equal <<~HTML }
+          <div>
+            <span><img src="https://avatars.githubusercontent.com/u/5754367?v=3" width="16" height="16" alt="" /></span>
+            <a href='https://github.com/hshimoyama'>hshimoyama</a>
+            dismissed
+            <span><img src="https://avatars.githubusercontent.com/u/17717895?v=3" width="16" height="16" alt="" /></span>
+            <a href='https://github.com/obatan'>obatan</a>
+            's stale review
             <a href='https://github.com/idobata/idobata-hooks/pull/73#pullrequestreview-4794931'>idobata/idobata-hooks#73</a>
             <b>Collecting review-event payload</b>
           </div>
