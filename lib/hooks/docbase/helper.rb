@@ -1,3 +1,5 @@
+require 'uri'
+
 module Idobata::Hook
   class Docbase < Base
     module Helper
@@ -15,8 +17,8 @@ module Idobata::Hook
       end
 
       def link_to_joined_team_or_group(name, message)
-        url_first_index = message.index(/https:/)
-        url = message[url_first_index..-1]
+        url = URI::RFC2396_Parser.new.extract(message).first
+
         capture_haml do
           haml_tag :a, name, href: url
         end
