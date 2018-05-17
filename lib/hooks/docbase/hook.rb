@@ -20,8 +20,6 @@ module Idobata::Hook
       when 'like_create'       then 'like_create'
       when 'team_join'         then 'team_join'
       when 'group_join'        then 'group_join'
-      else
-        'default'
       end
     end
   end
