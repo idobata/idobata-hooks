@@ -1,0 +1,5 @@
+%p
+  - payload.users.map do |user|
+    %span= avatar_image_tag user.profile_image_url
+    #{link_to_user payload.team.domain, user.id, user.name}
+  joined Team #{link_to_joined_team_or_group payload.trigger.name, payload.message}
