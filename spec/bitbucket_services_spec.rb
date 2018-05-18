@@ -87,10 +87,11 @@ describe Idobata::Hook::Bitbucket, type: :hook do
             <b>ping!</b>
           </p>
           <h1>This is a pull request</h1>
-          <pre class="highlight highlight-ruby"><code><span class="k">def</span> <span class="nf">hell</span>
+          <div class="highlight highlight-ruby">
+            <pre class="highlight"><code><span class="k">def</span> <span class="nf">hell</span>
             <span class="ss">:hi</span>
-          <span class="k">end</span>
-          </code></pre>
+            <span class="k">end</span></code></pre>
+          </div>
         HTML
       end
 
