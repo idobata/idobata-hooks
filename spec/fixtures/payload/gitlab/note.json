@@ -1,0 +1,35 @@
+{
+  "object_kind": "note",
+  "event_type": "note",
+  "user": {
+    "name": "Hama",
+    "username": "tricknotes",
+    "avatar_url": "https://secure.gravatar.com/avatar/5c22169c1f836709eea59cebfcd6356a?s=40&d=identicon"
+  },
+  "object_attributes": {
+    "attachment": null,
+    "author_id": 113,
+    "change_position": null,
+    "commit_id": null,
+    "created_at": "2018-11-22 02:16:36 UTC",
+    "discussion_id": "1d54a45285b8cf2476316616a62816599d6e2b86",
+    "id": 53469,
+    "line_code": null,
+    "note": "This is a new comment.",
+    "noteable_id": 1670,
+    "noteable_type": "Issue",
+    "original_position": null,
+    "position": null,
+    "project_id": 313,
+    "resolved_at": null,
+    "resolved_by_id": null,
+    "resolved_by_push": null,
+    "st_diff": null,
+    "system": false,
+    "type": null,
+    "updated_at": "2018-11-22 02:16:36 UTC",
+    "updated_by_id": null,
+    "description": "testing webhook",
+    "url": "https://gitlab.com/tricknotes/test/issues/1#note_53469"
+  }
+}

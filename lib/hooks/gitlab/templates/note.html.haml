@@ -1,0 +1,21 @@
+:ruby
+  note           = payload.object_attributes
+  has_url         = note.url?
+  has_user        = payload.user?
+  repository_name = has_url ? note.url.split('/', 5)[-2] : '' # http://example.com/owner/:name/issues/:id#note_id
+
+%p
+  - if has_user
+    %span= avatar_image_tag payload.user.avatar_url
+    = payload.user.name
+    = note.note
+    note
+  - else
+    The note was #{note.note}:
+
+  - if has_url
+    %a{href: note.url} #{repository_name}##{note.id}
+  - else
+    #{repository_name}##{note.id}
+
+= md note.description if note.action == 'open'
