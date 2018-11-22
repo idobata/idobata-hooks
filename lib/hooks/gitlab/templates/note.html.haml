@@ -1,5 +1,5 @@
 :ruby
-  note           = payload.object_attributes
+  note            = payload.object_attributes
   has_url         = note.url?
   has_user        = payload.user?
   repository_name = has_url ? note.url.split('/', 5)[-2] : '' # http://example.com/owner/:name/issues/:id#note_id
