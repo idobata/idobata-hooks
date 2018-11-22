@@ -116,5 +116,20 @@ describe Idobata::Hook::Gitlab, type: :hook do
         The new project <b>alice/hoi</b> is created.
       HTML
     end
+
+    describe 'note event' do
+      let(:fixture) { 'note.json' }
+
+      it { expect(subject[:source]).to be_dom_equal <<~HTML }
+        <p>
+          <span><img src="https://secure.gravatar.com/avatar/5c22169c1f836709eea59cebfcd6356a?s=40&amp;d=identicon" width="16" height="16" alt="" /></span>
+          Hama
+          This is a new comment.
+          note
+          <a href='https://gitlab.com/tricknotes/test/issues/1'>tricknotes#1</a>
+        </p>
+
+      HTML
+    end
   end
 end

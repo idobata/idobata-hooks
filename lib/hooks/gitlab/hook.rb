@@ -12,6 +12,7 @@ module Idobata::Hook
       project_create
       push
       tag
+      note
     )
 
     before_render do
