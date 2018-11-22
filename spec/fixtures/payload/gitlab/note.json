@@ -3,7 +3,7 @@
   "event_type": "note",
   "user": {
     "name": "Hama",
-    "username": "tricknotes",
+    "username": "trickcomments",
     "avatar_url": "https://secure.gravatar.com/avatar/5c22169c1f836709eea59cebfcd6356a?s=40&d=identicon"
   },
   "object_attributes": {
@@ -30,6 +30,6 @@
     "updated_at": "2018-11-22 02:16:36 UTC",
     "updated_by_id": null,
     "description": "testing webhook",
-    "url": "https://gitlab.com/tricknotes/test/issues/1#note_53469"
+    "url": "https://gitlab.com/trickcomments/test/issues/2#note_53469"
   }
 }

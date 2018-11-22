@@ -126,9 +126,8 @@ describe Idobata::Hook::Gitlab, type: :hook do
           Hama
           This is a new comment.
           note
-          <a href='https://gitlab.com/tricknotes/test/issues/1'>tricknotes#1</a>
+          <a href='https://gitlab.com/trickcomments/test/issues/2#note_53469'>trickcomments#53469</a>
         </p>
-
       HTML
     end
   end
