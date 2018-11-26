@@ -117,16 +117,20 @@ describe Idobata::Hook::Gitlab, type: :hook do
       HTML
     end
 
-    describe 'note event' do
-      let(:fixture) { 'note.json' }
+    describe 'issue comment event' do
+      let(:fixture) { 'issue_comment.json' }
 
       it { expect(subject[:source]).to be_dom_equal <<~HTML }
         <p>
-          <span><img src="https://secure.gravatar.com/avatar/5c22169c1f836709eea59cebfcd6356a?s=40&amp;d=identicon" width="16" height="16" alt="" /></span>
-          Hama
-          This is a new comment.
-          note
-          <a href='https://gitlab.com/trickcomments/test/issues/2#note_53469'>trickcomments#53469</a>
+        <span><img src="https://secure.gravatar.com/avatar/5c22169c1f836709eea59cebfcd6356a?s=40&amp;d=identicon" width="16" height="16" alt="" /></span>
+        Tester
+        commented on
+        Issue
+        <a href='https://gitlab.com/trickcomments/test/issues/29#note_53469'>trickcomments#29</a>
+        <b>Connect to Idobata</b>
+        </p>
+        <p>
+        This is a new comment.
         </p>
       HTML
     end

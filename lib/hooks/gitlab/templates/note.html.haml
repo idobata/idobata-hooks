@@ -2,20 +2,37 @@
   note            = payload.object_attributes
   has_url         = note.url?
   has_user        = payload.user?
-  repository_name = has_url ? note.url.split('/', 5)[-2] : '' # http://example.com/owner/:name/issues/:id#note_id
+  repository_name = has_url ? note.url.split('/', 5)[-2] : '' # http://example.com/owner/:name/issues/:id
+  has_issue       = payload.issue?
+  has_merge       = payload.merge_request?
+  has_snippet     = payload.snippet?
+  has_commit      = payload.commit?
 
 %p
   - if has_user
     %span= avatar_image_tag payload.user.avatar_url
     = payload.user.name
-    = note.note
-    note
+    commented on
+    = note.noteable_type
   - else
-    The note was #{note.note}:
+    The commented on #{note.noteable_type}:
 
-  - if has_url
-    %a{href: note.url} #{repository_name}##{note.id}
-  - else
+  - if has_issue && has_url
+    %a{href: note.url} #{repository_name}##{payload.issue.iid}
+    %b= payload.issue.title
+    
+  - if has_merge && has_url
+    %a{href: note.url} #{repository_name}##{payload.merge_request.iid}
+    %b= payload.merge_request.title
+  
+  - if has_snippet && has_url
+    %a{href: note.url} #{repository_name}##{payload.snippet.id}
+    %b= payload.snippet.title  
+
+  - if has_commit && has_url
+    %a{href: note.url} #{repository_name}##{payload.commit.id}
+
+  - if !has_url
     #{repository_name}##{note.id}
 
-= md note.description if note.action == 'open'
+= md note.note
