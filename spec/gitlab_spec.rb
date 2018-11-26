@@ -126,8 +126,8 @@ describe Idobata::Hook::Gitlab, type: :hook do
           Tester
           commented on
           Issue
-        <a href='https://gitlab.com/trickcomments/test/issues/29#note_53469'>trickcomments#29</a>
-        <b>Connect to Idobata(Issue)</b>
+          <a href='https://gitlab.com/trickcomments/test/issues/29#note_53469'>trickcomments#29</a>
+          <b>Connect to Idobata(Issue)</b>
         </p>
         <p>
           This is a new comment.
@@ -144,8 +144,8 @@ describe Idobata::Hook::Gitlab, type: :hook do
           Tester
           commented on
           MergeRequest
-        <a href='https://gitlab.com/trickcomments/test/merge_requests/30#note_1244'>trickcomments#30</a>
-        <b>Connect to Idobata(Merge request)</b>
+          <a href='https://gitlab.com/trickcomments/test/merge_requests/30#note_1244'>trickcomments#30</a>
+          <b>Connect to Idobata(Merge request)</b>
         </p>
         <p>
           This MR needs work.
@@ -162,8 +162,8 @@ describe Idobata::Hook::Gitlab, type: :hook do
           Tester
           commented on
           Snippet
-        <a href='https://gitlab.com/trickcomments/test/snippets/53#note_1245'>trickcomments#53</a>
-        <b>Connect to Idobata(Snippet)</b>
+          <a href='https://gitlab.com/trickcomments/test/snippets/53#note_1245'>trickcomments#53</a>
+          <b>Connect to Idobata(Snippet)</b>
         </p>
         <p>
           Is this snippet doing what it's supposed to be doing?
@@ -180,7 +180,7 @@ describe Idobata::Hook::Gitlab, type: :hook do
           Tester
           commented on
           Commit
-        <a href='https://gitlab.com/trickcomments/test/commit/cfe32cf61b73a0d5e9f13e774abde7ff789b1660#note_1243'>trickcomments#cfe32cf61b73a0d5e9f13e774abde7ff789b1660</a>
+          <a href='https://gitlab.com/trickcomments/test/commit/cfe32cf61b73a0d5e9f13e774abde7ff789b1660#note_1243'>trickcomments#cfe32cf61b73a0d5e9f13e774abde7ff789b1660</a>
         </p>
         <p>
           This is a commit comment. How does this work?
