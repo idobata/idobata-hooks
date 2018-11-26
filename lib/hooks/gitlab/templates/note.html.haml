@@ -35,7 +35,7 @@
     Commented on #{note.noteable_type}:
 
   %a{href: note.url} #{repository_name}##{reference_id}
-  - if title
-    %b= title  
+  - if title.present?
+    %b= title
 
 = md note.note
