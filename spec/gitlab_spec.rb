@@ -125,7 +125,7 @@ describe Idobata::Hook::Gitlab, type: :hook do
           <span><img src="https://secure.gravatar.com/avatar/5c22169c1f836709eea59cebfcd6356a?s=40&amp;d=identicon" width="16" height="16" alt="" /></span>
           Tester
           commented on
-          Issue
+          issue
           <a href='https://gitlab.com/trickcomments/test/issues/29#note_53469'>trickcomments#29</a>
           <b>Connect to Idobata(Issue)</b>
         </p>
@@ -143,7 +143,7 @@ describe Idobata::Hook::Gitlab, type: :hook do
           <span><img src="https://secure.gravatar.com/avatar/5c22169c1f836709eea59cebfcd6356a?s=40&amp;d=identicon" width="16" height="16" alt="" /></span>
           Tester
           commented on
-          MergeRequest
+          merge request
           <a href='https://gitlab.com/trickcomments/test/merge_requests/30#note_1244'>trickcomments#30</a>
           <b>Connect to Idobata(Merge request)</b>
         </p>
@@ -161,7 +161,7 @@ describe Idobata::Hook::Gitlab, type: :hook do
           <span><img src="https://secure.gravatar.com/avatar/5c22169c1f836709eea59cebfcd6356a?s=40&amp;d=identicon" width="16" height="16" alt="" /></span>
           Tester
           commented on
-          Snippet
+          snippet
           <a href='https://gitlab.com/trickcomments/test/snippets/53#note_1245'>trickcomments#53</a>
           <b>Connect to Idobata(Snippet)</b>
         </p>
@@ -179,7 +179,7 @@ describe Idobata::Hook::Gitlab, type: :hook do
           <span><img src="https://secure.gravatar.com/avatar/5c22169c1f836709eea59cebfcd6356a?s=40&amp;d=identicon" width="16" height="16" alt="" /></span>
           Tester
           commented on
-          Commit
+          commit
           <a href='https://gitlab.com/trickcomments/test/commit/cfe32cf61b73a0d5e9f13e774abde7ff789b1660#note_1243'>trickcomments#cfe32cf61b73a0d5e9f13e774abde7ff789b1660</a>
         </p>
         <p>

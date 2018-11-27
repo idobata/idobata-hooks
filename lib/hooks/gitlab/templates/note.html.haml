@@ -30,7 +30,7 @@
     %span= avatar_image_tag payload.user.avatar_url
     = payload.user.name
     commented on
-    = note.noteable_type
+    = note.noteable_type.underscore.humanize(capitalize: false)
   - else
     Commented on #{note.noteable_type}:
 
