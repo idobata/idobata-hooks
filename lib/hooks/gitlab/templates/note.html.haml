@@ -1,0 +1,41 @@
+:ruby
+  note                = payload.object_attributes
+  has_url             = note.url?
+  has_user            = payload.user?
+  repository_name     = has_url ? note.url.split('/', 5)[-2] : '' # http://example.com/owner/:name/issues/:id
+  has_issue           = payload.issue?
+  has_merge_request   = payload.merge_request?
+  has_snippet         = payload.snippet?
+  has_commit          = payload.commit?
+
+  if has_url
+    if has_issue
+      reference_id = payload.issue.iid
+      title = payload.issue.title
+    elsif has_merge_request
+      reference_id = payload.merge_request.iid
+      title = payload.merge_request.title
+    elsif has_snippet
+      reference_id = payload.snippet.id
+      title = payload.snippet.title  
+    elsif has_commit
+      reference_id = payload.commit.id
+    end
+  else
+    reference_id = note.id
+  end
+
+%p
+  - if has_user
+    %span= avatar_image_tag payload.user.avatar_url
+    = payload.user.name
+    commented on
+    = note.noteable_type.underscore.humanize(capitalize: false)
+  - else
+    Commented on #{note.noteable_type}:
+
+  %a{href: note.url} #{repository_name}##{reference_id}
+  - if title.present?
+    %b= title
+
+= md note.note
