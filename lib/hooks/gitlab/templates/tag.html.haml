@@ -1,7 +1,7 @@
 :ruby
   tag_name = payload.ref.split('/', 3).last # refs/tags/:tag_name
 
-%p
+%div
   %span= payload.user_name
 
   #{tag_type(payload)} tag

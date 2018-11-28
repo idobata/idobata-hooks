@@ -4,7 +4,7 @@
   has_user        = payload.user?
   repository_name = has_url ? issue.url.split('/', 5)[-2] : '' # http://example.com/owner/:name/issues/:id
 
-%p
+%div
   - if has_user
     %span= avatar_image_tag payload.user.avatar_url
     = payload.user.name
