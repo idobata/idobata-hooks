@@ -1,0 +1,5 @@
+%img(width="16" height="16" src="#{usericon.html_safe}")
+%b= username.html_safe
+- body.split("\n").each do |line|
+  %br
+  = line
