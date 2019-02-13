@@ -5,8 +5,9 @@ module Idobata::Hook
 
     def usericon
       payload.icon_url
-    rescue
-      '__WARNING: It could not make "usericon", please check your idobata hook settings.__'
+      # This value is used for a url of an image.
+      # If it returns a warning message, it shows just broken image to users.
+      # So, you should not make a warning message here.
     end
 
     def username
