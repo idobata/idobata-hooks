@@ -187,5 +187,56 @@ describe Idobata::Hook::Gitlab, type: :hook do
         </p>
       HTML
     end
+
+    describe 'pipeline event' do
+      let(:fixture) { 'pipeline.json' }
+
+
+      it { expect(subject[:source]).to be_dom_equal <<~HTML }
+        <div>
+          <a href='http://192.168.64.1:3005/gitlab-org/gitlab-test/pipelines/31'>Pipeline</a>
+          is failed.
+          <div>
+            <ul>
+              <li>
+                <a href='http://192.168.64.1:3005/gitlab-org/gitlab-test/-/jobs/376'>build-image</a>
+                is
+                <span class='label label-success'>
+                success
+                </span>
+              </li>
+              <li>
+                <a href='http://192.168.64.1:3005/gitlab-org/gitlab-test/-/jobs/377'>test-image</a>
+                is
+                <span class='label label-success'>
+                success
+                </span>
+              </li>
+              <li>
+                <a href='http://192.168.64.1:3005/gitlab-org/gitlab-test/-/jobs/378'>test</a>
+                is
+                <span class='label label-info'>
+                created
+                </span>
+              </li>
+              <li>
+                <a href='http://192.168.64.1:3005/gitlab-org/gitlab-test/-/jobs/379'>staging</a>
+                is
+                <span class='label label-danger'>
+                failed
+                </span>
+              </li>
+              <li>
+                <a href='http://192.168.64.1:3005/gitlab-org/gitlab-test/-/jobs/380'>production</a>
+                is
+                <span class='label label-default'>
+                skipped
+                </span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      HTML
+    end
   end
 end

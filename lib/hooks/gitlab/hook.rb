@@ -13,6 +13,7 @@ module Idobata::Hook
       push
       tag
       note
+      pipeline
     )
 
     before_render do

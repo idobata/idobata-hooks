@@ -1,0 +1,26 @@
+:ruby
+  label_classes = {
+    'failed'  => 'label-danger',
+    'created' => 'label-info',
+    'manual'  => 'label-info',
+    'success' => 'label-success',
+    'success_with_warnings' => 'label-warning'
+  }
+  web_url = payload.project.web_url
+  pipeline_url = "#{web_url}/pipelines/#{payload.object_attributes.id}"
+
+%div
+  %a{href: pipeline_url} Pipeline
+  is #{payload.object_attributes.status}.
+
+  %div
+    %ul
+      - payload.builds.each do |build|
+        - status = build.status
+        - label_class = label_classes[status].presence || 'label-default'
+        - job_url = "#{web_url}/-/jobs/#{build.id}"
+        %li
+          %a{href: job_url}= build.name
+          is
+          %span.label{class: label_class}
+            #{status}
