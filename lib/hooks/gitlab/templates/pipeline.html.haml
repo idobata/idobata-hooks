@@ -22,7 +22,7 @@
         - label_class = label_classes[status].presence || 'label-default'
         - job_url = "#{web_url}/-/jobs/#{build.id}"
         %li
-          %a{href: job_url}= build.name
-          is
-          %span.label{class: label_class}
+          %span.col-xs-1.label{class: label_class}
             #{status}
+          &nbsp;
+          %a{href: job_url}= build.name

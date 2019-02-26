@@ -202,39 +202,39 @@ describe Idobata::Hook::Gitlab, type: :hook do
             </summary>
             <ul>
               <li>
+                <span class='col-xs-1 label label-success'>
+                success
+                </span>
+                &nbsp;
                 <a href='http://192.168.64.1:3005/gitlab-org/gitlab-test/-/jobs/376'>build-image</a>
-                is
-                <span class='label label-success'>
-                success
-                </span>
               </li>
               <li>
+                <span class='col-xs-1 label label-success'>
+                success
+                </span>
+                &nbsp;
                 <a href='http://192.168.64.1:3005/gitlab-org/gitlab-test/-/jobs/377'>test-image</a>
-                is
-                <span class='label label-success'>
-                success
-                </span>
               </li>
               <li>
-                <a href='http://192.168.64.1:3005/gitlab-org/gitlab-test/-/jobs/378'>test</a>
-                is
-                <span class='label label-info'>
+                <span class='col-xs-1 label label-info'>
                 created
                 </span>
+                &nbsp;
+                <a href='http://192.168.64.1:3005/gitlab-org/gitlab-test/-/jobs/378'>test</a>
               </li>
               <li>
-                <a href='http://192.168.64.1:3005/gitlab-org/gitlab-test/-/jobs/379'>staging</a>
-                is
-                <span class='label label-danger'>
+                <span class='col-xs-1 label label-danger'>
                 failed
                 </span>
+                &nbsp;
+                <a href='http://192.168.64.1:3005/gitlab-org/gitlab-test/-/jobs/379'>staging</a>
               </li>
               <li>
-                <a href='http://192.168.64.1:3005/gitlab-org/gitlab-test/-/jobs/380'>production</a>
-                is
-                <span class='label label-default'>
+                <span class='col-xs-1 label label-default'>
                 skipped
                 </span>
+                &nbsp;
+                <a href='http://192.168.64.1:3005/gitlab-org/gitlab-test/-/jobs/380'>production</a>
               </li>
             </ul>
           </details>
