@@ -196,7 +196,10 @@ describe Idobata::Hook::Gitlab, type: :hook do
         <div>
           <a href='http://192.168.64.1:3005/gitlab-org/gitlab-test/pipelines/31'>Pipeline</a>
           is failed.
-          <div>
+          <details>
+            <summary>
+              Jobs
+            </summary>
             <ul>
               <li>
                 <a href='http://192.168.64.1:3005/gitlab-org/gitlab-test/-/jobs/376'>build-image</a>
@@ -234,7 +237,7 @@ describe Idobata::Hook::Gitlab, type: :hook do
                 </span>
               </li>
             </ul>
-          </div>
+          </details>
         </div>
       HTML
     end

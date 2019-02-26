@@ -13,7 +13,9 @@
   %a{href: pipeline_url} Pipeline
   is #{payload.object_attributes.status}.
 
-  %div
+  %details
+    %summary
+      Jobs
     %ul
       - payload.builds.each do |build|
         - status = build.status
