@@ -3,15 +3,24 @@
     'failed'  => 'label-danger',
     'created' => 'label-info',
     'manual'  => 'label-info',
+    'running' => 'label-info',
     'success' => 'label-success',
     'success_with_warnings' => 'label-warning'
   }
   web_url = payload.project.web_url
-  pipeline_url = "#{web_url}/pipelines/#{payload.object_attributes.id}"
+  p_status = payload.object_attributes.status
+  p_label_class = label_classes[p_status].presence || 'label-default'
+  p_id = payload.object_attributes.id
+  p_url = "#{web_url}/pipelines/#{p_id}"
 
 %div
-  %a{href: pipeline_url} Pipeline
-  is #{payload.object_attributes.status}.
+  %h4
+    %span.label{class: p_label_class}
+      #{p_status}
+    &nbsp;
+    %a{href: p_url} Pipeline ##{p_id}
+    on 
+    %a{href: web_url} #{payload.project.name}
 
   %details
     %summary
