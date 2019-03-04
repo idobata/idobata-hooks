@@ -13,14 +13,14 @@
   p_id = payload.object_attributes.id
   p_url = "#{web_url}/pipelines/#{p_id}"
 
-%div
-  %span.label{class: p_label_class}
-    #{p_status}
-  &nbsp;
-  %a{href: p_url} Pipeline ##{p_id}
-  on 
-  %a{href: web_url} #{payload.project.name}
+%div.col-xs-12
+  %span.col-xs-1.label{class: p_label_class}= p_status
+  %span.col-xs-11
+    %a{href: p_url} Pipeline ##{p_id}
+    on 
+    %a{href: web_url} #{payload.project.name}
 
+%div.col-xs-12
   %details
     %summary
       Jobs

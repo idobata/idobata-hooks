@@ -193,15 +193,17 @@ describe Idobata::Hook::Gitlab, type: :hook do
 
 
       it { expect(subject[:source]).to be_dom_equal <<~HTML }
-        <div>
-          <span class='label label-danger'>
+        <div class='col-xs-12'>
+          <span class='col-xs-1 label label-danger'>
           failed
           </span>
-          &nbsp;
-          <a href='http://192.168.64.1:3005/gitlab-org/gitlab-test/pipelines/31'>Pipeline #31</a>
-          on 
-          <a href='http://192.168.64.1:3005/gitlab-org/gitlab-test'>Gitlab Test</a>
-
+          <span class='col-xs-11'>
+            <a href='http://192.168.64.1:3005/gitlab-org/gitlab-test/pipelines/31'>Pipeline #31</a>
+            on 
+            <a href='http://192.168.64.1:3005/gitlab-org/gitlab-test'>Gitlab Test</a>
+          </span>
+        </div>
+        <div class='col-xs-12'>
           <details>
             <summary>
               Jobs
