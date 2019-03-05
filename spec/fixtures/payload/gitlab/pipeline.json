@@ -76,7 +76,7 @@
          "id": 377,
          "stage": "test",
          "name": "test-image",
-         "status": "success",
+         "status": "success_with_warnings",
          "created_at": "2016-08-12 15:23:28 UTC",
          "started_at": "2016-08-12 15:26:12 UTC",
          "finished_at": null,

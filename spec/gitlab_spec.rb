@@ -193,56 +193,61 @@ describe Idobata::Hook::Gitlab, type: :hook do
 
 
       it { expect(subject[:source]).to be_dom_equal <<~HTML }
-        <div class='col-xs-12'>
-          <span class='col-xs-1 label label-danger'>
+        <div class='col-lg-12'>
+          <span class='col-lg-2 label label-danger'>
           failed
           </span>
-          <span class='col-xs-11'>
+          <span class='col-lg-10'>
             <a href='http://192.168.64.1:3005/gitlab-org/gitlab-test/pipelines/31'>Pipeline #31</a>
             on 
             <a href='http://192.168.64.1:3005/gitlab-org/gitlab-test'>Gitlab Test</a>
           </span>
         </div>
-        <div class='col-xs-12'>
+        <div class='col-lg-12'>
           <details>
             <summary>
               Jobs
             </summary>
             <ul>
               <li>
-                <span class='col-xs-1 label label-success'>
+                <span class='col-lg-2 label label-success'>
                 success
                 </span>
-                &nbsp;
-                <a href='http://192.168.64.1:3005/gitlab-org/gitlab-test/-/jobs/376'>build-image</a>
-              </li>
-              <li>
-                <span class='col-xs-1 label label-success'>
-                success
+                <span class='col-lg-10'>
+                  <a href='http://192.168.64.1:3005/gitlab-org/gitlab-test/-/jobs/376'>build-image</a>
                 </span>
-                &nbsp;
-                <a href='http://192.168.64.1:3005/gitlab-org/gitlab-test/-/jobs/377'>test-image</a>
               </li>
               <li>
-                <span class='col-xs-1 label label-info'>
+                <span class='col-lg-2 label label-warning'>
+                success(warnings)
+                </span>
+                <span class='col-lg-10'>
+                  <a href='http://192.168.64.1:3005/gitlab-org/gitlab-test/-/jobs/377'>test-image</a>
+                </span>
+              </li>
+              <li>
+                <span class='col-lg-2 label label-info'>
                 created
                 </span>
-                &nbsp;
-                <a href='http://192.168.64.1:3005/gitlab-org/gitlab-test/-/jobs/378'>test</a>
+                <span class='col-lg-10'>
+                  <a href='http://192.168.64.1:3005/gitlab-org/gitlab-test/-/jobs/378'>test</a>
+                </span>
               </li>
               <li>
-                <span class='col-xs-1 label label-danger'>
+                <span class='col-lg-2 label label-danger'>  
                 failed
                 </span>
-                &nbsp;
-                <a href='http://192.168.64.1:3005/gitlab-org/gitlab-test/-/jobs/379'>staging</a>
+                <span class='col-lg-10'>
+                  <a href='http://192.168.64.1:3005/gitlab-org/gitlab-test/-/jobs/379'>staging</a>
+                </span>
               </li>
               <li>
-                <span class='col-xs-1 label label-default'>
+                <span class='col-lg-2 label label-default'>
                 skipped
                 </span>
-                &nbsp;
-                <a href='http://192.168.64.1:3005/gitlab-org/gitlab-test/-/jobs/380'>production</a>
+                <span class='col-lg-10'>
+                  <a href='http://192.168.64.1:3005/gitlab-org/gitlab-test/-/jobs/380'>production</a>
+                </span>
               </li>
             </ul>
           </details>
