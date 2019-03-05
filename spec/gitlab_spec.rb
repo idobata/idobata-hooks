@@ -194,10 +194,11 @@ describe Idobata::Hook::Gitlab, type: :hook do
 
       it { expect(subject[:source]).to be_dom_equal <<~HTML }
         <div class='col-lg-12'>
-          <span class='col-lg-2 label label-danger'>
+          <span class='label label-danger'>
           failed
           </span>
-          <span class='col-lg-10'>
+          &nbsp;
+          <span>
             <a href='http://192.168.64.1:3005/gitlab-org/gitlab-test/pipelines/31'>Pipeline #31</a>
             on 
             <a href='http://192.168.64.1:3005/gitlab-org/gitlab-test'>Gitlab Test</a>
@@ -210,42 +211,47 @@ describe Idobata::Hook::Gitlab, type: :hook do
             </summary>
             <ul>
               <li>
-                <span class='col-lg-2 label label-success'>
+                <span class='label label-success'>
                 success
                 </span>
-                <span class='col-lg-10'>
+                &nbsp;
+                <span>
                   <a href='http://192.168.64.1:3005/gitlab-org/gitlab-test/-/jobs/376'>build-image</a>
                 </span>
               </li>
               <li>
-                <span class='col-lg-2 label label-warning'>
+                <span class='label label-warning'>
                 success(warnings)
                 </span>
-                <span class='col-lg-10'>
+                &nbsp;
+                <span>
                   <a href='http://192.168.64.1:3005/gitlab-org/gitlab-test/-/jobs/377'>test-image</a>
                 </span>
               </li>
               <li>
-                <span class='col-lg-2 label label-info'>
+                <span class='label label-info'>
                 created
                 </span>
-                <span class='col-lg-10'>
+                &nbsp;
+                <span>
                   <a href='http://192.168.64.1:3005/gitlab-org/gitlab-test/-/jobs/378'>test</a>
                 </span>
               </li>
               <li>
-                <span class='col-lg-2 label label-danger'>  
+                <span class='label label-danger'>
                 failed
                 </span>
-                <span class='col-lg-10'>
+                &nbsp;
+                <span>
                   <a href='http://192.168.64.1:3005/gitlab-org/gitlab-test/-/jobs/379'>staging</a>
                 </span>
               </li>
               <li>
-                <span class='col-lg-2 label label-default'>
+                <span class='label label-default'>
                 skipped
                 </span>
-                <span class='col-lg-10'>
+                &nbsp;
+                <span>
                   <a href='http://192.168.64.1:3005/gitlab-org/gitlab-test/-/jobs/380'>production</a>
                 </span>
               </li>

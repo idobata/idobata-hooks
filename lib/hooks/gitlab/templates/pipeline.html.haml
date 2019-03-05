@@ -15,8 +15,9 @@
   p_url = "#{web_url}/pipelines/#{p_id}"
 
 %div.col-lg-12
-  %span.col-lg-2.label{class: p_label_class}= p_status
-  %span.col-lg-10
+  %span.label{class: p_label_class}= p_status
+  &nbsp;
+  %span
     %a{href: p_url} Pipeline ##{p_id}
     on 
     %a{href: web_url} #{payload.project.name}
@@ -31,6 +32,7 @@
         - label_class = label_classes[status].presence || 'label-default'
         - job_url = "#{web_url}/-/jobs/#{build.id}"
         %li
-          %span.col-lg-2.label{class: label_class}= status
-          %span.col-lg-10
+          %span.label{class: label_class}= status
+          &nbsp;
+          %span
             %a{href: job_url}= build.name
