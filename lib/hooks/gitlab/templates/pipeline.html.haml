@@ -1,0 +1,38 @@
+:ruby
+  status_name = -> (name) { name == 'success_with_warnings' ? 'success(warnings)' : name }
+  label_classes = {
+    'failed'  => 'label-danger',
+    'created' => 'label-info',
+    'manual'  => 'label-info',
+    'running' => 'label-info',
+    'success' => 'label-success',
+    'success(warnings)' => 'label-warning'
+  }
+  web_url = payload.project.web_url
+  p_status = status_name[payload.object_attributes.status]
+  p_label_class = label_classes[p_status].presence || 'label-default'
+  p_id = payload.object_attributes.id
+  p_url = "#{web_url}/pipelines/#{p_id}"
+
+%div.col-lg-12
+  %span.label{class: p_label_class}= p_status
+  &nbsp;
+  %span
+    %a{href: p_url} Pipeline ##{p_id}
+    on 
+    %a{href: web_url} #{payload.project.name}
+
+%div.col-lg-12
+  %details
+    %summary
+      Jobs
+    %ul
+      - payload.builds.each do |build|
+        - status = status_name[build.status]
+        - label_class = label_classes[status].presence || 'label-default'
+        - job_url = "#{web_url}/-/jobs/#{build.id}"
+        %li
+          %span.label{class: label_class}= status
+          &nbsp;
+          %span
+            %a{href: job_url}= build.name
