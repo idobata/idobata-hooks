@@ -16,10 +16,9 @@
 
 %div.col-lg-12
   %span.label{class: p_label_class}= p_status
-  &nbsp;
   %span
     %a{href: p_url} Pipeline ##{p_id}
-    on 
+    on
     %a{href: web_url} #{payload.project.name}
 
 %div.col-lg-12
@@ -33,6 +32,5 @@
         - job_url = "#{web_url}/-/jobs/#{build.id}"
         %li
           %span.label{class: label_class}= status
-          &nbsp;
           %span
             %a{href: job_url}= build.name
