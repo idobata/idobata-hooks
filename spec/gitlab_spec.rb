@@ -197,10 +197,9 @@ describe Idobata::Hook::Gitlab, type: :hook do
           <span class='label label-danger'>
           failed
           </span>
-          &nbsp;
           <span>
             <a href='http://192.168.64.1:3005/gitlab-org/gitlab-test/pipelines/31'>Pipeline #31</a>
-            on 
+            on
             <a href='http://192.168.64.1:3005/gitlab-org/gitlab-test'>Gitlab Test</a>
           </span>
         </div>
@@ -214,7 +213,6 @@ describe Idobata::Hook::Gitlab, type: :hook do
                 <span class='label label-success'>
                 success
                 </span>
-                &nbsp;
                 <span>
                   <a href='http://192.168.64.1:3005/gitlab-org/gitlab-test/-/jobs/376'>build-image</a>
                 </span>
@@ -223,7 +221,6 @@ describe Idobata::Hook::Gitlab, type: :hook do
                 <span class='label label-warning'>
                 success(warnings)
                 </span>
-                &nbsp;
                 <span>
                   <a href='http://192.168.64.1:3005/gitlab-org/gitlab-test/-/jobs/377'>test-image</a>
                 </span>
@@ -232,7 +229,6 @@ describe Idobata::Hook::Gitlab, type: :hook do
                 <span class='label label-info'>
                 created
                 </span>
-                &nbsp;
                 <span>
                   <a href='http://192.168.64.1:3005/gitlab-org/gitlab-test/-/jobs/378'>test</a>
                 </span>
@@ -241,7 +237,6 @@ describe Idobata::Hook::Gitlab, type: :hook do
                 <span class='label label-danger'>
                 failed
                 </span>
-                &nbsp;
                 <span>
                   <a href='http://192.168.64.1:3005/gitlab-org/gitlab-test/-/jobs/379'>staging</a>
                 </span>
@@ -250,7 +245,6 @@ describe Idobata::Hook::Gitlab, type: :hook do
                 <span class='label label-default'>
                 skipped
                 </span>
-                &nbsp;
                 <span>
                   <a href='http://192.168.64.1:3005/gitlab-org/gitlab-test/-/jobs/380'>production</a>
                 </span>
