@@ -1,7 +1,12 @@
+dist: bionic
 language: ruby
-sudo: false
-rvm: 2.6.6
+
+rvm:
+  - 2.5.7
+  - 2.6.6
+
 cache: [bundler, apt]
+
 git:
   depth: 1
 
