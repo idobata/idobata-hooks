@@ -6,5 +6,4 @@ gemspec
 
 group :test do
   gem 'github-linguist', '~> 4.5.0'
-  gem 'coveralls', require: false
 end
