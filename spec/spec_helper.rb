@@ -5,9 +5,6 @@ require 'active_support/core_ext/hash/conversions'
 require 'tapp'
 require 'pry'
 
-require 'coveralls'
-Coveralls.wear!
-
 require 'idobata/hooks'
 
 Dir[Idobata::Hook.root.join('../spec/support/**/*.rb')].each { |f| require f }
