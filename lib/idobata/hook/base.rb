@@ -119,6 +119,8 @@ module Idobata::Hook
       template_path = self.class.hook_root.join('templates', template_name)
 
       Tilt.new(template_path.to_s, escape_html: true).render(self, locals)
+    rescue Errno::ENOENT => e
+      warn "#{e.class}: #{e.message} (#{e.inspect})"
     end
 
     def payload
